@@ -1,0 +1,71 @@
+{
+  "002": [
+    "scripts/community/metrics.mjs",
+    "scripts/community/contracts.mjs",
+    "scripts/community/evidence-1.0.0.schema.json",
+    "scripts/community/metrics.test.mjs",
+    "scripts/community/contracts.test.mjs",
+    "scripts/community/test-fixture.mjs",
+    "scripts/community/fixtures/",
+    "src/data/community/input.ts",
+    "src/data/community/metrics.ts",
+    "src/components/community/CommunityNav.astro",
+    "docs/community/CONTRACTS.md"
+  ],
+  "003B": [
+    "src/data/community/challenges.json",
+    "src/data/community/submissions.ts",
+    "src/pages/community/submit.astro",
+    "src/components/hackathons/HackathonRules.astro",
+    "src/data/hackathons.ts",
+    "src/data/hackathonExperience.ts",
+    "docs/hackathons/"
+  ],
+  "004": [
+    "src/data/community/evidence.ts",
+    "src/components/community/MetricGrid.astro",
+    "src/pages/community/index.astro",
+    "src/pages/community/impact.astro",
+    "src/data/project.ts",
+    "src/components/Header.astro"
+  ],
+  "006": [
+    "src/data/community/projects.ts",
+    "src/components/community/ReviewedGallery.astro",
+    "src/pages/community/projects.astro"
+  ],
+  "007B": [
+    "src/data/community/adoption.ts",
+    "src/pages/community/adoption.astro"
+  ],
+  "008B": [
+    "scripts/community/reports.mjs",
+    "scripts/community/reports.test.mjs",
+    "src/data/community/reports.ts",
+    "src/pages/community/reports/",
+    ".github/workflows/community-drafts.yml"
+  ],
+  "ARCH-001": [
+    "docs/adr/ADR-007-google-workspace.md",
+    "docs/community/WORKSPACE_EXPORTS.md",
+    "scripts/community/public-export.mjs",
+    "scripts/community/public-export.test.mjs",
+    "src/data/hackathonForms.ts"
+  ],
+  "INTEGRATION-001": [
+    "scripts/community/upstream/",
+    "scripts/community/upstream.mjs",
+    "scripts/community/contract-bridge.py",
+    "scripts/community/publication.mjs",
+    "scripts/community/integration.test.mjs",
+    "scripts/community/impact-report.mjs",
+    "scripts/community/impact-cli.mjs",
+    "src/data/community/approvals.ts",
+    "src/data/community/recognition.ts",
+    "docs/adr/ADR-008-evidence-contract-integration.md",
+    "docs/specs/SPEC-017-contributor-recognition.md",
+    "docs/community/INTEGRATION_GUIDE.md",
+    "docs/community/CONTRACT_INVENTORY.json",
+    "docs/community/TRACEABILITY.md"
+  ]
+}

@@ -1,149 +1,35 @@
-# AeglysAI Community Hackathons — participant handbook
+# AeglysAI AI/ML and Cybersecurity Hackathon — Participant Handbook
 
-PORTAL-013-FINAL foundation, 2026-10-04. Planned events; registration is **Opening Soon**.
-This is the shared participant guide, not evidence of launched events or finalized
-eligibility terms. The red visual experience is stabilized; subsequent work covers
-Google Forms integration, CORE-012 Model D and challenge implementation.
+Current rules finalized by the user on 2026-10-11 (COM-003B-FIX-001). One hackathon replaces the former three-event proposal. Registration Opening Soon: dates, deadlines, official Forms, geographic/age eligibility and conduct reporting contact remain pending. No participation, judges, sponsors or awards are claimed.
 
-## Welcome
+## Register, qualify, then compete
 
-Build. Break. Measure. Improve. Explore authorization, identity, risk, observability,
-resilience and policy-bounded incident response through reproducible engineering work.
-AeglysAI remains an open-source research initiative; no validated outcomes are promised.
+1. Register individually through the official Google Form when it opens.
+2. Fork AeglysAI into your GitHub account; no official repository write access.
+3. Clone your fork and run the A/B/C baseline. Model D knowledge is not required.
+4. Document architecture, setup, one observation, proposed improvement and validation.
+5. Submit sanitized qualification evidence and GitHub username/fork/branch/file URLs through the qualification Google Form.
+6. Organizer review determines selection; mandatory qualification does not guarantee selection.
+7. Build and compete only after selection.
 
-## Who Can Participate
-
-University/graduate students, early-career engineers, platform/cloud/security/software
-engineers, SREs, AI/ML engineers, distributed-systems practitioners and researchers are
-the intended audience. Participation is free. Age and geographic eligibility: TBD.
-
-## Hackathon Series
-
-| Event | Theme | Planned launch | Planned submission |
-| --- | --- | --- | --- |
-| AeglysAI Adaptive Authorization Challenge | UNDERSTAND & EXTEND: RBAC, ABAC, Zero Trust, contextual risk, risk-aware authorization, explainability | November 2026 | January 2027 |
-| AeglysAI Behavioral Risk Challenge | MEASURE & DETECT: behavioral signals, anomaly detection, risk scoring, identity context, false-positive reduction, explainability | December 2026 | February 2027 |
-| AeglysAI Autonomous Resilience Challenge | ADAPT & RESPOND: incident detection, observability, resilience, policy-bounded response, distributed-system recovery | January 2027 | March 2027 |
-
-Model D remains planned research; no unverified autonomous capabilities or experimental
-results are claimed. FOUNDATION supports students, early-career engineers and first-time
-contributors; ADVANCED supports experienced engineers, graduate researchers and advanced
-students. Neither is more prestigious. Event-specific tasks/resources and rankings: TBD.
-
-## How to Register
-
-1. **REGISTER:** use the official Google Form when registration opens.
-2. **FORK AEGLYSAI:** fork the official repository into your GitHub account. No official write access.
-3. **CLONE & RUN:** clone your own fork; follow official setup instructions and demonstrate baseline build/run.
-4. **COMPLETE QUALIFICATION:** show architecture understanding, successful setup, one meaningful observation, one realistic improvement and how to validate it. Not a LeetCode-style elimination exercise.
-5. **SUBMIT:** official Google Form receives GitHub username, fork URL, qualification branch URL and qualification file URL.
-6. **SELECTION:** organizer applies published criteria; qualification does not guarantee selection.
-7. **BUILD & COMPETE:** selected participants develop scoped challenges with reproducible evidence.
-
-From first fork to a working idea.
-
-A proposed contributor pathway. Qualification and selection rules will be published before applications open; completing the steps does not guarantee selection.
-
-Branch `qualification/<github-username>` and file
-`community/qualification/<github-username>.md` live in your fork. See the
-[qualification template](QUALIFICATION_TEMPLATE.md) and [GitHub workflow](GITHUB_WORKFLOW.md).
+Every team member completes these steps individually. See [qualification template](QUALIFICATION_TEMPLATE.md) and [GitHub workflow](GITHUB_WORKFLOW.md).
 
 ## Teams
 
-Individual/team eligibility, size and changes: TBD. Selected branches in participant/team
-forks use `hackathon-01/<github-username-or-team>`, `hackathon-02/<github-username-or-team>`
-or `hackathon-03/<github-username-or-team>`. No PII in names.
+Individuals may compete. Teams have two to four members, maximum four, all individually qualified and selected, including the lead. One designated leader and organizer-issued unique team ID. No duplicate active membership; changes require organizer approval. Roster/registration mappings are verified in private Google Sheets, never published.
 
-## Rules
+## Five challenge options
 
-Official event rules and published selection criteria must precede intake. Prior-work
-limits, technologies, minimum valid-project criteria, exceptions and deadlines: TBD.
-A final submission does not guarantee merge into AeglysAI; normal maintainer review applies.
+Select exactly one: Smart Login Guardian; Find the Anomaly; API Traffic Watch; Explain My Security Alert; Predict the Outage. Any programming language/framework. Standalone final implementations are acceptable after mandatory AeglysAI qualification. Submit a working MVP, executable prototype or functional proof of concept; slides or a documented walkthrough alone are insufficient.
 
-## Code of Conduct
+## Submission and judging
 
-Respect others; reject harassment/discrimination; provide constructive feedback and
-credit collaborators. Test only authorized isolated systems. Private reporting contact
-and enforcement procedure: TBD before opening registration. Do not publish sensitive reports.
+See [required submission artifacts](SUBMISSION_REQUIREMENTS.md) and the [two-round judging framework](JUDGING_FRAMEWORK.md). Required demonstration video is at most two minutes; narrated screen recordings or silent captioned demonstrations accepted, no mandatory webcam. Optional deployed demo.
 
-## Challenge Requirements
+Round 1 selects finalists; Round 2 ranks finalists using five-minute live demos and five-minute Q&A over Google Meet. Proposed capacity five to ten teams depends on quality/capacity. Do not combine scores. Qualification is eligibility, not competition scoring.
 
-Choose the relevant event and depth. Describe the problem, policy boundaries and evidence.
-Starter resources, precise track deliverables and mentoring sessions: TBD / PLANNED.
+## Administration, privacy and recognition
 
-## Submission Requirements
+Forms collect registration, qualification and final submissions; private Sheets store applicant/team/judging administration; private Drive stores consent/supporting evidence. GitHub stores sanitized qualification and project code. No database/accounts/private-data API. Never publish participant contacts, credentials, private judging data or patent-related material. Publication consent is separate from eligibility/judging.
 
-Public GitHub repository unless a prior exception is approved; README; problem statement;
-architecture; setup instructions; demo; tests/evidence; security considerations; limitations;
-license. Supply a frozen review commit/tag. Optional video, benchmarks and research notes.
-See [submission requirements](SUBMISSION_REQUIREMENTS.md).
-
-## Judging
-
-Proposed weights: technical correctness 25%, security reasoning 20%, architecture 20%,
-reproducibility 15%, innovation 10%, documentation/explainability 10%. Independent,
-non-conflicted judges review eligible submissions; conflicts require recusal/reassignment.
-See [judging framework](JUDGING_FRAMEWORK.md). Final anchors, ties and appeals: TBD.
-
-## Prize
-
-Planned **USD $300 Prize Per Hackathon**. Prize eligibility and payment are subject to
-official event rules. Funding, allocation and payment arrangements: TBD. No sponsor or
-award/payment is claimed.
-
-## Digital Certificates
-
-Registration does not earn a certificate. Participation requires qualification,
-selection, actual participation and a valid minimum final project. Finalist certificates
-require official finalist selection; Excellence/Winner requires verified recognition;
-Appreciation requires actual judge/speaker/mentor service. Future IDs and private issuance
-rules are in [certificate policy](CERTIFICATE_POLICY.md). No certificates are generated.
-
-## Timeline
-
-Month windows above remain planned. Exact dates/time zones, judging, showcase and results:
-TBD. Unconfirmed workshops, clinics, office hours and demos remain PLANNED.
-
-## GitHub Guidelines
-
-Work in your fork; credit dependencies and collaborators; retain reproducible artifacts.
-Official repository: [AeglysAI](https://github.com/shubh-techie/AeglysAI). Optional upstream
-PRs follow review; direct writes to official main are not granted.
-
-## Academic Integrity
-
-Represent your own contribution honestly and attribute reuse. Detailed prior-work and
-institution-compatible requirements: TBD.
-
-## AI Tool Usage
-
-Disclose assistance and verify generated work; do not fabricate evidence. Specific allowed
-uses and disclosure format require organizer decisions: TBD.
-
-## Security Rules
-
-Authorized isolated testing only. No credentials, personal data or sensitive logs in public
-forks. Report vulnerabilities privately to affected maintainers.
-
-## FAQ
-
-Participation is free; students are welcome subject to final eligibility. Teams,
-international eligibility, permitted technologies and exact prerequisites: TBD.
-Applying to judge/speak does not confirm appointment. No certificate merely for registration.
-
-## Contact and privacy
-
-Approved organizer, conduct and accessibility contact: TBD; no email address is invented.
-Google Forms/Drive initially handle applications privately. V1 uses Google Forms, Google
-Sheets, Google Drive, GitHub and email, with manual organizer operations. No Supabase,
-PostgreSQL, Firebase, custom authentication, participant/judge accounts, custom backend,
-.NET registration backend or database infrastructure.
-
-Form/Sheet responses remain private. Never publish emails, phones, private applications,
-internal selection notes or unpublished judge scores. Public profiles require approval;
-privacy notice, access roles, retention/deletion and correction process: TBD before intake.
-
-All five configurable public responder URLs are currently null / Opening Soon:
-`PARTICIPANT_REGISTRATION_URL`, `QUALIFICATION_SUBMISSION_URL`, `JUDGE_APPLICATION_URL`,
-`SPEAKER_INTEREST_URL`, `PROJECT_SUBMISSION_URL`. Configuration owner:
-`src/data/hackathonForms.ts`; opening gates remain closed until reviewed.
+Existing $300 award remains a proposal with unconfirmed funding; no new award or sponsor introduced. Certificates require actual completed role/requirements and organizer approval; registration alone does not earn one. See [certificate policy](CERTIFICATE_POLICY.md), [launch checklist](LAUNCH_READINESS.md) and [manual Workspace export guide](../community/WORKSPACE_EXPORTS.md). Final submissions do not guarantee an upstream merge. Maintainer review applies.

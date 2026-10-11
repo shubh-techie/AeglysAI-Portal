@@ -1,0 +1,36 @@
+{
+  "evidence": {
+    "path": "community/evidence/schemas/evidence-1.0.0.schema.json",
+    "sha256": "51760d5570ab5317d6c898d0eab12c8cdbcdb4b6779ee1233df7e33e5915ddc6"
+  },
+  "recognition": {
+    "path": "community/contributors/schemas/recognition-1.0.0.schema.json",
+    "sha256": "9f9093ad4834e54a4505c617ae02c52604d0a0789707a071a211c986c7be405e"
+  },
+  "adoption": {
+    "path": "community/adoption/schemas/adoption-1.0.0.schema.json",
+    "sha256": "c72ad408deeb5611498fdbbbc1fd66471d302e254206837fcc34631023793794"
+  },
+  "monthly-impact": {
+    "path": "community/reporting/schemas/monthly-impact-1.0.0.schema.json",
+    "sha256": "4857b93e4c49d6cfb8deab6a365bd6627ca134c7c371298a481d3f7a48c3bb27"
+  },
+  "contract_tools.py": {
+    "sha256": "0f8af8924a064c25ee447c18d3e44e592f8803f3b8cff7c6f15e4094168f8585"
+  },
+  "validate_evidence.py": {
+    "sha256": "ec9530a6fb95e4229c8ba4966787fded867ee338623acee446107a63e059ac9d"
+  },
+  "validate_recognition.py": {
+    "sha256": "87c938dcbf9301c82213bf60712e26fe60e99dc4ec22d67cbb4af2ee04b1f254"
+  },
+  "validate_adoption.py": {
+    "sha256": "610a5d1f3d8800a6da363da46cabda6739b773fc82d6fa1d9792d9e9a89cce28"
+  },
+  "validate_monthly.py": {
+    "sha256": "f687a58a031b1c2dcaca835c5fb74e3e065f9d81a763b9dc7423f3a6ec0a4132"
+  },
+  "requirements.txt": {
+    "sha256": "d369a31d6612734edb4fd87c8ad12610429e2086cf43305a6d3a1c47848dae2b"
+  }
+}

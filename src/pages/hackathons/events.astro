@@ -1,14 +1,12 @@
 ---
-import { hackathonSeo, hackathonSocialPreview } from "../../data/hackathonSeo";
-import Layout from "../../layouts/Layout.astro";
-import Hero from "../../components/Hero.astro";
-import HackathonNav from "../../components/HackathonNav.astro";
-import EventDetails from "../../components/hackathons/EventDetails.astro";
-import { events } from "../../data/hackathons";
+import { hackathonSeo, hackathonSocialPreview } from '../../data/hackathonSeo';
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/Hero.astro';
+import HackathonNav from '../../components/HackathonNav.astro';
+import HackathonRules from '../../components/hackathons/HackathonRules.astro';
+import { challenges, legacyEvents } from '../../data/hackathons';
+import { href } from '../../data/project';
 ---
 <Layout title={hackathonSeo.events.title} description={hackathonSeo.events.description} socialImage={hackathonSocialPreview.image}>
-  <Hero eyebrow="Community / Events" title="Three ways to challenge the system." description="Build, evaluate and document security ideas with reproducible evidence. All events are planned; exact dates and official terms are pending." />
-  <div class="container page-content"><HackathonNav />
-    {events.map((event, index) => <EventDetails event={event} index={index}/>)}
-  </div>
-</Layout>
+<Hero eyebrow="One hackathon / Five challenges" title="Build a working idea." description="Mandatory individual qualification, teams of one to four, executable projects and two-round judging. Registration Opening Soon; dates to be announced."/>
+<div class="container page-content"><HackathonNav/><section class="section"><h2>Choose one challenge</h2><div class="cards-grid">{challenges.map(track=><article class="info-card" id={track.id}><h3>{track.title}</h3><p>Any programming language or framework. Build and validate a working intelligent technique; standalone implementations are accepted after mandatory qualification.</p></article>)}</div></section><HackathonRules/><section class="section"><h2>Legacy proposal links</h2><p>The former three-event proposal has been replaced by this single hackathon. These URLs are retained for compatibility; their dates and prizes are not current event announcements.</p><ul>{legacyEvents.map(event=><li id={event.id}><a href={href(`hackathons/${event.id}`)}>{event.title} — retired proposal</a></li>)}</ul></section></div></Layout>

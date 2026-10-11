@@ -22,4 +22,4 @@ Recording and redistribution require separate permission; no recording is assume
 Please let us know through [Approved private organizer contact] if your availability changes.
 
 [Approved organizer name]
-AeglysAI Community Hackathons
+AeglysAI AI/ML and Cybersecurity Hackathon

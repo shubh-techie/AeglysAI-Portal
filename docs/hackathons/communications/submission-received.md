@@ -20,4 +20,4 @@ For a correction, use [Approved correction procedure/contact] within [Official c
 window, if one exists]. Do not assume a corrected submission replaces the frozen version.
 
 [Approved organizer name]
-AeglysAI Community Hackathons
+AeglysAI AI/ML and Cybersecurity Hackathon

@@ -1,53 +1,13 @@
-# Participant invitation template
+# Participant invitation — current single-hackathon template
 
-Template only. Replace bracketed fields, select an event and verify official terms before
-sending. Do not claim registration is open while the official form is unset.
+Unsent template, revised 2026-10-11. Never treat this file as registration, invitation delivery or participation evidence. Insert only approved dates and responder URLs privately before use; registration currently Opening Soon.
 
-**Subject:** Join the AeglysAI [Challenge name]
+Join the AeglysAI AI/ML and Cybersecurity Hackathon: one event with five options — Smart Login Guardian, Find the Anomaly, API Traffic Watch, Explain My Security Alert and Predict the Outage.
 
-Hello [Participant name or community],
+Register individually through the official Google Form, fork/clone/run the A/B/C baseline and submit sanitized architecture/setup/observation/improvement/validation evidence. Model D knowledge is not required. Organizer review selects participants; mandatory qualification does not guarantee selection.
 
-You are invited to explore [challenge name and problem] through AeglysAI Community
-Hackathons — Build. Break. Measure. Improve. The program brings engineering and
-research perspectives to adaptive authorization, behavioral risk, cloud-native security
-and resilient distributed systems using the open-source AeglysAI platform.
+Individuals and teams of two to four can compete after every member is qualified and selected. Designate one leader, obtain a unique team ID; no duplicate active membership and organizer-approved membership changes. Any language/framework, standalone final challenge implementations accepted.
 
-Participation is FREE. Platform Engineers, Cloud Engineers, Security Engineers, SREs,
-Software Engineers, AI/ML Engineers, Researchers and Graduate Students are welcome.
-Final eligibility, age/geographic conditions and team limits are subject to official terms.
+Submit an executable MVP/prototype/functional proof of concept, public source/README/reproduction steps, maximum-two-minute working demonstration video, intelligent technique explanation, tests, attribution/licensing and limitations. Narrated or silent captioned recordings accepted; no webcam requirement. Round 1 shortlists; Round 2 five-minute live demonstration plus five-minute Q&A over Google Meet determines ranking.
 
-| Challenge | Planned launch | Planned submission | Themes |
-| --- | --- | --- | --- |
-| Adaptive Authorization | November 2026 | January 2027 | RBAC, ABAC, contextual risk, adaptive authorization, policy explainability |
-| Behavioral Risk | December 2026 | February 2027 | Behavioral anomaly detection, risk evidence, identity/context signals, explainability, false-positive reduction |
-| Autonomous Resilience | January 2027 | March 2027 | Incident detection, policy-bounded response, resilience, observability, distributed-system security |
-
-Selected event: [event]. Exact submission deadline and time zone: [pending or official
-confirmed deadline]. Each hackathon has a planned USD $300 prize. Prizes and rules are
-subject to official event terms until finalized; no award is claimed.
-
-Start with https://github.com/shubh-techie/AeglysAI and review the event details at
-https://aeglysai.com/hackathons/events/. Model D remains planned research; prototypes
-and evaluation themes do not imply implemented or validated platform capabilities.
-
-Prepare a public repository with source or evaluation code, an explicit compatible
-open-source license, README/setup instructions, reproducible tests and evidence,
-architecture/security reasoning, data provenance and an honest account of limitations.
-Include [event-specific deliverables from the event page]. Credit reused work and disclose
-AI assistance. Never publish credentials, personal information or sensitive datasets.
-The official submission channel and final requirements will be announced in event terms.
-
-Follow the program Code of Conduct: respect others, give constructive feedback, credit
-collaborators, avoid harassment and test only authorized systems. Read
-https://aeglysai.com/hackathons/#code-of-conduct for expectations; conduct reporting
-contact and enforcement procedures must be finalized before registration opens.
-
-Register through [PARTICIPANT_REGISTRATION_FORM_URL — official Google Form pending].
-Applications will initially be handled through Google Forms/Drive; review [application
-privacy notice] before submitting. Registration does not authorize public display of
-personal information. If no official form is available, registration is not yet open.
-
-We look forward to learning from reproducible experiments and thoughtful security reasoning.
-
-Shubh Prabhat
-Creator & Maintainer, AeglysAI
+Use approved registration, qualification and project Google Forms only. No private participant, judging or patent-related records in public evidence. Dates, deadline/time zone and organizer contact: insert approved values before sending; do not invent. See [handbook](README.md), [submission guide](SUBMISSION_REQUIREMENTS.md) and [judging rules](JUDGING_FRAMEWORK.md).

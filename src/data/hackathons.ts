@@ -14,12 +14,12 @@ export const registrationLinks = {
   submission: SUBMISSION_FORM_URL,
 };
 export const program = {
-  title: "AeglysAI Community Hackathons",
+  title: "AeglysAI AI/ML and Cybersecurity Hackathon",
   subtitle: "Build. Break. Measure. Improve.",
   description: "A community engineering program for exploring adaptive authorization, behavioral risk, cloud-native security and resilient distributed systems using the open-source AeglysAI research platform.",
-  prize: "Planned USD $300 prize per hackathon",
+  prize: "Existing planned USD $300 prize; funding unconfirmed",
   terms: "Prizes and rules are subject to official event terms until finalized. No prize has been awarded.",
-  eligibility: "Free participation for platform engineers, cloud engineers, security engineers, SREs, software engineers, AI/ML engineers, researchers and graduate students. Final eligibility, team limits and any geographic or age requirements will be specified in official event terms.",
+  eligibility: "Free participation for platform engineers, cloud engineers, security engineers, SREs, software engineers, AI/ML engineers, researchers and graduate students. Individuals and teams of two to four are eligible after every member individually qualifies and is selected. Age and geographic requirements remain subject to official terms.",
 };
 export const participants = ["Platform Engineers", "Cloud Engineers", "Security Engineers", "Distributed Systems Engineers", "SREs", "Software Engineers", "AI/ML Engineers", "Researchers", "Graduate Students"];
 export const judgingCriteria = ["Technical correctness", "Security reasoning", "Architecture quality", "Reproducibility", "Innovation", "Explainability", "Documentation"];
@@ -29,7 +29,7 @@ export const statusDefinitions: Record<ProgramStatus, string> = {
   PLANNED: "Proposed; arrangements have not been finalized.",
   COMPLETED: "Finished, with supporting evidence available.",
 };
-export const events: {
+export const legacyEvents: {
   id: string; title: string; status: ProgramStatus; launch: string;
   submission: string; prize: { amount: number; currency: "USD"; status: "PLANNED" }; themes: string[]; problem: string; challenge: string;
   deliverables: string[]; registrationUrl: string | null; submissionUrl: string | null;
@@ -65,23 +65,43 @@ export const events: {
 export const keynote = { person: creator, status: "PLANNED" as ProgramStatus };
 export { speakers, judges } from "./hackathonPeople";
 
-/** Proposed operating rubric; finalize in official terms before the event opens. */
+/** Finalized operating rules; dates, forms and judging appointments remain unavailable. */
+export { default as challenges } from './community/challenges.json';
+export const teamRules = [
+ "Individuals may compete; teams may contain two to four participants, maximum four.",
+ "Every member, including the leader, must individually complete qualification and be selected.",
+ "Designate one team leader and obtain a unique team ID from the organizer.",
+ "No duplicate active team membership; membership changes require organizer approval.",
+ "Organizers verify rosters in private Google Sheets; roster mappings are never public.",
+];
 export const scoringFramework = [
-  { category: "Technical Correctness", weight: 25 },
-  { category: "Security & Threat Reasoning", weight: 20 },
-  { category: "Architecture & Engineering", weight: 20 },
-  { category: "Reproducibility", weight: 15 },
-  { category: "Innovation", weight: 10 },
-  { category: "Documentation & Explainability", weight: 10 },
+ { category: "Functionality", weight: 30 },
+ { category: "AI/ML or intelligent feature", weight: 25 },
+ { category: "Relevance and creativity", weight: 20 },
+ { category: "Reproducibility", weight: 15 },
+ { category: "Video clarity", weight: 10 },
+];
+export const finalistRubric = [
+ { category: "Live demonstration", weight: 35 },
+ { category: "Technical understanding", weight: 25 },
+ { category: "Solution quality and safety", weight: 20 },
+ { category: "Technical Q&A", weight: 15 },
+ { category: "Presentation", weight: 5 },
 ];
 export const submissionRequirements = [
-  "Public GitHub repository unless an exception is approved before submission",
-  "README", "Problem statement", "Architecture description", "Setup instructions", "Demo",
-  "Test evidence", "Security considerations", "Limitations", "License information",
+ "Team ID", "Selected challenge", "Public GitHub source URL and frozen review commit/tag", "Project README",
+ "Reproduction/setup instructions", "Working demonstration video URL — maximum two minutes",
+ "Explanation of AI/ML or intelligent technique", "Test or validation evidence",
+ "Data/model attribution and licensing", "Known limitations",
 ];
-export const optionalSubmissionMaterials = ["Video demo", "Benchmark results", "Research notes"];
+export const optionalSubmissionMaterials = ["Deployed demo URL", "Benchmark results", "Research notes"];
+export const events = [{ ...legacyEvents[0], id: "ai-ml-cybersecurity", title: program.title,
+ launch: "To be announced", submission: "To be announced", themes: ["AI/ML", "Cybersecurity"],
+ problem: "Build and explain a working intelligent security solution.",
+ challenge: "Choose one of the five approved challenges. Any programming language or framework; standalone implementations are acceptable after mandatory AeglysAI qualification.",
+ deliverables: submissionRequirements,
+}];
 export const engineeringProblems = [
-  { title: "Authorization and identity", description: "Test how roles, attributes and identity context affect policy decisions across service boundaries. Explain who can do what and why." },
-  { title: "Risk and observability", description: "Explore which signals support a risk decision, how to trace its evidence and how to distinguish anomalies from legitimate operational changes." },
-  { title: "Resilience and incident response", description: "Use isolated failure scenarios to evaluate detection, recovery and policy-bounded response. Document safeguards and effects on distributed services." },
+ { title: "Intelligent security", description: "Build executable behavior, explain its decisions and validate it using authorized synthetic or licensed inputs." },
+ { title: "Reproducible engineering", description: "Document setup, tests, attribution and limitations so reviewers can run your project." },
 ];

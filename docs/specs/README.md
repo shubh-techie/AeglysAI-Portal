@@ -58,3 +58,14 @@ route count or a newly executed validation run.
 PORTAL-SPEAKING-FINAL extends existing SPEC-010 in place (no duplicate specification).
 [Speaking evidence tracker](../speaking/SPEAKING_EVIDENCE_TRACKER.md) records artifact availability
 and organizer follow-ups separately from public runtime records.
+
+## Community sprint contracts — 2026-10-11
+
+- [SPEC-011-github-metrics](SPEC-011-github-metrics.md)
+- [SPEC-012-hackathon-submissions](SPEC-012-hackathon-submissions.md)
+- [SPEC-013-impact-dashboard](SPEC-013-impact-dashboard.md)
+- [SPEC-014-project-showcase](SPEC-014-project-showcase.md)
+- [SPEC-015-adoption-showcase](SPEC-015-adoption-showcase.md)
+- [SPEC-016-monthly-reports](SPEC-016-monthly-reports.md)
+
+- [SPEC-017 — contributor recognition integration](SPEC-017-contributor-recognition.md): provisional upstream credit/consent/withdrawal adapter.

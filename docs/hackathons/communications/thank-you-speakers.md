@@ -19,4 +19,4 @@ the permissions you have explicitly granted. We will not assume permission from 
 Thank you for contributing to the program.
 
 [Approved organizer name]
-AeglysAI Community Hackathons
+AeglysAI AI/ML and Cybersecurity Hackathon

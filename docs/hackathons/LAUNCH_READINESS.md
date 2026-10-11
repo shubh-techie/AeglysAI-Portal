@@ -1,3 +1,11 @@
+# Current launch gate — COM-003B-FIX-001, 2026-10-11
+
+One hackathon with five challenges; registration is Opening Soon. Required before operation: approved registration/qualification/project responder URLs, private Sheets applicant/team/judging permissions, private Drive consent/evidence controls, Google Meet accessibility/logistics, deadline/time-zone/capacity configuration and conduct/appeal channels. Mandatory individual A/B/C qualification, selected rosters (one to four), executable projects, maximum-two-minute videos and two-round judging are finalized; no judges/participants/results confirmed. See [current operations](OPERATIONS.md).
+
+## Retained historical launch-readiness snapshots (superseded proposals)
+
+The following old dates, three-event configuration and TBD team/video/rubric wording are historical snapshots, not current launch instructions.
+
 # Launch readiness — 2026-10-03
 
 Current-status note — 2026-10-07: static foundation/experience/handbook code is merged
@@ -97,3 +105,7 @@ a speaker-interest form is now part of the V1 configuration, not a confirmed inv
 See [handbook](README.md), [workflow](GITHUB_WORKFLOW.md) and [certificate policy](CERTIFICATE_POLICY.md).
 Selection criteria/capacity, minimum valid-project and certificate issuance/verification
 requirements must also be finalized before intake. Registration launch remains pending.
+
+## Current rule alignment — 2026-10-11
+
+COM-003B-FIX-001 supersedes older proposal wording: one AI/ML and Cybersecurity Hackathon, five challenges, mandatory individual qualification (A/B/C sufficient, Model D not required), teams of one to four with every member qualified/selected. Working executable project and maximum-two-minute demonstration video required; Round 1 selects finalists, Round 2 five-minute live demo plus five-minute Q&A over Google Meet ranks them. See the [current handbook](README.md), [submission requirements](SUBMISSION_REQUIREMENTS.md) and [judging framework](JUDGING_FRAMEWORK.md). Dates/Forms remain unconfigured; no private rosters or scores published.

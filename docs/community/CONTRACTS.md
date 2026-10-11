@@ -1,0 +1,5 @@
+# Current contract provenance — COM-INTEGRATION-001
+
+2026-10-11: four current local upstream schemas and semantic validators copied byte-for-byte under scripts/community/upstream. Source repository checkout HEAD remains 6f24cd6, but contract files are local proposals; do not imply they belong to an approved immutable commit. Exact current hashes and required/optional fields: [inventory](CONTRACT_INVENTORY.json). Prior evidence copy ab27ef9f… is superseded by current 51760d55…; source declares 1.0.0 unchanged. COM-008A exists locally and is integrated, not absent. Interoperability PROVISIONAL until upstream commit/approval.
+
+Research publication/disclosure findings remain a separate gate. No real evidence/recognition/adoption/approval records published. Contract definitions prove neither source truth nor human consent. [Integration guide](INTEGRATION_GUIDE.md), [Workspace privacy workflow](WORKSPACE_EXPORTS.md). Existing local COM-003A five choices and corrected hackathon rules are unchanged; no remote contract availability claimed. No research repository modifications or private correspondence access.

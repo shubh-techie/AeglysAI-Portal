@@ -1,0 +1,4 @@
+---
+import Layout from '../../layouts/Layout.astro';import Hero from '../../components/Hero.astro';import CommunityNav from '../../components/community/CommunityNav.astro';import ReviewedGallery from '../../components/community/ReviewedGallery.astro';import { projects } from '../../data/community/projects';import { challenges } from '../../data/community/submissions';
+---
+<Layout title="Verified Community Projects" description="Permission-approved AeglysAI community projects with reproducibility review, public technical evidence and verification dates."><Hero eyebrow="Community / Projects" title="Projects with reproducible evidence." description="Technical work is shown only after review and explicit publication permission."/><div class="container page-content"><CommunityNav/><section><h2>Project showcase</h2><ReviewedGallery records={projects} categories={challenges.map(track=>track.title)} kind="projects"/></section></div></Layout>

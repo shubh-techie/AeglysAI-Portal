@@ -1,0 +1,8 @@
+---
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { href } from '../../data/project';
+const links=[['Overview','community'],['Impact','community/impact'],['Submit','community/submit'],['Projects','community/projects'],['Adoption','community/adoption'],['Reports','community/reports']].filter(([,path])=>existsSync(resolve('src/pages',`${path}.astro`))||existsSync(resolve('src/pages',path,'index.astro')));
+---
+<nav class="community-nav" aria-label="Community navigation">{links.map(([label,path])=><a class="text-link" href={href(path)} aria-current={Astro.url.pathname===href(path)?'page':undefined}>{label}</a>)}</nav>
+<style>.community-nav { display:flex; flex-wrap:wrap; gap:12px 24px; margin-bottom:32px; } a { display:inline-flex; align-items:center; min-height:44px; }</style>

@@ -1,63 +1,16 @@
-# Participant and event operations
+# Hackathon operations and Form configuration
 
-Prepared 2026-10-03 for PORTAL-007. This is a proposed manual workflow; Google Forms/Drive
-are the intended initial application tools, not a configured integration. The portal remains
-static, with no authentication, participant database or bulk-email infrastructure.
+COM-003B-FIX-001, 2026-10-11. One AI/ML and Cybersecurity Hackathon; five challenge options. Dates and official Google Forms unconfigured. Registration Opening Soon.
 
-Visitor → Hackathon Portal → Google Registration Form → Registration Confirmation →
-GitHub Challenge → Build → Submission Form → Eligibility Check → Independent Judges →
-Scoring → Results → Winner Announcement
+Configure only approved public Google responder URLs in src/data/hackathonForms.ts: PARTICIPANT_REGISTRATION_URL, QUALIFICATION_SUBMISSION_URL and PROJECT_SUBMISSION_URL. Enable each corresponding open setting only after privacy, signed-out accessibility, consent/retention and terms are reviewed. Judge/speaker forms remain separate, optional configuration. No editor URLs, private IDs, contact-prefilled queries or fragments. Alias consumers derive from the same settings; never add competing URL sources.
 
-| Step | Responsible party / evidence before advancing |
-| --- | --- |
-| Visitor → Portal | Public pages present planned status, accurate dates/terms and free participation |
-| Google Registration Form | Organizer sets approved public form URL after testing access, privacy notice and event terms |
-| Registration Confirmation | Organizer verifies actual response and sends receipt template; no eligibility/selection inferred |
-| GitHub Challenge | Participant selects challenge and reads research repository, scope and event requirements |
-| Build | Participant develops/evaluates in an authorized isolated environment and documents evidence |
-| Submission Form | Organizer opens tested public form; participant supplies required artifacts and frozen commit/tag |
-| Eligibility Check | Organizer applies published timing, eligibility and required-artifact rules consistently |
-| Independent Judges | At least two confirmed, non-conflicted judges review each eligible entry |
-| Scoring | Judges score independently using final published rubric; organizer checks completeness/arithmetic |
-| Results | Resolve published ties/corrections/appeals, approve results and obtain display permissions |
-| Winner Announcement | Send only for approved verified selection; describe payment status separately and truthfully |
+1. Individual registration through Google Forms; private Sheets applicant record, no automatic selection.
+2. Mandatory individual fork/clone/run A/B/C baseline, architecture/setup/observation/improvement/validation evidence. Model D knowledge unnecessary.
+3. Qualification Google Form receives sanitized evidence and GitHub URLs. Organizer checks evidence/eligibility and explicitly selects each member.
+4. Private Sheets verify one leader, unique team ID, maximum four selected members, no duplicate active membership and approved changes. Individuals allowed.
+5. Selected teams build an executable MVP/prototype/functional proof of concept in any language/framework; standalone final challenges allowed.
+6. Final Form records [required artifacts](SUBMISSION_REQUIREMENTS.md), including maximum-two-minute video. Private Drive retains approved supporting and consent evidence.
+7. Round 1 independent technical screening shortlists; Round 2 Google Meet five-minute live demo plus five-minute Q&A ranks. Use [exact rubrics and tie/conflict/clarification rules](JUDGING_FRAMEWORK.md). Proposed five-to-ten finalist capacity is not a guaranteed count.
+8. Approve results and obtain publication permissions; only sanitized reviewed JSON exports reach the Portal. Registration, qualification submission, qualified/selected applicant, submitted project, verified project, finalist and winner are distinct stages; no inferred stage counts.
 
-Registration and submission receipts are separate. Registration does not imply a submission,
-receipt does not imply eligibility, and scoring does not imply a winner. A winner announcement
-requires evidence and approved display information; it must not imply payment without proof.
-
-## Configuration and private operations
-
-- `PARTICIPANT_REGISTRATION_FORM_URL`: public registration form (currently null).
-- `JUDGE_INVITATION_FORM_URL`: public judge application form (currently null).
-- `SUBMISSION_FORM_URL`: public submission form (currently null).
-- Per-event `registrationUrl` and `submissionUrl` override shared forms (currently all null).
-- `PARTICIPANT_FORM_URL` is a compatibility alias, not an additional form.
-
-Keep organizer ownership, recipient contacts, Form/Drive responses, review assignments,
-conflict disclosures, score sheets and private access links outside this public repository.
-Publish only intended responder URLs, never a Drive folder/editor/share-management URL.
-Restrict application/review access to authorized organizers/judges; publish a privacy notice
-with purpose, access, retention, withdrawal/correction and an approved private contact before
-collecting applications. Consent to participate is separate from permission to publish a profile.
-
-Manually verify a response before using a communication template. Check dates/time zones,
-message send conditions, required links, consent/preferences and facts. Store filled copies
-and delivery evidence privately. No messages are sent by this task; no mailing infrastructure
-or automatic scoring/results system is implemented.
-
-Use [communications](communications/README.md), [submission requirements](SUBMISSION_REQUIREMENTS.md),
-[judging framework](JUDGING_FRAMEWORK.md) and [launch checklist](LAUNCH_READINESS.md).
-
-## PORTAL-013-FINAL clarification — 2026-10-04
-
-The earlier PORTAL-007 diagram is an operational outline, not the full applicant pathway.
-The current [handbook](README.md), [qualification template](QUALIFICATION_TEMPLATE.md) and
-[GitHub workflow](GITHUB_WORKFLOW.md) add fork-only qualification and organizer selection
-between registration and selected challenge work. Qualification does not guarantee selection.
-Canonical settings now live in src/data/hackathonForms.ts: PARTICIPANT_REGISTRATION_URL,
-QUALIFICATION_SUBMISSION_URL, JUDGE_APPLICATION_URL, SPEAKER_INTEREST_URL and
-PROJECT_SUBMISSION_URL. Earlier exported names are derived compatibility aliases.
-All URLs are null, collection gates closed; Opening Soon. V1 is Google Forms/Sheets/Drive,
-GitHub and email only, with no custom accounts or backend. See [certificate policy](CERTIFICATE_POLICY.md)
-for conditional future recognition; registration alone does not qualify.
+No database/accounts/private-data API. Contacts, roster mappings, judging data and patent-related material stay private. Configure deadlines/time zones, privacy retention, conduct/reporting and correction/appeal channels before opening. See [Workspace export/security guide](../community/WORKSPACE_EXPORTS.md). No private records are supplied/configured by this document.

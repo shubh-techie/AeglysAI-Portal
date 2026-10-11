@@ -3,7 +3,7 @@ import { journey } from "../../data/hackathonExperience";
 ---
 <section class="hx-section" id="how-it-works" aria-labelledby="journey-heading">
   <p class="hx-eyebrow">YOUR JOURNEY</p><h2 id="journey-heading">From first fork to a working idea.</h2>
-  <p class="hx-section-copy">A proposed contributor pathway. Qualification and selection rules will be published before applications open; completing the steps does not guarantee selection.</p>
+  <p class="hx-section-copy">Mandatory individual qualification for every participant, including every team member. The A/B/C baseline is sufficient; Model D knowledge is not required. Qualification does not guarantee selection.</p>
   <ol class="hx-journey">{journey.map((step, i) => <li><span class="hx-step-number">{String(i + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.detail}</p></li>)}</ol>
   <p class="hx-fine">Google Forms/Drive will initially handle applications privately. Registration confirmation, qualification review and project-submission receipt are separate steps. No private application data is published here.</p>
 </section>

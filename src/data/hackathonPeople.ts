@@ -4,6 +4,7 @@
  */
 export type PersonStatus = "CONFIRMED" | "INVITED";
 export type EventAssignment =
+  | "ai-ml-cybersecurity"
   | "adaptive-authorization"
   | "behavioral-risk"
   | "autonomous-resilience";
