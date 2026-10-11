@@ -1,0 +1,37 @@
+name: Prepare community observation and monthly draft
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: community-drafts
+  cancel-in-progress: false
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version-file: .nvmrc
+      - name: Collect public observations only
+        run: node scripts/community/metrics.mjs
+      - name: Prepare draft (previous month on day one)
+        run: |
+          month="$(date -u +%Y-%m)"
+          if [ "$(date -u +%d)" = "01" ]; then month="$(date -u -d 'last month' +%Y-%m)"; fi
+          node scripts/community/reports.mjs "$month"
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: community-draft-${{ github.run_id }}
+          path: .community-drafts/
+          include-hidden-files: true
+          retention-days: 30
+      # No repository writes, PRs, deployment, approval or public content promotion.
+      # Per-run artifacts do not establish a durable historical archive; download/retain
+      # snapshots for reviewed reports. No historical data inferred across missing runs.

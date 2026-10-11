@@ -4,7 +4,7 @@
 
 **Send only when:** Registration is operational, dates/terms/prize conditions are finalized, and the event has actually opened.
 
-**Subject:** [Event name] is open — AeglysAI Community Hackathons
+**Subject:** [Event name] is open — AeglysAI AI/ML and Cybersecurity Hackathon
 
 Hello [Community or approved recipient],
 
@@ -24,4 +24,8 @@ Review [Required deliverables URL], [Published judging rubric URL] and [Code of 
 Model D remains planned research; challenge themes do not imply validated platform results.
 
 [Approved organizer name]
-AeglysAI Community Hackathons
+AeglysAI AI/ML and Cybersecurity Hackathon
+
+## Current rule alignment — 2026-10-11
+
+COM-003B-FIX-001 supersedes older proposal wording: one AI/ML and Cybersecurity Hackathon, five challenges, mandatory individual qualification (A/B/C sufficient, Model D not required), teams of one to four with every member qualified/selected. Working executable project and maximum-two-minute demonstration video required; Round 1 selects finalists, Round 2 five-minute live demo plus five-minute Q&A over Google Meet ranks them. See the [current handbook](../README.md), [submission requirements](../SUBMISSION_REQUIREMENTS.md) and [judging framework](../JUDGING_FRAMEWORK.md). Dates/Forms remain unconfigured; no private rosters or scores published.

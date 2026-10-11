@@ -8,17 +8,11 @@ commit recipient contacts, responses, conflict disclosures or internal notes to 
 Dear [Judge name],
 
 I would like to invite you to serve as an independent judge for the [Challenge name],
-part of AeglysAI Community Hackathons. AeglysAI is an open-source research initiative
+part of the single AeglysAI AI/ML and Cybersecurity Hackathon. AeglysAI is an open-source research initiative
 exploring explainable, risk-aware and adaptive authorization for secure and resilient
 cloud-native distributed systems: https://github.com/shubh-techie/AeglysAI.
 
-This event focuses on [selected event theme and technical scope]. The program's planned events are:
-
-| Challenge | Planned launch | Planned submission |
-| --- | --- | --- |
-| Adaptive Authorization | November 2026 | January 2027 |
-| Behavioral Risk | December 2026 | February 2027 |
-| Autonomous Resilience | January 2027 | March 2027 |
+Five choices: Smart Login Guardian, Find the Anomaly, API Traffic Watch, Explain My Security Alert and Predict the Outage. Dates to be announced.
 
 Your proposed assignment is [event]. Exact dates, time zone and review window are
 [dates/time zone or pending confirmation]. Event rules and prizes remain subject to
@@ -26,9 +20,7 @@ finalized official terms; Model D remains planned research.
 
 As a judge, you would review assigned submissions and reproducible evidence, apply the
 published rubric consistently, provide constructive feedback, and take part in
-[calibration/final review arrangements]. Proposed dimensions are technical correctness,
-security reasoning, architecture quality, reproducibility, innovation, explainability
-and documentation. Final weights and tie-breaking procedures will be provided before review.
+[calibration/final review arrangements]. Round 1 reviews source, executable project, required maximum-two-minute video and reproducibility using the agreed 100-point screening rubric. Round 2 uses the separate 100-point finalist rubric for five-minute live demonstrations plus five-minute Q&A over Google Meet. Round 1 selects finalists; Round 2 ranks, without combining scores. See [judging framework](JUDGING_FRAMEWORK.md) for exact weights, conflicts, ties and clarification.
 
 The proposed estimated commitment is [total hours], comprising [briefing time],
 [review time per submission × expected assigned submissions] and [discussion time].
@@ -52,3 +44,7 @@ Thank you for considering the invitation.
 
 Shubh Prabhat
 Creator & Maintainer, AeglysAI
+
+## Current rule alignment — 2026-10-11
+
+COM-003B-FIX-001 supersedes older proposal wording: one AI/ML and Cybersecurity Hackathon, five challenges, mandatory individual qualification (A/B/C sufficient, Model D not required), teams of one to four with every member qualified/selected. Working executable project and maximum-two-minute demonstration video required; Round 1 selects finalists, Round 2 five-minute live demo plus five-minute Q&A over Google Meet ranks them. See the [current handbook](README.md), [submission requirements](SUBMISSION_REQUIREMENTS.md) and [judging framework](JUDGING_FRAMEWORK.md). Dates/Forms remain unconfigured; no private rosters or scores published.

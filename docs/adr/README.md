@@ -51,3 +51,18 @@ PORTAL-SPEAKING-FINAL closure: same static records and detail route template; Ac
 adds an evidence-gated status, not another conference store. Shared SpeakerProfile consumes
 creator.ts/photo; docs/speaking/SPEAKING_EVIDENCE_TRACKER.md is an artifact inventory outside
 runtime metadata, with no private correspondence paths. No dependencies or hosting changes.
+
+## Community sprint contracts — 2026-10-11
+
+- [ADR-001-github-metrics](ADR-001-github-metrics.md)
+- [ADR-002-hackathon-submissions](ADR-002-hackathon-submissions.md)
+- [ADR-003-impact-dashboard](ADR-003-impact-dashboard.md)
+- [ADR-004-project-showcase](ADR-004-project-showcase.md)
+- [ADR-005-adoption-showcase](ADR-005-adoption-showcase.md)
+- [ADR-006-monthly-reports](ADR-006-monthly-reports.md)
+
+- [ADR-007 — Google Workspace administration](ADR-007-google-workspace.md): approved COM-ARCH-001 decision; manual sanitized exports.
+
+- [ADR-008 — authoritative community contracts](ADR-008-evidence-contract-integration.md): provisional exact schemas, offline semantic validation and owner publication gates.
+
+- [ADR-009 — challenge architecture SVGs](ADR-009-challenge-architecture-visuals.md): safe local vectors and shared card/detail rendering.

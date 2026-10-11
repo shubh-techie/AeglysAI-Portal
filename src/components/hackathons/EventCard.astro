@@ -1,17 +1,18 @@
 ---
-import { events } from "../../data/hackathons";
-import { challengePresentation } from "../../data/hackathonExperience";
-import { href } from "../../data/project";
-interface Props { event: (typeof events)[number]; index: number; }
-const { event, index } = Astro.props;
-const display = challengePresentation[event.id];
+import {challengeVisuals} from '../../data/hackathonVisuals';
+import {href} from '../../data/project';
+import ChallengeDiagram from './ChallengeDiagram.astro';
+interface Props {challenge:{id:string;title:string};index:number;}
+const {challenge,index}=Astro.props;const visual=challengeVisuals[challenge.id];
 ---
-<article class="hx-card hx-event">
-  <div class="hx-event-top"><span class="hx-event-number">{String(index + 1).padStart(2, "0")}</span><span class="hx-status">{event.status}</span></div>
-  <p class="hx-eyebrow">{display.stage}</p><h3>{event.title}</h3>
-  <p class="hx-event-date">{event.launch} <span>Planned launch</span></p>
-  <p>{display.question}</p>
-  <ul class="hx-tags">{display.focus.map(focus => <li>{focus}</li>)}</ul>
-  <p class="hx-fine">Planned submission: {event.submission}<br/>Planned {event.prize.currency} ${event.prize.amount} prize · Prize details subject to official event rules.</p>
-  <a class="hx-link" href={href(`hackathons/${event.id}`)}>Explore Challenge <span aria-hidden="true">→</span></a>
+<article class="challenge-tile" data-challenge={challenge.id}>
+ <header><span class="challenge-number">Challenge {String(index+1).padStart(2,'0')}</span><span class="challenge-difficulty">Beginner-friendly</span></header>
+ <h3>{challenge.title}</h3><p class="challenge-problem">{visual.problem}</p>
+ <ChallengeDiagram id={challenge.id} scope="tile"/>
+ <dl><div><dt>AI/ML &amp; security focus</dt><dd>{visual.focus}</dd></div><div><dt>Minimum prototype</dt><dd>{visual.minimum}</dd></div></dl>
+ <a class="challenge-details" href={`${href('hackathons/events')}#${challenge.id}`}>Challenge rules →<span class="sr-only"> {challenge.title}</span></a>
 </article>
+<style>
+.challenge-tile{display:flex;flex-direction:column;gap:18px;min-width:0;padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--text);transition:border-color 140ms ease;}
+.challenge-tile:hover{border-color:var(--accent-border);}header{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;}.challenge-number{font: .72rem/1.5 var(--mono);color:var(--cyan);}.challenge-difficulty{font-size:.7rem;border:1px solid var(--line);border-radius:20px;padding:4px 8px;color:var(--muted);}.challenge-tile h3{margin:0;font-size:1.25rem;line-height:1.35;min-height:2.7em;}.challenge-tile .challenge-problem{font-size:.91rem;line-height:1.65;margin:0;color:var(--muted);min-height:4.95em;}dl{display:grid;gap:16px;margin:0;}dt{font-size:.7rem;text-transform:uppercase;letter-spacing:.04em;color:var(--cyan);font-weight:600;}dd{margin:5px 0 0;font-size:.86rem;line-height:1.6;color:var(--muted);}.challenge-details{display:inline-flex;align-items:center;min-height:44px;margin-top:auto;font-weight:600;font-size:.87rem;color:var(--cyan);}.challenge-details:focus-visible{outline:3px solid var(--cyan);outline-offset:4px;}@media(prefers-reduced-motion:reduce){.challenge-tile{transition:none;}}
+</style>

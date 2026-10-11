@@ -8,7 +8,7 @@ Keep recipient contacts, responses and internal correspondence outside this publ
 Dear [Speaker name],
 
 I would like to invite you to contribute a guest session to [event name] in the
-AeglysAI Community Hackathons program. AeglysAI explores adaptive authorization,
+AeglysAI AI/ML and Cybersecurity Hackathon program. AeglysAI explores adaptive authorization,
 behavioral risk, cloud-native security and resilient distributed systems through
 open-source engineering and research: https://github.com/shubh-techie/AeglysAI.
 

@@ -1,0 +1,542 @@
+{
+  "evidence": {
+    "sourcePath": "community/evidence/schemas/evidence-1.0.0.schema.json",
+    "upstreamSha256": "51760d5570ab5317d6c898d0eab12c8cdbcdb4b6779ee1233df7e33e5915ddc6",
+    "portalSha256": "51760d5570ab5317d6c898d0eab12c8cdbcdb4b6779ee1233df7e33e5915ddc6",
+    "byteIdentical": true,
+    "oldPortalSha256": "ab27ef9f7064df3740899a745c5cec7f0cc112745ad09fdbe744db000f0043aa",
+    "objects": [
+      {
+        "path": "",
+        "required": [
+          "schema_version",
+          "data_kind",
+          "metrics"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/metrics/items",
+        "required": [
+          "id",
+          "level",
+          "definition",
+          "unit",
+          "count",
+          "source",
+          "period",
+          "deduplication",
+          "verification",
+          "limitations"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/metrics/items/properties/source",
+        "required": [
+          "kind",
+          "reference",
+          "sha256"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/metrics/items/properties/period",
+        "required": [
+          "start",
+          "end"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/metrics/items/properties/deduplication",
+        "required": [
+          "method",
+          "unit",
+          "raw_count",
+          "excluded_count"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/metrics/items/properties/verification",
+        "required": [
+          "status",
+          "method",
+          "review_reference"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      }
+    ],
+    "enums": [
+      {
+        "path": "/properties/data_kind",
+        "values": [
+          "SYNTHETIC",
+          "PUBLIC_AGGREGATE"
+        ]
+      },
+      {
+        "path": "/properties/metrics/items/properties/unit",
+        "values": [
+          "views",
+          "unique-interests",
+          "participants",
+          "accepted-contributions",
+          "independent-reproductions"
+        ]
+      },
+      {
+        "path": "/properties/metrics/items/properties/source/properties/kind",
+        "values": [
+          "synthetic",
+          "public-aggregate"
+        ]
+      },
+      {
+        "path": "/properties/metrics/items/properties/verification/properties/status",
+        "values": [
+          "draft",
+          "verified"
+        ]
+      }
+    ],
+    "status": "PROVISIONAL: local upstream bytes; immutable approved commit pending"
+  },
+  "recognition": {
+    "sourcePath": "community/contributors/schemas/recognition-1.0.0.schema.json",
+    "upstreamSha256": "9f9093ad4834e54a4505c617ae02c52604d0a0789707a071a211c986c7be405e",
+    "portalSha256": "9f9093ad4834e54a4505c617ae02c52604d0a0789707a071a211c986c7be405e",
+    "byteIdentical": true,
+    "oldPortalSha256": null,
+    "objects": [
+      {
+        "path": "",
+        "required": [
+          "schema_version",
+          "data_kind",
+          "recognitions"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/recognitions/items",
+        "required": [
+          "id",
+          "contribution_reference",
+          "credit_mode",
+          "contribution_accepted",
+          "consent",
+          "publication",
+          "recorded_at"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/recognitions/items/properties/consent",
+        "required": [
+          "state",
+          "scope",
+          "review_reference"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/recognitions/items/properties/publication",
+        "required": [
+          "state",
+          "review_approved"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      }
+    ],
+    "enums": [
+      {
+        "path": "/properties/data_kind",
+        "values": [
+          "SYNTHETIC",
+          "PUBLIC_AGGREGATE"
+        ]
+      },
+      {
+        "path": "/properties/recognitions/items/properties/credit_mode",
+        "values": [
+          "artifact-only",
+          "anonymous",
+          "none"
+        ]
+      },
+      {
+        "path": "/properties/recognitions/items/properties/consent/properties/state",
+        "values": [
+          "not-requested",
+          "granted",
+          "withdrawn"
+        ]
+      },
+      {
+        "path": "/properties/recognitions/items/properties/consent/properties/scope",
+        "values": [
+          "none",
+          "public-attribution"
+        ]
+      },
+      {
+        "path": "/properties/recognitions/items/properties/publication/properties/state",
+        "values": [
+          "draft",
+          "published",
+          "withdrawn"
+        ]
+      }
+    ],
+    "status": "PROVISIONAL: local upstream bytes; immutable approved commit pending"
+  },
+  "adoption": {
+    "sourcePath": "community/adoption/schemas/adoption-1.0.0.schema.json",
+    "upstreamSha256": "c72ad408deeb5611498fdbbbc1fd66471d302e254206837fcc34631023793794",
+    "portalSha256": "c72ad408deeb5611498fdbbbc1fd66471d302e254206837fcc34631023793794",
+    "byteIdentical": true,
+    "oldPortalSha256": null,
+    "objects": [
+      {
+        "path": "",
+        "required": [
+          "schema_version",
+          "data_kind",
+          "records"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/records/items",
+        "required": [
+          "id",
+          "claim_kind",
+          "source",
+          "independence",
+          "execution",
+          "verification",
+          "citations",
+          "record_state",
+          "correction",
+          "limitations"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/records/items/properties/source",
+        "required": [
+          "reference",
+          "sha256"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/records/items/properties/independence",
+        "required": [
+          "classification",
+          "relationship",
+          "review_method"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/records/items/properties/execution",
+        "required": [
+          "status",
+          "reference",
+          "environment",
+          "source_commit"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/records/items/properties/verification",
+        "required": [
+          "status",
+          "method",
+          "review_reference"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/records/items/properties/citations/items",
+        "required": [
+          "kind",
+          "reference"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/records/items/properties/correction/anyOf/0",
+        "required": [
+          "previous_id",
+          "reason"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      }
+    ],
+    "enums": [
+      {
+        "path": "/properties/data_kind",
+        "values": [
+          "SYNTHETIC",
+          "PUBLIC_AGGREGATE"
+        ]
+      },
+      {
+        "path": "/properties/records/items/properties/claim_kind",
+        "values": [
+          "usage",
+          "independent-adoption",
+          "independent-reproduction",
+          "citation"
+        ]
+      },
+      {
+        "path": "/properties/records/items/properties/independence/properties/classification",
+        "values": [
+          "maintainer",
+          "external",
+          "unknown"
+        ]
+      },
+      {
+        "path": "/properties/records/items/properties/independence/properties/relationship",
+        "values": [
+          "independent",
+          "affiliated",
+          "unknown"
+        ]
+      },
+      {
+        "path": "/properties/records/items/properties/execution/properties/status",
+        "values": [
+          "executed",
+          "not-executed"
+        ]
+      },
+      {
+        "path": "/properties/records/items/properties/verification/properties/status",
+        "values": [
+          "draft",
+          "verified"
+        ]
+      },
+      {
+        "path": "/properties/records/items/properties/citations/items/properties/kind",
+        "values": [
+          "doi",
+          "public-reference"
+        ]
+      },
+      {
+        "path": "/properties/records/items/properties/record_state",
+        "values": [
+          "current",
+          "superseded",
+          "withdrawn"
+        ]
+      }
+    ],
+    "status": "PROVISIONAL: local upstream bytes; immutable approved commit pending"
+  },
+  "monthly-impact": {
+    "sourcePath": "community/reporting/schemas/monthly-impact-1.0.0.schema.json",
+    "upstreamSha256": "4857b93e4c49d6cfb8deab6a365bd6627ca134c7c371298a481d3f7a48c3bb27",
+    "portalSha256": "4857b93e4c49d6cfb8deab6a365bd6627ca134c7c371298a481d3f7a48c3bb27",
+    "byteIdentical": true,
+    "oldPortalSha256": null,
+    "objects": [
+      {
+        "path": "",
+        "required": [
+          "schema_version",
+          "report_id",
+          "data_kind",
+          "period",
+          "source_snapshots",
+          "metrics",
+          "data_quality",
+          "publication",
+          "revision"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/period",
+        "required": [
+          "month",
+          "start",
+          "end"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/source_snapshots/items",
+        "required": [
+          "id",
+          "artifact_path",
+          "sha256",
+          "record"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/metrics/items",
+        "required": [
+          "id",
+          "level",
+          "definition",
+          "unit",
+          "value",
+          "aggregation",
+          "references",
+          "deduplication",
+          "coverage",
+          "verification",
+          "limitations"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/metrics/items/properties/references/items",
+        "required": [
+          "snapshot_id",
+          "metric_id"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/metrics/items/properties/deduplication",
+        "required": [
+          "method",
+          "excluded_count"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/metrics/items/properties/verification",
+        "required": [
+          "status",
+          "method"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/data_quality",
+        "required": [
+          "status",
+          "issues"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/publication",
+        "required": [
+          "state",
+          "review_reference",
+          "approved_at"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/revision",
+        "required": [
+          "number",
+          "reason",
+          "history"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      },
+      {
+        "path": "/properties/revision/properties/history/items",
+        "required": [
+          "revision",
+          "artifact_path",
+          "sha256"
+        ],
+        "optional": [],
+        "additionalProperties": false
+      }
+    ],
+    "enums": [
+      {
+        "path": "/properties/data_kind",
+        "values": [
+          "SYNTHETIC",
+          "PUBLIC_AGGREGATE"
+        ]
+      },
+      {
+        "path": "/properties/metrics/items/properties/unit",
+        "values": [
+          "views",
+          "unique-interests",
+          "participants",
+          "accepted-contributions",
+          "independent-reproductions"
+        ]
+      },
+      {
+        "path": "/properties/metrics/items/properties/coverage",
+        "values": [
+          "full-period",
+          "partial-period"
+        ]
+      },
+      {
+        "path": "/properties/metrics/items/properties/verification/properties/status",
+        "values": [
+          "draft",
+          "verified"
+        ]
+      },
+      {
+        "path": "/properties/data_quality/properties/status",
+        "values": [
+          "complete",
+          "incomplete"
+        ]
+      },
+      {
+        "path": "/properties/publication/properties/state",
+        "values": [
+          "pending",
+          "approved",
+          "withdrawn"
+        ]
+      }
+    ],
+    "status": "PROVISIONAL: local upstream bytes; immutable approved commit pending"
+  }
+}

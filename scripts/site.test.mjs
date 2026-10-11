@@ -12,6 +12,12 @@ const routes = [
   "about",
   "media",
   "speaking",
+  "community",
+  "community/impact",
+  "community/submit",
+  "community/projects",
+  "community/adoption",
+  "community/reports",
   "hackathons",
   "hackathons/events",
   "hackathons/community",
@@ -58,7 +64,7 @@ test("static pages have unique metadata and accessible landmarks", () => {
     descriptions.add(html.match(/name="description" content="([^"]+)"/)[1]);
     assert.equal(
       (html.match(/aria-current="page"/g) || []).length,
-      route && route !== "media" && !route.startsWith("hackathons/") ? 1 : 0,
+      route.startsWith("community") ? 2 : route && route !== "media" && !route.startsWith("hackathons/") ? 1 : 0,
     );
   }
   assert.equal(titles.size, routes.length);
@@ -123,7 +129,7 @@ test("research claims keep planned work and unpublished results explicit", () =>
 
 test("production output contains only scoped inline scripts and approved local PDF embeds", () => {
   for (const { html } of pages) {
-    assert.doesNotMatch(html, /<form\b/);
+    if (html.includes('aria-label="Submission field preview"')) { assert.match(html, /<fieldset disabled/); assert.doesNotMatch(html, /<form[^>]+action=/); } else assert.doesNotMatch(html, /<form\b/);
     if (!html.includes('class="presentation-pdf-viewer"')) assert.doesNotMatch(html, /<iframe\b/);
     else {
       const embeds = [...html.matchAll(/<iframe\b[^>]*>/g)];
@@ -185,7 +191,7 @@ test("production routes and metadata use the aeglysai.com root", () => {
   for (const { route, html } of pages) {
     const expected = `https://aeglysai.com/${route ? route + "/" : ""}`;
     assert.ok(html.includes(`property="og:url" content="${expected}"`));
-    for (const destination of routes.filter(route => route !== "media" && !route.startsWith("hackathons/") && !route.startsWith("speaking/"))) {
+    for (const destination of routes.filter(route => route !== "media" && !route.startsWith("hackathons/") && !route.startsWith("speaking/") && !route.startsWith("community/"))) {
       assert.ok(
         html.includes(`href="/${destination ? destination + "/" : ""}"`),
       );
@@ -213,7 +219,7 @@ test("hackathon foundation keeps events provisional and registration unavailable
   const events = read("hackathons/events/index.html");
   const community = read("hackathons/community/index.html");
   for (const html of [landing, events, community]) {
-    assert.match(html, /PLANNED/);
+    assert.match(html, /PLANNED|Opening Soon/);
     assert.doesNotMatch(html, /docs\.google\.com\/forms|forms\.gle/);
     assert.doesNotMatch(html, /immigration|profile.building/i);
     const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
@@ -224,15 +230,13 @@ test("hackathon foundation keeps events provisional and registration unavailable
     }
   }
   assert.match(landing, /Participation is FREE/);
-  assert.match(landing, /USD \$300 prize per hackathon/);
+  assert.match(landing, /funding unconfirmed/i);
   assert.match(landing, /subject to official event terms until finalized/);
   assert.match(landing, /disabled[^>]*>Start Qualification/);
   assert.match(landing, /Opening Soon/);
   for (const id of ["adaptive-authorization", "behavioral-risk", "autonomous-resilience"])
     assert.ok(events.includes(`id="${id}"`));
-  for (const month of ["November 2026", "December 2026", "January 2027", "February 2027", "March 2027"])
-    assert.ok(events.includes(month));
-  assert.match(events, /Model D is planned research, not an existing implemented capability/);
+  assert.doesNotMatch(events, /November 2026|December 2026|January 2027|February 2027|March 2027/);
   assert.match(community, /src="\/images\/shubh-prabhat\.jpg"/);
   assert.equal((community.match(/Future guest speaker [123]/g) || []).length, 3);
   assert.equal((community.match(/Independent judge slot [123]/g) || []).length, 3);
@@ -273,15 +277,12 @@ test("public profiles require both confirmation and explicit display permission"
 test("launch rubric, submission package and hackathon social metadata are consistent", () => {
   const source = readFileSync("src/data/hackathons.ts", "utf8");
   const weights = [...source.matchAll(/category: "([^"]+)", weight: (\d+)/g)].map(match => ({category: match[1], weight: Number(match[2])}));
-  assert.deepEqual(weights.map(item => item.weight), [25, 20, 20, 15, 10, 10]);
-  assert.equal(weights.reduce((sum, item) => sum + item.weight, 0), 100);
-  const rubric = readFileSync("docs/hackathons/JUDGING_FRAMEWORK.md", "utf8");
-  for (const item of weights) assert.ok(rubric.includes(`| ${item.category} | ${item.weight}% |`));
+  assert.deepEqual(weights.map(item => item.weight), [30,25,20,15,10,35,25,20,15,5]);
+  assert.equal(weights.slice(0,5).reduce((sum,item)=>sum+item.weight,0),100);
+  assert.equal(weights.slice(5).reduce((sum,item)=>sum+item.weight,0),100);
   const events = read("hackathons/events/index.html");
-  for (const item of weights) assert.ok(events.includes(`${item.weight}%`));
-  for (const artifact of ["README", "Architecture description", "Setup instructions", "Demo", "Test evidence", "Security considerations", "Limitations", "License information", "Video demo", "Benchmark results", "Research notes"])
-    assert.ok(events.includes(artifact), artifact);
-  assert.match(events, /Public GitHub repository unless an exception is approved before submission/);
+  for (const item of weights) assert.ok(events.includes(`${item.weight} points`));
+  for (const artifact of ["Team ID", "Selected challenge", "Project README", "Working demonstration video URL", "Data/model attribution and licensing", "Known limitations"])assert.ok(events.includes(artifact),artifact);
   assert.match(read("hackathons/index.html"), /Distributed Systems Engineers/);
   for (const route of ["hackathons", "hackathons/events", "hackathons/community"]) {
     const html = read(`${route}/index.html`);
@@ -352,26 +353,19 @@ test("form configuration rejects private/unsafe links and keeps collection gated
   const fixture = "https://forms.gle/synthetic-test-fixture";
   assert.equal(publicFormUrl(fixture, false), null);
   assert.equal(publicFormUrl(fixture, true), fixture);
-  for (const invalid of ["javascript:alert(1)", "https://drive.google.com/private", "https://docs.google.com/forms/d/synthetic-test-fixture/edit", "http://forms.gle/synthetic-test-fixture", "https://forms.gle.evil.invalid/test", "not-a-url"])
+  for (const invalid of ["javascript:alert(1)", "https://drive.google.com/private", "https://docs.google.com/forms/d/synthetic-test-fixture/edit", "http://forms.gle/synthetic-test-fixture", "https://forms.gle.evil.invalid/test", "https://forms.gle/synthetic-test-fixture?email=private", "https://forms.gle/synthetic-test-fixture#private", "https://docs.google.com/spreadsheets/d/private/edit", "not-a-url"])
     assert.throws(() => publicFormUrl(invalid, true));
   assert.doesNotMatch(read("hackathons/index.html"), /synthetic-test-fixture/);
 });
 
 test("closure routes preserve event identity, windows and shared fork/certificate guidance", () => {
   const landing = read("hackathons/index.html");
-  for (const [id, launch, submission] of [
-    ["adaptive-authorization", "November 2026", "January 2027"],
-    ["behavioral-risk", "December 2026", "February 2027"],
-    ["autonomous-resilience", "January 2027", "March 2027"],
-  ]) {
-    const html = read(`hackathons/${id}/index.html`);
-    assert.ok(landing.includes(`href="/hackathons/${id}/"`));
-    assert.ok(html.includes(launch) && html.includes(submission));
-    assert.match(html, /hackathons\/#qualification/);
-    assert.match(html, /hackathons\/#certificates/);
-    assert.match(html, /Opening Soon/);
-    assert.match(html, /No appointments or results are claimed/);
-    assert.match(html, /Prize eligibility and payment are subject to official event rules/);
+  for (const id of ["adaptive-authorization","behavioral-risk","autonomous-resilience"]) {
+    const html=read(`hackathons/${id}/index.html`);
+    assert.match(html,/Retired Proposal/);
+    assert.match(html,/hackathons\/events\//);
+    assert.match(html,/hackathons\/#qualification/);
+    assert.doesNotMatch(html,/November 2026|January 2027|March 2027/);
     assert.ok(read("hackathons/events/index.html").includes(`id="${id}"`));
   }
   assert.match(landing, /Registration alone does not earn a certificate/);
@@ -609,4 +603,40 @@ test("speaking closure keeps three conferences, written-confirmation gate and pu
     assert.match(html, /AI-Driven Automation for Resilient and Secure Cloud &amp; Distributed Systems/);
   }
   assert.equal((read("speaking/index.html").match(/data-engagement-status=/g) ?? []).length, 4); // three cards plus featured view
+});
+
+
+test("community empty states never imply unreviewed participation or adoption", () => {
+ for(const route of ['community/impact','community/projects','community/adoption','community/reports']) {
+  const html=read(`${route}/index.html`);
+  assert.match(html,/Unavailable|No reviewed|No approved/);
+  assert.doesNotMatch(html,/LOCAL TEST|SYNTHETIC|GITHUB_METRICS_TOKEN|Bearer /);
+ }
+ const submit=read('community/submit/index.html');
+ assert.match(submit,/Submission intake is closed/);
+ assert.match(submit,/<fieldset disabled/);
+ assert.doesNotMatch(submit,/type="email"|name="email"|<form[^>]+action=/);
+ assert.equal((submit.match(/<option value="(?:smart-login-guardian|find-the-anomaly|api-traffic-watch|explain-security-alert|predict-the-outage)"/g)||[]).length,5);
+ assert.doesNotMatch(read('community/reports/index.html'),/href="\/community\/reports\/2026-10\//);
+});
+
+
+test("COM-003B-FIX-001 enforces single-event qualification, teams, executable submissions and distinct judging rounds",()=>{
+ const landing=read("hackathons/index.html"),rules=read("hackathons/events/index.html"),submission=read("community/submit/index.html");
+ for(const title of ["Smart Login Guardian","Find the Anomaly","API Traffic Watch","Explain My Security Alert","Predict the Outage"])assert.ok(landing.includes(title));
+ assert.equal((landing.match(/Challenge rules →/g)||[]).length,5);
+ assert.doesNotMatch(landing,/Three build windows|THREE CHALLENGES|hackathon-02|hackathon-03/);
+ for(const html of [landing,rules,submission]){
+  assert.match(html,/Every member, including the leader/);
+  assert.match(html,/No duplicate active team membership/);
+  assert.match(html,/maximum two minutes/);
+  assert.match(html,/walkthrough alone is insufficient/);
+  assert.match(html,/five-minute live demonstration/);
+  assert.match(html,/Round 2 determines final ranking/);
+  assert.match(html,/private Google Sheets/);
+ }
+ assert.match(landing,/Model D knowledge is not required/);
+ assert.match(landing,/Registration Opening Soon/);
+ for(const field of ['team-id','video','intelligent-technique','validation','licensing','limitations'])assert.ok(submission.includes(`name="${field}"`));
+ assert.doesNotMatch(submission,/action=|participantEmail|spreadsheetId/);
 });

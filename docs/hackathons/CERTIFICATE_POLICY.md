@@ -94,3 +94,7 @@ otherwise formally agreed; sponsor acknowledgement cannot overpower issuer, reci
 achievement or event title and does not change eligibility. Sponsorship purchases no
 achievement certificate. See [sponsorship program](SPONSORSHIP.md) and
 [draft terms](SPONSORSHIP_TERMS_DRAFT.md). No certificates are generated here.
+
+## Current rule alignment — 2026-10-11
+
+COM-003B-FIX-001 supersedes older proposal wording: one AI/ML and Cybersecurity Hackathon, five challenges, mandatory individual qualification (A/B/C sufficient, Model D not required), teams of one to four with every member qualified/selected. Working executable project and maximum-two-minute demonstration video required; Round 1 selects finalists, Round 2 five-minute live demo plus five-minute Q&A over Google Meet ranks them. See the [current handbook](README.md), [submission requirements](SUBMISSION_REQUIREMENTS.md) and [judging framework](JUDGING_FRAMEWORK.md). Dates/Forms remain unconfigured; no private rosters or scores published.

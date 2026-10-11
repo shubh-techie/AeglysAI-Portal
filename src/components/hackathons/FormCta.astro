@@ -6,5 +6,5 @@ const setting = hackathonForms[kind];
 const url = publicFormUrl(setting.url, setting.open);
 ---
 <div class="hx-form-cta">
-  {url ? <a class="hx-button hx-primary" href={url}>{label}<span aria-hidden="true">↗</span></a> : <><button class="hx-button hx-primary" disabled aria-describedby={id}>{label}<span aria-hidden="true">→</span></button><span class="hx-opening" id={id}>Opening Soon</span></>}
+  {url ? <a class="hx-button hx-primary" href={url}>{label}<span aria-hidden="true">↗</span></a> : <><button class="hx-button hx-primary" disabled aria-describedby={id}>{label}<span aria-hidden="true">→</span></button><span class="hx-opening" id={id}>{kind === "participant" ? "Registration Opening Soon" : "Opening Soon"}</span></>}
 </div>

@@ -107,3 +107,7 @@ contact/privacy and acceptance evidence. Refunds, cancellation, postponement,
 recognition removal and binding IP provisions: TBD — LEGAL/ORGANIZER REVIEW.
 Use [draft terms](SPONSORSHIP_TERMS_DRAFT.md); this page does not establish a binding
 agreement, launch the form or confirm any sponsor.
+
+## Current rule alignment — 2026-10-11
+
+COM-003B-FIX-001 supersedes older proposal wording: one AI/ML and Cybersecurity Hackathon, five challenges, mandatory individual qualification (A/B/C sufficient, Model D not required), teams of one to four with every member qualified/selected. Working executable project and maximum-two-minute demonstration video required; Round 1 selects finalists, Round 2 five-minute live demo plus five-minute Q&A over Google Meet ranks them. See the [current handbook](README.md), [submission requirements](SUBMISSION_REQUIREMENTS.md) and [judging framework](JUDGING_FRAMEWORK.md). Dates/Forms remain unconfigured; no private rosters or scores published.

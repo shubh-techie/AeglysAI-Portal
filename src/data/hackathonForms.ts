@@ -16,7 +16,7 @@ export type HackathonFormKind = keyof typeof hackathonForms;
 export function publicFormUrl(url: string | null, open: boolean): string | null {
   if (!url) return null;
   const parsed = new URL(url);
-  const responder = parsed.protocol === "https:" && !parsed.username && !parsed.password && !parsed.port && (
+  const responder = parsed.protocol === "https:" && !parsed.username && !parsed.password && !parsed.port && !parsed.search && !parsed.hash && (
     (parsed.hostname === "forms.gle" && /^\/[A-Za-z0-9_-]+\/?$/.test(parsed.pathname)) ||
     (parsed.hostname === "docs.google.com" && /^\/forms\/d\/(?:e\/)?[A-Za-z0-9_-]+\/viewform\/?$/.test(parsed.pathname))
   );

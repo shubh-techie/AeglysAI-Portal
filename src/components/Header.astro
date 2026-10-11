@@ -16,7 +16,7 @@ const current = Astro.url.pathname.replace(/\/$/, "");
         <a
           href={href(item.path)}
           aria-current={
-            current === href(item.path).replace(/\/$/, "") || (item.path === "speaking" && current.startsWith(href("speaking"))) ? "page" : undefined
+            current === href(item.path).replace(/\/$/, "") || (["speaking", "community"].includes(item.path) && current.startsWith(href(item.path))) ? "page" : undefined
           }
         >
           {item.label}

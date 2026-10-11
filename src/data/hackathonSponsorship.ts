@@ -9,7 +9,7 @@ export const sponsorshipTiers = [
   { id: "community", name: "Community Supporter", minimumUsd: 250, recognition: ["Sponsor name/logo on the sponsorship page", "Acknowledgement on the applicable event page"] },
   { id: "challenge", name: "Challenge Sponsor", minimumUsd: 500, recognition: ["Community Supporter recognition", "Acknowledgement associated with the applicable hackathon", "Recognition in applicable event communications"] },
   { id: "prize", name: "Prize Sponsor", minimumUsd: 1000, recognition: ["Challenge Sponsor recognition", "Contribution acknowledged toward the applicable prize pool", "Recognition in applicable winner/final-results communication"] },
-  { id: "series", name: "Series Sponsor", minimumUsd: 2500, recognition: ["Recognition across the three-event series", "Sponsor logo on the series sponsorship section", "Acknowledgement in series communications", "Recognition in the final series summary"] },
+  { id: "series", name: "Hackathon Sponsor", minimumUsd: 2500, recognition: ["Recognition across the single hackathon", "Sponsor logo on the hackathon sponsorship section", "Acknowledgement in hackathon communications", "Recognition in the final hackathon summary"] },
 ];
 export type SponsorStatus = "INTERESTED" | "UNDER_REVIEW" | "TERMS_PENDING" | "CONFIRMED" | "COMPLETED";
 /** Public-approved records only. Private intake, contacts, terms/evidence stay outside Git. */

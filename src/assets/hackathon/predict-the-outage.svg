@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="challenge-svg" viewBox="0 0 480 320" role="img" aria-labelledby="predict-the-outage-title predict-the-outage-description">
+<title id="predict-the-outage-title">Predict the Outage: conceptual architecture</title>
+<desc id="predict-the-outage-description">System metrics including CPU, latency and errors to pattern analysis to risk prediction to an early warning. No actual prediction or proprietary algorithm.</desc>
+<style>.challenge-svg .node{fill:var(--diagram-surface,#fff);stroke:var(--diagram-line,#bdccd9);stroke-width:1.5}.challenge-svg .flow{fill:none;stroke:var(--diagram-accent,#a45717);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.challenge-svg .icon{fill:none;stroke:var(--diagram-accent,#a45717);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.challenge-svg .label{fill:var(--diagram-text,#203348);font:600 19px system-ui,sans-serif;text-anchor:middle}.challenge-svg .step{fill:var(--diagram-muted,#486078);font:13px ui-monospace,monospace}.challenge-svg .secondary{stroke:var(--diagram-secondary,#2767a4)}</style>
+<defs><marker id="predict-the-outage-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 6 3 0 6" fill="none" stroke="var(--diagram-accent,#a45717)" stroke-width="1.5"/></marker></defs>
+<rect x="1" y="1" width="478" height="318" rx="16" fill="var(--diagram-wash,#eff5fa)"/>
+<rect class="node" x="26" y="26" width="190" height="106" rx="10"/>
+<text class="step" x="38" y="46">01</text>
+<g class="icon " transform="translate(97 39)"><path d="M4 7h40v10H4zM4 23h40v10H4zM4 39h40v6H4zM10 12h9m7 0h10M10 28h13m7 0h6"/></g>
+<text class="label" x="121" y="114">System metrics</text>
+<rect class="node" x="264" y="26" width="190" height="106" rx="10"/>
+<text class="step" x="276" y="46">02</text>
+<g class="icon " transform="translate(335 39)"><path d="M4 38V5m0 33h40M9 29l7-12 7 10 7-15 9 9"/></g>
+<text class="label" x="359" y="114">Pattern analysis</text>
+<rect class="node" x="264" y="190" width="190" height="106" rx="10"/>
+<text class="step" x="276" y="210">03</text>
+<g class="icon " transform="translate(335 203)"><path d="M5 38V7m0 31h38M11 29l9-5 9 2"/><path d="m29 26 13-15m-7 0h7v7" stroke-dasharray="4 3"/></g>
+<text class="label" x="359" y="278">Risk prediction</text>
+<rect class="node" x="26" y="190" width="190" height="106" rx="10"/>
+<text class="step" x="38" y="210">04</text>
+<g class="icon secondary" transform="translate(97 203)"><path d="m24 3 22 39H2zM24 16v13m0 5v2"/></g>
+<text class="label" x="121" y="278">Early warning</text>
+<path class="flow" d="M220 79h38" marker-end="url(#predict-the-outage-arrow)"/>
+<path class="flow" d="M359 137v46" marker-end="url(#predict-the-outage-arrow)"/>
+<path class="flow" d="M258 243h-37" marker-end="url(#predict-the-outage-arrow)"/>
+</svg>

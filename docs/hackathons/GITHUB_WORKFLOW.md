@@ -1,62 +1,11 @@
-# AeglysAI participant GitHub workflow
+# Participant GitHub workflow
 
-PORTAL-013-FINAL foundation convention, 2026-10-04. Applications are not open.
+Current COM-003B-FIX-001 rules, 2026-10-11. Official repository: https://github.com/shubh-techie/AeglysAI. No direct participant write access.
 
-## Fork and qualification
+Every applicant first registers individually, then forks into their own account, clones and runs the A/B/C baseline. Model D knowledge is not required. Create qualification/<github-username> in your fork, and community/qualification/<github-username>.md. Document setup, actual build/test evidence, architecture understanding, observation, proposed improvement and validation. Use the [qualification template](QUALIFICATION_TEMPLATE.md). Never use contact details or other PII in branch names/evidence.
 
-Official repository: [shubh-techie/AeglysAI](https://github.com/shubh-techie/AeglysAI).
-Fork it into your own GitHub account. Participants do not receive official repository
-write access. Clone **your own fork**, follow the official repository's current README
-for prerequisites and setup, and demonstrate the baseline builds/runs. This portal
-does not prescribe or verify the core application's runtime or commands.
+Submit sanitized GitHub username, fork URL, qualification branch URL and qualification file URL through the qualification Google Form when it opens. Every member independently qualifies and is selected; completing qualification does not guarantee selection. Private Sheets track applicants, selection and unique team IDs.
 
-Create `qualification/<github-username>` in your fork; example:
-`qualification/example-user`. Do not put email, phone, student IDs or other PII in
-branch names. Copy the [qualification template](QUALIFICATION_TEMPLATE.md) into
-`community/qualification/<github-username>.md`. Document actual build/test outcomes,
-architecture understanding, one meaningful observation, one realistic improvement,
-its value and a validation approach. Qualification is not a LeetCode-style elimination
-exercise. No upstream pull request or accepted contribution is required.
+After selection, build in the team fork under hackathon/<team-id>. Individuals may compete; teams have two to four members and one leader, no duplicate active membership and organizer-approved changes. Use the same organizer-issued team ID in the final form. Former hackathon-01/02/03 conventions belong to the retired three-event proposal.
 
-Push to your fork, then supply your GitHub username, fork URL, qualification branch
-URL and qualification file URL in the official qualification Google Form when open.
-Do not send private evidence through a public issue. Organizer review uses published
-selection criteria; completing qualification does not guarantee selection. Criteria,
-capacity, review dates and correction/appeal procedure remain TBD before intake opens.
-
-## Selected participant branches
-
-Use these conceptual conventions in participant/team forks:
-
-- `hackathon-01/<github-username-or-team>` — Adaptive Authorization.
-- `hackathon-02/<github-username-or-team>` — Behavioral Risk.
-- `hackathon-03/<github-username-or-team>` — Autonomous Resilience.
-
-Team eligibility, size and approved public team naming remain TBD. Never grant or
-request direct writes to official main. Follow event-specific scope, build/test/document,
-and submit the final repository and frozen review commit/tag through the official form.
-
-## Contribution pathway
-
-```text
-Official AeglysAI Repository
-→ Participant Fork
-→ Qualification Branch
-→ Local Build / Run
-→ Qualification File
-→ Push to Participant Fork
-→ Google Form Submission
-→ Organizer Review
-→ Selection
-→ Hackathon Branch
-→ Build / Test / Document
-→ Final Submission
-→ Optional Pull Request after review
-```
-
-Final submission does not automatically mean code will merge into AeglysAI. Maintainers
-retain normal security, correctness, architecture, testing, licensing and code-review
-standards. An upstream PR is optional and follows review or an explicit maintainer
-request. Keep experiments isolated and authorized; never publish credentials or
-sensitive data. Use truthful implementation and evaluation status, including Model D
-as planned research unless the core repository provides verified completion evidence.
+Public source repository, pinned review commit/tag, executable project, README, reproduction steps and required maximum-two-minute video are submitted through the final Google Form. See [submission requirements](SUBMISSION_REQUIREMENTS.md). Optional upstream PRs use normal maintainer review; final submission does not guarantee merge. No personal contacts, private judging data or patent-related material in Git.

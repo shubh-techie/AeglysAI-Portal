@@ -19,4 +19,4 @@ only the acknowledgement/profile information you have explicitly approved.
 Thank you for contributing your expertise.
 
 [Approved organizer name]
-AeglysAI Community Hackathons
+AeglysAI AI/ML and Cybersecurity Hackathon

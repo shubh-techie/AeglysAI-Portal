@@ -65,9 +65,9 @@ npm run preview
 | `/robots.txt`                           | Generated crawl policy |
 | `/sitemap-index.xml`, `/sitemap-0.xml`   | Generated sitemap files |
 
-Fifteen content routes plus a custom 404 currently generate sixteen HTML files (including the three event routes from
+Fifteen content routes plus a custom 404 currently generate sixteen HTML files (including the three retired-proposal compatibility routes from
 `src/pages/hackathons/[event].astro` using `getStaticPaths()`), plus `robots.txt`.
-Approved presentation records add detail pages to that total. The current build reports twenty-one HTML pages; robots.txt and sitemap files are additional crawl output. `/media/` is
+Approved presentation records add detail pages to that total. The current community-sprint build reports twenty-seven HTML pages; robots.txt and sitemap files are additional crawl output. `/media/` is
 linked from Home; the shared header navigation remains unchanged by the media feature.
 
 ## Frontend architecture and content ownership
@@ -272,7 +272,7 @@ Invitation templates are available for [judges](docs/hackathons/JUDGE_INVITATION
 replace placeholders privately and verify terms before sending. No invitations were sent.
 See [SPEC-004](docs/specs/SPEC-004-participation-workflow.md) for PORTAL-006.
 
-All three events and keynote arrangements are PLANNED. Free participation, proposed rules
+The three-event proposal is retired; current rules use one AI/ML and Cybersecurity Hackathon. Dates and keynote arrangements remain unconfirmed. Free participation, proposed rules
 and a planned USD $300 prize per event are presented subject to finalized official terms.
 Before opening registration, publish exact deadlines/time zones, eligibility, award and
 judging procedures, licensing requirements, and conduct reporting/enforcement details.
@@ -316,7 +316,7 @@ AeglysAI is the evolution of the initiative previously known as AegisAI. Existin
 
 ### Hackathon foundation closure
 
-The series landing links to /hackathons/adaptive-authorization/,
+Retired-proposal compatibility routes remain at /hackathons/adaptive-authorization/,
 /hackathons/behavioral-risk/ and /hackathons/autonomous-resilience/. The events overview
 and community routes remain available. Shared guidance: [handbook](docs/hackathons/README.md),
 [qualification template](docs/hackathons/QUALIFICATION_TEMPLATE.md),
@@ -471,3 +471,29 @@ See [Speaking evidence tracker](docs/speaking/SPEAKING_EVIDENCE_TRACKER.md) for 
 status and [existing SPEC-010](docs/specs/SPEC-010-speaking-presentations.md) for closure requirements.
 Roadmap: collect organizer confirmations/agenda/listings, finalize upcoming titles and approve
 final slide/event assets; no invented recordings/certificates/downloads.
+
+## Community sprint — 2026-10-11 (local review)
+
+COM-002 collects verified public GitHub observations into ignored drafts; dashboard consumes only explicitly approved observation manifests. No live browser API calls or invented counts. `/community/`, `/community/impact/`, `/community/submit/`, `/community/projects/`, `/community/adoption/` and `/community/reports/` reuse static Astro/design tokens. Submission intake is closed pending an approved private service. Project/adoption records require verified review, explicit permission, source URLs and provenance; production lists are empty.
+
+Commands: `npm run community:metrics`, `npm run community:report -- 2026-10`, `npm test`. Drafts live under .community-drafts (ignored); never copy them to public/. Optional traffic collection requires explicit authorization through ALLOW_GITHUB_TRAFFIC=1 and a purpose-supplied GITHUB_METRICS_TOKEN; no token is required for public metrics, no credential values logged. Do not grant secrets to fork workflows.
+
+COM-001 evidence 1.0.0 is pinned/copied from the locally inspected research contract. COM-008A 1.0.0 is integrated from local upstream files; interoperability remains PROVISIONAL until upstream commit/approval, and publication requires separate owner authorization. October 2026 remains open until month-end. Monthly net changes need exact UTC boundary observations; no unavailable historical reconstruction. Scheduled workflow prepares artifacts only; no commits, PRs or deployment. Retain snapshots for reviewed history; artifacts are not complete historical evidence.
+
+See [contract provenance](docs/community/CONTRACTS.md), [sprint review and roadmap](docs/community/SPRINT_REVIEW.md), [file ownership](docs/community/FILE_OWNERSHIP.json), SPEC-011 through SPEC-016 and ADR-001 through ADR-006. Development log remains the engineering changelog; no release/tag added.
+
+Roadmap: authorize private intake and end-to-end receipt review; resolve research disclosure findings; supply COM-008A; approve source/consent manifests and durable archive policy; inspect dependency advisories; only then authorize publication/PRs/deployment.
+
+### COM-ARCH-001 — Google Workspace administration
+
+The first hackathon uses configured Google Forms registration/submission links, private Google Sheets for administration and private Google Drive for consent/review evidence. The static Portal reads only approved sanitized JSON exports; no database or browser Sheets API. Forms and exports are not configured yet, so unavailable states remain. See [ADR-007](docs/adr/ADR-007-google-workspace.md) and [manual export/security workflow](docs/community/WORKSPACE_EXPORTS.md). Roadmap: provision/review private Workspace permissions and forms, supply reviewed exports, then assess automation separately. COM-008A/publication gates remain unresolved.
+
+### COM-003B-FIX-001 — finalized hackathon workflow
+
+One AeglysAI AI/ML and Cybersecurity Hackathon with five approved challenges replaces the obsolete three-event proposal. Every participant individually registers, forks/clones/runs A/B/C, documents sanitized qualification evidence and is selected before building. Model D knowledge is not required. Individuals and teams of two to four, one leader/unique team ID, no duplicate active membership, approved changes; private Sheets verify rosters. Executable project and maximum-two-minute video required. Round 1 selects finalists, Round 2 five-minute live demo plus five-minute Q&A over Google Meet determines ranking. Official Forms/dates remain unconfigured: Registration Opening Soon. See [current handbook](docs/hackathons/README.md), [Form configuration](docs/hackathons/OPERATIONS.md) and [judging](docs/hackathons/JUDGING_FRAMEWORK.md). Roadmap: approve Forms/privacy/access, deadlines/capacity and operational contacts before opening; existing community publication/contract blockers remain.
+
+### COM-INTEGRATION-001 — provisional upstream interoperability
+
+Four current local 1.0.0 schemas and validators now match upstream bytes, including recognition, adoption and monthly impact. Install pinned offline Python validation dependencies using the [integration setup](docs/community/INTEGRATION_GUIDE.md). Source status never grants owner permission: a separate digest-bound publication allowlist is required. No production approval data supplied. GitHub observation drafts remain separate from COM-001 evidence/COM-008A reports; `npm run community:impact-report -- YYYY-MM source.json` prepares pending impact drafts from sanitized local evidence only. Research repository untouched. Roadmap: approved upstream commit/version review, genuine sanitized inputs and archive/withdrawal policy before publication.
+
+HACK-VISUAL-001: five conceptual SVG architecture tiles reuse existing challenge anchors and approved workflow. Desktop centered 3+2, tablet two/mobile one, existing themes and reduced-motion support. See [asset/UI inventory](docs/hackathons/VISUAL_ASSETS.md) and [visual specification](docs/specs/SPEC-018-challenge-architecture-visuals.md). No new dependencies or client scripts; no actual outcomes or proprietary algorithms depicted.

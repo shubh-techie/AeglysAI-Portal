@@ -19,4 +19,4 @@ accurately. We will not publish your name, profile or work beyond permissions yo
 Questions or optional feedback can be sent through [Approved private organizer contact].
 
 [Approved organizer name]
-AeglysAI Community Hackathons
+AeglysAI AI/ML and Cybersecurity Hackathon

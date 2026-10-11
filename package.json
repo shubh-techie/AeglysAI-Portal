@@ -11,7 +11,10 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "node --test scripts/site.test.mjs"
+    "test": "node --test scripts/site.test.mjs scripts/community/*.test.mjs",
+    "community:metrics": "node scripts/community/metrics.mjs",
+    "community:report": "node scripts/community/reports.mjs",
+    "community:impact-report": "node scripts/community/impact-cli.mjs"
   },
   "dependencies": {
     "astro": "^7.3.4",

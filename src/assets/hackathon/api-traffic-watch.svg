@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="challenge-svg" viewBox="0 0 480 320" role="img" aria-labelledby="api-traffic-watch-title api-traffic-watch-description">
+<title id="api-traffic-watch-title">API Traffic Watch: conceptual architecture</title>
+<desc id="api-traffic-watch-description">API requests to traffic monitor to spike detection to a conceptual dashboard. No real traffic or dashboard metrics.</desc>
+<style>.challenge-svg .node{fill:var(--diagram-surface,#fff);stroke:var(--diagram-line,#bdccd9);stroke-width:1.5}.challenge-svg .flow{fill:none;stroke:var(--diagram-accent,#076b88);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.challenge-svg .icon{fill:none;stroke:var(--diagram-accent,#076b88);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.challenge-svg .label{fill:var(--diagram-text,#203348);font:600 19px system-ui,sans-serif;text-anchor:middle}.challenge-svg .step{fill:var(--diagram-muted,#486078);font:13px ui-monospace,monospace}.challenge-svg .secondary{stroke:var(--diagram-secondary,#147453)}</style>
+<defs><marker id="api-traffic-watch-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 6 3 0 6" fill="none" stroke="var(--diagram-accent,#076b88)" stroke-width="1.5"/></marker></defs>
+<rect x="1" y="1" width="478" height="318" rx="16" fill="var(--diagram-wash,#eff5fa)"/>
+<rect class="node" x="26" y="26" width="190" height="106" rx="10"/>
+<text class="step" x="38" y="46">01</text>
+<g class="icon " transform="translate(97 39)"><path d="M3 8h15v12H3zM29 8h15v12H29zM3 29h15v12H3zM29 29h15v12H29zM18 14h11M18 35h11M10 20v9m26-9v9"/></g>
+<text class="label" x="121" y="114">API requests</text>
+<rect class="node" x="264" y="26" width="190" height="106" rx="10"/>
+<text class="step" x="276" y="46">02</text>
+<g class="icon " transform="translate(335 39)"><path d="M3 5h42v29H3zM9 21h7l4-8 7 16 5-8h7M24 34v9m-10 0h20"/></g>
+<text class="label" x="359" y="114">Traffic monitor</text>
+<rect class="node" x="264" y="190" width="190" height="106" rx="10"/>
+<text class="step" x="276" y="210">03</text>
+<g class="icon " transform="translate(335 203)"><path d="M5 40V8m0 32h39M10 31h7l6-20 7 20h11"/></g>
+<text class="label" x="359" y="278">Spike detection</text>
+<rect class="node" x="26" y="190" width="190" height="106" rx="10"/>
+<text class="step" x="38" y="210">04</text>
+<g class="icon secondary" transform="translate(97 203)"><path d="M3 5h42v31H3zM24 36v8m-10 0h20M9 12h11v7H9zM26 13h13M26 19h9M9 27h30"/></g>
+<text class="label" x="121" y="278">Dashboard</text>
+<path class="flow" d="M220 79h38" marker-end="url(#api-traffic-watch-arrow)"/>
+<path class="flow" d="M359 137v46" marker-end="url(#api-traffic-watch-arrow)"/>
+<path class="flow" d="M258 243h-37" marker-end="url(#api-traffic-watch-arrow)"/>
+</svg>

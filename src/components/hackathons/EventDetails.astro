@@ -1,26 +1,4 @@
 ---
-import HackathonRegistration from "../HackathonRegistration.astro";
-import HackathonPersonCard from "../HackathonPersonCard.astro";
-import { events, program, scoringFramework, submissionRequirements, optionalSubmissionMaterials, registrationLinks } from "../../data/hackathons";
-import { challengePresentation, tracks } from "../../data/hackathonExperience";
-import { judges, approvedPublicPerson } from "../../data/hackathonPeople";
-import { href } from "../../data/project";
-interface Props { event: (typeof events)[number]; index: number; }
-const { event, index: i } = Astro.props;
-const display = challengePresentation[event.id];
-const assignedJudges = judges.filter(slot => { const person = approvedPublicPerson(slot.person); return person && person.eventAssignments.some(id => id === event.id); });
+import HackathonRules from './HackathonRules.astro';
 ---
-<article class="section hackathon-event" id={event.id}>
-      <div class="card-top"><span class="eyebrow">Event 0{i + 1}</span><span class="program-status">{event.status}</span></div>
-      <h2>{event.title}</h2><p class="eyebrow">{display.stage}</p><p><a class="text-link" href={href(`hackathons/${event.id}`)}>Event detail page →</a></p><ul class="theme-tags">{display.focus.map(theme => <li>{theme}</li>)}</ul>
-      <div class="cards-grid two">
-        <section class="info-card"><h3>Problem</h3><p>{event.problem}</p><h3>Challenge</h3><p>{event.challenge}</p></section>
-        <section class="info-card"><h3>Timeline</h3><p>Planned launch: {event.launch}<br />Planned submission: {event.submission}</p><p>Exact deadlines, time zones and review dates will be announced in official terms.</p><h3>Eligibility</h3><p>{program.eligibility}</p></section>
-        <section class="info-card"><h3>Deliverables</h3><ul>{event.deliverables.map(item => <li>{item}</li>)}</ul><h3>Proposed scoring framework</h3><ul>{scoringFramework.map(item => <li>{item.category} — {item.weight}%</li>)}</ul><p>Independent judges score eligible submissions using the same evidence-based rubric. Conflict disclosure, recusal and a published tie procedure protect independent review. The framework remains subject to finalized official terms.</p></section>
-        <section class="info-card"><h3>Prize</h3><p>Planned {event.prize.currency} ${event.prize.amount} prize. Prize eligibility and payment are subject to official event rules. {program.terms} Award conditions and payment details remain to be finalized.</p><h3>Submission process</h3><p>Required submission package (subject to finalized official terms):</p><ul>{submissionRequirements.map(item => <li>{item}</li>)}</ul><p>Optional: {optionalSubmissionMaterials.join(", ")}. A demo is required; a video is optional. Submit the repository URL and a specific commit/tag through the official form when available. Receipt is separate from eligibility and judging.</p>{(event.submissionUrl ?? registrationLinks.submission) ? <a class="text-link" href={(event.submissionUrl ?? registrationLinks.submission)!}>Official submission channel</a> : <p>Opening Soon. Submissions are not open yet.</p>}</section>
-        <section class="info-card"><h3>Rules</h3><p>Proposed rules: use authorized isolated environments; avoid real credentials or personal data; disclose reused code, datasets and AI assistance; credit collaborators; and report results honestly.</p><p>Final eligibility, team size, permitted prior work, submission deadlines and award procedures are subject to official event terms.</p><a class="text-link" href={`${href("hackathons")}#code-of-conduct`}>Program Code of Conduct →</a></section>
-        <section class="info-card"><h3>Open-source expectations</h3><p>A public GitHub repository is required unless an exception is approved before submission. Include source code, setup instructions, evaluation artifacts and explicit license information. Respect upstream licenses and document third-party dependencies and data provenance.</p><p>Use synthetic or appropriately licensed data; never publish secrets or sensitive datasets. Final licensing and submission requirements will be defined in official terms.</p></section>
-        <section class="info-card"><h3>Tracks</h3>{tracks.map(track => <div><h4>{track.title}</h4><p>{track.audience}</p><p>{track.description}</p></div>)}<p>Event-specific tasks, resources and track evaluation: TBD.</p></section>
-        <section class="info-card"><h3>Judges and results</h3>{assignedJudges.map(entry => <HackathonPersonCard entry={entry}/>)}{assignedJudges.length === 0 && <p>Independent judges: TBD. No appointments or results are claimed.</p>}<p>Results will be published only after eligibility checks, independent judging and organizer approval.</p><h3>Shared participant guidance</h3><p><a class="text-link" href={`${href("hackathons")}#qualification`}>Qualification and GitHub workflow →</a></p><p><a class="text-link" href={`${href("hackathons")}#certificates`}>Certificate eligibility framework →</a></p><p>Final submission does not guarantee an upstream merge. Maintainers retain normal review standards.</p></section>
-      </div><div class="actions"><HackathonRegistration url={event.registrationUrl} id={`${event.id}-registration`} /></div>
-    </article>
+<HackathonRules/>

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "smart-login-guardian",
+    "title": "Smart Login Guardian",
+    "source": "https://github.com/shubh-techie/AeglysAI",
+    "sourcePath": "community/hackathon/tracks/smart-login-guardian.md",
+    "referenceStatus": "LOCAL_CONTRACT_REMOTE_UNAVAILABLE"
+  },
+  {
+    "id": "find-the-anomaly",
+    "title": "Find the Anomaly",
+    "source": "https://github.com/shubh-techie/AeglysAI",
+    "sourcePath": "community/hackathon/tracks/find-the-anomaly.md",
+    "referenceStatus": "LOCAL_CONTRACT_REMOTE_UNAVAILABLE"
+  },
+  {
+    "id": "api-traffic-watch",
+    "title": "API Traffic Watch",
+    "source": "https://github.com/shubh-techie/AeglysAI",
+    "sourcePath": "community/hackathon/tracks/api-traffic-watch.md",
+    "referenceStatus": "LOCAL_CONTRACT_REMOTE_UNAVAILABLE"
+  },
+  {
+    "id": "explain-security-alert",
+    "title": "Explain My Security Alert",
+    "source": "https://github.com/shubh-techie/AeglysAI",
+    "sourcePath": "community/hackathon/tracks/explain-security-alert.md",
+    "referenceStatus": "LOCAL_CONTRACT_REMOTE_UNAVAILABLE"
+  },
+  {
+    "id": "predict-the-outage",
+    "title": "Predict the Outage",
+    "source": "https://github.com/shubh-techie/AeglysAI",
+    "sourcePath": "community/hackathon/tracks/predict-the-outage.md",
+    "referenceStatus": "LOCAL_CONTRACT_REMOTE_UNAVAILABLE"
+  }
+]

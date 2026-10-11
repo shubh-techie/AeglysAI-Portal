@@ -1,32 +1,11 @@
-# Submission requirements
+# Final project submission requirements
 
-Prepared 2026-10-03. Adopt in finalized official event terms before launch. Event-specific
-challenge deliverables supplement these requirements; proposed requirements do not imply
-that submissions are open or any entry has been received.
+COM-003B-FIX-001 finalized 2026-10-11. One selected challenge, one team submission. Every member must individually qualify and be selected first; private roster verification precedes eligibility.
 
-| Required artifact | What to include |
-| --- | --- |
-| Public GitHub repository | Source/evaluation artifacts and exact commit/tag to review; a nonpublic exception must be approved before submission with equivalent judge access |
-| README | Challenge, contribution, usage and links to the artifacts below |
-| Problem statement | Engineering question, scope and contribution |
-| Architecture description | Components, data/control flow, trust boundaries and design tradeoffs |
-| Setup instructions | Dependencies/versions, configuration, commands and synthetic or licensed test data |
-| Demo | Runnable demonstration or documented reproducible walkthrough; video is optional |
-| Test evidence | Commands, scenarios, expected/observed behavior and retained evidence |
-| Security considerations | Threat assumptions, authorization boundaries, safeguards and safe testing |
-| Limitations | Known failures, uncertainty, scope and unsupported claims |
-| License information | Project license, dependency/data licenses and attribution; do not imply ownership of reused work |
+Required: team ID; selected challenge; public GitHub source URL and frozen review commit/tag; project README; reproduction/setup instructions; working demonstration video URL (maximum two minutes); explanation of AI/ML or intelligent technique; test or validation evidence; data/model attribution and licensing; known limitations.
 
-Optional: video demo, benchmark results and research notes. Benchmarks require a disclosed
-method and environment if supplied; no fabricated performance claims. Model D remains
-planned research. Identify reused code/data and AI assistance; use only authorized systems.
-No credentials, personal information or sensitive datasets may be included.
+A working MVP, executable prototype or functional proof of concept is mandatory. Slides or a documented walkthrough alone are insufficient. Any language/framework; standalone projects acceptable after qualification. Narrated screen recordings or silent captioned demonstrations accepted; webcam footage is not mandatory. Deployed demo URLs, benchmarks and research notes are optional.
 
-Submit the event choice, repository URL, review commit/tag, artifact links and required
-fields through configured `PROJECT_SUBMISSION_URL` (legacy `SUBMISSION_FORM_URL` alias) or the event-specific `submissionUrl`.
-Do not place completed application forms, Drive IDs, access credentials or exception
-correspondence in this public repository. A submission receipt records receipt only;
-organizers perform eligibility checks before independent scoring.
+Identify original contribution, prior work, dependencies, data/models, licenses and AI assistance. Meaningful intelligent functionality may use a justified rule/statistical method; naming AI without executable behavior is insufficient. Use authorized synthetic/licensed inputs and disclose actual results/limitations. No credentials, personal contact details, private participant/judging data or patent-related material in Git/video/public artifacts.
 
-Finalize repository exceptions, correction windows, late-submission treatment, license
-requirements and accessibility arrangements in official terms before opening submissions.
+Submit through the externally configured PROJECT_SUBMISSION_URL Google Form. Private Sheets/Drive handle roster, review and approved supporting evidence; receipt does not establish verification or publication permission. Forms remain unavailable until configured. Deadlines/time zones, correction windows and conduct/appeal channels remain organizer configuration items. See [handbook](README.md) and [judging](JUDGING_FRAMEWORK.md).
