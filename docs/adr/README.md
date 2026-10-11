@@ -64,3 +64,5 @@ runtime metadata, with no private correspondence paths. No dependencies or hosti
 - [ADR-007 — Google Workspace administration](ADR-007-google-workspace.md): approved COM-ARCH-001 decision; manual sanitized exports.
 
 - [ADR-008 — authoritative community contracts](ADR-008-evidence-contract-integration.md): provisional exact schemas, offline semantic validation and owner publication gates.
+
+- [ADR-009 — challenge architecture SVGs](ADR-009-challenge-architecture-visuals.md): safe local vectors and shared card/detail rendering.

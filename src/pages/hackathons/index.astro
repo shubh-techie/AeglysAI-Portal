@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import HackathonNav from "../../components/HackathonNav.astro";
 import SeriesHero from "../../components/hackathons/SeriesHero.astro";
+import EventCard from "../../components/hackathons/EventCard.astro";
 import HackathonRules from "../../components/hackathons/HackathonRules.astro";
 import ParticipantJourney from "../../components/hackathons/ParticipantJourney.astro";
 import PeopleSection from "../../components/hackathons/PeopleSection.astro";
@@ -30,7 +31,7 @@ const resources = [
       <section class="hx-section" id="challenges" aria-labelledby="challenges-heading">
         <div class="hx-section-heading"><div><p class="hx-eyebrow">FIVE CHALLENGES / ONE HACKATHON</p><h2 id="challenges-heading">Understand. Measure. Adapt.</h2></div><span class="hx-status">DATES TO BE ANNOUNCED</span></div>
         <p class="hx-section-copy">{program.title}. Explore security problems across authorization, identity, risk, observability and incident response. Challenge themes describe work to investigate, not validated platform capabilities. Model D remains planned research.</p>
-        <div class="hx-grid hx-challenges">{challenges.map((challenge, index) => <article class="hx-card"><span class="hx-eyebrow">Challenge {index + 1}</span><h3>{challenge.title}</h3><p>Any programming language or framework. Standalone implementations are acceptable after mandatory qualification.</p><a class="hx-link" href={`${href("hackathons/events")}#${challenge.id}`}>Challenge rules →</a></article>)}</div>
+        <div class="challenge-grid">{challenges.map((challenge,index)=><EventCard challenge={challenge} index={index}/>)}</div>
       </section>
       <ParticipantJourney/>
       <section class="hx-section" id="qualification" aria-labelledby="qualification-heading">

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="challenge-svg" viewBox="0 0 480 320" role="img" aria-labelledby="smart-login-guardian-title smart-login-guardian-description">
+<title id="smart-login-guardian-title">Smart Login Guardian: conceptual architecture</title>
+<desc id="smart-login-guardian-description">Login events to behavioral checks to risk decision, branching into allow or flag. Conceptual only; no live login enforcement.</desc>
+<style>.challenge-svg .node{fill:var(--diagram-surface,#fff);stroke:var(--diagram-line,#bdccd9);stroke-width:1.5}.challenge-svg .flow{fill:none;stroke:var(--diagram-accent,#1463a5);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.challenge-svg .icon{fill:none;stroke:var(--diagram-accent,#1463a5);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.challenge-svg .label{fill:var(--diagram-text,#203348);font:600 19px system-ui,sans-serif;text-anchor:middle}.challenge-svg .step{fill:var(--diagram-muted,#486078);font:13px ui-monospace,monospace}.challenge-svg .secondary{stroke:var(--diagram-secondary,#0b766c)}</style>
+<defs><marker id="smart-login-guardian-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 6 3 0 6" fill="none" stroke="var(--diagram-accent,#1463a5)" stroke-width="1.5"/></marker></defs>
+<rect x="1" y="1" width="478" height="318" rx="16" fill="var(--diagram-wash,#eff5fa)"/>
+<rect class="node" x="26" y="26" width="190" height="106" rx="10"/>
+<text class="step" x="38" y="46">01</text>
+<g class="icon " transform="translate(97 39)"><circle cx="24" cy="12" r="8"/><path d="M8 43v-5a16 16 0 0 1 32 0v5M38 12h10m-4-4 4 4-4 4"/></g>
+<text class="label" x="121" y="114">Login events</text>
+<rect class="node" x="264" y="26" width="190" height="106" rx="10"/>
+<text class="step" x="276" y="46">02</text>
+<g class="icon " transform="translate(335 39)"><path d="M8 5h31v38H8zM14 14l3 3 5-6m3 3h8M14 27l3 3 5-6m3 3h8"/></g>
+<text class="label" x="359" y="114">Behavior checks</text>
+<rect class="node" x="264" y="190" width="190" height="106" rx="10"/>
+<text class="step" x="276" y="210">03</text>
+<g class="icon secondary" transform="translate(335 203)"><path d="m24 3 18 8v13c0 12-18 22-18 22S6 36 6 24V11zM24 14v13m0 7v2"/></g>
+<text class="label" x="359" y="278">Risk decision</text>
+<path class="flow" d="M220 79h38" marker-end="url(#smart-login-guardian-arrow)"/>
+<path class="flow" d="M359 137v46" marker-end="url(#smart-login-guardian-arrow)"/>
+<path class="flow" d="M258 243h-18m0 0v-23h-18m18 23v29h-18"/>
+<rect class="node" x="26" y="201" width="190" height="42" rx="10"/>
+<text class="label" x="121" y="228">Allow</text>
+<path class="flow" d="M231 220h-11" marker-end="url(#smart-login-guardian-arrow)"/>
+<rect class="node" x="26" y="253" width="190" height="42" rx="10"/>
+<text class="label" x="121" y="280">Flag</text>
+<path class="flow" d="M231 272h-11" marker-end="url(#smart-login-guardian-arrow)"/>
+</svg>

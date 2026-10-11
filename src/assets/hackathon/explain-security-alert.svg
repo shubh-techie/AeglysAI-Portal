@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="challenge-svg" viewBox="0 0 480 320" role="img" aria-labelledby="explain-security-alert-title explain-security-alert-description">
+<title id="explain-security-alert-title">Explain My Security Alert: conceptual architecture</title>
+<desc id="explain-security-alert-description">Security alert to AI explanation processing to a human-readable explanation and safety guidance. Recommendations only, not enforcement.</desc>
+<style>.challenge-svg .node{fill:var(--diagram-surface,#fff);stroke:var(--diagram-line,#bdccd9);stroke-width:1.5}.challenge-svg .flow{fill:none;stroke:var(--diagram-accent,#7051a0);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.challenge-svg .icon{fill:none;stroke:var(--diagram-accent,#7051a0);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.challenge-svg .label{fill:var(--diagram-text,#203348);font:600 19px system-ui,sans-serif;text-anchor:middle}.challenge-svg .step{fill:var(--diagram-muted,#486078);font:13px ui-monospace,monospace}.challenge-svg .secondary{stroke:var(--diagram-secondary,#255ea0)}</style>
+<defs><marker id="explain-security-alert-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 6 3 0 6" fill="none" stroke="var(--diagram-accent,#7051a0)" stroke-width="1.5"/></marker></defs>
+<rect x="1" y="1" width="478" height="318" rx="16" fill="var(--diagram-wash,#eff5fa)"/>
+<rect class="node" x="26" y="26" width="190" height="106" rx="10"/>
+<text class="step" x="38" y="46">01</text>
+<g class="icon " transform="translate(97 39)"><path d="m24 3 22 39H2zM24 16v13m0 5v2"/></g>
+<text class="label" x="121" y="114">Security alert</text>
+<rect class="node" x="264" y="26" width="190" height="106" rx="10"/>
+<text class="step" x="276" y="46">02</text>
+<g class="icon " transform="translate(335 39)"><path d="M4 5h40v28H24L12 44V33H4zM11 14h26M11 23h19"/></g>
+<text class="label" x="359" y="114">AI explanation</text>
+<rect class="node" x="264" y="190" width="190" height="106" rx="10"/>
+<text class="step" x="276" y="210">03</text>
+<g class="icon " transform="translate(335 203)"><path d="M9 3h30v41H9zM16 13h16M16 21h16M16 29h16M16 37h10"/></g>
+<text class="label" x="359" y="278">Explanation</text>
+<rect class="node" x="26" y="190" width="190" height="106" rx="10"/>
+<text class="step" x="38" y="210">04</text>
+<g class="icon secondary" transform="translate(97 203)"><path d="m24 3 18 8v13c0 12-18 22-18 22S6 36 6 24V11zM14 24l7 7 14-14"/></g>
+<text class="label" x="121" y="278">Safety guidance</text>
+<path class="flow" d="M220 79h38" marker-end="url(#explain-security-alert-arrow)"/>
+<path class="flow" d="M359 137v46" marker-end="url(#explain-security-alert-arrow)"/>
+<path class="flow" d="M258 243h-37" marker-end="url(#explain-security-alert-arrow)"/>
+</svg>
