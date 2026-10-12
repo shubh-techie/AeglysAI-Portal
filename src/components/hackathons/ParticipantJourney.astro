@@ -1,9 +1,12 @@
 ---
+import FormCta from "./FormCta.astro";
 import { journey } from "../../data/hackathonExperience";
 ---
 <section class="hx-section" id="how-it-works" aria-labelledby="journey-heading">
   <p class="hx-eyebrow">YOUR JOURNEY</p><h2 id="journey-heading">From first fork to a working idea.</h2>
+  <div id="registration" class="hx-actions"><FormCta kind="participant" label="Register for Hackathon" id="journey-registration-note"/><a class="hx-button" href="#qualification">Prepare Qualification Evidence ↓</a></div>
   <p class="hx-section-copy">Mandatory individual qualification for every participant, including every team member. The A/B/C baseline is sufficient; Model D knowledge is not required. Qualification does not guarantee selection.</p>
   <ol class="hx-journey">{journey.map((step, i) => <li><span class="hx-step-number">{String(i + 1).padStart(2, "0")}</span><h3>{step.title}</h3><p>{step.detail}</p></li>)}</ol>
-  <p class="hx-fine">Google Forms/Drive will initially handle applications privately. Registration confirmation, qualification review and project-submission receipt are separate steps. No private application data is published here.</p>
+  <p class="hx-fine">Google Forms handles intake; private Google Sheets and Drive support organizer review. Teams of one to four include the team leader; every member must be individually qualified and selected. Registration confirmation, qualification review and project-submission receipt are separate steps. No private application data is published here.</p>
+<div class="hx-inline-note"><p>Only selected participants form a team. One leader submits its unique roster for private organizer verification; no duplicate active membership. Changes need organizer approval.</p><FormCta kind="team" label="Submit Selected Team Roster" id="team-form-note"/></div>
 </section>

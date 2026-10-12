@@ -5,11 +5,11 @@ export const challengePresentation: Record<string, { stage: string; focus: strin
   "autonomous-resilience": { stage: "ADAPT & RESPOND", focus: ["Incident Detection", "Observability", "Resilience", "Policy-Bounded Response", "Distributed-System Recovery"], question: "How can systems respond intelligently without surrendering deterministic control?" },
 };
 export const journey = [
-  { title: "Register", detail: "Use the official form when it opens." },
+  { title: "Register", detail: "Register individually through the official Google Form." },
   { title: "Fork AeglysAI", detail: "Fork the official repository into your own GitHub account." },
   { title: "Clone & Run", detail: "Clone your own fork; demonstrate the baseline builds/runs." },
   { title: "Complete Qualification", detail: "Document architecture, setup, an observation, an improvement and validation." },
-  { title: "Submit", detail: "Send your GitHub username, fork, branch and qualification file URLs." },
+  { title: "Submit", detail: "Send your GitHub username, fork, branch, qualification document and sanitized build-log URLs." },
   { title: "Selection", detail: "Organizer review against published criteria; qualification does not guarantee selection." },
   { title: "Build & Compete", detail: "Develop a scoped challenge with reproducible evidence." },
 ];

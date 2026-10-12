@@ -31,3 +31,5 @@ HACK-VISUAL-001 (2026-10-11): shared EventCard/ChallengeDiagram now render the f
 HACK-CHALLENGE-006 extends selections/gallery categories through the canonical Portal list. [SPEC-019](SPEC-019-everyday-ai-challenge.md) and [ADR-010](../adr/ADR-010-everyday-ai-portal-extension.md) explicitly distinguish the sixth choice from upstream five-track authority. No evidence/monthly contract enum change.
 
 COM-PIN-001: [published source provenance](../community/CONTRACTS.md) supersedes local-only/source-approval blockers for the four pinned evidence contracts. All schema/validator/fixture bytes match public main revision 711c1556e27bd226c08fb6a8c7b0d9040b4c88ee. Data publication, consent, independence and immutable report review remain separately gated; no synthetic activity published.
+
+HACK-PORTAL-OPS-001: supplied Forms verified, seven URLs configured and enabled by organizer follow-up. [SPEC-020](SPEC-020-hackathon-portal-operations.md) supersedes absent-URL claims in earlier snapshots. Final form checklist/consent completeness and private Workspace controls remain organizer actions; no responses submitted or intake opened.

@@ -7,5 +7,5 @@ export const hackathonSocialPreview: { image: SocialImage | null } = { image: so
 export const hackathonSeo = {
   program: { title: "AI/ML and Cybersecurity Hackathon", description: "One free AeglysAI hackathon with six challenge choices, mandatory individual qualification and teams of one to four." },
   events: { title: "Hackathon Challenges and Rules", description: "Six challenges for one AeglysAI hackathon. Read mandatory qualification, team rules, working project and two-minute video requirements, and two-round judging." },
-  community: { title: "Hackathon Community", description: "AeglysAI creator Shubh Prabhat and planned speaker and independent judge roles. Participant and judge application forms are pending; public profiles require confirmation and permission." },
+  community: { title: "Hackathon Community", description: "Meet the AeglysAI creator and review speaker, mentor, judge and guest onboarding. Official registration and role-specific intake links are available; event profiles require confirmation and display permission." },
 };

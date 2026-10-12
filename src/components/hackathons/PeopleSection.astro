@@ -1,21 +1,29 @@
 ---
-import { speakers, judges, approvedPublicPerson } from "../../data/hackathonPeople";
-import { keynote } from "../../data/hackathons";
-import { asset } from "../../data/project";
+import { speakers, judges, mentors, guests, approvedPublicPerson } from "../../data/hackathonPeople";
 import HackathonPersonCard from "../HackathonPersonCard.astro";
 import FormCta from "./FormCta.astro";
-const guests = speakers.filter(slot => approvedPublicPerson(slot.person));
+const publicSpeakers = speakers.filter(slot => approvedPublicPerson(slot.person));
+const publicMentors = mentors.filter(slot => approvedPublicPerson(slot.person));
+const publicGuests = guests.filter(slot => approvedPublicPerson(slot.person));
 const publicJudges = judges.filter(slot => approvedPublicPerson(slot.person));
-const person = keynote.person;
+
 ---
 <section class="hx-section" id="speakers" aria-labelledby="speakers-heading">
   <p class="hx-eyebrow">ENGINEERING PERSPECTIVES</p><h2 id="speakers-heading">Speakers</h2>
-  <article class="hx-card hx-keynote"><img src={asset(person.photo.path)} alt={person.photo.alt} width="160" height="160" loading="lazy" decoding="async"/><div><p class="hx-eyebrow">Keynote Speaker · {keynote.status}</p><h3>{person.name}</h3><p>{person.role}</p><p>{person.biography[0]}</p><p class="hx-fine">Creator &amp; Maintainer of AeglysAI. Keynote topic and schedule are planned.</p></div></article>
-  {guests.length > 0 && <div class="hx-people"><h3>Guest Speakers</h3><div class="hx-grid">{guests.map(entry => <HackathonPersonCard entry={entry}/>)}</div></div>}
-  <div class="hx-inline-note"><p>Additional speaker sessions will be announced only after confirmation and permission to publish.</p><FormCta kind="speaker" label="Express Speaker Interest" id="speaker-form-note"/></div>
+  <p class="hx-section-copy">Speaker appointments will be announced only after confirmation and approval to display their profiles.</p>
+  {publicSpeakers.length > 0 && <div class="hx-people"><h3>Guest Speakers</h3><div class="hx-grid">{publicSpeakers.map(entry => <HackathonPersonCard entry={entry}/>)}</div></div>}
+  {publicMentors.length > 0 && <div class="hx-grid">{publicMentors.map(entry => <HackathonPersonCard entry={entry}/>)}</div>}
+  <div class="hx-inline-note"><p>Additional speaker sessions will be announced only after confirmation and permission to publish.</p><FormCta kind="speaker" label="Speaker / Mentor Profile" id="speaker-form-note"/></div>
 </section>
 <section class="hx-section" id="judges" aria-labelledby="judges-heading">
   <p class="hx-eyebrow">INDEPENDENT TECHNICAL REVIEW</p><h2 id="judges-heading">Judges</h2>
   {publicJudges.length > 0 ? <div class="hx-grid hx-people">{publicJudges.map(entry => <HackathonPersonCard entry={entry}/>)}</div> : <p class="hx-section-copy">Independent judge appointments are pending. Confirmed, approved public profiles will appear here when available.</p>}
-  <div class="hx-inline-note"><p>Judges review evidence and disclose conflicts. Applications do not confirm an appointment.</p><FormCta kind="judge" label="Apply to Judge" id="judge-form-note"/></div>
+  <div class="hx-inline-note"><p>Invited judges provide their profile, acceptance and conflict declaration. Completing the form does not confirm an appointment.</p><FormCta kind="judge" label="Judge Profile & Acceptance" id="judge-form-note"/></div>
+</section>
+
+<section class="hx-section" id="guests" aria-labelledby="guests-heading">
+  <p class="hx-eyebrow">COMMUNITY EXCHANGE</p><h2 id="guests-heading">Guests &amp; Chief Guests</h2>
+  <p class="hx-section-copy">Invited guests may respond through the official guest response form. An invitation or response does not establish attendance. Only confirmed, publication-approved profiles are displayed.</p>
+  {publicGuests.length > 0 && <div class="hx-grid">{publicGuests.map(entry => <HackathonPersonCard entry={entry}/>)}</div>}
+  <FormCta kind="guest" label="Respond to Guest Invitation" id="guest-form-note"/>
 </section>

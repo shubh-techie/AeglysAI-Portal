@@ -20,3 +20,7 @@ Grid: three equal desktop columns, two rows of three cards. At 1100px and below 
 Update procedure: change source SVG and corresponding HTML summary together, verify normal/edge/invalid-input minimums remain consistent with finalized rules and public briefs, then run check/build/tests/XML/link/privacy checks and inspect actual light/dark/mobile screenshots. Screenshots are ignored review artifacts, never illustrative production assets.
 
 HACK-CHALLENGE-006 adds beginner-to-intermediate open innovation; source provenance is Portal extension, not an upstream sixth track. Previous five-asset byte totals and centered 3+2 layout were the HACK-VISUAL-001 snapshot.
+
+HACK-PORTAL-OPS-001: six code-authored challenge SVGs unchanged. Certificate preview is an original HTML/CSS hackathon-themed sample, not a generated photograph or issued artifact. The organizer’s follow-up authorizes creating an original design instead of waiting for Certificate_example.png. Existing approved brand icon reused; all personal/issuance fields remain placeholders.
+
+Certificate reference refinement: inspected the user-supplied PNG and adapted its dark/cyan frame, serif title, recipient box and AI/ML/Cybersecurity badges as accessible responsive HTML/CSS. Existing local AeglysAI icon and shared TechnicalIcon component reused; no raw reference asset or personal elements published.
