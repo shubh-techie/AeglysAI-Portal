@@ -6,7 +6,7 @@ Canonical sources: scripts/community for collection/validation/reporting, src/da
 
 Acceptance: accessible responsive routes/links, source/date attribution, privacy-minimal allowlists, missing-data/error states, no fake counts/claims. VERIFIED plus explicit publication permission and reviewed provenance required for showcases. Only approved closed-period reports may publish. October 2026 remains open; no cumulative-to-monthly reconstruction.
 
-Validation/traceability: scripts/community/*.test.mjs API failure/pagination/validation/permission/aggregation tests and scripts/site.test.mjs route/metadata/assets/privacy checks. See [sprint review](../community/SPRINT_REVIEW.md) for actual results/blockers. COM-003B live intake blocked by absent authorized service; COM-008B final upstream compatibility blocked by upstream commit/approval pending for COM-008A.
+Validation/traceability: scripts/community/*.test.mjs API failure/pagination/validation/permission/aggregation tests and scripts/site.test.mjs route/metadata/assets/privacy checks. See [sprint review](../community/SPRINT_REVIEW.md) for actual results/blockers. COM-003B live intake blocked by absent authorized service; COM-008B source contract pinned; final activity publication blocked by owner/data approval.
 
 ## Implemented behavior and requirements-to-tests traceability
 
@@ -29,3 +29,5 @@ Acceptance/tests: site.test.mjs COM-003B-FIX-001 asserts five choices, qualifica
 HACK-VISUAL-001 (2026-10-11): shared EventCard/ChallengeDiagram now render the five existing choices with code-authored conceptual SVGs, HTML focus/minimum prototypes and larger diagrams at existing detail anchors. [SPEC-018](SPEC-018-challenge-architecture-visuals.md) governs this visual enhancement; qualification/team/submission/judging rules unchanged.
 
 HACK-CHALLENGE-006 extends selections/gallery categories through the canonical Portal list. [SPEC-019](SPEC-019-everyday-ai-challenge.md) and [ADR-010](../adr/ADR-010-everyday-ai-portal-extension.md) explicitly distinguish the sixth choice from upstream five-track authority. No evidence/monthly contract enum change.
+
+COM-PIN-001: [published source provenance](../community/CONTRACTS.md) supersedes local-only/source-approval blockers for the four pinned evidence contracts. All schema/validator/fixture bytes match public main revision 711c1556e27bd226c08fb6a8c7b0d9040b4c88ee. Data publication, consent, independence and immutable report review remain separately gated; no synthetic activity published.

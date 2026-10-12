@@ -32,5 +32,42 @@
   },
   "requirements.txt": {
     "sha256": "d369a31d6612734edb4fd87c8ad12610429e2086cf43305a6d3a1c47848dae2b"
+  },
+  "source": {
+    "repository": "https://github.com/shubh-techie/AeglysAI",
+    "commit": "711c1556e27bd226c08fb6a8c7b0d9040b4c88ee",
+    "referenceBranch": "main",
+    "observedMainCommit": "711c1556e27bd226c08fb6a8c7b0d9040b4c88ee",
+    "mainReachability": "identical",
+    "public": true,
+    "verifiedAt": "2026-10-12T01:26:47Z",
+    "status": "PUBLISHED_MAIN_VERIFIED",
+    "approvalBasis": "User-supplied approved source candidate, verified public main and exact immutable source bytes; activity publication remains separately gated."
+  },
+  "fixtures": {
+    "community/adoption/fixtures/invalid/maintainer-not-independent.json": "8d254332499416c010ea2f3f6c8eb8efd2ad79beab6add8607f066e8473fbcbd",
+    "community/adoption/fixtures/invalid/no-execution.json": "efe9f7e82bec335adfb9dbbe8f50ab72242481e16094debd6ebc30990608d47c",
+    "community/adoption/fixtures/invalid/unknown-relationship.json": "16cd206326d9f46687a43ff8dcbd9a06c27d46e75e1da1c387c006e35ac483b5",
+    "community/adoption/fixtures/valid/synthetic-integration.json": "94ed21701d100f50b281d03594e95b54c40e8dda410f05eaf4b8e1026bc5978e",
+    "community/adoption/fixtures/valid/synthetic-reproduction.json": "047eb1daaacb5a7aa3794f86902b3f9b9f9717060fec206c987c262d14ac2a68",
+    "community/contributors/fixtures/invalid/no-consent.json": "d326e559c6eea637d41994a1d6bbf0d1e11d2d278773c21b2a675a4729f275a1",
+    "community/contributors/fixtures/invalid/withdrawn-credit-retained.json": "525f305968628606cbe2cfc816eee236c4197cb98d18e5258843ffa42165b815",
+    "community/contributors/fixtures/valid/synthetic-recognition.json": "8c5e9b5d1d488bf5b345c917b1c445eb438d5c2d023725158cff4b74912484f5",
+    "community/contributors/fixtures/valid/synthetic-withdrawal.json": "d5205d87a07142d01d791f594f19c9c3af01ed770bc3e29d5cff91a8cd6443c2",
+    "community/evidence/fixtures/invalid/inconsistent-count.json": "52e05c32d8b418b4a8285632744380e61b2fdabf9c66a280c9714346e3002a41",
+    "community/evidence/fixtures/invalid/missing-definition.json": "8182a30c7f7b5e6c6542bc6b6efd5bcfe7f0f069a1aa1c8a1a82d52e183e818d",
+    "community/evidence/fixtures/invalid/personal-data-field.json": "b42b54bb52cec74ddcedaafc91b7a71413e567ac7779b5604931eb93a255f9fc",
+    "community/evidence/fixtures/invalid/reversed-period.json": "bd9b6507528ef82caa866984bba617e83111d3dabbeb9bd382ca864c8824a690",
+    "community/evidence/fixtures/valid/synthetic-all-levels.json": "70792e8df4670dc49c8cbe9620c7a3d16f436a93ca270e3f84c3686340de35e2",
+    "community/reporting/fixtures/invalid/incorrect-period.json": "1c5ef7755cf10d4a1c30ff355c6fa17eebb12e24db6825b743bb6d7ae327a1fd",
+    "community/reporting/fixtures/invalid/unapproved-publication.json": "6ad67bd589f63368dd68f35a832ec29c489efb13e7367263b0e1fdb8172ce2d6",
+    "community/reporting/fixtures/invalid/unknown-evidence.json": "daa23ea35f2cf9fe2b459e0a0e229e20aa9aac49cc2849d9c8a24663d31c3dce",
+    "community/reporting/fixtures/invalid/wrong-total.json": "ff2c63aaf39fa20563c673953f70ac16ed65622935020d1503f26f1604ecf59e",
+    "community/reporting/fixtures/snapshots/monthly-revision-1.json": "eb915aa0ad77c59003861f586c6bc3aa6034bea6cb0ff61c188d8392a738369b",
+    "community/reporting/fixtures/snapshots/source-evidence.json": "70792e8df4670dc49c8cbe9620c7a3d16f436a93ca270e3f84c3686340de35e2",
+    "community/reporting/fixtures/snapshots/verified-synthetic-evidence.json": "21dcf643f5472bbaa54dbaf6cadf23a2901ae7d761f495d4b465a03bca4ef7ae",
+    "community/reporting/fixtures/valid/synthetic-approved-monthly.json": "eb915aa0ad77c59003861f586c6bc3aa6034bea6cb0ff61c188d8392a738369b",
+    "community/reporting/fixtures/valid/synthetic-monthly.json": "9c054ba1dbce2b17c8ede2b3dfdbbd74dcb772eb64ce0c1a5f94019d6f191927",
+    "community/reporting/fixtures/valid/synthetic-revised-monthly.json": "5bd1683909dde58d74036ff50991662fed033029366acf15634bb00f903ad371"
   }
 }

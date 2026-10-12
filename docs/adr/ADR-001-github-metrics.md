@@ -8,3 +8,5 @@ Alternatives: database/CMS/serverless writes rejected as unnecessary/unauthorize
 Consequences: reviewer action needed to approve records; unavailable states remain until real evidence/consent/service exist. Test privacy gates/failure paths and existing routes. SPEC-011 and sprint review record validation.
 
 COM-INTEGRATION-001 update: [ADR-008](ADR-008-evidence-contract-integration.md) governs exact local upstream contracts, offline Python validators, separate owner approvals and provisional release compatibility. Earlier Portal-only adoption/report shapes and COM-008A absence claims are superseded; no upstream version altered. GitHub observations and project metadata remain distinct from reviewed community evidence.
+
+COM-PIN-001: [published source provenance](../community/CONTRACTS.md) supersedes local-only/source-approval blockers for the four pinned evidence contracts. All schema/validator/fixture bytes match public main revision 711c1556e27bd226c08fb6a8c7b0d9040b4c88ee. Data publication, consent, independence and immutable report review remain separately gated; no synthetic activity published.
