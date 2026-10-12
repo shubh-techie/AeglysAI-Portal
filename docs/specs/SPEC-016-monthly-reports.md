@@ -1,12 +1,12 @@
 # SPEC-016 — COM-008B: Draft monthly reporting
 
-Recorded 2026-10-11 before implementation. Scope: Draft monthly reporting in static Astro, preserving portal routes/themes. Status: Draft scaffold IMPLEMENTED and TESTED; upstream contract/publication BLOCKED; no publication/deployment authorization.
+Recorded 2026-10-11 before implementation. Scope: Draft monthly reporting in static Astro, preserving portal routes/themes. Status: Draft scaffold IMPLEMENTED and TESTED; source contract pin VERIFIED; activity publication BLOCKED; no publication/deployment authorization.
 
 Canonical sources: scripts/community for collection/validation/reporting, src/data/community for explicitly reviewed public records, COM-001 contract in [contract provenance](../community/CONTRACTS.md). Fixtures are tests only. Unknown data is unavailable, never zero.
 
 Acceptance: accessible responsive routes/links, source/date attribution, privacy-minimal allowlists, missing-data/error states, no fake counts/claims. VERIFIED plus explicit publication permission and reviewed provenance required for showcases. Only approved closed-period reports may publish. October 2026 remains open; no cumulative-to-monthly reconstruction.
 
-Validation/traceability: scripts/community/*.test.mjs API failure/pagination/validation/permission/aggregation tests and scripts/site.test.mjs route/metadata/assets/privacy checks. See [sprint review](../community/SPRINT_REVIEW.md) for actual results/blockers. COM-003B live intake blocked by absent authorized service; COM-008B final upstream compatibility blocked by upstream commit/approval pending for COM-008A.
+Validation/traceability: scripts/community/*.test.mjs API failure/pagination/validation/permission/aggregation tests and scripts/site.test.mjs route/metadata/assets/privacy checks. See [sprint review](../community/SPRINT_REVIEW.md) for actual results/blockers. COM-003B live intake blocked by absent authorized service; COM-008B source contract pinned; final activity publication blocked by owner/data approval.
 
 ## Implemented behavior and requirements-to-tests traceability
 
@@ -20,6 +20,8 @@ Acceptance traceability: public-export.test.mjs rejects nested private Workspace
 
 ## COM-INTEGRATION-001 — authoritative contracts, 2026-10-11
 
-[ADR-008](../adr/ADR-008-evidence-contract-integration.md) and [integration guide](../community/INTEGRATION_GUIDE.md) supersede earlier schema/COM-008A absence/mapping statements. Local current upstream bytes and semantic validators copied exactly; version remains 1.0.0, interoperability PROVISIONAL pending approved immutable source commit. Offline Python build/test dependency; bounded parsing and local artifact integrity. Distinct owner digest/ID authorization is mandatory, not source-supplied verification. No approved production records. See [requirements-to-tests](../community/TRACEABILITY.md).
+[ADR-008](../adr/ADR-008-evidence-contract-integration.md) and [integration guide](../community/INTEGRATION_GUIDE.md) supersede earlier schema/COM-008A absence/mapping statements. Local current upstream bytes and semantic validators copied exactly; version remains 1.0.0, source pin PUBLISHED_MAIN_VERIFIED; activity publication separately gated. Offline Python build/test dependency; bounded parsing and local artifact integrity. Distinct owner digest/ID authorization is mandatory, not source-supplied verification. No approved production records. See [requirements-to-tests](../community/TRACEABILITY.md).
 
 HACK-CHALLENGE-006: the Portal list now has six choices, including AI for Everyday Life as an explicit extension pending COM-003A alignment. Project validation/filtering derives from that list (sixth filter index 5); dashboard/report evidence levels, units and contract schemas remain unchanged. No new participation/adoption counts inferred. [SPEC-019](SPEC-019-everyday-ai-challenge.md) records content, Form mapping and upstream requirements.
+
+COM-PIN-001: [published source provenance](../community/CONTRACTS.md) supersedes local-only/source-approval blockers for the four pinned evidence contracts. All schema/validator/fixture bytes match public main revision 711c1556e27bd226c08fb6a8c7b0d9040b4c88ee. Data publication, consent, independence and immutable report review remain separately gated; no synthetic activity published.

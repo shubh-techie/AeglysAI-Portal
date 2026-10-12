@@ -1,6 +1,6 @@
 # ADR-008 — COM-INTEGRATION-001: authoritative offline contracts
 
-Date 2026-10-11. Status IMPLEMENTED locally; interoperability PROVISIONAL until source files are committed and owner approved. Research repository read-only. No release, deployment or approved upstream commit inferred from checkout HEAD.
+Date 2026-10-11. Status IMPLEMENTED; source pin PUBLISHED_MAIN_VERIFIED at 711c1556e27bd226c08fb6a8c7b0d9040b4c88ee by COM-PIN-001. Research repository read-only; source publication is not activity permission or Portal deployment.
 
 Decision: copy four actual local upstream Draft 2020-12 schemas, semantic validators and synthetic fixtures byte-for-byte under scripts/community/upstream; pin SHA-256 in MANIFEST.json. Legacy evidence schema path is a compatibility symlink to the authoritative copy. No network schema resolution or evidence URL retrieval. Use upstream Python validators rather than extending an incomplete JavaScript schema subset. Pinned Python requirements add an offline build/test dependency; no browser dependency, API, accounts, database or CMS. Build workflow prepares a local virtual environment; no new publication authority.
 
@@ -12,4 +12,8 @@ GitHub cumulative observations retain their existing collector format; they are 
 
 COM-008A exists locally. Generate pending 1.0.0 impact drafts only from pinned COM-001 source files; avoid cross-source summation without human deduplication review. Monthly publication validates sources, prior revisions, coverage, quality, closed period and source approval plus independent owner authorization. Retain immutable old reports/source bytes privately in the approved artifact root; publishing prior revisions needs explicit further review, especially after withdrawal.
 
-Alternatives: JS-only reimplementation rejected for semantic drift; runtime remote verification rejected for privacy and untrusted URL risk. Added build dependency and manual approval complexity are intentional. The same-version evidence schema was tightened during uncommitted upstream work. No published earlier 1.0.0 baseline has been established; if earlier bytes were approved/released, upstream must resolve a version change before claiming immutable 1.0.0 interoperability. Do not silently rewrite source version.
+Alternatives: JS-only reimplementation rejected for semantic drift; runtime remote verification rejected for privacy and untrusted URL risk. Added build dependency and manual approval complexity are intentional. Historical context: evidence schema tightened during local draft work. COM-PIN-001 now verifies its exact current 1.0.0 bytes in the user-approved published revision. No schema content/version changed; no earlier release history inferred. Future incompatibilities require explicit source version/approval review.
+
+## COM-PIN-001 — published source pin
+
+The user-approved candidate is verified as public main HEAD; all four schemas, validator/helper/requirements files and fixture bytes match. MANIFEST.json now records authoritative commit/provenance and fixture hashes, verified offline by integration tests. No schema/helper/fixture content changed. Earlier local-draft/source-version concerns are historical and superseded for this exact reference; authentic data, independent owner authorization and privacy/consent/report-revision gates remain. No remote CI/release/deployment claim.

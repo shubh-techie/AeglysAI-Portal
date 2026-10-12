@@ -1,6 +1,6 @@
 # Community cross-repository integration — COM-INTEGRATION-001
 
-Status: locally implemented and tested, **PROVISIONAL** interoperability. All source contracts declare 1.0.0; upstream working-tree files are not assumed committed/approved. Research repository was read-only. [Inventory](CONTRACT_INVENTORY.json), [decision](../adr/ADR-008-evidence-contract-integration.md), [traceability](TRACEABILITY.md).
+Status: **PUBLISHED_MAIN_VERIFIED** source pin. Four 1.0.0 schemas, semantic validators and fixtures match public main revision 711c1556e27bd226c08fb6a8c7b0d9040b4c88ee. This user-supplied approved candidate is an immutable source reference; data truth/consent/publication remains separately gated. Research repository was read-only. [Inventory](CONTRACT_INVENTORY.json), [decision](../adr/ADR-008-evidence-contract-integration.md), [traceability](TRACEABILITY.md).
 
 ## Contract inventory and comparison
 
@@ -8,7 +8,7 @@ The inventory records old Portal hash (evidence only), current upstream/Portal h
 
 Recognition: consent not-requested/granted/withdrawn, public-attribution scope, accepted contribution and reviewed draft/published/withdrawn state; withdrawn record strips reference/credit. Adoption: usage/independent-adoption/independent-reproduction/citation; external + independent + executed required for independent claims; current/superseded/withdrawn, valid acyclic correction chains. Monthly: pending/approved/withdrawn, complete/incomplete quality, draft/verified metrics, partial/full coverage, pinned snapshots and ordered immutable revisions. These are snapshot assertions; historical transition authentication remains the owner's private administrative responsibility, not an inferred event from current JSON.
 
-No upstream version changed. Same-version schema tightening is provisional uncommitted draft evolution; if earlier 1.0.0 bytes were actually published/approved, upstream owner must resolve versioning before final interoperability. No such release established here.
+No upstream version or schema content changed in COM-PIN-001. Earlier draft evidence tightening is historical; current exact 1.0.0 bytes now match the approved published candidate. No Release/tag or earlier public version history inferred.
 
 ## Local validation setup
 
@@ -29,7 +29,7 @@ The bridge uses the local ignored virtual environment when present, otherwise py
 
 Manually sanitize exports per [Workspace guide](WORKSPACE_EXPORTS.md). Never put raw/private exports in this public repository. Existing approved-metrics.json wrapper retains snapshot format; approved-evidence.json retains evidence wrapper. recognition.json uses canonical recognition document; adoptions.json now uses canonical adoption document, not the previous Portal array. reports.json is an array of canonical monthly contracts. projects.json keeps established project presentation metadata; no upstream project contract invented. No production input files are currently supplied.
 
-The separately owner-maintained publication-approvals.json is an array of kind (metrics/evidence/recognition/adoption/monthly/projects), sha256, reviewUrl, approvedAt and recordIds. Digest is SHA-256 of JSON.stringify(document), separate from upstream source SHA-256 of exact file bytes. Projects digest wraps {data_kind:PUBLIC_AGGREGATE,records}; other kinds digest their canonical document/snapshot. recordIds allowlists individual recognition/adoption/project IDs; evidence/monthly approval covers the complete digest-bound document. Future dates, mismatches, duplicate authorizations, unsafe URLs and missing permission fail closed. Do not generate approvals from source VERIFIED fields. Owner must review truth, consent, safe provenance and upstream release approval first. The Git-managed allowlist is operator authority, not a client API.
+The separately owner-maintained publication-approvals.json is an array of kind (metrics/evidence/recognition/adoption/monthly/projects), sha256, reviewUrl, approvedAt and recordIds. Digest is SHA-256 of JSON.stringify(document), separate from upstream source SHA-256 of exact file bytes. Projects digest wraps {data_kind:PUBLIC_AGGREGATE,records}; other kinds digest their canonical document/snapshot. recordIds allowlists individual recognition/adoption/project IDs; evidence/monthly approval covers the complete digest-bound document. Future dates, mismatches, duplicate authorizations, unsafe URLs and missing permission fail closed. Do not generate approvals from source VERIFIED fields. Owner must review truth, consent, safe provenance and the pinned upstream source first. The Git-managed allowlist is operator authority, not a client API.
 
 Recognition shows approved anonymous/artifact credits, never names/emails inferred from GitHub. Adoption displays exact claim kind, evidence, executed outcome, limitations and citations; usage/citation do not imply independent adoption. Withdrawn/superseded records remain in local contract history but are excluded from public cards. Projects require both existing VERIFIED/consent gate and distinct owner allowlisting; project records never become adoption.
 
@@ -47,4 +47,4 @@ Approved reports use fixed src/data/community/report-artifacts as the operator-c
 
 ## Roadmap and remaining gates
 
-Obtain an approved immutable upstream commit and recompare hashes; review source schema-version immutability; approve actual sanitized exports/record permissions; set durable artifact/archive/withdrawal policy; configure private Workspace Forms/permissions; resolve documented disclosure findings and existing dependency advisories. No real metrics/activity/recognition/adoption or report approval added. No commit/push/PR/merge/deployment in this task.
+The source commit gate is resolved by COM-PIN-001. Approve actual sanitized exports/record permissions; set durable artifact/archive/withdrawal policy; configure private Workspace Forms/permissions; resolve documented disclosure findings and existing dependency advisories. No real metrics/activity/recognition/adoption or report approval added. No commit/push/PR/merge/deployment in this task.

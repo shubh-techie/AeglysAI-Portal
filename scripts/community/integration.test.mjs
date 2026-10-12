@@ -8,7 +8,13 @@ const approval=(kind,d,recordIds=[])=>[{kind,sha256:digest(d),reviewUrl:'https:/
 const later={now:new Date('2026-11-03T00:00:00Z')};
 test('INTEGRATION-001 pinned schema and validator hashes remain exact',()=>{
  const manifest=JSON.parse(readFileSync(join(root,'MANIFEST.json'),'utf8'));
- for(const [name,m] of Object.entries(manifest)){
+ const {source,fixtures,...files}=manifest;
+ assert.equal(source.commit,'711c1556e27bd226c08fb6a8c7b0d9040b4c88ee');
+ assert.equal(source.observedMainCommit,source.commit);
+ assert.equal(source.public,true);assert.equal(source.status,'PUBLISHED_MAIN_VERIFIED');
+ assert.equal(Object.keys(fixtures).length,24);
+ for(const [path,sha]of Object.entries(fixtures))assert.equal(createHash('sha256').update(readFileSync(join(root,path))).digest('hex'),sha,path);
+ for(const [name,m] of Object.entries(files)){
   const path=m.path??`scripts/community/${name}`;
   assert.equal(createHash('sha256').update(readFileSync(join(root,path))).digest('hex'),m.sha256,name);
  }
