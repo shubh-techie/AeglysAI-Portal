@@ -12,7 +12,7 @@ part of the single AeglysAI AI/ML and Cybersecurity Hackathon. AeglysAI is an op
 exploring explainable, risk-aware and adaptive authorization for secure and resilient
 cloud-native distributed systems: https://github.com/shubh-techie/AeglysAI.
 
-Five choices: Smart Login Guardian, Find the Anomaly, API Traffic Watch, Explain My Security Alert and Predict the Outage. Dates to be announced.
+Six Portal choices: Smart Login Guardian, Find the Anomaly, API Traffic Watch, Explain My Security Alert and Predict the Outage; AI for Everyday Life. Dates to be announced.
 
 Your proposed assignment is [event]. Exact dates, time zone and review window are
 [dates/time zone or pending confirmation]. Event rules and prizes remain subject to
@@ -48,3 +48,5 @@ Creator & Maintainer, AeglysAI
 ## Current rule alignment — 2026-10-11
 
 COM-003B-FIX-001 supersedes older proposal wording: one AI/ML and Cybersecurity Hackathon, five challenges, mandatory individual qualification (A/B/C sufficient, Model D not required), teams of one to four with every member qualified/selected. Working executable project and maximum-two-minute demonstration video required; Round 1 selects finalists, Round 2 five-minute live demo plus five-minute Q&A over Google Meet ranks them. See the [current handbook](README.md), [submission requirements](SUBMISSION_REQUIREMENTS.md) and [judging framework](JUDGING_FRAMEWORK.md). Dates/Forms remain unconfigured; no private rosters or scores published.
+
+HACK-CHALLENGE-006: [AI for Everyday Life](AI_FOR_EVERYDAY_LIFE.md) is the sixth Portal-defined choice (ai-for-everyday-life), pending upstream COM-003A alignment. Organizers must add the exact choice to relevant Google Forms manually; Forms have not been edited. All individual qualification/team/video/judging requirements unchanged.

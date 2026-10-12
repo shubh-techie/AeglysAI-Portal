@@ -6,10 +6,10 @@ interface Props {challenge:{id:string;title:string};index:number;}
 const {challenge,index}=Astro.props;const visual=challengeVisuals[challenge.id];
 ---
 <article class="challenge-tile" data-challenge={challenge.id}>
- <header><span class="challenge-number">Challenge {String(index+1).padStart(2,'0')}</span><span class="challenge-difficulty">Beginner-friendly</span></header>
+ <header><span class="challenge-number">Challenge {String(index+1).padStart(2,'0')}</span><span class="challenge-difficulty">{visual.difficulty??'Beginner-friendly'}</span></header>
  <h3>{challenge.title}</h3><p class="challenge-problem">{visual.problem}</p>
  <ChallengeDiagram id={challenge.id} scope="tile"/>
- <dl><div><dt>AI/ML &amp; security focus</dt><dd>{visual.focus}</dd></div><div><dt>Minimum prototype</dt><dd>{visual.minimum}</dd></div></dl>
+ <dl><div><dt>Technical focus</dt><dd>{visual.focus}</dd></div><div><dt>Minimum prototype</dt><dd>{visual.minimum}</dd></div></dl>
  <a class="challenge-details" href={`${href('hackathons/events')}#${challenge.id}`}>Challenge rules →<span class="sr-only"> {challenge.title}</span></a>
 </article>
 <style>

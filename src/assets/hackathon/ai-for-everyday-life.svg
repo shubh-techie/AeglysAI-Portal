@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="challenge-svg" viewBox="0 0 480 320" role="img" aria-labelledby="ai-for-everyday-life-title ai-for-everyday-life-description">
+<title id="ai-for-everyday-life-title">AI for Everyday Life: conceptual architecture</title>
+<desc id="ai-for-everyday-life-description">Real-world problem to privacy-safe user input or data to AI or ML processing to a useful outcome. Conceptual only; no measured results or medical, legal or financial decision claims.</desc>
+<style>.challenge-svg .node{fill:var(--diagram-surface,#fff);stroke:var(--diagram-line,#bdccd9);stroke-width:1.5}.challenge-svg .flow{fill:none;stroke:var(--diagram-accent,#0b766c);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.challenge-svg .icon{fill:none;stroke:var(--diagram-accent,#0b766c);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.challenge-svg .label{fill:var(--diagram-text,#203348);font:600 19px system-ui,sans-serif;text-anchor:middle}.challenge-svg .step{fill:var(--diagram-muted,#486078);font:13px ui-monospace,monospace}.challenge-svg .secondary{stroke:var(--diagram-secondary,#255ea0)}</style>
+<defs><marker id="ai-for-everyday-life-arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 6 3 0 6" fill="none" stroke="var(--diagram-accent,#0b766c)" stroke-width="1.5"/></marker></defs>
+<rect x="1" y="1" width="478" height="318" rx="16" fill="var(--diagram-wash,#eff5fa)"/>
+<rect class="node" x="26" y="26" width="190" height="106" rx="10"/>
+<text class="step" x="38" y="46">01</text>
+<g class="icon " transform="translate(97 39)"><path d="M5 6h38v27H25L12 44V33H5zM14 15h20M14 23h12"/></g>
+<text class="label" x="121" y="114">Everyday problem</text>
+<rect class="node" x="264" y="26" width="190" height="106" rx="10"/>
+<text class="step" x="276" y="46">02</text>
+<g class="icon " transform="translate(335 39)"><path d="M8 5h32v38H8zM14 14h20M14 23h12M14 32h17"/></g>
+<text class="label" x="359" y="114">Input / data</text>
+<rect class="node" x="264" y="190" width="190" height="106" rx="10"/>
+<text class="step" x="276" y="210">03</text>
+<g class="icon " transform="translate(335 203)"><path d="M12 12h24v24H12zM18 3v9m12-9v9M18 36v9m12-9v9M3 18h9m-9 12h9M36 18h9m-9 12h9M19 19h10v10H19z"/></g>
+<text class="label" x="359" y="278">AI / ML processing</text>
+<rect class="node" x="26" y="190" width="190" height="106" rx="10"/>
+<text class="step" x="38" y="210">04</text>
+<g class="icon secondary" transform="translate(97 203)"><path d="M5 5h38v32H5zM15 22l6 6 13-14M24 37v7m-10 0h20"/></g>
+<text class="label" x="121" y="278">Useful outcome</text>
+<path class="flow" d="M220 79h38" marker-end="url(#ai-for-everyday-life-arrow)"/>
+<path class="flow" d="M359 137v46" marker-end="url(#ai-for-everyday-life-arrow)"/>
+<path class="flow" d="M258 243h-37" marker-end="url(#ai-for-everyday-life-arrow)"/>
+</svg>

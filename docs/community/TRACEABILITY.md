@@ -14,3 +14,5 @@
 | Hackathon correction and portal regressions | Existing components/rules retained | site.test.mjs finalized one-hackathon rules, media/speaking/SEO/links |
 
 These tests establish local structure/logic, not authentic source truth, real consent, independent outcomes, hosted CI or deployment. Latest executed check/build/test outcomes in development log. No upstream release approval inferred from local fixtures. Live API traffic and private Workspace end-to-end checks remain unperformed/unconfigured.
+
+HACK-CHALLENGE-006: everyday-ai.test.mjs verifies six choices, explicit extension provenance, safe requirements and unchanged eligibility/judging; updated vector tests verify six assets/anchors. Project list/category validation derives from one Portal list; native index-five filtering is checked in an isolated fixture build. Monthly schema has no challenge enum; no invented track totals.

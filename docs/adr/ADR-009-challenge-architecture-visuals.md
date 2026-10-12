@@ -11,3 +11,5 @@ HTML retains summaries, difficulty, focus, minimum prototype and conceptual flow
 Alternatives: raster/generated posters rejected by user scope and readability; full portal diagram reuse rejected because it communicates different implementation claims. Inline SVG slightly increases two HTML documents but avoids image requests, layout shifts and new bundles. Changing diagrams requires source review and XML/active-content tests.
 
 Validation: SPEC-018 and visual handover record actual check/build/tests, local screenshots and browser limits. Requested new branch is not created from the combined dirty checkout; current feature branch/work retained and a visual-only review patch prepared. Future authorized separation must account for related finalized challenge data/workflow, not include unrelated sprint changes.
+
+HACK-CHALLENGE-006 update: [ADR-010](ADR-010-everyday-ai-portal-extension.md) adds one SVG/Portal topic, changes current grid to three columns × two rows, retains the original five vectors and all rules. Earlier 3+2 decision is historical.

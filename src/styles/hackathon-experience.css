@@ -141,9 +141,7 @@
   .hackathon-experience .hx-event { transition: none; }
 }
 
-/* Five architecture tiles: centered 3+2 without changing other grids. */
-.hackathon-experience .challenge-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:20px;margin-top:32px;}
-.hackathon-experience .challenge-grid>article{grid-column:span 2;}
-.hackathon-experience .challenge-grid>article:nth-child(4){grid-column:2 / span 2;}
-@media(max-width:1100px){.hackathon-experience .challenge-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.hackathon-experience .challenge-grid>article,.hackathon-experience .challenge-grid>article:nth-child(4){grid-column:auto;}}
-@media(max-width:760px){.hackathon-experience .challenge-grid{grid-template-columns:1fr;}}
+/* Six architecture tiles: 3×2, then two/one columns at existing breakpoints. */
+ .hackathon-experience .challenge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:1fr;gap:20px;margin-top:32px;}
+@media(max-width:1100px){.hackathon-experience .challenge-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:760px){.hackathon-experience .challenge-grid{grid-template-columns:1fr;grid-auto-rows:auto;}}

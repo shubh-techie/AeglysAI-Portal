@@ -1,6 +1,6 @@
 # Current launch gate — COM-003B-FIX-001, 2026-10-11
 
-One hackathon with five challenges; registration is Opening Soon. Required before operation: approved registration/qualification/project responder URLs, private Sheets applicant/team/judging permissions, private Drive consent/evidence controls, Google Meet accessibility/logistics, deadline/time-zone/capacity configuration and conduct/appeal channels. Mandatory individual A/B/C qualification, selected rosters (one to four), executable projects, maximum-two-minute videos and two-round judging are finalized; no judges/participants/results confirmed. See [current operations](OPERATIONS.md).
+One hackathon with six Portal challenges (sixth pending COM-003A alignment); registration is Opening Soon. Required before operation: approved registration/qualification/project responder URLs, private Sheets applicant/team/judging permissions, private Drive consent/evidence controls, Google Meet accessibility/logistics, deadline/time-zone/capacity configuration and conduct/appeal channels. Mandatory individual A/B/C qualification, selected rosters (one to four), executable projects, maximum-two-minute videos and two-round judging are finalized; no judges/participants/results confirmed. See [current operations](OPERATIONS.md).
 
 ## Retained historical launch-readiness snapshots (superseded proposals)
 
@@ -109,3 +109,5 @@ requirements must also be finalized before intake. Registration launch remains p
 ## Current rule alignment — 2026-10-11
 
 COM-003B-FIX-001 supersedes older proposal wording: one AI/ML and Cybersecurity Hackathon, five challenges, mandatory individual qualification (A/B/C sufficient, Model D not required), teams of one to four with every member qualified/selected. Working executable project and maximum-two-minute demonstration video required; Round 1 selects finalists, Round 2 five-minute live demo plus five-minute Q&A over Google Meet ranks them. See the [current handbook](README.md), [submission requirements](SUBMISSION_REQUIREMENTS.md) and [judging framework](JUDGING_FRAMEWORK.md). Dates/Forms remain unconfigured; no private rosters or scores published.
+
+HACK-CHALLENGE-006 launch gate: add **AI for Everyday Life** to relevant Google Form challenge choices, map ai-for-everyday-life in sanitized exports, and separately align the upstream COM-003A contract. Portal UI does not edit Forms or imply registration is open. Historical five-choice snapshots below are preserved.

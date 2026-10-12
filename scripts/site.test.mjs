@@ -623,8 +623,8 @@ test("community empty states never imply unreviewed participation or adoption", 
 
 test("COM-003B-FIX-001 enforces single-event qualification, teams, executable submissions and distinct judging rounds",()=>{
  const landing=read("hackathons/index.html"),rules=read("hackathons/events/index.html"),submission=read("community/submit/index.html");
- for(const title of ["Smart Login Guardian","Find the Anomaly","API Traffic Watch","Explain My Security Alert","Predict the Outage"])assert.ok(landing.includes(title));
- assert.equal((landing.match(/Challenge rules →/g)||[]).length,5);
+ for(const title of ["Smart Login Guardian","Find the Anomaly","API Traffic Watch","Explain My Security Alert","Predict the Outage","AI for Everyday Life"])assert.ok(landing.includes(title));
+ assert.equal((landing.match(/Challenge rules →/g)||[]).length,6);
  assert.doesNotMatch(landing,/Three build windows|THREE CHALLENGES|hackathon-02|hackathon-03/);
  for(const html of [landing,rules,submission]){
   assert.match(html,/Every member, including the leader/);
