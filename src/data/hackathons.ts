@@ -97,8 +97,8 @@ export const submissionRequirements = [
 export const optionalSubmissionMaterials = ["Deployed demo URL", "Benchmark results", "Research notes"];
 export const events = [{ ...legacyEvents[0], id: "ai-ml-cybersecurity", title: program.title,
  launch: "To be announced", submission: "To be announced", themes: ["AI/ML", "Cybersecurity"],
- problem: "Build and explain a working intelligent security solution.",
- challenge: "Choose one of the five approved challenges. Any programming language or framework; standalone implementations are acceptable after mandatory AeglysAI qualification.",
+ problem: "Build and explain a working intelligent solution for security or an everyday human problem.",
+ challenge: "Choose one of the six Portal challenges. Any programming language or framework; standalone implementations are acceptable after mandatory AeglysAI qualification.",
  deliverables: submissionRequirements,
 }];
 export const engineeringProblems = [

@@ -23,13 +23,13 @@ const resources = [
   { title: "Code of Conduct", note: "Expectations and pending reporting arrangements", url: "#code-of-conduct" },
 ];
 ---
-<Layout title="AI/ML and Cybersecurity Hackathon" description="One AeglysAI hackathon, five challenges, mandatory individual qualification and teams of one to four. Build a working project and compete through two rounds." socialImage={hackathonSocialPreview.image}>
+<Layout title="AI/ML and Cybersecurity Hackathon" description="One AeglysAI hackathon, six challenges, mandatory individual qualification and teams of one to four. Build a working project and compete through two rounds." socialImage={hackathonSocialPreview.image}>
   <div class="hackathon-experience">
     <SeriesHero/>
     <div class="container hx-content">
       <HackathonNav/>
       <section class="hx-section" id="challenges" aria-labelledby="challenges-heading">
-        <div class="hx-section-heading"><div><p class="hx-eyebrow">FIVE CHALLENGES / ONE HACKATHON</p><h2 id="challenges-heading">Understand. Measure. Adapt.</h2></div><span class="hx-status">DATES TO BE ANNOUNCED</span></div>
+        <div class="hx-section-heading"><div><p class="hx-eyebrow">SIX CHALLENGES / ONE HACKATHON</p><h2 id="challenges-heading">Understand. Measure. Adapt.</h2></div><span class="hx-status">DATES TO BE ANNOUNCED</span></div>
         <p class="hx-section-copy">{program.title}. Explore security problems across authorization, identity, risk, observability and incident response. Challenge themes describe work to investigate, not validated platform capabilities. Model D remains planned research.</p>
         <div class="challenge-grid">{challenges.map((challenge,index)=><EventCard challenge={challenge} index={index}/>)}</div>
       </section>

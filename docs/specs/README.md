@@ -71,3 +71,5 @@ and organizer follow-ups separately from public runtime records.
 - [SPEC-017 — contributor recognition integration](SPEC-017-contributor-recognition.md): provisional upstream credit/consent/withdrawal adapter.
 
 - [SPEC-018 — challenge architecture visuals](SPEC-018-challenge-architecture-visuals.md): five conceptual diagrams and responsive shared tiles.
+
+- [SPEC-019 — AI for Everyday Life](SPEC-019-everyday-ai-challenge.md): sixth Portal topic, safe prototype requirements and upstream follow-up.

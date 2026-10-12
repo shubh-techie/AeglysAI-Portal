@@ -18,9 +18,9 @@ Every team member completes these steps individually. See [qualification templat
 
 Individuals may compete. Teams have two to four members, maximum four, all individually qualified and selected, including the lead. One designated leader and organizer-issued unique team ID. No duplicate active membership; changes require organizer approval. Roster/registration mappings are verified in private Google Sheets, never published.
 
-## Five challenge options
+## Six Portal challenge options
 
-Select exactly one: Smart Login Guardian; Find the Anomaly; API Traffic Watch; Explain My Security Alert; Predict the Outage. Any programming language/framework. Standalone final implementations are acceptable after mandatory AeglysAI qualification. Submit a working MVP, executable prototype or functional proof of concept; slides or a documented walkthrough alone are insufficient.
+Select exactly one: Smart Login Guardian; Find the Anomaly; API Traffic Watch; Explain My Security Alert; Predict the Outage; AI for Everyday Life. Any programming language/framework. Standalone final implementations are acceptable after mandatory AeglysAI qualification. Submit a working MVP, executable prototype or functional proof of concept; slides or a documented walkthrough alone are insufficient.
 
 ## Submission and judging
 
@@ -33,3 +33,5 @@ Round 1 selects finalists; Round 2 ranks finalists using five-minute live demos 
 Forms collect registration, qualification and final submissions; private Sheets store applicant/team/judging administration; private Drive stores consent/supporting evidence. GitHub stores sanitized qualification and project code. No database/accounts/private-data API. Never publish participant contacts, credentials, private judging data or patent-related material. Publication consent is separate from eligibility/judging.
 
 Existing $300 award remains a proposal with unconfirmed funding; no new award or sponsor introduced. Certificates require actual completed role/requirements and organizer approval; registration alone does not earn one. See [certificate policy](CERTIFICATE_POLICY.md), [launch checklist](LAUNCH_READINESS.md) and [manual Workspace export guide](../community/WORKSPACE_EXPORTS.md). Final submissions do not guarantee an upstream merge. Maintainer review applies.
+
+HACK-CHALLENGE-006: [AI for Everyday Life](AI_FOR_EVERYDAY_LIFE.md) is the sixth Portal-defined choice (ai-for-everyday-life), pending upstream COM-003A alignment. Organizers must add the exact choice to relevant Google Forms manually; Forms have not been edited. All individual qualification/team/video/judging requirements unchanged.

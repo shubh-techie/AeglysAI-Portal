@@ -33,5 +33,12 @@
     "source": "https://github.com/shubh-techie/AeglysAI",
     "sourcePath": "community/hackathon/tracks/predict-the-outage.md",
     "referenceStatus": "LOCAL_CONTRACT_REMOTE_UNAVAILABLE"
+  },
+  {
+    "id": "ai-for-everyday-life",
+    "title": "AI for Everyday Life",
+    "source": null,
+    "sourcePath": "docs/hackathons/AI_FOR_EVERYDAY_LIFE.md",
+    "referenceStatus": "PORTAL_EXTENSION_UPSTREAM_PENDING"
   }
 ]

@@ -66,3 +66,5 @@ runtime metadata, with no private correspondence paths. No dependencies or hosti
 - [ADR-008 — authoritative community contracts](ADR-008-evidence-contract-integration.md): provisional exact schemas, offline semantic validation and owner publication gates.
 
 - [ADR-009 — challenge architecture SVGs](ADR-009-challenge-architecture-visuals.md): safe local vectors and shared card/detail rendering.
+
+- [ADR-010 — sixth Portal challenge](ADR-010-everyday-ai-portal-extension.md): explicit COM-003A extension provenance and unchanged evidence schemas.
