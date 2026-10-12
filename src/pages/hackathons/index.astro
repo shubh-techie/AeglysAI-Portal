@@ -4,6 +4,7 @@ import HackathonNav from "../../components/HackathonNav.astro";
 import SeriesHero from "../../components/hackathons/SeriesHero.astro";
 import EventCard from "../../components/hackathons/EventCard.astro";
 import HackathonRules from "../../components/hackathons/HackathonRules.astro";
+import CertificateShowcase from "../../components/hackathons/CertificateShowcase.astro";
 import ParticipantJourney from "../../components/hackathons/ParticipantJourney.astro";
 import PeopleSection from "../../components/hackathons/PeopleSection.astro";
 import FormCta from "../../components/hackathons/FormCta.astro";
@@ -61,15 +62,7 @@ const resources = [
         <div><p class="hx-eyebrow">PLANNED AWARD · USD</p><h2 id="prize-heading">{commonPrize ? `$${events[0].prize.amount}` : "Event prizes"}</h2><p class="hx-eyebrow">EXISTING PROPOSED AWARD · FUNDING UNCONFIRMED</p></div>
         <div><h3>Evidence deserves the spotlight.</h3><p>Prize eligibility and payment are subject to official event rules.</p><p class="hx-fine">Prize details subject to official event rules. {program.terms}</p>{!commonPrize && <ul>{events.map(event => <li>{event.title}: {event.prize.currency} ${event.prize.amount} · {event.prize.status}</li>)}</ul>}</div>
       </section>
-      <section class="hx-section" id="certificates" aria-labelledby="certificates-heading">
-        <p class="hx-eyebrow">DIGITAL CERTIFICATES</p><h2 id="certificates-heading">Recognition requires completed work.</h2><p class="hx-section-copy">Registration alone does not earn a certificate. Eligibility requires completion of the applicable event requirements; no certificates have been issued by this foundation work.</p>
-        <div class="hx-grid hx-tracks">
-          <article class="hx-card"><h3>Certificate of Participation</h3><p>Complete qualification, be selected, participate in the event and submit a valid final project meeting published minimum requirements.</p></article>
-          <article class="hx-card"><h3>Certificate of Finalist</h3><p>For officially selected finalists under published event criteria.</p></article>
-          <article class="hx-card"><h3>Certificate of Excellence / Winner</h3><p>For officially declared winners or recognized exceptional submissions. Exceptional recognition does not imply winning.</p></article>
-          <article class="hx-card"><h3>Certificate of Appreciation</h3><p>For judges, speakers and mentors who actually perform the corresponding role.</p></article>
-        </div><p class="hx-fine">Future certificate identifiers and private Google Sheets/Drive issuance records support later verification. Issuance timing, verification channel and minimum project criteria: TBD. No certificate database or verification service is implemented.</p>
-      </section>
+      <CertificateShowcase/>
       <PeopleSection/>
       <section class="hx-section" id="timeline"><h2>One event. Dates to be announced.</h2><p>Registration, qualification, selection, build window, final submission, technical screening and finalist demonstrations follow in that order. Deadlines and time zones are not yet configured.</p><FormCta kind="project" label="Submit Project" id="project-form-note"/></section>
       <HackathonRules/>
@@ -85,7 +78,7 @@ const resources = [
       <p class="hx-fine"><a class="hx-link" href={href("hackathons/sponsors")}>Become a Sponsor →</a></p>
       <section class="hx-final" aria-labelledby="final-heading">
         <p class="hx-eyebrow">READY TO BUILD?</p><h2 id="final-heading">Bring a question.<br/>Build the evidence.</h2><p>Join engineers, students and researchers exploring the future of adaptive security and resilient distributed systems.</p>
-        <div class="hx-actions"><FormCta kind="participant" label="Start Qualification" id="final-form-note"/><a class="hx-button" href={project.github}>View AeglysAI on GitHub <span aria-hidden="true">↗</span></a></div>
+        <div class="hx-actions"><FormCta kind="participant" label="Register for Hackathon" id="final-form-note"/><a class="hx-button" href={project.github}>View AeglysAI on GitHub <span aria-hidden="true">↗</span></a></div>
         <p class="hx-fine">Free participation · Event dates pending · Eligibility and official terms pending</p>
       </section>
     </div>

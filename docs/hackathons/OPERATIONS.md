@@ -1,8 +1,8 @@
 # Hackathon operations and Form configuration
 
-COM-003B-FIX-001, 2026-10-11. One AI/ML and Cybersecurity Hackathon; six Portal challenge options. Dates and official Google Forms unconfigured. Registration Opening Soon.
+COM-003B-FIX-001, 2026-10-11. One AI/ML and Cybersecurity Hackathon; six Portal challenge options. Dates remain unconfigured. Seven verified Google Form responder links are enabled by organizer follow-up; see [actual mapping](GOOGLE_FORMS_SETUP.md).
 
-Configure only approved public Google responder URLs in src/data/hackathonForms.ts: PARTICIPANT_REGISTRATION_URL, QUALIFICATION_SUBMISSION_URL and PROJECT_SUBMISSION_URL. Enable each corresponding open setting only after privacy, signed-out accessibility, consent/retention and terms are reviewed. Judge/speaker forms remain separate, optional configuration. No editor URLs, private IDs, contact-prefilled queries or fragments. Alias consumers derive from the same settings; never add competing URL sources.
+Configure only approved public Google responder URLs in src/data/hackathonForms.ts: PARTICIPANT_REGISTRATION_URL, QUALIFICATION_SUBMISSION_URL and PROJECT_SUBMISSION_URL. Enable each corresponding open setting only after privacy, signed-out accessibility, consent/retention and terms are reviewed. Judge, speaker/mentor, selected-team and guest forms use separate matching registry entries. No editor URLs, private IDs, contact-prefilled queries or fragments. Alias consumers derive from the same settings; never add competing URL sources.
 
 1. Individual registration through Google Forms; private Sheets applicant record, no automatic selection.
 2. Mandatory individual fork/clone/run A/B/C baseline, architecture/setup/observation/improvement/validation evidence. Model D knowledge unnecessary.

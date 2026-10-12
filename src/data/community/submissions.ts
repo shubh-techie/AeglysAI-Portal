@@ -1,4 +1,4 @@
 import challenges from './challenges.json';
-import { hackathonForms,publicFormUrl } from '../hackathonForms';
+import { hackathonForms,approvedFormUrl } from '../hackathonForms';
 export { challenges };
-export const submissionService=publicFormUrl(hackathonForms.project.url,hackathonForms.project.open);
+export const submissionService=approvedFormUrl(hackathonForms.project);

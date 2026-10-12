@@ -204,7 +204,8 @@ no active coding branch or completion date is inferred.
 | Sponsorship frontend and draft terms | COMPLETED / IMPLEMENTED | `280fd65`, merge `ba5c514`; sponsor records empty, intake closed, no payments or contributions implied |
 | Papers, proposed talks and literature/specification preparation | IN PROGRESS / IN PREPARATION | `/publications/` and research copy; no manuscripts, accepted talks, verified reference list or results supplied |
 | Hackathon organizer terms, judging, privacy and certificate operations | IN PROGRESS / IN PREPARATION | Existing draft handbook/operations; dates, eligibility, funding, contacts, people and issuance details remain TBD |
-| Live forms, event sessions, selection/results and certificate issuance | PLANNED | Five canonical form URLs null/closed, sponsor intake null/closed; no live workflow or issued artifact established |
+| Verified seven-stage Form mapping and publication/opening gates | IMPLEMENTED / TESTED | [OPS-001 specification](docs/specs/SPEC-020-hackathon-portal-operations.md); all seven verified links active; original sample certificate displayed |
+| Live forms, event sessions, selection/results and certificate issuance | PLANNED | Seven verified responder URLs enabled by organizer instruction; sponsor intake null/closed; no live workflow or issued artifact established |
 | Speaking & Presentations module | IMPLEMENTED LOCALLY | Listing/nav, shared cards/detail/PDF viewer and approval gates exist; ATAI completed, GICITE confirmed/upcoming, ETIC awaiting written confirmation, two proposals and shared details; full PDF remains private |
 | PR-triggered CI | PLANNED | Current Pages workflow triggers on main push/manual dispatch only |
 | Model D, telemetry/feedback and comparative experiments | PLANNED RESEARCH | Separate research repository scope; no implemented Model D or validated comparisons asserted here |
@@ -252,7 +253,7 @@ Configure official HTTPS Google Form responder URLs in `src/data/hackathonForms.
 alias for the participant registration setting. Event-specific registration URLs override
 the shared participant form; submission URLs are configured separately. Rebuild after changes.
 No authentication, participant database or application collection is added to this portal.
-Google Forms/Drive will initially handle applications; no live external workflow is configured here.
+Seven verified public Google Forms responder links are configured; collection links are enabled by organizer instruction. Private Sheets/Drive support administration outside the Portal.
 
 `src/data/hackathonPeople.ts` provides three guest speaker slots and three independent judge
 slots. Fill a slot only with approved public information. Speaker records support name,
@@ -285,11 +286,11 @@ See the [launch checklist](docs/hackathons/LAUNCH_READINESS.md),
 [proposed judging framework](docs/hackathons/JUDGING_FRAMEWORK.md),
 [submission requirements](docs/hackathons/SUBMISSION_REQUIREMENTS.md) and
 [eleven communication drafts](docs/hackathons/communications/README.md).
-The operational framework is prepared; event terms and live forms remain pending.
+The operational framework is prepared; event terms and private intake administration remain organizer-managed.
 No email infrastructure, messages sent, judging or results are implied.
 
-`SUBMISSION_FORM_URL` derives from `PROJECT_SUBMISSION_URL`; all five canonical form
-URLs and per-event overrides remain null, with collection gates closed. Use public responder URLs after testing;
+`SUBMISSION_FORM_URL` derives from the approved project setting; all seven canonical Form
+responders are verified and enabled by organizer instruction. Availability and permission gates remain independent;
 never place private Drive folders or application responses in public configuration.
 
 `src/data/hackathonSeo.ts` owns per-page SEO; `src/data/social.ts` owns the shared social asset referenced by `hackathonSocialPreview.image` and the site layout.
@@ -474,7 +475,7 @@ final slide/event assets; no invented recordings/certificates/downloads.
 
 ## Community sprint — 2026-10-11 (local review)
 
-COM-002 collects verified public GitHub observations into ignored drafts; dashboard consumes only explicitly approved observation manifests. No live browser API calls or invented counts. `/community/`, `/community/impact/`, `/community/submit/`, `/community/projects/`, `/community/adoption/` and `/community/reports/` reuse static Astro/design tokens. Submission intake is closed pending an approved private service. Project/adoption records require verified review, explicit permission, source URLs and provenance; production lists are empty.
+COM-002 collects verified public GitHub observations into ignored drafts; dashboard consumes only explicitly approved observation manifests. No live browser API calls or invented counts. `/community/`, `/community/impact/`, `/community/submit/`, `/community/projects/`, `/community/adoption/` and `/community/reports/` reuse static Astro/design tokens. Submission intake links to the verified public Google Form authorized by the organizer. Project/adoption records require verified review, explicit permission, source URLs and provenance; production lists are empty.
 
 Commands: `npm run community:metrics`, `npm run community:report -- 2026-10`, `npm test`. Drafts live under .community-drafts (ignored); never copy them to public/. Optional traffic collection requires explicit authorization through ALLOW_GITHUB_TRAFFIC=1 and a purpose-supplied GITHUB_METRICS_TOKEN; no token is required for public metrics, no credential values logged. Do not grant secrets to fork workflows.
 
@@ -486,11 +487,11 @@ Roadmap: authorize private intake and end-to-end receipt review; resolve researc
 
 ### COM-ARCH-001 — Google Workspace administration
 
-The first hackathon uses configured Google Forms registration/submission links, private Google Sheets for administration and private Google Drive for consent/review evidence. The static Portal reads only approved sanitized JSON exports; no database or browser Sheets API. Forms and exports are not configured yet, so unavailable states remain. See [ADR-007](docs/adr/ADR-007-google-workspace.md) and [manual export/security workflow](docs/community/WORKSPACE_EXPORTS.md). Roadmap: provision/review private Workspace permissions and forms, supply reviewed exports, then assess automation separately. COM-008A/publication gates remain unresolved.
+The first hackathon uses configured Google Forms registration/submission links, private Google Sheets for administration and private Google Drive for consent/review evidence. The static Portal reads only approved sanitized JSON exports; no database or browser Sheets API. Seven Forms are now verified/configured and their links enabled; exports remain unavailable. See [ADR-007](docs/adr/ADR-007-google-workspace.md) and [manual export/security workflow](docs/community/WORKSPACE_EXPORTS.md). Roadmap: provision/review private Workspace permissions and forms, supply reviewed exports, then assess automation separately. COM-008A/publication gates remain unresolved.
 
 ### COM-003B-FIX-001 — finalized hackathon workflow
 
-One AeglysAI AI/ML and Cybersecurity Hackathon with six Portal challenges (five COM-003A choices plus a pending Portal extension) replaces the obsolete three-event proposal. Every participant individually registers, forks/clones/runs A/B/C, documents sanitized qualification evidence and is selected before building. Model D knowledge is not required. Individuals and teams of two to four, one leader/unique team ID, no duplicate active membership, approved changes; private Sheets verify rosters. Executable project and maximum-two-minute video required. Round 1 selects finalists, Round 2 five-minute live demo plus five-minute Q&A over Google Meet determines ranking. Official Forms/dates remain unconfigured: Registration Opening Soon. See [current handbook](docs/hackathons/README.md), [Form configuration](docs/hackathons/OPERATIONS.md) and [judging](docs/hackathons/JUDGING_FRAMEWORK.md). Roadmap: approve Forms/privacy/access, deadlines/capacity and operational contacts before opening; existing community publication/contract blockers remain.
+One AeglysAI AI/ML and Cybersecurity Hackathon with six Portal challenges (five COM-003A choices plus a pending Portal extension) replaces the obsolete three-event proposal. Every participant individually registers, forks/clones/runs A/B/C, documents sanitized qualification evidence and is selected before building. Model D knowledge is not required. Individuals and teams of two to four, one leader/unique team ID, no duplicate active membership, approved changes; private Sheets verify rosters. Executable project and maximum-two-minute video required. Round 1 selects finalists, Round 2 five-minute live demo plus five-minute Q&A over Google Meet determines ranking. Seven official Form responders are verified and enabled; dates remain unconfigured. See [current handbook](docs/hackathons/README.md), [Form configuration](docs/hackathons/OPERATIONS.md) and [judging](docs/hackathons/JUDGING_FRAMEWORK.md). Roadmap: approve Forms/privacy/access, deadlines/capacity and operational contacts before opening; existing community publication/contract blockers remain.
 
 ### COM-INTEGRATION-001 — upstream contract interoperability
 
@@ -501,3 +502,7 @@ Current challenge UI: six conceptual SVG architecture tiles reuse existing chall
 HACK-CHALLENGE-006: [AI for Everyday Life](docs/hackathons/AI_FOR_EVERYDAY_LIFE.md) is a user-authorized Portal extension, not a claimed sixth upstream COM-003A track. Roadmap: separately update/approve research briefs/choice validators/templates and manually add exact Google Forms choice **AI for Everyday Life** (export ID ai-for-everyday-life). Existing source contracts unchanged; no Form edited or activity fabricated.
 
 COM-PIN-001: four contracts plus semantic validators and fixtures are pinned byte-for-byte to [published research revision 711c1556e27bd226c08fb6a8c7b0d9040b4c88ee](https://github.com/shubh-techie/AeglysAI/commit/711c1556e27bd226c08fb6a8c7b0d9040b4c88ee), verified reachable on public main. [Manifest/provenance](docs/community/CONTRACTS.md) records hashes and observation. Source pinning does not authorize public activity, bypass consent/privacy, or imply Portal deployment.
+
+### HACK-PORTAL-OPS-001 — current operations / roadmap
+
+[Verified Forms setup](docs/hackathons/GOOGLE_FORMS_SETUP.md) and [SPEC-020](docs/specs/SPEC-020-hackathon-portal-operations.md) document seven distinct intake stages, independent opening/availability gates, approved role profiles and eight conditional certificate categories. Six diagrams and finalized rules preserved. Remaining roadmap: maintain privacy/artifact review for intake, review the original sanitized hackathon-themed sample, verify private rosters/appointments and manage actual issuance through Workspace. No database or certificate issuance service added. No commit/push/deployment implied.

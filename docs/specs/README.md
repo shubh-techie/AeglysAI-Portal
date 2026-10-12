@@ -73,3 +73,5 @@ and organizer follow-ups separately from public runtime records.
 - [SPEC-018 — challenge architecture visuals](SPEC-018-challenge-architecture-visuals.md): five conceptual diagrams and responsive shared tiles.
 
 - [SPEC-019 — AI for Everyday Life](SPEC-019-everyday-ai-challenge.md): sixth Portal topic, safe prototype requirements and upstream follow-up.
+
+- [SPEC-020 — Hackathon operations](SPEC-020-hackathon-portal-operations.md): verified seven-stage Forms registry, gated onboarding and certificate recognition; preview reference and opening approvals pending.

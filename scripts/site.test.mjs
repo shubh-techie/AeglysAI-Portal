@@ -214,13 +214,13 @@ test("production routes and metadata use the aeglysai.com root", () => {
 });
 
 
-test("hackathon foundation keeps events provisional and registration unavailable", () => {
+test("hackathon foundation keeps events provisional with authorized registration links", () => {
   const landing = read("hackathons/index.html");
   const events = read("hackathons/events/index.html");
   const community = read("hackathons/community/index.html");
   for (const html of [landing, events, community]) {
     assert.match(html, /PLANNED|Opening Soon/);
-    assert.doesNotMatch(html, /docs\.google\.com\/forms|forms\.gle/);
+    assert.match(html, /docs\.google\.com\/forms\/d\/e\//);
     assert.doesNotMatch(html, /immigration|profile.building/i);
     const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
     assert.equal(new Set(ids).size, ids.length, "IDs must be unique");
@@ -232,8 +232,9 @@ test("hackathon foundation keeps events provisional and registration unavailable
   assert.match(landing, /Participation is FREE/);
   assert.match(landing, /funding unconfirmed/i);
   assert.match(landing, /subject to official event terms until finalized/);
-  assert.match(landing, /disabled[^>]*>Start Qualification/);
-  assert.match(landing, /Opening Soon/);
+  assert.match(landing, /Register for Hackathon/);
+  assert.match(landing, /id="registration"/);
+  assert.doesNotMatch(landing, /Registration Opening Soon/);
   for (const id of ["adaptive-authorization", "behavioral-risk", "autonomous-resilience"])
     assert.ok(events.includes(`id="${id}"`));
   assert.doesNotMatch(events, /November 2026|December 2026|January 2027|February 2027|March 2027/);
@@ -243,15 +244,17 @@ test("hackathon foundation keeps events provisional and registration unavailable
 });
 
 
-test("participation CTAs stay unavailable without official forms", () => {
+test("participation CTAs expose the organizer-authorized public responder forms", () => {
   const community = read("hackathons/community/index.html");
-  assert.match(community, /disabled[^>]*>Apply to Judge/);
-  assert.match(community, /disabled[^>]*>Register for Hackathon/);
+  assert.match(community, /Judge Profile/);
+  assert.doesNotMatch(community, /<button[^>]*disabled/);
+  assert.match(community, /Register for Hackathon/);
   assert.match(community, /Google Forms\/Drive/);
-  assert.doesNotMatch(community, /mailto:|tel:|drive\.google\.com|docs\.google\.com\/forms|forms\.gle/);
+  assert.doesNotMatch(community, /mailto:|tel:|drive\.google\.com/);
+  assert.match(community, /docs\.google\.com\/forms\/d\/e\//);
   for (const route of ["hackathons", "hackathons/events", "hackathons/community"]) {
     const html = read(`${route}/index.html`);
-    assert.match(html, route === "hackathons" ? /Start Qualification/ : /Register for Hackathon/);
+    assert.match(html, /Register for Hackathon/);
     assert.doesNotMatch(html, /Register Interest/);
   }
 });
@@ -332,10 +335,12 @@ test("hackathon visual experience preserves honest empty states and qualificatio
   assert.match(html, /does not guarantee selection/);
   assert.match(html, /Prize eligibility and payment are subject to official event rules/);
   assert.doesNotMatch(html, /Future guest speaker|Independent judge slot|Person to be announced/);
-  assert.match(html, /Keynote Speaker · PLANNED/);
+  assert.doesNotMatch(html, /Keynote Speaker · PLANNED/);
+  assert.match(html, /Speaker appointments will be announced/);
   assert.match(html, /Shubh Prabhat/);
-  for (const label of ["Start Qualification", "Submit Qualification", "Apply to Judge", "Express Speaker Interest", "Submit Project"])
-    assert.ok(html.includes(`disabled aria-describedby=`) && html.includes(label));
+  for (const label of ["Register for Hackathon", "Submit Qualification", "Judge Profile", "Speaker / Mentor Profile", "Submit Project", "Submit Selected Team Roster", "Respond to Guest Invitation"])
+    assert.ok(html.includes(label));
+  assert.doesNotMatch(html, /<button[^>]*disabled/);
   assert.doesNotMatch(html, /href="(?:#|null|undefined)"|mailto:|tel:|drive\.google\.com/);
   for (const {route, html: other} of pages.filter(page => !["hackathons", "hackathons/sponsors"].includes(page.route)))
     assert.doesNotMatch(other, /class="hackathon-experience"/, route);
@@ -348,7 +353,8 @@ test("form configuration rejects private/unsafe links and keeps collection gated
   const { transpileModule } = await import("typescript");
   const { outputText } = transpileModule(readFileSync("src/data/hackathonForms.ts", "utf8"), { compilerOptions: { module: 99, target: 99 } });
   const { hackathonForms, publicFormUrl } = await import(`data:text/javascript;base64,${Buffer.from(outputText).toString("base64")}`);
-  assert.ok(Object.values(hackathonForms).every(form => form.url === null && form.open === false));
+  assert.equal(Object.keys(hackathonForms).length, 7);
+  assert.ok(Object.values(hackathonForms).every(form => form.url && form.open === true && form.available && form.publicationApproved));
   assert.equal(publicFormUrl(null, true), null);
   const fixture = "https://forms.gle/synthetic-test-fixture";
   assert.equal(publicFormUrl(fixture, false), null);
@@ -613,7 +619,7 @@ test("community empty states never imply unreviewed participation or adoption", 
   assert.doesNotMatch(html,/LOCAL TEST|SYNTHETIC|GITHUB_METRICS_TOKEN|Bearer /);
  }
  const submit=read('community/submit/index.html');
- assert.match(submit,/Submission intake is closed/);
+ assert.match(submit,/Submit through the approved Google Form/);
  assert.match(submit,/<fieldset disabled/);
  assert.doesNotMatch(submit,/type="email"|name="email"|<form[^>]+action=/);
  assert.equal((submit.match(/<option value="(?:smart-login-guardian|find-the-anomaly|api-traffic-watch|explain-security-alert|predict-the-outage)"/g)||[]).length,5);
@@ -636,7 +642,7 @@ test("COM-003B-FIX-001 enforces single-event qualification, teams, executable su
   assert.match(html,/private Google Sheets/);
  }
  assert.match(landing,/Model D knowledge is not required/);
- assert.match(landing,/Registration Opening Soon/);
+ assert.doesNotMatch(landing,/Registration Opening Soon/);
  for(const field of ['team-id','video','intelligent-technique','validation','licensing','limitations'])assert.ok(submission.includes(`name="${field}"`));
  assert.doesNotMatch(submission,/action=|participantEmail|spreadsheetId/);
 });

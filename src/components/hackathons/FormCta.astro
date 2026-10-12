@@ -1,10 +1,14 @@
 ---
-import { hackathonForms, publicFormUrl, type HackathonFormKind } from "../../data/hackathonForms";
-interface Props { kind: HackathonFormKind; label: string; id: string; }
-const { kind, label, id } = Astro.props;
-const setting = hackathonForms[kind];
-const url = publicFormUrl(setting.url, setting.open);
+import { hackathonForms, approvedFormUrl, type HackathonFormKind } from "../../data/hackathonForms";
+interface Props { kind: HackathonFormKind; label: string; id: string; primary?: boolean; }
+const { kind, label, id, primary = false } = Astro.props;
+const url = approvedFormUrl(hackathonForms[kind]);
 ---
 <div class="hx-form-cta">
-  {url ? <a class="hx-button hx-primary" href={url}>{label}<span aria-hidden="true">↗</span></a> : <><button class="hx-button hx-primary" disabled aria-describedby={id}>{label}<span aria-hidden="true">→</span></button><span class="hx-opening" id={id}>{kind === "participant" ? "Registration Opening Soon" : "Opening Soon"}</span></>}
+  {url ? <a class:list={["button", "hx-button", {"hx-primary": primary, "button-primary": primary}]} href={url} target="_blank" rel="noopener noreferrer">{label}<span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a> : <div class="hx-form-unavailable"><span>{label}</span><span class="hx-opening" id={id}>{kind === "participant" ? "Registration Opening Soon" : "Opening Soon"}</span></div>}
 </div>
+
+<style>
+  .hx-form-unavailable { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; padding: .8rem 1rem; border: 1px solid var(--line); border-radius: .6rem; color: var(--text); }
+  .hx-opening { color: var(--muted); font-size: .875rem; }
+</style>

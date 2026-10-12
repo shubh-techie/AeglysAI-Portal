@@ -1,0 +1,27 @@
+---
+import TechnicalIcon from "./TechnicalIcon.astro";
+import { asset } from "../../data/project";
+import { certificateCategories, certificatePreview, canShowCertificatePreview } from "../../data/hackathonCertificates";
+---
+<section class="hx-section" id="certificates" aria-labelledby="certificates-heading">
+  <p class="hx-eyebrow">RECOGNITION WITH EVIDENCE</p>
+  <h2 id="certificates-heading">Build. Demonstrate. Earn Recognition.</h2>
+  <p class="hx-section-copy">Showcase your technical skills through a working AI/ML project and receive recognition according to the official hackathon eligibility and award criteria.</p>
+  <p>Registration alone does not earn a certificate. Every category requires its own eligibility review and separate organizer approval. No issued certificates or approved results are represented here.</p>
+  {canShowCertificatePreview(certificatePreview) ? <figure class="hx-certificate" aria-labelledby="certificate-sample-caption">
+    <div class="hx-certificate-header"><div class="hx-certificate-brand"><img src={asset("brand/icons/icon-mark.png")} alt="" width="44" height="48" loading="lazy" decoding="async"/><span>AEGLYSAI<small>COMMUNITY ENGINEERING</small></span></div><span class="hx-certificate-sample">SAMPLE CERTIFICATE</span></div>
+    <p class="hx-certificate-kicker">AEGLYSAI HACKATHON 2026</p>
+    <p class="hx-certificate-title">Certificate of Recognition</p>
+    <p class="hx-certificate-event">AeglysAI AI/ML and Cybersecurity Hackathon 2026</p>
+    <p class="hx-certificate-intro">THIS SAMPLE IS PRESENTED TO</p>
+    <p class="hx-certificate-recipient">Sample Recipient</p>
+    <p class="hx-certificate-category">[Certificate Category]</p>
+    <p class="hx-certificate-description">In recognition of technical participation and contributions to a working AI/ML project.<br/>Actual recognition requires verified eligibility and organizer approval.</p>
+    <div class="hx-certificate-focus"><span><TechnicalIcon name="nodes"/>Artificial Intelligence</span><span><TechnicalIcon name="code"/>Machine Learning</span><span><TechnicalIcon name="shield"/>Cybersecurity</span></div>
+    <p class="hx-certificate-track">[Team / Challenge]</p>
+    <div class="hx-certificate-meta"><div><span>Certificate ID</span><strong>[Certificate ID]</strong></div><div><span>Date</span><strong>[Date]</strong></div><div><span>Organizer authorization</span><strong>[Authorized Signature]</strong></div></div>
+    <figcaption id="certificate-sample-caption">Sample — Not Valid for Verification</figcaption>
+  </figure> : <div class="hx-callout"><h3>Certificate design preview pending</h3><p>The sample preview is currently unavailable. Certificates are managed privately through Google Workspace; this website does not issue them.</p></div>}
+  <div class="hx-grid hx-certificate-categories">{certificateCategories.map(category => <article class="hx-card"><h3>{category.title}</h3><p>{category.criteria}</p><p class="hx-fine">Separate organizer approval required.</p></article>)}</div>
+  <p class="hx-fine">Issuance, consent, supporting evidence and correction records stay in private Google Sheets and Drive. Verification channel and issuance dates remain to be announced.</p>
+</section>

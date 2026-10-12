@@ -1,11 +1,11 @@
 import { creator } from "./creator";
-import { hackathonForms, publicFormUrl } from "./hackathonForms";
+import { hackathonForms, approvedFormUrl } from "./hackathonForms";
 
 export type ProgramStatus = "CONFIRMED" | "INVITED" | "PLANNED" | "COMPLETED";
 // Set to official HTTPS application forms when available; never invent URLs.
-export const PARTICIPANT_REGISTRATION_FORM_URL = publicFormUrl(hackathonForms.participant.url, hackathonForms.participant.open);
-export const JUDGE_INVITATION_FORM_URL = publicFormUrl(hackathonForms.judge.url, hackathonForms.judge.open);
-export const SUBMISSION_FORM_URL = publicFormUrl(hackathonForms.project.url, hackathonForms.project.open);
+export const PARTICIPANT_REGISTRATION_FORM_URL = approvedFormUrl(hackathonForms.participant);
+export const JUDGE_INVITATION_FORM_URL = approvedFormUrl(hackathonForms.judge);
+export const SUBMISSION_FORM_URL = approvedFormUrl(hackathonForms.project);
 // Compatibility alias for PORTAL-005 consumers; configure the registration URL above.
 export const PARTICIPANT_FORM_URL = PARTICIPANT_REGISTRATION_FORM_URL;
 export const registrationLinks = {

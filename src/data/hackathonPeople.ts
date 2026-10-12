@@ -40,6 +40,10 @@ export const judges: CommunitySlot<Judge>[] = Array.from({ length: 3 }, (_, i) =
   id: `judge-${i + 1}`, label: `Independent judge slot ${i + 1}`, person: null,
 }));
 
+// Public-safe role slots reuse the same profile and confirmation/consent gate.
+export const mentors: CommunitySlot<Speaker>[] = [];
+export const guests: CommunitySlot<Speaker>[] = [];
+
 export function approvedPublicPerson<T extends PublicProfile>(person: T | null): T | null {
   return person?.status === "CONFIRMED" && person.publicDisplayApproved === true
     ? person : null;

@@ -1,6 +1,6 @@
 # AeglysAI AI/ML and Cybersecurity Hackathon — Participant Handbook
 
-Current rules finalized by the user on 2026-10-11 (COM-003B-FIX-001). One hackathon replaces the former three-event proposal. Registration Opening Soon: dates, deadlines, official Forms, geographic/age eligibility and conduct reporting contact remain pending. No participation, judges, sponsors or awards are claimed.
+Current rules finalized by the user on 2026-10-11 (COM-003B-FIX-001). One hackathon replaces the former three-event proposal. Registration Opening Soon: dates, deadlines, geographic/age eligibility and conduct reporting contact remain pending. No participation, judges, sponsors or awards are claimed.
 
 ## Register, qualify, then compete
 
@@ -35,3 +35,7 @@ Forms collect registration, qualification and final submissions; private Sheets 
 Existing $300 award remains a proposal with unconfirmed funding; no new award or sponsor introduced. Certificates require actual completed role/requirements and organizer approval; registration alone does not earn one. See [certificate policy](CERTIFICATE_POLICY.md), [launch checklist](LAUNCH_READINESS.md) and [manual Workspace export guide](../community/WORKSPACE_EXPORTS.md). Final submissions do not guarantee an upstream merge. Maintainer review applies.
 
 HACK-CHALLENGE-006: [AI for Everyday Life](AI_FOR_EVERYDAY_LIFE.md) is the sixth Portal-defined choice (ai-for-everyday-life), pending upstream COM-003A alignment. Organizers must add the exact choice to relevant Google Forms manually; Forms have not been edited. All individual qualification/team/video/judging requirements unchanged.
+
+## HACK-PORTAL-OPS-001 intake update
+
+Seven official responder pages have been verified without submitting data; all seven Portal links are enabled by the organizer’s follow-up. See [Forms setup and exact mapping](GOOGLE_FORMS_SETUP.md). Every participant submits sanitized logs as well as GitHub qualification URLs. Selected team leaders use the separate roster form. Invited judges, speakers/mentors and guests use role-specific profile/response forms; neither a response nor an invitation confirms a role. [Eight certificate categories](CERTIFICATE_POLICY.md) require separate eligibility and approval; original hackathon-themed sample is now displayed.

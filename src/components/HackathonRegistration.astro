@@ -3,10 +3,11 @@ import { registrationLinks } from "../data/hackathons";
 interface Props { url?: string | null; id?: string; kind?: "participant" | "judge"; }
 const kind = Astro.props.kind ?? "participant";
 const id = Astro.props.id ?? `${kind}-registration-note`;
-const url = Astro.props.url ?? registrationLinks[kind];
-const label = kind === "judge" ? "Apply to Judge" : "Register for Hackathon";
+const url = registrationLinks[kind];
+if (Astro.props.url !== undefined && Astro.props.url !== url) throw new Error("Registration overrides cannot bypass the approved form configuration.");
+const label = kind === "judge" ? "Judge Profile & Acceptance" : "Register for Hackathon";
 const note = kind === "judge"
-  ? "Judge applications are not open yet. The official application form will be linked here when available."
-  : "Participant registration is not open yet. The official registration form will be linked here when available.";
+  ? "Judge profile and acceptance intake is not open yet. The verified form will be linked here after organizer opening approval."
+  : "Participant registration is not open yet. The verified registration form will be linked here after organizer opening approval.";
 ---
-{url ? <a class="button button-primary" href={url}>{label}</a> : <div class="registration-placeholder"><button class="button" disabled aria-describedby={id}>{label}</button><p id={id}>Opening Soon. {note}</p></div>}
+{url ? <a class="button button-primary" href={url} target="_blank" rel="noopener noreferrer">{label}</a> : <div class="registration-placeholder"><strong>{label}</strong><p id={id}>Opening Soon. {note}</p></div>}
