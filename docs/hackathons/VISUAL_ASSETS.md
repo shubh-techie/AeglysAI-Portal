@@ -35,3 +35,15 @@ No generated image, stock portrait, poster, new font or external asset request i
 New landing presentation lives in `src/styles/hackathon-landing.css`; the prior shared
 stylesheet continues to serve Sponsors. Screenshot evidence is local and ignored under
 `.community-drafts/design-002/screenshots/`, with baseline built from unchanged `4fc596d`.
+
+## DESIGN-004 — Interaction inventory, 2026-10-14
+
+No new visual asset. The existing exclusive landing stylesheet and raw-imported
+`landing-motion.js` provide hero lighting/grid depth, existing-word stagger/gradient accents,
+six pointer-highlight/tilt cards, one-time section/divider/number reveals, reading-attention
+journey/timeline lines, decorative rubric bars, trophy/sample elevation and CTA/navigation
+feedback. Original SVGs and shared assets are unchanged; only connector opacity is emphasized
+briefly on fine hover. Keyboard/reduced/coarse/no-JS variants retain all text and static diagrams.
+Before/after local screenshots: `.community-drafts/design-004/screenshots/` at 1440/768/390,
+including actual pointer and section captures. The reusable optional Chrome harness is
+`scripts/community/hackathon-motion.browser.mjs`; it stops its own temporary browser/server.

@@ -25,3 +25,10 @@ HACK-CHALLENGE-006: the sixth topic/diagram extends the original five-topic visu
 borders around the same six EventCard/ChallengeDiagram instances. Assets, briefs, acceptance
 criteria and detail rendering remain unchanged. Existing 3/2/1 layout and SVG safety checks
 remain applicable; see the [experience specification](HACKATHON_EXPERIENCE_SPEC.md).
+
+2026-10-14 DESIGN-004 adds exclusive landing pointer highlights and bounded tilt around the
+unchanged six architecture sources. Labels/nodes remain static; decorative connector stroke
+opacity receives one short emphasis on fine-pointer hover. Coarse/reduced modes disable it.
+Shared renderer/detail pages remain byte-identical. Existing experience SPEC and the
+motion-preservation/browser checks govern this presentation-only exception to the earlier
+static landing treatment; no acceptance criteria or architecture text changes.

@@ -499,3 +499,44 @@ Validation: Node 24 check/build/test plus generated route/anchor/CTA checks, bro
 tablet/mobile, SVG contrast, focus, reduced motion and output isolation. Actual outcomes and
 limits are recorded in the [review](../hackathons/HACK-DESIGN-002-REVIEW.md) and development log.
 No remote CI, release or deployment is asserted.
+
+## AEGLYSAI-HACK-DESIGN-004 — 2026-10-14
+
+IMPLEMENTED locally; no commit/push/PR/merge/deploy authorized. Interaction-only extension
+of the DESIGN-002 landing at unchanged main `464aa10`. Every existing word, heading,
+paragraph, section order, anchor, URL, six challenge/qualification/judging/prize/recognition
+rule and configuration is preserved. The page template and all shared components/data
+are unchanged. The initial HTML owns all content; JavaScript only sets presentation attributes.
+
+Acceptance:
+
+- Hero: mouse-following soft light, pointer-offset technical grid (±4px), layered gradients,
+  staggered existing words and readable gradient accents/underlines; no typewriter/text replacement.
+- Six tiles: existing per-topic palettes, pointer highlight, bounded ±1.5° tilt/elevation,
+  soft border/link feedback; original SVG labels/static architecture remain unchanged,
+  with one finite opacity emphasis only on decorative connectors during fine-pointer hover.
+- Sections: one entrance per document, gentle rise/divider/number reveal; default visibility
+  even without JavaScript/IntersectionObserver. No scroll-replayed or continuous loops.
+- Qualification/timeline: readable seven/nine-item lists, focusable reading emphasis,
+  connector illumination; never a completed/started stage. Existing TBA status unchanged.
+- Judging: decorative score bars derive only from existing 100-point rubric weights;
+  source values/labels and independent-round policies unchanged.
+- Award/sample: gradient framing and restrained trophy/certificate elevation preserve
+  amounts/categories/eligibility/disclaimers and do not imply issuance or approval.
+- Navigation/CTAs: same labels/destinations, sticky feedback above 760px, static below;
+  native anchors/focus feedback, no new banner/popup, form opening or automatic external navigation.
+- Accessibility/performance: all content initially visible; static reduced-motion/coarse-pointer
+  treatment, keyboard highlights, visible outlines, passive pointer/scroll listeners,
+  requestAnimationFrame throttling, AbortController/observer/frame cleanup and back/forward
+  restoration. No new dependency/network/storage/API or research-repository modification.
+
+Validation traceability: `hackathon-motion.test.mjs` uses the recorded immutable baseline
+fixture to compare all non-script HTML bytes (only generated CSS filenames normalized),
+protected source bytes and all 26 other route/style outputs. Approved future content changes
+must intentionally update this task's baseline fixture with new evidence. The optional
+`hackathon-motion.browser.mjs` exercises real Chrome pointers, six tiles, keyboard, one-time
+entrances, exact browser content, coarse/reduced modes, lifecycle cleanup and disabled JS.
+Existing route/anchor/intake/privacy/SVG/certificate tests remain required.
+
+Actual outcomes/limits and screenshot paths are appended to the existing
+[design review](../hackathons/HACK-DESIGN-002-REVIEW.md). No duplicate SPEC/ADR created.
