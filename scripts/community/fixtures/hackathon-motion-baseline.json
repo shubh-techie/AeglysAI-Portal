@@ -1,0 +1,214 @@
+{
+  "task": "AEGLYSAI-HACK-DESIGN-004",
+  "baselineCommit": "464aa10efbf1c2a94bf31d9fc5a49a605b49823d",
+  "normalization": "Remove inline script blocks and normalize generated stylesheet filenames only; retain all other HTML bytes.",
+  "landingHtml": "d412fe66e7f3b48a896b5d36cf8121c34cfe86250f46ed0a7866277afaf09578",
+  "otherRoutes": {
+    "404.html": {
+      "html": "8f75d4162e63a4e0b7ffc8587770ba06a7b53ad91cd1d07fc941085a1d46dd52",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "about/index.html": {
+      "html": "b32f26df680f15a98eeefd66932a04f3d3c5af49622417db0b079a3e9e0a9f6c",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "architecture/index.html": {
+      "html": "5a000b6ad7932e0f3b5d785fd06593a23b0cce67358ac792c79fe0f9909da520",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "community/adoption/index.html": {
+      "html": "d9f4eef1998eb363cedfefe9d8931330437f2dc649fd402a239850bfa9e9e9af",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "community/impact/index.html": {
+      "html": "01be3a40f24cf7f519385df52eee96d89c18b0e422383521b346ad8831c09f42",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "community/index.html": {
+      "html": "bedfde3127c18f366c991690ead3187b1484b78f570800aa1c21c0239a0574d3",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "community/projects/index.html": {
+      "html": "7811a62250a96b2501dd772286f49d2acabb5a2d9d2e7beb49c812b5f0a6f2a7",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "community/reports/index.html": {
+      "html": "a5ab7c71d4e9349251615396ed9bb0b386b6003ce8764f09a9feb06eaafdd7e0",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "community/submit/index.html": {
+      "html": "33c2683678400e333b0af5e1223f65d2dffcbd2d8e8025c54c4fbb8ae0da63dc",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "experiments/index.html": {
+      "html": "eb2372880f87bd2366a68d9ae20b42ef1b5c26e3f502d7f7631abc62850a5c78",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "hackathons/adaptive-authorization/index.html": {
+      "html": "63919785b467f9ed38f32e4b2a995a675ba93e6db66241e14d85a6ede41855fe",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "hackathons/autonomous-resilience/index.html": {
+      "html": "201c597fd3e9b6f48e95babd702014faa51b53593e7260e8488699e689a89539",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "hackathons/behavioral-risk/index.html": {
+      "html": "34bdc782071dcfdee5e08c3b3915538f3b331286e5760a205849c03fcc2c6a80",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "hackathons/community/index.html": {
+      "html": "0eaaf5c63e838d4f2d25bb3aa9bc589cd84de2d47521b78fac844ccaaf3b1949",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "hackathons/events/index.html": {
+      "html": "a38abcc41b4b19f5371d25e0aeb4b04eea08b6f1313f09d00de36e36806984f5",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "hackathons/sponsors/index.html": {
+      "html": "5854c9eb58d47fbb9f3aafaf1fef4d16be11d26b790d83d2e01a30e2ed3ac60d",
+      "styles": [
+        "5ac2d1ab96a0b10e302abeb40c17dcfa87a9c2cb07ae298697fe01f27680f64e",
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "index.html": {
+      "html": "2942731d1d7bf446c05ee0843001948671da64df46e5f430dccc80181e1dbf80",
+      "styles": [
+        "adf6d107c0f595435e174f66402212f08a0edf571905232e721c979d4d89017d",
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "media/index.html": {
+      "html": "9ba8b84b1a4895e4bda6fc2366a58c89dee4791835024d68d2b3487f64a34128",
+      "styles": [
+        "adf6d107c0f595435e174f66402212f08a0edf571905232e721c979d4d89017d",
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "publications/index.html": {
+      "html": "10f461a26ea1ace3144dd434d0465c4a89fa8ec3b1240cf4b849a49f4159eead",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "research/index.html": {
+      "html": "d23b2edcd077a27ca8c78b0272437f39b9f68ce2c980955e48980d531c0d7c3d",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "speaking/beyond-static-access-control/index.html": {
+      "html": "3af0f8fd4857a246ed5ade8439fcb7be0a40d488c5666b8166607de0333ada2d",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "speaking/building-ai-driven-incident-response/index.html": {
+      "html": "9db1a00363fd649b6ce4cb6a83e008f2c3000c22f76544f1fb0686a70eac3e9e",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "speaking/etic-2026/index.html": {
+      "html": "35617f6ac0c64fc7b2d4e56b35984820b9391423930e0f1d652835eacb6bd289",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "speaking/from-static-security-policies/index.html": {
+      "html": "c29c525059410e9a656161a2be237a087165bf5e500f47f346bcef29c785973e",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "speaking/gicite-2026-wru-key-talk/index.html": {
+      "html": "6aa2b82eca3bcfdeff117f63ea8da0d7e725dfa7785fdea0cd93d52fa5a8acb6",
+      "styles": [
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    },
+    "speaking/index.html": {
+      "html": "e298cb808cd8a6cc2c0a5d1e5b54d3dd3c8f9145bacd2b88877d13edd7970e6b",
+      "styles": [
+        "60ae7509fe2c4aad67710476b61a6988bfeaa0338d9f88e1fba9b75fb8ae77cc",
+        "1b9abd0eeb994f5ac303d5d7e6eeebc026654f95c2fb30ac332c5814ba9431bf"
+      ]
+    }
+  },
+  "protectedSources": {
+    "src/data/community/adoption.ts": "5b4aa33eb307eee015cc13d3e076e72ad45063b6718b96aaea756bd93f409652",
+    "src/data/community/approvals.ts": "79748d7cf2b89e706f748e4518a676d97e300fff18f230f036abbcd5b147bb33",
+    "src/data/community/challenges.json": "ad4b03c0143865a275575059a1c40be688cf8875e137e5be244af7a26631038a",
+    "src/data/community/evidence.ts": "f0ff3721c71c76852af7ff1158eef5cbe171a975cc76370834815fe1428adb2f",
+    "src/data/community/input.ts": "73f0a31b910ee8f0b94e0a32de8c7952b0acbcfdbe64fbf9f2a97464f6f7a7df",
+    "src/data/community/metrics.ts": "d21c75bef095e05aa8d932cfd1ba739fdcbcb771904caddfb62c76ad239c855f",
+    "src/data/community/projects.ts": "e46176e5e4f4622d2c4d8f6fa3f7a01cf0107b662c5c6411026e1ecc29d5cb19",
+    "src/data/community/recognition.ts": "e2a5fdafbe2a05e134ad66a95f6dbaef374df4ccfdce8f48ff4c9e0e64925d15",
+    "src/data/community/reports.ts": "b2fb6ffb17320c7e087bddd05f71f27f6f76b7b6a485dda0c6082624486466f3",
+    "src/data/community/submissions.ts": "e4fa3ee2f2843bc77aad92077fd825635a610630b08f949b6f9dbdc6e129f027",
+    "src/data/creator.ts": "c6fec11461bb62b853a7adf2694784177004ef3cad668d3612a8e832ca8f6152",
+    "src/data/hackathonCertificates.ts": "9020d0dc3789ebb618684c541dde7f4c86ae25de17b3f4a0acbe1ae5e3c177e6",
+    "src/data/hackathonExperience.ts": "b018f7612218b825118b4b58a0aed0645ef6c0859036dcd84917c79e1c8450ff",
+    "src/data/hackathonForms.ts": "e6ca612ff94a0d4f6ef423620ad9266895f4506d69e58876e9da672e80773562",
+    "src/data/hackathonPeople.ts": "507ce42c4bbf9f3b0a2f3b9d6afa0d3581a1a3c1e7f753ef3f6ea80bfb63c592",
+    "src/data/hackathonSeo.ts": "ec4d1ff92e6e3323702b34ca05b9e70c0a6e0de171279b2a65afbd5325fe5796",
+    "src/data/hackathonSponsorship.ts": "bafdb945af23cd53e482b19f16b53acb901ae6a90cc28630ec3e27cce444176e",
+    "src/data/hackathonVisuals.ts": "30bbed114834d63397af275168f9798ee5cc10ed23e97e56740521dba9120391",
+    "src/data/hackathons.ts": "7061d946ddedcdd004f3f2202c56d1a92e9c22f11e0ec5a503dad089c00f0c6d",
+    "src/data/media.ts": "96243994f89219e178b920d41f40e8c8eea5e68e1714c186076b315dbb165e8c",
+    "src/data/presentations.ts": "c92eb8006d673d3ee983d9a9ef8ad0beb532a1ef15e0479d6187534d7174e390",
+    "src/data/project.ts": "bc181493ba84d49ac6aca4cf87909cc86a9ad6e55df254502395f9a39575205c",
+    "src/data/social.ts": "e15c3385b8b5732eb28d31670ab0c414b6b14aa88d6001c58f409f00c42a691e",
+    "src/assets/hackathon/ai-for-everyday-life.svg": "5d744b0445027ac35d5e262540be62fc15bfb794bb87959f17acb92a2aca104e",
+    "src/assets/hackathon/api-traffic-watch.svg": "70158cab6d8c3ab7f851a45ac28f41a41b603e13ab63f665972924d07b9b9eaf",
+    "src/assets/hackathon/explain-security-alert.svg": "bb75589f842530e77840c58936e840b1d197fc65de3b1eef81ea21c31846316e",
+    "src/assets/hackathon/find-the-anomaly.svg": "1c726edfd3d826064aec8e7407dc3c6e2a6ae7b1c94fd59b488c95c4584be791",
+    "src/assets/hackathon/predict-the-outage.svg": "139a44df42ea23cf9d4be9cabf7eecbfe80aca1ef8b0be9e53dfe34b8edcb356",
+    "src/assets/hackathon/smart-login-guardian.svg": "bec8bc48154d3853291b34f7ee119d6fb257589a569ec1de86c37119e3f27b71",
+    "src/components/hackathons/CertificateShowcase.astro": "c267b341280f855250248f74bb6920d73750adc5ecf514d000dadb8db52330d8",
+    "src/components/hackathons/ChallengeDiagram.astro": "ac78f2680407a85294259bc21feafb89efcb91be8a61c5f8c3a32b2f73b95d9f",
+    "src/components/hackathons/EventCard.astro": "5a71fb69c894236120df57d578f541108a98f10cec4783b295494caa5cab0936",
+    "src/components/hackathons/EventDetails.astro": "71d0dd0d26eac078c616f57992b613678c98cd2d157644d5c6ba687c1039ee05",
+    "src/components/hackathons/FormCta.astro": "03d4ced5174a54434dac008044a0a43d8b3859939a69964f3ea529080135e0c6",
+    "src/components/hackathons/HackathonRules.astro": "3a717cd1c36624a459b35f8e3fe3932bb2760b1b281f5a9332f74fffd736f372",
+    "src/components/hackathons/ParticipantJourney.astro": "2f925f12e6318d0a54f25bdc7965537952048f9d86f7ccb86ff93792b597c143",
+    "src/components/hackathons/PeopleSection.astro": "44826cbf34908f5627dac4f196056a2e0f6d36e15fff92e6f8571c9193837892",
+    "src/components/hackathons/SeriesHero.astro": "b8108ea2b7bec13ef1f53e5bd65b01a2fcaedf501b2f9ef6c41b5a90ddfc3546",
+    "src/components/hackathons/TechnicalIcon.astro": "82ee5d6077daa23d032ebd57080ba9d84b789980d0b095f7ad2060d8dfdade89",
+    "src/components/hackathons/landing/CompetitionRules.astro": "6fa9b3074b41a51c3e3a9dbacfa9b954dea7a655ac34fc4a0ebcef1d255a35a2",
+    "src/components/hackathons/landing/CompetitionTimeline.astro": "0d0c7305b5632a699a77df632550a91a3247ecd05386ddb1588e245ee756ca7e",
+    "src/components/hackathons/landing/EventHero.astro": "b36656de5d51087f0d1edd9814a6ef61bb6ce7f19b38c67b1ebacc07331be8e2",
+    "src/components/hackathons/landing/QualificationJourney.astro": "2af12b8318749220bb87ce13bb215b0d5a01f9b1cc1317564b63b6dbef918a30",
+    "src/pages/hackathons/index.astro": "c9070fb78546be91e1982bdae436c130d7097f33909ddd5c43f85d3d5cb3528d"
+  }
+}

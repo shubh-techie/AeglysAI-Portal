@@ -518,3 +518,15 @@ Remaining event decisions: dates/time zones, age/geographic eligibility, officia
 reporting contact, proposed $300 funding/allocation, judges/sessions/mentors, private intake
 administration and approved certificate issuance/verification. No confirmed participation,
 partnership, funded prize, research result or hosted deployment is inferred from the design.
+
+### AEGLYSAI-HACK-DESIGN-004 — interaction polish / review roadmap
+
+The existing `/hackathons/` content and order are preserved exactly while exclusive CSS and
+one inline controller add subtle hero/card pointer effects, one-time entrances, journey/rubric
+accents and navigation feedback. Fine-pointer tracking is optional, frame-throttled and
+cleaned up; coarse pointers and reduced motion use a stable presentation. No package or
+shared-route change. Exact preservation and optional real-browser checks are documented in
+the [existing design review](docs/hackathons/HACK-DESIGN-002-REVIEW.md) and experience SPEC.
+Roadmap: organizer visual review and explicit commit/PR approval; broader screen-reader,
+physical-device and field-performance verification remain follow-ups. Existing event
+operational decisions are unchanged. No new commit, push, CI or deployment claimed.
