@@ -1,4 +1,5 @@
 ---
+import interactions from "./landing-interactions.js?raw";
 import motionController from "./landing-motion.js?raw";
 import { href } from "../../../data/project";
 const sections = [["challenges", "Challenges"], ["how-it-works", "Qualification"], ["timeline", "Timeline"], ["prizes", "Awards"], ["judging", "Judging"], ["faq", "FAQs"]];
@@ -8,4 +9,4 @@ const sections = [["challenges", "Challenges"], ["how-it-works", "Qualification"
   <div>{sections.map(([id, title]) => <a href={`#${id}`} data-event-section={id}>{title}</a>)}</div>
   <a href={href("hackathons/events")}>Full rules ↗</a>
 </nav>
-<script is:inline data-event-nav-init set:html={motionController}/>
+<script is:inline data-event-nav-init set:html={motionController + "\n" + interactions}/>

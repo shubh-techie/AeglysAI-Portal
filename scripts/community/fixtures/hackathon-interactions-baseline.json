@@ -1,0 +1,6 @@
+{
+  "task": "AEGLYSAI-HACK-DESIGN-005",
+  "baselineCommit": "68b5c16",
+  "landingOutsideNetwork": "beb5e01e89961dfe47fcb76faa42f415ec139e648854a845976707cd535f05b2",
+  "exception": "Only the decorative hero network is replaced. Every other server-rendered HTML byte must match DESIGN-004, normalizing scripts and CSS filenames."
+}

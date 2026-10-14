@@ -32,3 +32,9 @@ opacity receives one short emphasis on fine-pointer hover. Coarse/reduced modes 
 Shared renderer/detail pages remain byte-identical. Existing experience SPEC and the
 motion-preservation/browser checks govern this presentation-only exception to the earlier
 static landing treatment; no acceptance criteria or architecture text changes.
+
+2026-10-14 DESIGN-005: exclusive landing controller adds synthetic stage-selection buttons,
+node emphasis and animated connector dash progression around the unchanged six source SVGs.
+Existing lighting/tilt remains. Native buttons provide keyboard equivalents; reduced/paused
+modes keep static selected paths; shared detail pages unchanged. These are conceptual examples,
+not proprietary algorithms, live enforcement or measured outcomes. See the experience SPEC.

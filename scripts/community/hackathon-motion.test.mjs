@@ -5,9 +5,10 @@ import { createHash } from 'node:crypto';
 const baseline = JSON.parse(readFileSync('scripts/community/fixtures/hackathon-motion-baseline.json','utf8'));
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const normalize = html => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'').replace(/\/_astro\/[^" ]+\.css/g,'/_astro/STYLES.css');
-test('DESIGN-004 preserves every non-script landing HTML byte including copy, links, anchors, order and SVGs', () => {
- assert.equal(sha(normalize(readFileSync('dist/hackathons/index.html','utf8'))),baseline.landingHtml);
- for(const [path,hash] of Object.entries(baseline.protectedSources)) assert.equal(sha(readFileSync(path)),hash,path);
+test('DESIGN-005 preserves every non-network landing HTML byte and protected content source', () => {
+ const revised = JSON.parse(readFileSync('scripts/community/fixtures/hackathon-interactions-baseline.json','utf8'));
+ assert.equal(sha(normalize(readFileSync('dist/hackathons/index.html','utf8')).replace(/<div class="hx-network\b[\s\S]*?(?=<\/section>)/,'NETWORK</div>')),revised.landingOutsideNetwork);
+ for(const [path,hash] of Object.entries(baseline.protectedSources).filter(([path])=>path!=='src/components/hackathons/landing/EventHero.astro')) assert.equal(sha(readFileSync(path)),hash,path);
 });
 test('DESIGN-004 keeps all 26 other routes and their consumed styles identical to the untouched baseline', () => {
  assert.equal(Object.keys(baseline.otherRoutes).length,26);

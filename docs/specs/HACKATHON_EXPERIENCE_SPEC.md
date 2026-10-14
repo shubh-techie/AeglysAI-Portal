@@ -540,3 +540,23 @@ Existing route/anchor/intake/privacy/SVG/certificate tests remain required.
 
 Actual outcomes/limits and screenshot paths are appended to the existing
 [design review](../hackathons/HACK-DESIGN-002-REVIEW.md). No duplicate SPEC/ADR created.
+
+## AEGLYSAI-HACK-DESIGN-005 — 2026-10-14
+
+IMPLEMENTED locally for review: six-domain conceptual hero with selection, neighbors, example
+signals, bounded drag/keyboard pan/reset; contextual desktop pointer badge; actual page-position
+rail; six selectable architecture signal flows; original-text qualification/timeline panels;
+round-selection and focus explanations; stronger score bars; kinetic labels/gradient/ticker;
+page-session pause and reduced-motion default. Existing words, policy, links, anchors and data
+remain authoritative. Full qualification/rubric lists stay visible without JS. No live telemetry,
+completed qualification, actual scores, confirmed dates, new prize or appointment implied.
+
+Acceptance requires observable SVG progression and actual keyboard/pointer interaction at
+1440×900, 768×1024 and 390×844, no overflow, six functional card controls, exact point weights,
+paused/reduced readable content, no-JS headings/rules/links, safe unchanged Forms, lifecycle
+cleanup and unchanged other routes. Native CSS/SVG/DOM only; offscreen ambient work paused.
+New fixture intentionally excludes only the replaced decorative network from the prior exact
+HTML comparison; protected content/shared sources and other routes remain checked.
+
+Actual outcomes, screenshot evidence and limits: [DESIGN-005 review](../hackathons/HACK-DESIGN-005-REVIEW.md).
+No commit, remote CI, merge or deployment claimed.
