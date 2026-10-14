@@ -75,6 +75,7 @@
         resetPointer(target);
       };
       target.addEventListener('pointermove', event => {
+        if (root.dataset.paused === 'true') return;
         if (event.pointerType !== 'mouse' && event.pointerType !== 'pen') return;
         point = { x: event.clientX, y: event.clientY };
         if (frame) return;

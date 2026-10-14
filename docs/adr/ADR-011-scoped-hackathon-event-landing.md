@@ -39,3 +39,23 @@ encode existing rubric weights, never results. Trophy/sample motion never change
 or certificate validity. Navigation sticks on desktop/tablet and stays static on narrow
 mobile to preserve reading space. See the existing experience SPEC and review handover
 for exact preservation tests, browser evidence, size impact and remaining limitations.
+
+## DESIGN-005 — Native interactive instruments, 2026-10-14
+
+Extend the same exclusive landing boundary with `IntelligenceNetwork.astro` and a native
+DOM/SVG controller imported into the existing inline initialization script. Preserve shared
+components, data and original SVG assets. Reuse DESIGN-004 pointer/entrance utilities;
+add deliberate selection controls and conceptual signal state rather than an event-state store.
+No package, WebGL, external runtime request or research algorithm is added.
+
+Use bounded SVG transforms, CSS dash motion and IntersectionObserver for in-view work.
+A sessionStorage page-specific preference pauses decorative motion; reduced motion defaults
+paused. Native pointer/text selection remains intact. AbortController, observer disconnect,
+frame/timer cancellation and back-forward reinitialization manage lifecycle. Original lists,
+rubrics and anchor links stay readable without JS; enhanced panels duplicate original text.
+Selection is a reading aid, never participant progress or confirmed event status.
+
+Alternatives: heavier canvas/animation dependencies are unnecessary for six domains; copying
+reference source/branding violates the task; hidden-tab interfaces would reduce no-JS access.
+Tradeoff: additional inline controller bytes and duplicated enhanced text, measured locally.
+See [DESIGN-005 review](../hackathons/HACK-DESIGN-005-REVIEW.md) for reference limits and evidence.

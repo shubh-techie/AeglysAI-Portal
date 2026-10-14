@@ -47,3 +47,13 @@ briefly on fine hover. Keyboard/reduced/coarse/no-JS variants retain all text an
 Before/after local screenshots: `.community-drafts/design-004/screenshots/` at 1440/768/390,
 including actual pointer and section captures. The reusable optional Chrome harness is
 `scripts/community/hackathon-motion.browser.mjs`; it stops its own temporary browser/server.
+
+## DESIGN-005 — 2026-10-14
+
+Original code-authored IntelligenceNetwork SVG is landing-exclusive: six conceptual technology
+domains, nine relationships, bounded pan, selected neighbors and synthetic signal examples.
+No generated bitmap, copied reference asset, mascot, telemetry or algorithm disclosure.
+Existing six challenge sources stay unchanged; controller highlights conceptual signal stages.
+Page-scoped pointer/rail/ticker/process/rubric controls honor pause/reduced motion. Local
+screenshots and interaction evidence: `.community-drafts/design-005/`; see
+[review](HACK-DESIGN-005-REVIEW.md). These are interface demonstrations, not event results.

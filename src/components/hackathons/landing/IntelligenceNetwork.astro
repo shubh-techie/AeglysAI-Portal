@@ -1,0 +1,21 @@
+---
+const nodes = [["IDENTITY",200,45],["API",345,115],["CLOUD",345,255],["DATA",200,325],["AI / ML",55,255],["SECURITY",55,115]] as const;
+const edges = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,0],[0,3],[1,4],[2,5]];
+---
+<div class="hx-network hx-intelligence" aria-label="AeglysAI Intelligence Network">
+ <p class="hx-network-caption">AEGLYSAI INTELLIGENCE NETWORK</p>
+ <div class="hx-network-stage" data-cursor="DRAG">
+ <svg viewBox="0 0 400 370" fill="none" aria-label="Six conceptually connected technology domains">
+ <g class="hx-network-plane">
+ {edges.map(([a,b],i)=><path data-edge={i} data-from={a} data-to={b} class="hx-intelligence-edge" d={`M${nodes[a][1]} ${nodes[a][2]} L${nodes[b][1]} ${nodes[b][2]}`}/>)}
+ <circle cx="200" cy="185" r="64" class="hx-core"/><circle cx="200" cy="185" r="45" class="hx-core-inner"/>
+ <text x="200" y="181" class="hx-core-label">AEGLYSAI</text><text x="200" y="200" class="hx-core-note">CONCEPTUAL</text>
+ {nodes.map(([label,x,y],i)=><g class="hx-domain" data-node={i} aria-label={`Select ${label} connections`} data-cursor="SELECT"><circle cx={x} cy={y} r="29"/><text x={x} y={y+4}>{label}</text></g>)}
+ </g>
+ </svg>
+ </div>
+ <p class="hx-network-selection" role="status" aria-live="polite">Select a domain to explore its connections.</p>
+ <div class="hx-network-controls"><button type="button" data-example="identity">Login signal</button><button type="button" data-example="cloud">Cloud signal</button><button type="button" data-network-reset>Reset view</button></div>
+ <p class="hx-network-caption">CONCEPTUAL EXAMPLES · NO LIVE TELEMETRY<br/>Select with Enter / Space · Arrow keys pan the view</p>
+ <noscript><style>.hx-network-controls{display:none!important}</style><p>IDENTITY ↔ API ↔ CLOUD ↔ DATA ↔ AI / ML ↔ SECURITY. Conceptual relationships only.</p></noscript>
+</div>
