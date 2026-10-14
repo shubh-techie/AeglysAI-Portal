@@ -24,3 +24,14 @@ HACK-CHALLENGE-006 adds beginner-to-intermediate open innovation; source provena
 HACK-PORTAL-OPS-001: six code-authored challenge SVGs unchanged. Certificate preview is an original HTML/CSS hackathon-themed sample, not a generated photograph or issued artifact. The organizer’s follow-up authorizes creating an original design instead of waiting for Certificate_example.png. Existing approved brand icon reused; all personal/issuance fields remain placeholders.
 
 Certificate reference refinement: inspected the user-supplied PNG and adapted its dark/cyan frame, serif title, recipient box and AI/ML/Cybersecurity badges as accessible responsive HTML/CSS. Existing local AeglysAI icon and shared TechnicalIcon component reused; no raw reference asset or personal elements published.
+
+## AEGLYSAI-HACK-DESIGN-002 — 2026-10-14
+
+Landing-only `EventHero.astro` consumes the existing approved `brand/icons/icon-mark.png`
+with reserved 44×48 dimensions; it is not a new logo. The conceptual network SVG remains
+code-authored; a new decorative inline cup in `/hackathons/` emphasizes the proposed award.
+All six architecture SVG source files and the shared ChallengeDiagram remain unchanged.
+No generated image, stock portrait, poster, new font or external asset request introduced.
+New landing presentation lives in `src/styles/hackathon-landing.css`; the prior shared
+stylesheet continues to serve Sponsors. Screenshot evidence is local and ignored under
+`.community-drafts/design-002/screenshots/`, with baseline built from unchanged `4fc596d`.

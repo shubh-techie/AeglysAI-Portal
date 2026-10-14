@@ -1,0 +1,20 @@
+---
+import FormCta from "../FormCta.astro";
+const milestones = [
+ ["APPLICATION", "Register individually through the official participant form."],
+ ["QUALIFICATION", "Each participant submits their own repository and sanitized engineering evidence."],
+ ["SELECTION", "Organizers review published criteria. Qualification does not guarantee selection."],
+ ["TEAM FORMATION", "Selected participants form teams of 1–4, including a leader; organizers verify the roster."],
+ ["PROJECT BUILD", "Build a working challenge prototype with source, tests and a reproducible README."],
+ ["TWO-MINUTE VIDEO SUBMISSION", "Submit the required video of at most two minutes and the complete project artifacts."],
+ ["TECHNICAL SCREENING", "Round 1 evaluates the prototype, intelligence and reproducibility to select finalists."],
+ ["FINALIST LIVE DEMO", "Round 2: five-minute demo and five-minute technical Q&A over Google Meet."],
+ ["WINNERS", "Final ranking follows Round 2 and organizer review; no winners are confirmed."],
+];
+---
+<section class="hx-section" id="timeline" aria-labelledby="timeline-heading">
+ <p class="hx-eyebrow">THE COMPETITION JOURNEY</p><h2 id="timeline-heading">From application to the final demo.</h2>
+ <p class="hx-section-copy">One event. Dates to be announced. Qualification establishes readiness; competition judging evaluates the finished project. Deadlines and time zones remain TBA.</p>
+ <ol class="hx-competition-timeline">{milestones.map(([title, detail], i) => <li><span class="hx-step-number">{String(i + 1).padStart(2, "0")}</span><div><h3>{title}</h3><p>{detail}</p></div><span class="hx-status">TBA</span></li>)}</ol>
+ <div class="hx-inline-note"><p>Final submissions require a working project. Prepare the full checklist before submitting.</p><FormCta kind="project" label="Submit Project" id="project-form-note"/></div>
+</section>

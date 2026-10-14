@@ -506,3 +506,15 @@ COM-PIN-001: four contracts plus semantic validators and fixtures are pinned byt
 ### HACK-PORTAL-OPS-001 — current operations / roadmap
 
 [Verified Forms setup](docs/hackathons/GOOGLE_FORMS_SETUP.md) and [SPEC-020](docs/specs/SPEC-020-hackathon-portal-operations.md) document seven distinct intake stages, independent opening/availability gates, approved role profiles and eight conditional certificate categories. Six diagrams and finalized rules preserved. Remaining roadmap: maintain privacy/artifact review for intake, review the original sanitized hackathon-themed sample, verify private rosters/appointments and manage actual issuance through Workspace. No database or certificate issuance service added. No commit/push/deployment implied.
+
+### AEGLYSAI-HACK-DESIGN-002 — landing design / roadmap
+
+The international-facing `/hackathons/` experience uses exclusive landing components and
+`src/styles/hackathon-landing.css`; Sponsors retains the prior stylesheet. Six architecture
+cards, full qualification and judging rules, verified Forms gates and sample certificate
+remain intact. [Design review](docs/hackathons/HACK-DESIGN-002-REVIEW.md) and
+[ADR-011](docs/adr/ADR-011-scoped-hackathon-event-landing.md) describe scope and validation.
+Remaining event decisions: dates/time zones, age/geographic eligibility, official terms and
+reporting contact, proposed $300 funding/allocation, judges/sessions/mentors, private intake
+administration and approved certificate issuance/verification. No confirmed participation,
+partnership, funded prize, research result or hosted deployment is inferred from the design.

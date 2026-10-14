@@ -1,0 +1,25 @@
+---
+import FormCta from "../FormCta.astro";
+import { asset } from "../../../data/project";
+---
+<section class="hx-hero" aria-labelledby="series-heading" id="series">
+  <div class="container hx-hero-grid">
+    <div>
+      <div class="hx-event-brand"><img src={asset("brand/icons/icon-mark.png")} width="44" height="48" alt="AeglysAI"/><span>AEGLYSAI<span>HACKATHON / 2026</span></span></div><p class="hx-eyebrow">GLOBAL AI / ML / CYBERSECURITY INNOVATION</p>
+      <h1 id="series-heading"><span>BUILD</span> <span>INTELLIGENCE.</span> <span class="hx-emphasis">SECURE</span> <span class="hx-emphasis">TOMORROW.</span></h1>
+      <p class="hx-event-title">AEGLYSAI HACKATHON 2026</p><p class="hx-lead">Six challenges. One hackathon. Developers, students and innovators building practical intelligent solutions for a safer and more resilient digital future.</p>
+      <div class="hx-actions"><FormCta kind="participant" label="Register for Hackathon" id="hero-form-note" primary/><a class="hx-button" href="#challenges">Explore Challenges <span aria-hidden="true">↓</span></a></div>
+      <p class="hx-fine">Six challenges · Free participation · Teams of 1–4<br/>Any programming language · Mandatory individual prequalification<br/>Event dates to be announced</p>
+    </div>
+    <div class="hx-network" aria-hidden="true">
+      <div class="hx-network-caption">ENGINEERING / IN THE OPEN</div>
+      <svg viewBox="0 0 400 340" fill="none">
+        <path class="hx-network-lines" d="M200 35 350 115v110L200 305 50 225V115Zm0 0v270M50 115l300 110M350 115 50 225M200 100l85 45v60l-85 45-85-45v-60Z"/>
+        <path class="hx-network-ring" d="m200 100 85 45v60l-85 45-85-45v-60Z"/>
+        <g class="hx-network-nodes"><circle cx="200" cy="35" r="5"/><circle cx="350" cy="115" r="5"/><circle cx="350" cy="225" r="5"/><circle cx="200" cy="305" r="5"/><circle cx="50" cy="225" r="5"/><circle cx="50" cy="115" r="5"/><circle cx="200" cy="173" r="9"/></g>
+        <g class="hx-network-labels" font-family="monospace" font-size="11" text-anchor="middle"><text x="200" y="82">OBSERVE</text><text x="302" y="177">ASSESS</text><text x="200" y="278">AUTHORIZE</text><text x="96" y="177">RESPOND</text></g>
+      </svg>
+      <div class="hx-network-caption">A CONCEPTUAL SYSTEM MOTIF</div>
+    </div>
+  </div>
+</section>

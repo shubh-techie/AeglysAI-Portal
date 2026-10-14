@@ -469,3 +469,33 @@ HACK-VISUAL-001 (2026-10-11): shared EventCard/ChallengeDiagram now render the f
 HACK-CHALLENGE-006: the Portal list now has six choices, including AI for Everyday Life as an explicit extension pending COM-003A alignment. Project validation/filtering derives from that list (sixth filter index 5); dashboard/report evidence levels, units and contract schemas remain unchanged. No new participation/adoption counts inferred. [SPEC-019](SPEC-019-everyday-ai-challenge.md) records content, Form mapping and upstream requirements.
 
 HACK-PORTAL-OPS-001: [SPEC-020](SPEC-020-hackathon-portal-operations.md) refines contextual registration/qualification/team/role actions and eight approval-based recognition categories; existing six diagrams and finalized rules preserved. Certificate reference missing, preview gated; all seven verified links active.
+
+## AEGLYSAI-HACK-DESIGN-002 — 2026-10-14
+
+IMPLEMENTED locally: exclusive international-facing landing experience at `/hackathons/`.
+This supersedes the original red landing visual direction only; Sponsors keeps the existing
+stylesheet. [ADR-011](../adr/ADR-011-scoped-hackathon-event-landing.md) records the boundary.
+No homepage, research, global header/footer, detail page, community or infrastructure change.
+
+Acceptance: approved AeglysAI brand icon, specified Build Intelligence / Secure Tomorrow
+hero, six factual event badges, six equal architecture cards at 3/2/1 columns, six student
+opportunities, complete seven-step individual qualification plus detailed evidence checklist,
+separate nine-stage TBA competition timeline, proposed configurable $300 award with trophy,
+eight conditional certificate categories and original invalid sample, exact independent
+100-point rubrics, five-minute demo/five-minute Q&A, consent-filtered profiles and honest
+unconfirmed appointments, resources/FAQs/conduct, contextual registry-resolved Forms CTAs.
+All original tracks, planned activities, eligibility, team, submission, tie/conflict rules and
+privacy guidance retained. Geographic eligibility remains pending; international presentation
+is not evidence of participant geography or partners. Funding/first-place allocation remains
+unapproved. Registration alone earns no certificate. No countdown date or new dependency.
+
+Accessibility: one h1, descriptive links, named section navigation, aria-current location,
+visible focus, native details, reserved SVG/image dimensions, optional progressive entrances,
+four-second network motion, reduced-motion override. Global themes are retained while the
+landing deliberately uses dark color-scheme in either theme. Native section links work without
+JavaScript; only the active indicator needs a small inline script with no requests/storage.
+
+Validation: Node 24 check/build/test plus generated route/anchor/CTA checks, browser desktop,
+tablet/mobile, SVG contrast, focus, reduced motion and output isolation. Actual outcomes and
+limits are recorded in the [review](../hackathons/HACK-DESIGN-002-REVIEW.md) and development log.
+No remote CI, release or deployment is asserted.

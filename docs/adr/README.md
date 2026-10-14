@@ -68,3 +68,5 @@ runtime metadata, with no private correspondence paths. No dependencies or hosti
 - [ADR-009 — challenge architecture SVGs](ADR-009-challenge-architecture-visuals.md): safe local vectors and shared card/detail rendering.
 
 - [ADR-010 — sixth Portal challenge](ADR-010-everyday-ai-portal-extension.md): explicit COM-003A extension provenance and unchanged evidence schemas.
+
+- [ADR-011 — Scoped international event landing](ADR-011-scoped-hackathon-event-landing.md): exclusive landing components/styles; unchanged shared routes, policy and intake.
