@@ -20,3 +20,8 @@ ChallengeDiagram uses build-time local raw imports with exact ID allowlist and s
 Remaining: owner review and later authorized task separation; existing Forms/evidence/upstream approval/security blockers are unrelated and unchanged. See [review handover](../hackathons/HACK-VISUAL-001-REVIEW.md).
 
 HACK-CHALLENGE-006: the sixth topic/diagram extends the original five-topic visual decision with explicit Portal provenance; [SPEC-019](SPEC-019-everyday-ai-challenge.md) governs its requirements/upstream gap. Original assets/workflow preserved.
+
+2026-10-14 DESIGN-002: `/hackathons/` adds exclusive navy/cyan presentation, elevation and
+borders around the same six EventCard/ChallengeDiagram instances. Assets, briefs, acceptance
+criteria and detail rendering remain unchanged. Existing 3/2/1 layout and SVG safety checks
+remain applicable; see the [experience specification](HACKATHON_EXPERIENCE_SPEC.md).

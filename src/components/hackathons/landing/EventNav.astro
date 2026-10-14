@@ -1,0 +1,28 @@
+---
+import { href } from "../../../data/project";
+const sections = [["challenges", "Challenges"], ["how-it-works", "Qualification"], ["timeline", "Timeline"], ["prizes", "Awards"], ["judging", "Judging"], ["faq", "FAQs"]];
+---
+<nav class="hx-event-nav" aria-label="Event sections">
+  <span class="hx-nav-brand">AEGLYSAI / 2026</span>
+  <div>{sections.map(([id, title]) => <a href={`#${id}`} data-event-section={id}>{title}</a>)}</div>
+  <a href={href("hackathons/events")}>Full rules ↗</a>
+</nav>
+<script is:inline data-event-nav-init>
+  function initEventNavigation() {
+  const nav = document.querySelector('.hx-event-nav');
+  if (nav && 'IntersectionObserver' in window) {
+    const links = Array.from(nav.querySelectorAll('[data-event-section]'));
+    const observer = new IntersectionObserver(entries => {
+      const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+      if (!visible) return;
+      links.forEach(link => {
+        if (link.dataset.eventSection === visible.target.id) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    }, { rootMargin: '-15% 0px -55% 0px', threshold: 0 });
+    links.forEach(link => { const section = document.getElementById(link.dataset.eventSection); if (section) observer.observe(section); });
+  }
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initEventNavigation, { once: true });
+  else initEventNavigation();
+</script>

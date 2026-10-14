@@ -13,3 +13,7 @@ Alternatives: raster/generated posters rejected by user scope and readability; f
 Validation: SPEC-018 and visual handover record actual check/build/tests, local screenshots and browser limits. Requested new branch is not created from the combined dirty checkout; current feature branch/work retained and a visual-only review patch prepared. Future authorized separation must account for related finalized challenge data/workflow, not include unrelated sprint changes.
 
 HACK-CHALLENGE-006 update: [ADR-010](ADR-010-everyday-ai-portal-extension.md) adds one SVG/Portal topic, changes current grid to three columns × two rows, retains the original five vectors and all rules. Earlier 3+2 decision is historical.
+
+2026-10-14 DESIGN-002: [ADR-011](ADR-011-scoped-hackathon-event-landing.md) scopes the new
+international landing presentation. The existing six SVG assets, renderer and detail pages
+remain unchanged; only the landing wrapper changes card borders, colors and hover elevation.

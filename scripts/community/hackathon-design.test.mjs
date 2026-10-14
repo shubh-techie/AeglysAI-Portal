@@ -1,0 +1,33 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+const landing = () => readFileSync('dist/hackathons/index.html', 'utf8');
+test('DESIGN-002 preserves full individual qualification and independent competition rounds', () => {
+ const html = landing();
+ for (const label of ['REGISTER','FORK AEGLYSAI','CLONE &amp; RUN','UNDERSTAND &amp; DOCUMENT','SUBMIT EVIDENCE','ORGANIZER REVIEW','BUILD &amp; COMPETE']) assert.ok(html.includes(label), label);
+ for (const evidence of ['sanitized build-log URLs','qualification/&lt;github-username&gt;','community/qualification/&lt;github-username&gt;.md','Model D knowledge is not required','does not guarantee selection','No duplicate active team membership']) assert.ok(html.includes(evidence), evidence);
+ const round1 = html.slice(html.indexOf('ROUND 01 /'), html.indexOf('ROUND 02 /'));
+ const round2 = html.slice(html.indexOf('ROUND 02 /'), html.indexOf('Proposed capacity:'));
+ for (const [category,weight] of [['Working functionality',30],['AI/ML or intelligent feature',25],['Relevance and creativity',20],['Reproducibility',15],['Video clarity',10]]) assert.ok(round1.includes(`${category} — ${weight} points`));
+ for (const [category,weight] of [['Live demonstration',35],['Technical understanding',25],['Solution quality and safety',20],['Technical Q&amp;A',15],['Presentation',5]]) assert.ok(round2.includes(`${category} — ${weight} points`));
+ assert.ok(html.includes('do not combine round scores'));
+});
+test('DESIGN-002 uses truthful award presentation and landing-only assets', () => {
+ const html=landing();
+ assert.ok(html.includes('PROPOSED AWARD — SUBJECT TO CONFIRMATION'));
+ assert.ok(html.includes('$300'));
+ assert.ok(html.includes('funding is unconfirmed'));
+ assert.ok(html.includes('Final prize structure to be announced'));
+ assert.ok(html.includes('Sample — Not Valid for Verification'));
+ assert.ok(html.includes('Registration alone does not earn a certificate'));
+ assert.equal((html.match(/<h1\b/g)||[]).length,1);
+ const page=readFileSync('src/pages/hackathons/index.astro','utf8');
+ assert.ok(page.includes('hackathon-landing.css'));
+ assert.ok(!readFileSync('src/pages/hackathons/sponsors.astro','utf8').includes('hackathon-landing.css'));
+ assert.ok(!readFileSync('src/pages/hackathons/events.astro','utf8').includes('hackathon-landing.css'));
+ assert.doesNotMatch(page,/https:\/\/(?:forms\.gle|docs\.google\.com\/forms)/);
+ const css=readFileSync('src/styles/hackathon-landing.css','utf8');
+ assert.ok(css.includes('prefers-reduced-motion:reduce'));
+ assert.ok(css.includes('animation: none !important'));
+ assert.doesNotMatch(html,/countdown|stock-headshot|guaranteed employment/i);
+});

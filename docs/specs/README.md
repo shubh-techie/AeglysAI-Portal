@@ -75,3 +75,7 @@ and organizer follow-ups separately from public runtime records.
 - [SPEC-019 — AI for Everyday Life](SPEC-019-everyday-ai-challenge.md): sixth Portal topic, safe prototype requirements and upstream follow-up.
 
 - [SPEC-020 — Hackathon operations](SPEC-020-hackathon-portal-operations.md): verified seven-stage Forms registry, gated onboarding and certificate recognition; preview reference and opening approvals pending.
+
+2026-10-14: AEGLYSAI-HACK-DESIGN-002 extends the existing
+[Hackathon Experience specification](HACKATHON_EXPERIENCE_SPEC.md), SPEC-018 and SPEC-020
+with the exclusive international landing presentation. No duplicate hackathon SPEC created.

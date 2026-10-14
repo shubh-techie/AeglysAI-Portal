@@ -22,3 +22,10 @@ CertificateShowcase and hackathonCertificates define eight distinct conditional 
 Pending: organizer visual review; privacy notices/necessary contact collection/retention; explicit public-profile/photo/project permission; final-submission missing checklist fields; organizer roster/role/issuance verification. No hosted CI/deployment or actual issued certificate inferred.
 
 Architecture remains [ADR-007](../adr/ADR-007-google-workspace.md). Related [SPEC-012](SPEC-012-hackathon-submissions.md), [SPEC-019](SPEC-019-everyday-ai-challenge.md), [certificate policy](../hackathons/CERTIFICATE_POLICY.md).
+
+2026-10-14 DESIGN-002: landing-only visual composition reuses the unchanged FormCta resolver,
+registry, approved profiles and certificate sample. Contextual participant/qualification/team/
+project/role actions stay matched; no opening settings or responder URLs changed. Hero,
+qualification and final callout provide a primary action at their respective stages. Prize
+presentation explicitly remains proposed/funding-unconfirmed; recognition still needs separate
+eligibility review and organizer approval. See the existing experience specification and ADR-011.
