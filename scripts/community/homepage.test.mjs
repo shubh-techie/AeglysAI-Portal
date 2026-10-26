@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { originalHomepage } from './homepage-preservation.mjs';
+import { originalHackathon } from './registration-preservation.mjs';
 const read = path => readFileSync(path, 'utf8');
 const sha = value => createHash('sha256').update(value).digest('hex');
 const baseline = JSON.parse(read('scripts/community/fixtures/homepage-baseline.json'));
@@ -12,7 +13,7 @@ test('UX-002 retains every existing homepage byte except its three explicit addi
   assert.equal(baseline.baseline, '6f56ec09a4556143e43d268fed24237cabb20bfd');
   assert.equal(sha(originalHomepage(html)), baseline.homepage);
   assert.equal(Object.keys(baseline.routes).length, 27);
-  for (const [path, hash] of Object.entries(baseline.routes)) assert.equal(sha(read(`dist/${path}`)), hash, path);
+  for (const [path, hash] of Object.entries(baseline.routes)) assert.equal(sha(path==='hackathons/index.html'?originalHackathon(read(`dist/${path}`)):read(`dist/${path}`)), hash, path);
   assert.equal((html.match(/<aside class="home-research-note"/g) ?? []).length, 1);
   assert.equal((html.match(/<section class="section container home-community"/g) ?? []).length, 1);
   assert.equal((html.match(/<style data-home-experience>/g) ?? []).length, 1);

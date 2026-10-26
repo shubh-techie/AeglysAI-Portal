@@ -87,3 +87,5 @@ with the exclusive international landing presentation. No duplicate hackathon SP
 - [SPEC-024 — Homepage experience](SPEC-024-homepage-experience.md): homepage-only hierarchy, research boundaries and event discovery, with before/after and preservation validation.
 
 - [SPEC-025 — Approved public showcase registry](SPEC-025-approved-public-showcase-registry.md): sanitized JSON export, independent approval and integration with the existing EVENT-001 showcase; no live Sheet or real public seed.
+
+- [SPEC-026 — External registration channels](SPEC-026-registration-channels.md): Unstop/Luma discovery, Discord support and a planned private reconciliation boundary; official qualification/selection remains authoritative.

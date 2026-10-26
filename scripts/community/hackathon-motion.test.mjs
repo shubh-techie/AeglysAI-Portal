@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { originalHackathon, originalHackathonSource } from './registration-preservation.mjs';
 import { originalHomepage } from './homepage-preservation.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -11,8 +12,8 @@ const originalHeader = (html, path) => html.replace(/<header class="site-header"
 const normalize = html => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'').replace(/\/_astro\/[^" ]+\.css/g,'/_astro/STYLES.css');
 test('DESIGN-005 preserves every non-network landing HTML byte and protected content source', () => {
  const revised = JSON.parse(readFileSync('scripts/community/fixtures/hackathon-interactions-baseline.json','utf8'));
- assert.equal(sha(normalize(originalHeader(readFileSync('dist/hackathons/index.html','utf8'), 'hackathons/index.html')).replace(/<div class="hx-network\b[\s\S]*?(?=<\/section>)/,'NETWORK</div>')),revised.landingOutsideNetwork);
- for(const [path,hash] of Object.entries(baseline.protectedSources).filter(([path])=>path!=='src/components/hackathons/landing/EventHero.astro')) assert.equal(sha(readFileSync(path)),hash,path);
+ assert.equal(sha(normalize(originalHeader(originalHackathon(readFileSync('dist/hackathons/index.html','utf8')), 'hackathons/index.html')).replace(/<div class="hx-network\b[\s\S]*?(?=<\/section>)/,'NETWORK</div>')),revised.landingOutsideNetwork);
+ for(const [path,hash] of Object.entries(baseline.protectedSources).filter(([path])=>path!=='src/components/hackathons/landing/EventHero.astro')) assert.equal(sha(path==='src/pages/hackathons/index.astro'?originalHackathonSource(readFileSync(path,'utf8')):readFileSync(path)),hash,path);
 });
 test('EVENT-001 preserves 25 other routes and all pre-existing community content/styles', () => {
  assert.equal(Object.keys(baseline.otherRoutes).length,26);
