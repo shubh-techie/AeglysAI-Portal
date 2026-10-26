@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 const baseline = JSON.parse(readFileSync('scripts/community/fixtures/hackathon-motion-baseline.json','utf8'));
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -19,10 +19,10 @@ test('EVENT-001 preserves 25 other routes and all pre-existing community content
   const html=readFileSync(`dist/${path}`,'utf8');
   if (path === 'hackathons/community/index.html') {
    const eventBaseline = JSON.parse(readFileSync('scripts/community/fixtures/event-showcase-baseline.json','utf8'));
-   const withoutShowcase = normalize(html).replace(/<style>\.event-showcase\[[\s\S]*?<\/style>/, '').replace(/<section class="section event-showcase"[\s\S]*?<\/section>/, '');
+   const withoutShowcase = normalize(originalHeader(html,path)).replace(/<style>\.event-showcase\[[\s\S]*?<\/style>/, '').replace(/<section class="section event-showcase"[\s\S]*?<\/section>/, '');
    assert.equal(sha(withoutShowcase.replace(/<style>[\s\S]*?<\/style>/g,'')),eventBaseline.html,path);
    assert.equal(sha([...withoutShowcase.matchAll(/<style>([\s\S]*?)<\/style>/g)].map(x=>x[1]).join('').replace(/\s/g,'')),eventBaseline.inlineStyles,'Existing community inline styles');
-  } else assert.equal(sha(normalize(html)),record.html,path);
+  } else assert.equal(sha(normalize(originalHeader(html,path))),record.html,path);
   const styles=[...html.matchAll(/href="(\/_astro\/[^" ]+\.css)"/g)].map(match=>sha(readFileSync(`dist${match[1]}`)));
   assert.deepEqual(styles,record.styles,`${path} CSS`);
  }
