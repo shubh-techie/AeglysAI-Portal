@@ -1,8 +1,13 @@
 ---
+import navigationController from "./mobile-navigation.js?raw";
 import BrandMark from "./BrandMark.astro";
 import ThemeControls from "./ThemeControls.astro";
 import { href, navigation, project } from "../data/project";
+const researchPaths = ["research", "experiments", "publications"];
+const researchItems = navigation.filter(item => researchPaths.includes(item.path));
+const topLevelItems = navigation.filter(item => !researchPaths.includes(item.path) || item.path === "research");
 const current = Astro.url.pathname.replace(/\/$/, "");
+const isCurrent = (path: string) => current === href(path).replace(/\/$/, "") || (["speaking", "community"].includes(path) && current.startsWith(href(path)));
 ---
 
 <header class="site-header">
@@ -11,14 +16,30 @@ const current = Astro.url.pathname.replace(/\/$/, "");
       <BrandMark />
       Aeglys<span>AI</span>
     </a>
+    <ThemeControls />
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-navigation" data-menu-toggle hidden>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+      <span class="sr-only">Menu</span>
+    </button>
+    <details class="site-menu" data-site-menu>
+      <summary class="menu-fallback" aria-controls="site-navigation"><span class="menu-open-label">Menu</span><span class="menu-close-label">Close menu</span></summary>
+      <div class="navigation-panel" id="site-navigation">
+        <div class="mobile-menu-heading"><span id="navigation-title">Navigation</span><button type="button" data-menu-close>Close <span aria-hidden="true">×</span></button></div>
     <nav aria-label="Main navigation">
-      {navigation.map((item) => (
-        <a
-          href={href(item.path)}
-          aria-current={
-            current === href(item.path).replace(/\/$/, "") || (["speaking", "community"].includes(item.path) && current.startsWith(href(item.path))) ? "page" : undefined
-          }
-        >
+      <a class="mobile-home" href={href()} aria-current={current === href().replace(/\/$/, "") ? "page" : undefined}>Home</a>
+      {topLevelItems.map((item) => item.path === "research" ? (
+        <details class="research-navigation" data-research-navigation>
+          <summary aria-controls="research-destinations" class:list={{ "research-current": researchItems.some(item => isCurrent(item.path)) }}>
+            Research
+          </summary>
+          <ul id="research-destinations" class="research-destinations" aria-label="Research destinations">
+            {researchItems.map(item => (
+              <li><a href={href(item.path)} aria-current={isCurrent(item.path) ? "page" : undefined}>{item.label}</a></li>
+            ))}
+          </ul>
+        </details>
+      ) : (
+        <a href={href(item.path)} aria-current={isCurrent(item.path) ? "page" : undefined}>
           {item.label}
         </a>
       ))}
@@ -32,6 +53,57 @@ const current = Astro.url.pathname.replace(/\/$/, "");
       View on GitHub <span aria-hidden="true">↗</span>
       <span class="sr-only"> (opens in a new tab)</span>
     </a>
-    <ThemeControls />
+        <button class="mobile-system-action" type="button" data-menu-system>Use system theme</button>
+      </div>
+    </details>
   </div>
+  <dialog id="mobile-navigation" class="mobile-navigation" aria-labelledby="navigation-title"></dialog>
+  <style is:inline>
+    .site-header .wordmark { min-height: 44px; }
+    .site-header .site-menu { margin-left: auto; }
+    .site-menu > summary { cursor: pointer; color: var(--text); padding: 12px; min-width: 44px; min-height: 44px; }
+    .site-header summary:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; border-radius: 3px; }
+    .menu-close-label, .site-menu[open] .menu-open-label { display: none; }
+    .site-menu[open] .menu-close-label { display: inline; }
+    .navigation-ready .menu-fallback, .mobile-menu-heading, .mobile-home, .mobile-system-action { display: none; }
+    .mobile-menu-toggle[hidden] { display: none; }
+    .mobile-menu-toggle, .mobile-menu-heading button, .mobile-system-action { min-width: 44px; min-height: 44px; padding: 10px; border: 1px solid var(--button-border); border-radius: 4px; color: var(--text); background: var(--surface); cursor: pointer; }
+    .research-navigation { position: relative; align-self: flex-start; }
+    .research-navigation summary { padding: 1rem 0; min-width: 44px; min-height: 44px; color: var(--muted); font-size: .82rem; cursor: pointer; }
+    .research-navigation summary:hover, .research-navigation .research-current { color: var(--text); }
+    .research-destinations { position: absolute; z-index: 20; top: 100%; left: 0; min-width: 190px; margin: 0; padding: 8px; list-style: none; border: 1px solid var(--line); background: var(--surface); box-shadow: 0 8px 24px #0002; }
+    .site-header .research-destinations a { display: block; padding: 12px; min-height: 44px; }
+    .site-header .research-destinations a:hover { background: var(--surface-raised); color: var(--text); }
+    .site-header .research-destinations a[aria-current]:after { left: 12px; right: 12px; bottom: 6px; }
+    @media (min-width: 1025px) {
+      .site-header .site-menu { order: 1; }
+      .site-header .theme-controls { order: 2; }
+      .site-menu[open] > .navigation-panel { display: flex; gap: 24px; align-items: center; }
+      .site-header .navigation-panel nav { width: auto; order: initial; margin: 0; gap: 1.2rem; }
+    }
+    @media (max-width: 1024px) {
+      .site-header { position: relative; }
+      .site-header .header-inner { min-height: 76px; flex-wrap: nowrap; gap: 8px; padding-block: 12px; }
+      .site-header .wordmark { font-size: 1.1rem; white-space: nowrap; }
+      .site-header .theme-controls { margin-left: auto; }
+      .site-header .theme-controls [data-theme-system] { display: none; }
+      .site-header .site-menu { margin: 0; }
+      .site-menu > .navigation-panel { position: absolute; z-index: 30; top: 100%; right: 0; width: 100%; max-height: calc(100dvh - 76px); overflow-y: auto; padding: 20px; background: var(--surface); border-block: 1px solid var(--line); }
+      .site-header .navigation-panel nav { display: flex; flex-direction: column; align-items: stretch; flex-wrap: nowrap; gap: 4px; width: 100%; margin: 0 0 20px; }
+      .site-header .navigation-panel nav > a, .research-navigation summary { min-height: 44px; padding: 12px; font-size: .95rem; }
+      .site-header .navigation-panel a[aria-current]:after { left: 12px; right: 12px; bottom: 4px; }
+      .site-header .navigation-panel .mobile-home { display: block; }
+      .research-navigation { width: 100%; }
+      .research-destinations { position: static; min-width: 0; width: 100%; margin: 4px 0 8px; padding-left: 20px; box-shadow: none; border-width: 0 0 0 2px; }
+      .site-header .navigation-panel .header-github { display: flex; margin: 0; width: 100%; min-height: 44px; }
+      .navigation-ready .mobile-menu-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; font-weight: 600; }
+      .navigation-ready .mobile-system-action { display: block; width: 100%; margin-top: 12px; }
+    }
+    .mobile-navigation { inset: 0 0 0 auto; margin: 0; width: min(90vw, 360px); height: 100dvh; max-width: 100%; max-height: 100dvh; padding: 24px 20px; border: 0; border-left: 1px solid var(--line); color: var(--text); background: var(--surface); overflow-y: auto; overscroll-behavior: contain; }
+    .mobile-navigation::backdrop { background: #0009; }
+    .mobile-navigation[open] { animation: navigation-enter 140ms ease-out; }
+    @keyframes navigation-enter { from { opacity: .4; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .mobile-navigation[open] { animation: none; } }
+  </style>
+  <script is:inline data-research-nav-init set:html={navigationController} />
 </header>
