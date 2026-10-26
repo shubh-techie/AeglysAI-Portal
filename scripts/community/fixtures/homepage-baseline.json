@@ -1,0 +1,33 @@
+{
+  "baseline": "6f56ec09a4556143e43d268fed24237cabb20bfd",
+  "routes": {
+    "404.html": "28906a0a732eb2d9d7c63929929ae7283e9fa27fc8638e614c1b3f89d516c59f",
+    "research/index.html": "065e2e077c8fe4a13eee4d7c8bb13abf822a737324aac622205fd465f911f1cc",
+    "publications/index.html": "ffda8eb95a27cb8e03218fa11280ac2395227aa85e474dc278ffb7aae83d94a0",
+    "experiments/index.html": "c16afae225ec7bb52598a4a331acf5ef06e537d92e87b08812b15497a053d31d",
+    "about/index.html": "a9bfd3cfd2cf26cab46d16b010614b486b65222b364ae40080415188af884662",
+    "architecture/index.html": "f5e0524466e18c252e892b14ad327a61ae2fbbbdeacb6276cdf85f7214d46408",
+    "hackathons/index.html": "bfe4ba9dc1baccd009a45fa60bfaba836bf291b9e566e2137bc35f542b64a64b",
+    "community/index.html": "e56e806c76fed63c6cb89b9425f851dd16894f0950562c16ce2f0db912122ba1",
+    "speaking/index.html": "98591b5eda21183ee749e320b7964b55c190c54b455a5a5391307e4b22a9bc28",
+    "media/index.html": "a1a242b5e752cfd7b9d9d90522ff3941b5cb9503b6f7d23ebdf5975223d45c85",
+    "hackathons/adaptive-authorization/index.html": "a1ae61b74e0c8c5c2076c82c4fc034e9add31eba5b0cf00954e30c9a5cacef6d",
+    "hackathons/autonomous-resilience/index.html": "2ea359b1bfa31464f64bdb6d9fb82b48488892778f65a1b58b6d041fdcfc861f",
+    "hackathons/sponsors/index.html": "1f34d0d1855a8e034600dffbf1ff7f13354a0ee52aa8a75d7ef6e91a4f2b02c0",
+    "hackathons/2027/index.html": "50dab052c1be26dd2787fa2d348bdc9f551aae8f075b9d737128300577fafe3e",
+    "hackathons/behavioral-risk/index.html": "6d4196d0f5c41ce5a592bc8d1674f2b44dabe005fd50ad71804de0e2f76cd4c7",
+    "hackathons/events/index.html": "78a50e94e708c8dde40a725baa1155d95062b1b033c19e8e7f1b23e6f4f42d37",
+    "hackathons/community/index.html": "b175a504e54d5e01998155e7bf14c510c9062d8b1bd8e6a4777451b177529824",
+    "community/submit/index.html": "a9477ac3c4132a4f75d164044ac5485d27b31136cb596c4f5ad1b5ae54acf0ae",
+    "community/projects/index.html": "512f9d30732de223bdd16f60cd01774c0d51dd37e046057b122a19c4d7112c00",
+    "community/adoption/index.html": "0a37e016968df4e8afdd199f47c2ce35845c91fb94adcb6b4368082ebc610cbf",
+    "community/impact/index.html": "5e0bb43f07287556ef745e00e4130cfac950cadaec0689d16cf69bf187edf1ed",
+    "community/reports/index.html": "7d53839a78cc83cef4654f7d8fd6a75e14395727d175df986f014af6387ff72c",
+    "speaking/gicite-2026-wru-key-talk/index.html": "9f3658d74f124da75ffdda17f10dd594e35fb2ec0ced6d00b76fa294ab10302f",
+    "speaking/building-ai-driven-incident-response/index.html": "c595885aff67dc469d8e980b7d74dc4d275a32750719554a2da4586a265767a4",
+    "speaking/from-static-security-policies/index.html": "3cd104a020330305cde4cd5f2c91fd633d4545de2eb468245361f7a2a5e28c0d",
+    "speaking/etic-2026/index.html": "753cf6f441c89f982e4d4bfe47399815cd545e3c93e7eacf2c0b0f4c79cc141e",
+    "speaking/beyond-static-access-control/index.html": "37516c562e500419f2524e6359f58eb9f2d7bc9792699d2fd47a8dad1c470751"
+  },
+  "homepage": "332a39b4121348313344d700113ed71c049308dbf169801e7eb78bcbbe67ed38"
+}

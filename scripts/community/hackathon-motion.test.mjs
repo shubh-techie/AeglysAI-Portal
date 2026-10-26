@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { originalHomepage } from './homepage-preservation.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -16,7 +17,7 @@ test('DESIGN-005 preserves every non-network landing HTML byte and protected con
 test('EVENT-001 preserves 25 other routes and all pre-existing community content/styles', () => {
  assert.equal(Object.keys(baseline.otherRoutes).length,26);
  for(const [path,record] of Object.entries(baseline.otherRoutes)) {
-  const html=readFileSync(`dist/${path}`,'utf8');
+  const html=path === 'index.html' ? originalHomepage(readFileSync(`dist/${path}`,'utf8')) : readFileSync(`dist/${path}`,'utf8');
   if (path === 'hackathons/community/index.html') {
    const eventBaseline = JSON.parse(readFileSync('scripts/community/fixtures/event-showcase-baseline.json','utf8'));
    const withoutShowcase = normalize(originalHeader(html,path)).replace(/<style>\.event-showcase\[[\s\S]*?<\/style>/, '').replace(/<section class="section event-showcase"[\s\S]*?<\/section>/, '');
