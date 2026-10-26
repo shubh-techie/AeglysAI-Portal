@@ -23,23 +23,32 @@ This workflow describes the required process, not existing branch-protection set
 
 ## Local development
 
-Use Node.js 24 LTS (`nvm use` if you use nvm) and npm.
+Use Node.js 24 via `.nvmrc` and the primary checkout at
+`/Users/shubhprabhat/Documents/Work/AeglysAI-Portal`.
+See [Local development](docs/LOCAL_DEVELOPMENT.md) for ownership checks, logs,
+stop/restart and safe branch transitions.
 
 ```sh
-npm install
-npm run dev
+unset npm_config_prefix  # Rider may set an incompatible npm prefix
+export NVM_DIR="$HOME/.nvm"
+. "$NVM_DIR/nvm.sh"
+nvm use
+npm ci  # initial dependency installation
+npm run dev -- --background
 ```
 
-Open the local address printed by Astro at `/`. Development and preview use the same root routes as production.
+Open http://localhost:4321/. The development config binds loopback only and fails
+if port 4321 is occupied. Astro serves source with automatic reload.
 
 ```sh
+npm run dev -- status
+npm run dev -- logs
 npm run check
 npm run build
 npm test
-npm run preview
 ```
 
-`npm test` checks the built `dist/` output, so run the build first. Production pages contain a small inline theme script; Home and Media Coverage also include a scoped carousel script, with no client JavaScript bundle. Theme defaults to the system preference; the header sun/moon button saves a light/dark choice in localStorage, and the monitor button restores system mode. No React, database, backend, authentication, CMS, analytics, cookies, external fonts or marketing SDKs are included.
+Tests inspect `dist`, so build first. `npm run preview` serves the last build.
 
 ## Site structure
 
