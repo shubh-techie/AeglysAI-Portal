@@ -528,6 +528,24 @@ Banner preserved and excluded. No staging, commit, push, merge or deployment.
 See [SPEC-022](specs/SPEC-022-research-navigation.md) and
 [UX-001 review](ux/UX-001-REVIEW.md) for exact scope, evidence and limitations.
 
+## 2026-10-26 — UX / EVENT / SEC integration compatibility resolution
+
+Implemented locally, uncommitted on the UX feature branch at `d5e5c9e`.
+No active main/PR conflict was present; resolved the anticipated overlapping test
+assumptions before combining EVENT #23 and SEC #24. Three test files now preserve
+both navigation and showcase expectations, count allowed scripts independently,
+and retain the original page/style baselines. No runtime source, content, dependency,
+asset or approved fixture hash changed. Prepared a combined development log retaining
+all historical entries in an isolated source-copy sandbox; no Git merge performed.
+
+UX-only check and 55 tests passed. Combined UX/EVENT/SEC check, 27-page build and
+64 tests passed; navigation's 12 viewport/theme/no-JavaScript cases and showcase's
+eight viewport/theme cases plus no-JavaScript passed. Negative probes confirmed
+unapproved community text and duplicate scripts still fail guards. Combined audit
+remains failed with one high cache advisory; Magicast embedded-code finding also
+remains open. No security waiver, commit, push, PR creation, merge or deployment.
+See [integration review](ux/INTEGRATION-REVIEW.md) for scope, evidence and limitations.
+
 ## 2026-10-26 — UX-001A compact responsive navigation correction
 
 IMPLEMENTED locally for review on the existing UX branch at `d5e5c9e`; previous
@@ -548,3 +566,15 @@ no-JavaScript. Audit remains six high/one moderate on this branch; SEC remains s
 with cache/Magicast findings open. No staging, commit, push, merge or deployment.
 See [UX-001A review](ux/UX-001A-REVIEW.md) and the corrective revision in
 [SPEC-022](specs/SPEC-022-research-navigation.md) for exact inventory, evidence and limits.
+
+## 2026-10-26 — Authorized integration compatibility closeout
+
+User authorized committing and pushing the remaining previously preserved integration
+fixes on the existing UX branch after UX-001A `514c78b`. Scope: the three compatibility
+test files, historical integration review and append-only development log. Runtime,
+page content, dependencies and the excluded banner remain unchanged. Fresh Node 24
+check passed with zero diagnostics, build produced 27 pages, and all 55 tests passed.
+Runtime/test files match the earlier isolated EVENT/SEC snapshot that passed 64 tests.
+The audit still exits 1 with six high and one moderate findings; no suppression,
+waiver, dependency upgrade, merge or deployment is included. Commit/push outcome and
+the current combined scope are recorded in draft PR #25 and the closeout report.

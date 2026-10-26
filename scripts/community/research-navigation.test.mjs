@@ -5,12 +5,21 @@ import { createHash } from 'node:crypto';
 const baseline = JSON.parse(readFileSync('scripts/community/fixtures/research-navigation-baseline.json', 'utf8'));
 const sha = value => createHash('sha256').update(value).digest('hex');
 
-test('UX-001 changes only the shared header across all 27 rendered routes', () => {
+test('UX-001 preserves all 27 routes outside the header, with the approved EVENT-001 community exception', () => {
   assert.equal(Object.keys(baseline.routes).length, 27);
   for (const [path, record] of Object.entries(baseline.routes)) {
     const html = readFileSync(`dist/${path}`, 'utf8');
     const outside = html.replace(/<header class="site-header">[\s\S]*?<\/header>/, 'HEADER').replace(/\/_astro\/[^" ]+\.css/g, '/_astro/STYLES.css');
-    assert.equal(sha(outside), record.outsideHeader, path);
+    if (path === 'hackathons/community/index.html' && existsSync('scripts/community/fixtures/event-showcase-baseline.json')) {
+      // Keep EVENT's independent baseline; do not regenerate UX's original page hashes.
+      const event = JSON.parse(readFileSync('scripts/community/fixtures/event-showcase-baseline.json', 'utf8'));
+      const restored = html.replace(/<header class="site-header">[\s\S]*?<\/header>/, baseline.headers[record.header]);
+      const previousContent = restored.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g, '').replace(/\/_astro\/[^" ]+\.css/g, '/_astro/STYLES.css')
+        .replace(/<section class="section event-showcase"[\s\S]*?<\/section>/, '').replace(/<style>[\s\S]*?<\/style>/g, '');
+      assert.equal(sha(previousContent), event.html, path);
+      assert.equal((html.match(/<section class="section event-showcase"/g) ?? []).length, 1);
+      assert.equal((html.match(/<script[^>]*data-showcase-init/g) ?? []).length, 1);
+    } else assert.equal(sha(outside), record.outsideHeader, path);
   }
 });
 

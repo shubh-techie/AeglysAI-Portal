@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 const baseline = JSON.parse(readFileSync('scripts/community/fixtures/hackathon-motion-baseline.json','utf8'));
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -13,11 +13,16 @@ test('DESIGN-005 preserves every non-network landing HTML byte and protected con
  assert.equal(sha(normalize(originalHeader(readFileSync('dist/hackathons/index.html','utf8'), 'hackathons/index.html')).replace(/<div class="hx-network\b[\s\S]*?(?=<\/section>)/,'NETWORK</div>')),revised.landingOutsideNetwork);
  for(const [path,hash] of Object.entries(baseline.protectedSources).filter(([path])=>path!=='src/components/hackathons/landing/EventHero.astro')) assert.equal(sha(readFileSync(path)),hash,path);
 });
-test('DESIGN-004 keeps all 26 other routes and their consumed styles identical to the untouched baseline', () => {
+test('Preserve all other routes and styles, allowing only the approved EVENT-001 showcase', () => {
  assert.equal(Object.keys(baseline.otherRoutes).length,26);
  for(const [path,record] of Object.entries(baseline.otherRoutes)) {
   const html=readFileSync(`dist/${path}`,'utf8');
-  assert.equal(sha(normalize(originalHeader(html,path))),record.html,path);
+  if (path === 'hackathons/community/index.html' && existsSync('scripts/community/fixtures/event-showcase-baseline.json')) {
+   const eventBaseline = JSON.parse(readFileSync('scripts/community/fixtures/event-showcase-baseline.json','utf8'));
+   const withoutShowcase = normalize(originalHeader(html,path)).replace(/<style>\.event-showcase\[[\s\S]*?<\/style>/, '').replace(/<section class="section event-showcase"[\s\S]*?<\/section>/, '');
+   assert.equal(sha(withoutShowcase.replace(/<style>[\s\S]*?<\/style>/g,'')),eventBaseline.html,path);
+   assert.equal(sha([...withoutShowcase.matchAll(/<style>([\s\S]*?)<\/style>/g)].map(x=>x[1]).join('').replace(/\s/g,'')),eventBaseline.inlineStyles,'Existing community inline styles');
+  } else assert.equal(sha(normalize(originalHeader(html,path))),record.html,path);
   const styles=[...html.matchAll(/href="(\/_astro\/[^" ]+\.css)"/g)].map(match=>sha(readFileSync(`dist${match[1]}`)));
   assert.deepEqual(styles,record.styles,`${path} CSS`);
  }
