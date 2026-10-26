@@ -2,6 +2,11 @@
 
 Architecture: [ADR-007](../adr/ADR-007-google-workspace.md). Applies to the first hackathon and COM-003B/004/006/007B/008B. This is an administrator procedure, not a provisioned Workspace integration.
 
+EVENT-002 adds a separate [approved showcase registry contract](../hackathons/PUBLIC_SHOWCASE_REGISTRY.md)
+for the existing EVENT-001 profile/role cards. Its sanitized candidate/export and
+independent digest approval do not read private Sheets or change the evidence contracts
+below. No live Sheet, access grants or real showcase snapshot is created by this task.
+
 1. Configure approved external Google Form responder URLs in src/data/hackathonForms.ts (participant for registration; project for submissions). Keep open=false until signed-out accessibility, privacy notice, purpose/retention and consent wording are reviewed. No email collection unless necessary and explicitly approved. No prefilled participant/contact query parameters. Never paste editor, private Sheet or Drive links into Portal configuration.
 2. Keep response Sheets and evidence Drive folders private to authorized administrators. Review least-privilege membership/sharing, retention/deletion and revocation procedures in Workspace; do not enable public link sharing. Store IDs, correspondence, consent evidence and review identities privately, outside Git, public assets and CI artifacts. No Sheets requests from browser JavaScript.
 3. Administrators manage RECEIVED, PENDING_REVIEW, VERIFIED, REJECTED and WITHDRAWN in private Sheets. Verification is separate from publication permission. Keep consent/review evidence in private Drive; no invitation letters, participant emails or internal row references in public records. On withdrawal, remove public records and regenerate affected approved exports/reports; retain only privately authorized audit history.

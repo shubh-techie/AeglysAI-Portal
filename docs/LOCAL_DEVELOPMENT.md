@@ -118,3 +118,36 @@ recheck PID/cwd, stop the old owned server from its cwd, then start the primary
 checkout. Verify homepage, both menus, 2027 page, themes, source HMR, branch/HEAD
 and listener ownership. Only then is DEV-002 complete; EVENT-002 stays blocked.
 Open cache/Magicast security findings remain unchanged, without waiver.
+
+## Verified transition — 2026-10-26
+
+The checkpoint above is historical. PR #30 merged at
+`e79ee98613a49268816b0424a1449ed342264a54`; Pages run 40396758047 succeeded for
+that SHA. Under EVENT-002 Phase 1 authorization, the clean primary checkout was
+fast-forwarded to this main, and only old Portal PID 62750 was stopped after verifying
+its cwd/executable. The primary was started under Node 24.22.1/npm 11.19.1/Astro 7.3.4.
+Eight homepage/theme/JS/no-JS cases, eight Research/Hackathon cases and an actual
+source-triggered browser reload passed; source bytes/timestamps restored and Git clean.
+DEV-002 local transition is complete. Historical worktree directories remain preserved.
+
+Before creating EVENT-002, the identified primary server was stopped for the branch
+switch, then restarted. The selected checkout is now this primary on
+`feat/AEGLYSAI-PORTAL-EVENT-002-public-registry`, based at that merge, with managed
+PID 75231 on loopback localhost:4321 at this recording. PID values are observations,
+not persistent configuration: recheck `.astro/dev.json` and lsof before operations.
+No additional active source checkout, LaunchAgent or unrelated process changes.
+
+A later complete listener inventory also identified stale primary preview PID 72734
+on4322, using Node23.11.0. Its cwd/command and Astro preview status were verified;
+only that preview was stopped through `npm run preview -- stop`. Final Node listener
+inventory shows only managed primary development PID75231 on127.0.0.1:4321.
+
+During final EVENT-002 checks a pre-existing interactive shell (PID66135) launched
+another primary `npm run preview` child, PID81615, on4322/Node23. Its command/cwd
+and preview lock were verified and it was stopped through native preview stop.
+No shell/IDE launcher settings were changed; manually or externally starting preview
+can recreate it. Continue using only localhost:4321 for source development.
+
+The external terminal recreated preview again (PID82310); exact command/cwd/lock
+were verified before native stop. Recurrence is an observed operational limitation,
+not a claim that the external launcher is disabled. The4321 source server stays75231.

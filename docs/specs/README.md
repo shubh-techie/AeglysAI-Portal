@@ -85,3 +85,5 @@ with the exclusive international landing presentation. No duplicate hackathon SP
 - [SPEC-023 — Hackathon 2027 coming soon](SPEC-023-hackathon-2027-coming-soon.md): future announcement route and shared Hackathon navigation disclosure; local review status and evidence recorded separately.
 
 - [SPEC-024 — Homepage experience](SPEC-024-homepage-experience.md): homepage-only hierarchy, research boundaries and event discovery, with before/after and preservation validation.
+
+- [SPEC-025 — Approved public showcase registry](SPEC-025-approved-public-showcase-registry.md): sanitized JSON export, independent approval and integration with the existing EVENT-001 showcase; no live Sheet or real public seed.
