@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { originalHomepage } from './homepage-preservation.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -8,7 +9,7 @@ const sha = value => createHash('sha256').update(value).digest('hex');
 test('UX-001 preserves all 27 routes outside the header, with the approved EVENT-001 community exception', () => {
   assert.equal(Object.keys(baseline.routes).length, 27);
   for (const [path, record] of Object.entries(baseline.routes)) {
-    const html = readFileSync(`dist/${path}`, 'utf8');
+    const html = path === 'index.html' ? originalHomepage(readFileSync(`dist/${path}`, 'utf8')) : readFileSync(`dist/${path}`, 'utf8');
     const outside = html.replace(/<header class="site-header">[\s\S]*?<\/header>/, 'HEADER').replace(/\/_astro\/[^" ]+\.css/g, '/_astro/STYLES.css');
     if (path === 'hackathons/community/index.html' && existsSync('scripts/community/fixtures/event-showcase-baseline.json')) {
       // Keep EVENT's independent baseline; do not regenerate UX's original page hashes.

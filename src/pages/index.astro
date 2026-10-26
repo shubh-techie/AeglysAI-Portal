@@ -139,6 +139,7 @@ const presentations = featuredPresentations();
         <ModelCard model={model} />
       ))}
     </div>
+    <aside class="home-research-note" aria-label="Research implementation boundary"><strong>A research progression, not a product maturity scale.</strong><p>Models A–C describe implemented baselines in the separate research repository; this portal does not independently validate their effectiveness. Model D is planned, non-enforcing research (<code>enforcement_authority=NONE</code>), not a production authorization mechanism.</p></aside>
   </section>
   <section class="section container architecture-section">
     <SectionHeading
@@ -158,6 +159,13 @@ const presentations = featuredPresentations();
       <a class="text-link" href={href("experiments")}>
         Toward reproducible experiments <span aria-hidden="true">→</span>
       </a>
+    </div>
+  </section>
+  <section class="section container home-community" aria-labelledby="home-community-heading">
+    <div class="section-heading-row"><div><span class="eyebrow">Build / Learn / Contribute</span><h2 id="home-community-heading">Build with the community.</h2></div><a class="text-link" href={href("community")}>Explore the community <span aria-hidden="true">→</span></a></div>
+    <div class="home-community-grid">
+      <article class="home-event-card"><span class="eyebrow">AEGYTHON 2026</span><h3>Turn curiosity into working software.</h3><p>Explore the six challenges, qualification guidance and existing event program.</p><a class="button button-primary" href={href("hackathons")}>Explore AEGYTHON 2026 <span aria-hidden="true">→</span></a></article>
+      <article class="home-event-card home-event-future"><span class="eyebrow">Hackathon 2027</span><h3>Coming Soon</h3><p>A new chapter of innovation and collaboration. Details will be shared when officially confirmed.</p><a class="text-link" href={href("hackathons/2027")}>Hackathon 2027 — Coming Soon <span aria-hidden="true">→</span></a></article>
     </div>
   </section>
   <section class="section container" aria-labelledby="featured-media-heading" id="featured-media">
@@ -181,4 +189,94 @@ const presentations = featuredPresentations();
       About & Roadmap <span aria-hidden="true">→</span>
     </a>
   </section>
+  <style is:inline data-home-experience>
+    /* Homepage-only presentation; shared route/component styles remain untouched. */
+    .home-hero { grid-template-columns: minmax(0, 1.15fr) minmax(0, .9fr); gap: clamp(2rem, 5vw, 5rem); padding-block: clamp(3rem, 6vw, 6rem); }
+    .hero-copy { min-width: 0; }
+    .hero-kicker { width: fit-content; padding: .5rem .8rem; border: 1px solid var(--line); border-radius: 30px; background: var(--surface); font-size: .66rem; letter-spacing: .08em; }
+    .home-hero h1 { font-size: clamp(3.5rem, 6.8vw, 6rem); line-height: 1.02; margin: 0; }
+    .hero-fullname { font-size: clamp(1.65rem, 2.8vw, 2.65rem); line-height: 1.2; margin-top: 1.5rem; max-width: 21ch; }
+    .tagline { margin-block: 1.5rem 0; font-size: .8rem; }
+    .hero-description { max-width: 55ch; font-size: 1.05rem; line-height: 1.75; }
+    .hero-description + .hero-description { font-size: .94rem; color: var(--muted); }
+    .hero-copy .actions { gap: .75rem; margin-top: 1.75rem; }
+    .hero-copy .button { min-height: 48px; padding: .85rem 1.1rem; }
+    .research-visual { width: 100%; border-radius: 12px; background: linear-gradient(145deg, var(--panel-start), var(--surface)); overflow: hidden; }
+    .research-visual svg { display: block; aspect-ratio: 420 / 330; max-height: 360px; }
+    .visual-top, .visual-bottom { padding: 1.5rem; }
+    .visual-bottom p { font-size: 1.35rem; line-height: 1.4; }
+    .visual-top .eyebrow, .visual-bottom .eyebrow, .microcopy { font-size: .7rem; }
+    .theme-band > .container { gap: 2rem; padding-block: 1.35rem; }
+    .theme-band p { max-width: 65ch; line-height: 1.6; font-size: .9rem; }
+    .section.container { padding-block: clamp(3rem, 5vw, 5rem); }
+    .section-heading-row { align-items: flex-end; margin-bottom: 2rem; gap: 1.5rem; }
+    .section .section-heading { max-width: 660px; margin-bottom: 2rem; }
+    .section-heading-row .section-heading { margin-bottom: 0; }
+    .section h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); line-height: 1.2; letter-spacing: -.035em; }
+    .section .section-heading p { font-size: 1rem; line-height: 1.75; max-width: 60ch; }
+    .section .text-link { display: inline-flex; align-items: center; min-height: 44px; }
+    .models-grid { gap: 1rem; }
+    .models-grid .model-card { padding: 1.5rem; border-radius: 8px; background: linear-gradient(155deg, var(--surface), var(--theme-band)); }
+    .models-grid .planned-card { background: var(--planned-wash); }
+    .models-grid .model-top { margin-bottom: 1.5rem; }
+    .models-grid .model-card h3 { font-size: 1.1rem; line-height: 1.4; min-height: 3.1rem; }
+    .models-grid .model-card p { font-size: .9rem; line-height: 1.7; }
+    .models-grid .badge { margin-top: auto; font-size: .65rem; }
+    .home-research-note { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 1.5rem; margin-top: 1.5rem; padding: 1.5rem; border: 1px solid var(--line); border-left: 3px solid var(--amber); border-radius: 6px; background: var(--surface); }
+    .home-research-note strong { font-size: 1rem; line-height: 1.5; color: var(--text); }
+    .home-research-note p { margin: 0; font-size: .9rem; color: var(--muted); line-height: 1.7; }
+    .home-research-note code { overflow-wrap: anywhere; }
+    .architecture-section .architecture { padding: clamp(1rem, 3vw, 2.5rem); border-radius: 10px; }
+    .architecture-section .diagram-header { gap: 1rem; flex-wrap: wrap; }
+    .architecture-section .diagram-legend { font-size: .8rem; gap: 1rem; }
+    .architecture-section .diagram-node { padding: 1.3rem .75rem; font-size: .95rem; line-height: 1.4; }
+    .architecture-section .diagram-node small { font-size: .72rem; line-height: 1.5; }
+    .architecture-section .planned-strip { font-size: .8rem; padding: 1rem; }
+    .architecture-section figcaption { font-size: .85rem; line-height: 1.75; }
+    .question-section { border-block: 1px solid var(--line); }
+    .question-section .question-copy { font-size: 1.05rem; line-height: 1.8; }
+    .home-community-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 1.25rem; }
+    .home-event-card { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(1.5rem, 3vw, 2.5rem); border: 1px solid var(--panel-border); border-radius: 10px; background: linear-gradient(140deg, var(--panel-start), var(--surface)); }
+    .home-event-card h3 { margin: 1rem 0; font-size: clamp(1.4rem, 2vw, 1.8rem); line-height: 1.3; letter-spacing: -.025em; }
+    .home-event-card p { margin: 0 0 1.5rem; color: var(--muted); }
+    .home-event-card a { margin-top: auto; min-height: 48px; }
+    .home-event-future { border-color: var(--line); background: var(--surface); }
+    #featured-media .section-heading-row { margin-bottom: 2rem; }
+    #featured-media .media-card, .section .presentation-card { border-radius: 10px; }
+    #featured-media .media-body { padding: 1.5rem; }
+    #featured-media .media-card h3 { -webkit-line-clamp: unset; font-size: 1.05rem; line-height: 1.5; }
+    #featured-media .media-controls { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; max-width: 430px; margin-inline: auto; gap: .5rem; }
+    #featured-media .media-controls[hidden] { display: none; }
+    #featured-media .media-pagination { display: flex; flex-wrap: wrap; justify-content: center; }
+    #featured-media .media-pagination button { width: 44px; min-width: 44px; height: 44px; }
+    .closing-panel { margin-top: 2rem; margin-bottom: 4rem; padding: clamp(1.5rem, 4vw, 3rem); border-radius: 10px; gap: 2rem; }
+    .closing-panel h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); line-height: 1.25; }
+    .closing-panel p { max-width: 56ch; line-height: 1.75; }
+    @media (max-width: 1100px) { .models-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 960px) {
+      .home-hero { grid-template-columns: 1fr; }
+      .hero-copy { max-width: 680px; }
+      .research-visual { max-width: 580px; margin: 0; }
+      .hero-fullname { max-width: 25ch; }
+      .home-research-note { grid-template-columns: 1fr; gap: .75rem; }
+      .architecture-section .engine-grid { grid-template-columns: 1fr; }
+      .architecture-section .inline-arrow { transform: rotate(90deg); line-height: 30px; }
+      .architecture-section .input-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 600px) {
+      .home-hero { padding-block: 2.5rem 3rem; gap: 2.5rem; }
+      .hero-copy .actions { display: grid; grid-template-columns: 1fr; }
+      .hero-copy .button { justify-content: center; }
+      .models-grid, .home-community-grid { grid-template-columns: 1fr; }
+      .models-grid .model-card h3 { min-height: 0; }
+      .section-heading-row { display: block; }
+      .section-heading-row > .text-link { margin: .75rem 0 0; white-space: normal; }
+      .home-event-card a { white-space: normal; }
+      .architecture-section .decision-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .architecture-section .planned-strip { display: block; }
+      .architecture-section .planned-strip span { display: block; margin-top: .5rem; }
+      .theme-band > .container { display: block; }
+      .theme-band p { margin-top: .5rem; }
+    }
+  </style>
 </Layout>
