@@ -2,6 +2,26 @@
 
 Recorded 2026-10-26 for AEGLYSAI-PORTAL-UX-001. Status: IMPLEMENTED locally, uncommitted and not deployed.
 
+## Corrective follow-up — UX-001A, 2026-10-26
+
+IMPLEMENTED locally for review: a compact header through 1024px shows the brand,
+one theme toggle and one navigation control. A single shared link tree is moved into
+a native modal dialog when opened; desktop keeps the Research dropdown. Native dialog
+modality plus explicit boundary Tab handling contains focus; Close, Escape and backdrop
+dismissal restore focus and scroll state. Research remains a native disclosure with
+explicit enhanced expanded/controls state and an overview link. Home and all original
+destinations remain reachable. System-theme reset is available inside the drawer.
+
+Without JavaScript or dialog support, a closed native Menu disclosure provides the
+same navigation, with a Close menu summary and Research accordion. It is not permanently
+expanded. This supersedes the original 760px full-row mobile Research presentation
+below. Header-scoped CSS uses existing tokens and 44px touch targets; entrance motion
+is brief and disabled for reduced motion. No dependencies, routes, page content or
+backend changes. [UX-001A review](../ux/UX-001A-REVIEW.md) records exact validation and
+remaining security/browser limitations. Prior uncommitted integration fixes are preserved.
+
+## Original UX-001 implementation snapshot
+
 The shared Astro Header groups the existing `/research/`, `/experiments/` and
 `/publications/` destinations under one Research disclosure. It derives links from
 the existing `project.ts` navigation records; no routes or page content change.

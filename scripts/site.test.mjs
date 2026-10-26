@@ -64,7 +64,7 @@ test("static pages have unique metadata and accessible landmarks", () => {
     descriptions.add(html.match(/name="description" content="([^"]+)"/)[1]);
     assert.equal(
       (html.match(/aria-current="page"/g) || []).length,
-      route.startsWith("community") ? 2 : route && route !== "media" && !route.startsWith("hackathons/") ? 1 : 0,
+      route === "" ? 1 : route.startsWith("community") ? 2 : route !== "media" && !route.startsWith("hackathons/") ? 1 : 0,
     );
   }
   assert.equal(titles.size, routes.length);

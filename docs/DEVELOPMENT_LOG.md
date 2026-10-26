@@ -527,3 +527,24 @@ remain separate; shared test/log integration requires follow-up combined validat
 Banner preserved and excluded. No staging, commit, push, merge or deployment.
 See [SPEC-022](specs/SPEC-022-research-navigation.md) and
 [UX-001 review](ux/UX-001-REVIEW.md) for exact scope, evidence and limitations.
+
+## 2026-10-26 — UX-001A compact responsive navigation correction
+
+IMPLEMENTED locally for review on the existing UX branch at `d5e5c9e`; previous
+uncommitted integration resolutions and excluded banner preserved. Header is compact
+through 1024px, with brand/theme/menu controls. One shared link tree progressively
+moves into a native modal drawer; Close, Escape, backdrop, focus containment/restoration,
+scroll release, Research overview/accordion and reduced motion are supported. Native
+closed Menu disclosure supplies no-JavaScript navigation. Desktop dropdown and all
+27 page contents/routes remain preserved; no dependency, lockfile, fixture hash or
+hackathon policy/content changes.
+
+Check/build passed; 55 tests passed. Chrome passed fourteen viewport/theme cases
+across 320/375/390/430/768/1024/1440px and fourteen additional no-JavaScript light/dark
+cases. Keyboard/touch/focus/ARIA-tree, 44px drawer targets, no overflow and reduced
+motion checks passed. Existing hackathon browser checks passed. Isolated EVENT/SEC
+compatibility check/build and 64 tests passed, plus eight showcase browser cases and
+no-JavaScript. Audit remains six high/one moderate on this branch; SEC remains separate,
+with cache/Magicast findings open. No staging, commit, push, merge or deployment.
+See [UX-001A review](ux/UX-001A-REVIEW.md) and the corrective revision in
+[SPEC-022](specs/SPEC-022-research-navigation.md) for exact inventory, evidence and limits.

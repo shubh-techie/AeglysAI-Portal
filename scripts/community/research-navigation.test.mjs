@@ -18,12 +18,15 @@ test('UX-001 has one native disclosure with exactly the original destinations an
   for (const [path, record] of Object.entries(baseline.routes)) {
     const html = readFileSync(`dist/${path}`, 'utf8');
     const header = html.match(/<header class="site-header">[\s\S]*?<\/header>/)[0];
-    const disclosure = header.match(/<details\b[\s\S]*?<\/details>/)[0];
-    assert.equal((header.match(/<details\b/g) ?? []).length, 1);
+    const disclosure = header.match(/<details class="research-navigation"[\s\S]*?<\/details>/)[0];
+    assert.equal((header.match(/data-site-menu(?=[\s>])/g) ?? []).length, 1);
+    assert.match(header, /<dialog id="mobile-navigation"[^>]*aria-labelledby="navigation-title"/);
+    assert.match(header, /aria-controls="mobile-navigation"/);
+    assert.match(header, /data-menu-close/);
     assert.match(disclosure, /<summary[^>]*>\s*Research\s*<\/summary>/);
     assert.deepEqual([...disclosure.matchAll(/href="([^"]+)"/g)].map(m => m[1]), ['/research/', '/experiments/', '/publications/']);
     const links = value => [...value.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)].map(m => m[1]);
-    assert.deepEqual(links(header).sort(), links(baseline.headers[record.header]).sort(), path);
+    assert.deepEqual(links(header).sort(), [...links(baseline.headers[record.header]), '/'].sort(), path);
     for (const destination of ['research', 'experiments', 'publications']) {
       assert.equal((header.match(new RegExp(`href="/${destination}/"`, 'g')) ?? []).length, 1);
       assert.ok(existsSync(`dist/${destination}/index.html`));
