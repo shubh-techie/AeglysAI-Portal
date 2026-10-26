@@ -13,16 +13,16 @@ test('DESIGN-005 preserves every non-network landing HTML byte and protected con
  assert.equal(sha(normalize(originalHeader(readFileSync('dist/hackathons/index.html','utf8'), 'hackathons/index.html')).replace(/<div class="hx-network\b[\s\S]*?(?=<\/section>)/,'NETWORK</div>')),revised.landingOutsideNetwork);
  for(const [path,hash] of Object.entries(baseline.protectedSources).filter(([path])=>path!=='src/components/hackathons/landing/EventHero.astro')) assert.equal(sha(readFileSync(path)),hash,path);
 });
-test('Preserve all other routes and styles, allowing only the approved EVENT-001 showcase', () => {
+test('EVENT-001 preserves 25 other routes and all pre-existing community content/styles', () => {
  assert.equal(Object.keys(baseline.otherRoutes).length,26);
  for(const [path,record] of Object.entries(baseline.otherRoutes)) {
   const html=readFileSync(`dist/${path}`,'utf8');
-  if (path === 'hackathons/community/index.html' && existsSync('scripts/community/fixtures/event-showcase-baseline.json')) {
+  if (path === 'hackathons/community/index.html') {
    const eventBaseline = JSON.parse(readFileSync('scripts/community/fixtures/event-showcase-baseline.json','utf8'));
-   const withoutShowcase = normalize(originalHeader(html,path)).replace(/<style>\.event-showcase\[[\s\S]*?<\/style>/, '').replace(/<section class="section event-showcase"[\s\S]*?<\/section>/, '');
+   const withoutShowcase = normalize(html).replace(/<style>\.event-showcase\[[\s\S]*?<\/style>/, '').replace(/<section class="section event-showcase"[\s\S]*?<\/section>/, '');
    assert.equal(sha(withoutShowcase.replace(/<style>[\s\S]*?<\/style>/g,'')),eventBaseline.html,path);
    assert.equal(sha([...withoutShowcase.matchAll(/<style>([\s\S]*?)<\/style>/g)].map(x=>x[1]).join('').replace(/\s/g,'')),eventBaseline.inlineStyles,'Existing community inline styles');
-  } else assert.equal(sha(normalize(originalHeader(html,path))),record.html,path);
+  } else assert.equal(sha(normalize(html)),record.html,path);
   const styles=[...html.matchAll(/href="(\/_astro\/[^" ]+\.css)"/g)].map(match=>sha(readFileSync(`dist${match[1]}`)));
   assert.deepEqual(styles,record.styles,`${path} CSS`);
  }

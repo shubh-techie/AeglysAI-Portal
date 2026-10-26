@@ -140,13 +140,9 @@ test("production output contains only scoped inline scripts and approved local P
       assert.match(embeds[0][0], /loading="lazy"/);
     }
     const scripts = [...html.matchAll(/<script\b[^>]*>[\s\S]*?<\/script>/g)];
-    const initializers = ["data-theme-init", "data-research-nav-init", "data-media-carousel-init", "data-event-nav-init", "data-showcase-init"];
-    const expected = initializers.filter(marker => html.includes(marker));
-    assert.equal(scripts.length, expected.length);
-    for (const marker of expected)
-      assert.equal(scripts.filter(script => script[0].includes(marker)).length, 1, marker);
+    assert.equal(scripts.length, html.includes("data-media-carousel") || html.includes("data-event-nav-init") || html.includes("data-showcase-init") ? 2 : 1);
     for (const script of scripts.slice(1)) {
-      assert.match(script[0], /data-media-carousel-init|data-event-nav-init|data-research-nav-init|data-showcase-init/);
+      assert.match(script[0], /data-media-carousel-init|data-event-nav-init|data-showcase-init/);
       assert.doesNotMatch(script[0], /\bsrc=|fetch\(|XMLHttpRequest/);
     }
     assert.match(scripts[0][0], /data-theme-init/);

@@ -507,74 +507,28 @@ Record meaningful engineering changes in chronological order. This is not a copy
 - User explicitly authorized committing and pushing the completed DESIGN-005 changes for PR review. This supersedes the earlier review-only restriction; prior entries retain their historical status. Stage only the 16 documented task files on the requested feature branch. Recorded validation remains zero Astro diagnostics, 27-page build, 53 passing tests and actual responsive/browser/lifecycle checks; no runtime changes made during commit preparation.
 - Commit message: feat(hackathon): AEGLYSAI-HACK-DESIGN-005 build interactive event experience. Push targets origin's same feature branch. Push outcome is reported from Git command evidence; no PR creation, merge or deployment performed in this authorization step.
 
-## 2026-10-26 — AEGLYSAI-PORTAL-UX-001 research navigation
+### 2026-10-26 — AEGLYSAI-PORTAL-EVENT-001: configurable event showcase
 
-IMPLEMENTED locally on `feat/AEGLYSAI-PORTAL-UX-001-research-navigation` from freshly
-verified `origin/main`/HEAD `bc7c280b30520100d48893c0d0cae597ec67dc7a`.
-Shared Header now groups the original Research, Experiments and Publications links
-in one native disclosure, with an in-flow mobile accordion and scoped Escape/outside
-click/focus-exit enhancement. Reuses navigation records, theme tokens and components;
-no route, page content, dependency, global stylesheet or hackathon policy changes.
+- Verified root `/Users/shubhprabhat/Documents/Work/AegisAI-Portal` and actual origin `https://github.com/shubh-techie/AeglysAI-Portal.git`; initial DESIGN-005 branch HEAD `171fc4414e864870c9d3e8ea98ea0deb3f367903`, only untracked Cybersecurity Banner preserved. Refreshed origin; created requested `feat/AEGLYSAI-PORTAL-EVENT-001-configurable-showcase` from main merge `bc7c280b30520100d48893c0d0cae597ec67dc7a` (PR #22, preserves initial HEAD). No history rewrite, prohibited-repository changes, commit/push/PR/CI/merge/deploy.
+- Extended existing static Astro/file-based architecture with strict Astro-provided Zod contracts, event-scoped records and shared people/role assignments. Seven categories, optional reviewed metadata, safe links/local image paths, explicit editorial/approval/visibility states, participant/team consent/selection/qualification gates, max-four and no duplicate active public team membership. Suppressed profiles also hide related teams; explicit public projection excludes administrative/member fields. No raw registration pipeline, backend, new dependency or external runtime request.
+- Reusable EventShowcase on existing community route provides 3/2/1 cards or optional native manual carousel, category filter/live count, keyboard/touch navigation, labels, lazy fixed-aspect images/fallbacks, reduced motion and no-JS reading. Reuses existing layout/card/tokens/asset patterns; legacy empty slots remain compatibility scaffolding. Three requested partners configured only as hidden Draft records with proposed announcement dates, all approvals false and no invented logo/copy/endorsement. Official event timezone unavailable/null: date-gated publication fails closed. Calendar visibility is build-time, inclusive start/exclusive end; publishing/expiry/withdrawal needs rebuild/deployment and does not post to social channels.
+- Added SPEC-021, ADR-012, four editable documentation-only SVG social templates and copy/format/approval specification. Exact 18-file inventory, discovery, baseline, limitations and proposed commit in `docs/hackathons/EVENT-001-REVIEW.md`. Original six challenge descriptions/vectors, forms/URLs, qualification/team rules, rubrics, dates, policies, certificate data and landing remain unchanged. No restricted research/enterprise claim; Model D remains non-enforcing (`enforcement_authority=NONE`).
+- Final Node 24.13.0 check: 125 files, zero diagnostics; build: 27 pages; tests: 62/62 passed, including nine new schema/filter/visibility/timezone-DST/consent/team/withdrawal tests and existing offline contracts/privacy regressions. Narrow script allowance and preservation test updated only for the authorized community addition; prior community HTML hash verified before deriving fixture, original HTML/inline CSS and 25 other routes/styles still protected. Sandbox build hit macOS SecItemCopyMatching -50; approved rerun succeeded.
+- Local isolated Chromium: eight width/theme cases (1440/768/390/320 × light/dark) plus no-JS passed. Tests cover empty production state, ten synthetic public records/all categories/fourth partner/shared roles, 3/2/1 columns, no overflow, filtering, Home/End/manual navigation, mobile touch, reduced motion, named accessibility-tree controls, lazy existing local image/fallback and escaped injection copy; no runtime exceptions. Evidence `.community-drafts/event-001/run-1792995350849`; desktop/mobile screenshots inspected. Fixture CLI/import/asset-root/navigation/image checks corrected; product carousel offsets/scroll padding fixed, completion waits replaced an insufficient fixed sleep. Temporary browser/server stopped. Bounded Chrome evidence only, not full assistive-technology/physical-device/cross-browser certification.
+- Ten new-doc links resolve, four SVG templates parse, draft/synthetic identities absent from production HTML, tracked/new-file whitespace passes. `npm audit --json` on unchanged dependencies exits 1: seven advisories (six high: http-cache-semantics, sharp, source-map-js, undici, vite, zod; one moderate: fast-uri). No auto-fix or security-clear claim. Remaining: dependency review, official partner role/logo/content/publication approval, event timezone and actual consenting appointments/rosters. No successful production release claimed.
 
-Node 24 check passed (121 files, zero diagnostics), build passed (27 pages), tests
-passed 55/55. Chrome passed eight viewport/theme cases, four no-JavaScript cases,
-keyboard/touch/focus/accessibility-tree checks and five current-route checks. New
-byte guards preserve all output outside the header on every route; historical protected
-sources/styles remain checked. Existing hackathon browser regression also passed at
-1440/768/390px, including forms, qualification, judging and no-JavaScript behavior. Audit fails with existing six high/one moderate transitive
-findings; no waiver or remediation is claimed. Independent draft EVENT-001/SEC-001 PRs
-remain separate; shared test/log integration requires follow-up combined validation.
-Banner preserved and excluded. No staging, commit, push, merge or deployment.
-See [SPEC-022](specs/SPEC-022-research-navigation.md) and
-[UX-001 review](ux/UX-001-REVIEW.md) for exact scope, evidence and limitations.
+### 2026-10-26 — EVENT-001 controlled Git review and closeout
 
-## 2026-10-26 — UX / EVENT / SEC integration compatibility resolution
+- Reverified Portal root/origin, requested feature branch and HEAD/base `bc7c280b30520100d48893c0d0cae597ec67dc7a`; verified commit object/initial-HEAD ancestry and read-only origin refs (main matches baseline, requested feature ref not present remotely). Reviewed exact 18-file proposed change; preserved excluded untracked banner. Before/after SHA-256 inventory records existing work. Only delivery report and this log appended during review; feature/test/config/package/lock/workflow code unchanged. No staging, commit, push, reset, clean, force push, merge, deploy or prohibited-repository operation.
+- Reran Node 24.13.0 Astro check (125 files, zero diagnostics), static build (27 pages), tests (62/62) and existing isolated Chrome harness (eight widths/themes plus no-JS, zero exceptions). Sandbox build again hit SecItemCopyMatching -50; approved external rerun passed. No lint script configured. New browser evidence `.community-drafts/event-001/run-1793021129107`; desktop/light and 320px/dark screenshots inspected. Temporary browser/server cleaned up. Existing content/source/asset checks confirm six challenges, Forms/URLs/gates, qualification/team/selection rules, dates/links/rubrics/certificates unchanged; original community source reproduced after removing only two additions. Four inert social SVGs/paths/whitespace checked.
+- Verified seven categories/config-only fourth partner/shared person roles, hidden three partner drafts, consent/suppression/team/timezone gates and no hidden client payload. Manual source review plus bounded 18-file credential scan/public draft-synthetic-marker exclusion found no real private registration/contact data, credentials, restricted research or unapproved enterprise claims. Scans and local Chromium remain bounded evidence, not exhaustive security/accessibility certification.
+- Fresh npm audit exits 1: six high/one moderate vulnerable package groups, 17 advisory records. Existing installed chains verified; official primary advisories and patch floors reviewed. Report records per-package exploit prerequisites, static production versus developer/CI relevance and explicit OPEN/no-waiver disposition. Zod is used on local build configuration, so not dismissed as unused; sharp risk includes Linux SVG processing; public static Pages has no Node runtime. http-cache-semantics advisory lists no patched version despite npm fixAvailable metadata. No speculative update/install/override/audit-fix performed; no severity downgrade or gate bypass.
+- Full closeout findings, exact proposed 18-file contents, raw evidence locations, remediation recommendations and acceptance table appended to `docs/hackathons/EVENT-001-REVIEW.md`. Ready for PR code/security review after explicit commit/push approval; not fully security-cleared/merge-ready while audit remains failed/open. Official content/consent/timezone and static publication/withdrawal prerequisites unchanged. No commit hash, PR, remote CI or production release created/claimed.
+### 2026-10-26 — AEGLYSAI-PORTAL-SEC-001: targeted dependency remediation
 
-Implemented locally, uncommitted on the UX feature branch at `d5e5c9e`.
-No active main/PR conflict was present; resolved the anticipated overlapping test
-assumptions before combining EVENT #23 and SEC #24. Three test files now preserve
-both navigation and showcase expectations, count allowed scripts independently,
-and retain the original page/style baselines. No runtime source, content, dependency,
-asset or approved fixture hash changed. Prepared a combined development log retaining
-all historical entries in an isolated source-copy sandbox; no Git merge performed.
-
-UX-only check and 55 tests passed. Combined UX/EVENT/SEC check, 27-page build and
-64 tests passed; navigation's 12 viewport/theme/no-JavaScript cases and showcase's
-eight viewport/theme cases plus no-JavaScript passed. Negative probes confirmed
-unapproved community text and duplicate scripts still fail guards. Combined audit
-remains failed with one high cache advisory; Magicast embedded-code finding also
-remains open. No security waiver, commit, push, PR creation, merge or deployment.
-See [integration review](ux/INTEGRATION-REVIEW.md) for scope, evidence and limitations.
-
-## 2026-10-26 — UX-001A compact responsive navigation correction
-
-IMPLEMENTED locally for review on the existing UX branch at `d5e5c9e`; previous
-uncommitted integration resolutions and excluded banner preserved. Header is compact
-through 1024px, with brand/theme/menu controls. One shared link tree progressively
-moves into a native modal drawer; Close, Escape, backdrop, focus containment/restoration,
-scroll release, Research overview/accordion and reduced motion are supported. Native
-closed Menu disclosure supplies no-JavaScript navigation. Desktop dropdown and all
-27 page contents/routes remain preserved; no dependency, lockfile, fixture hash or
-hackathon policy/content changes.
-
-Check/build passed; 55 tests passed. Chrome passed fourteen viewport/theme cases
-across 320/375/390/430/768/1024/1440px and fourteen additional no-JavaScript light/dark
-cases. Keyboard/touch/focus/ARIA-tree, 44px drawer targets, no overflow and reduced
-motion checks passed. Existing hackathon browser checks passed. Isolated EVENT/SEC
-compatibility check/build and 64 tests passed, plus eight showcase browser cases and
-no-JavaScript. Audit remains six high/one moderate on this branch; SEC remains separate,
-with cache/Magicast findings open. No staging, commit, push, merge or deployment.
-See [UX-001A review](ux/UX-001A-REVIEW.md) and the corrective revision in
-[SPEC-022](specs/SPEC-022-research-navigation.md) for exact inventory, evidence and limits.
-
-## 2026-10-26 — Authorized integration compatibility closeout
-
-User authorized committing and pushing the remaining previously preserved integration
-fixes on the existing UX branch after UX-001A `514c78b`. Scope: the three compatibility
-test files, historical integration review and append-only development log. Runtime,
-page content, dependencies and the excluded banner remain unchanged. Fresh Node 24
-check passed with zero diagnostics, build produced 27 pages, and all 55 tests passed.
-Runtime/test files match the earlier isolated EVENT/SEC snapshot that passed 64 tests.
-The audit still exits 1 with six high and one moderate findings; no suppression,
-waiver, dependency upgrade, merge or deployment is included. Commit/push outcome and
-the current combined scope are recorded in draft PR #25 and the closeout report.
+- Reverified Portal origin/root and `bc7c280b30520100d48893c0d0cae597ec67dc7a` baseline against read-only upstream main. Original EVENT-001 checkout has nineteen existing changed/untracked paths (eighteen task files plus excluded banner), empty index and unchanged package/lock. Created clean `fix/AEGLYSAI-PORTAL-SEC-001-dependency-remediation` in linked worktree `/private/tmp/aeglysai-portal-sec-001`, preserving every original changed-file hash. No stash/reset/clean/commit/push/merge/deploy/prohibited-repository operation.
+- Narrowed lockfile-only transitive updates within existing ranges: Vite 8.3.3, Sharp 0.35.5, source-map-js 1.2.2, Undici 8.12.2, Zod 4.6.6, fast-uri 3.1.9. Required companions: Rolldown/native bindings 1.2.11 and Sharp platform/libvips bundle updates. Forty-eight existing lock entries change, no package path added/removed; direct package manifest, Astro 7.3.4, sitemap, unrelated PostCSS/nanoid/types/Prettier metadata unchanged. Exploratory newer resolutions narrowed before install; temporary resolver constraints removed. Final manifest has no overrides/new dependencies; no force/audit-fix/suppression.
+- Clean npm ci/npm ls passed. Node 24.13.0 baseline check zero diagnostics (120 files), build 27 pages and 53/53 tests passed. Ignored copy of unchanged EVENT-001 source using security dependencies: check zero diagnostics (125 files), build 27 pages, 62/62 tests passed. Existing landing Chrome harness passed three sizes/CLS 0; EVENT-001 Chrome passed eight width/theme cases plus no-JS and zero exceptions. Desktop/mobile showcase screenshots inspected. Native Sharp SVG rasterization and existing portrait resize passed; loaded librsvg 2.63.2 confirmed. No Linux native/remote CI/deployment verification claimed. Browser/server cleanup retained; existing offline contract Python environment reused read-only.
+- Full dependency audit improves from six high/one moderate groups (seventeen records) to one high cache finding, exit 1. http-cache-semantics 4.2.0 retained: maintainer disputes advisory; candidate 4.3.0 tarball/source and benign in-memory probe do not change reported stale-cache semantics. Do not equate leaving the affected range with verified remediation. No risk waiver.
+- Additional manual finding: Magicast 0.5.5 embeds legacy source-map-js 1.2.1 consumer/generator/SourceNode logic despite resolved module update; no newer published Magicast rebuild available. Source-map remediation is PARTIAL and embedded risk remains OPEN; no untrusted-map exploit/API reachability proved. Reject unreviewed build inputs and seek verified upstream rebuild/independently reviewed patch. No ad hoc node_modules/postinstall code patch introduced. Audit counts alone do not establish closure.
+- Exact three-file security inventory and full seventeen-row advisory matrix, exploit prerequisites/paths/exposure, release evidence, validation, source preservation and remaining blockers in `docs/security/SEC-001-REVIEW.md`. Only lock/log/report change; no event content, challenge, Form, registration, date, rubric, social asset, research disclosure, feature/test or workflow change. Proposed commit: fix(portal): remediate actionable dependency advisories. Overall security acceptance remains incomplete; original EVENT-001 branch/dependencies untouched, no commit/PR/production release claimed.
