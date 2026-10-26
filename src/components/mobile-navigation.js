@@ -5,22 +5,23 @@
   const panel = header?.querySelector('#site-navigation');
   const dialog = header?.querySelector('#mobile-navigation');
   const toggle = header?.querySelector('[data-menu-toggle]');
-  const research = header?.querySelector('[data-research-navigation]');
-  if (!shell || !panel || !toggle || !research || typeof dialog?.showModal !== 'function') return;
+  const disclosures = [...(header?.querySelectorAll('[data-navigation-disclosure]') ?? [])];
+  if (!shell || !panel || !toggle || !disclosures.length || typeof dialog?.showModal !== 'function') return;
   const mobile = window.matchMedia('(max-width: 1024px)');
-  const summary = research.querySelector('summary');
   let previousOverflow = '';
-  const syncResearch = () => summary.setAttribute('aria-expanded', String(research.open));
-  research.addEventListener('toggle', syncResearch);
-  syncResearch();
+  const sync = disclosure => disclosure.querySelector('summary').setAttribute('aria-expanded', String(disclosure.open));
+  const closeDisclosure = disclosure => { disclosure.open = false; sync(disclosure); };
+  disclosures.forEach(disclosure => {
+    disclosure.addEventListener('toggle', () => sync(disclosure));
+    sync(disclosure);
+  });
   const finishClose = (restore = true) => {
     shell.append(panel);
     shell.open = !mobile.matches;
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Open navigation');
     document.body.style.overflow = previousOverflow;
-    research.open = false;
-    syncResearch();
+    disclosures.forEach(closeDisclosure);
     if (restore && mobile.matches) toggle.focus();
   };
   const close = (restore = true) => {
@@ -63,10 +64,13 @@
   header.addEventListener('keydown', event => {
     if (event.key !== 'Escape') return;
     if (dialog.open) { event.preventDefault(); close(); }
-    else if (research.open) { event.preventDefault(); research.open = false; syncResearch(); summary.focus(); }
+    else {
+      const opened = disclosures.find(disclosure => disclosure.open);
+      if (opened) { event.preventDefault(); closeDisclosure(opened); opened.querySelector('summary').focus(); }
+    }
   });
-  document.addEventListener('click', event => { if (!research.contains(event.target)) { research.open = false; syncResearch(); } });
-  document.addEventListener('focusin', event => { if (!research.contains(event.target)) { research.open = false; syncResearch(); } });
+  document.addEventListener('click', event => { disclosures.forEach(disclosure => { if (!disclosure.contains(event.target)) closeDisclosure(disclosure); }); });
+  document.addEventListener('focusin', event => { disclosures.forEach(disclosure => { if (!disclosure.contains(event.target)) closeDisclosure(disclosure); }); });
   const resize = () => {
     if (dialog.open) { close(false); header.querySelector('.wordmark').focus(); }
     shell.open = !mobile.matches;

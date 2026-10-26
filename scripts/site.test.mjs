@@ -19,6 +19,7 @@ const routes = [
   "community/adoption",
   "community/reports",
   "hackathons",
+  "hackathons/2027",
   "hackathons/events",
   "hackathons/community",
   "hackathons/sponsors",
@@ -64,7 +65,7 @@ test("static pages have unique metadata and accessible landmarks", () => {
     descriptions.add(html.match(/name="description" content="([^"]+)"/)[1]);
     assert.equal(
       (html.match(/aria-current="page"/g) || []).length,
-      route === "" ? 1 : route.startsWith("community") ? 2 : route !== "media" && !route.startsWith("hackathons/") ? 1 : 0,
+      route === "" || route === "hackathons/2027" ? 1 : route.startsWith("community") ? 2 : route !== "media" && !route.startsWith("hackathons/") ? 1 : 0,
     );
   }
   assert.equal(titles.size, routes.length);

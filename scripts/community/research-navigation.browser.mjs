@@ -144,6 +144,33 @@ try {
         await key(' ','Space',32);assert.equal(await opened(),true);
         await tap('.wordmark',false);assert.equal(await opened(),false);
       }
+      // Both groups share the drawer/disclosure controller; exercise the new destination too.
+      await navigate('/hackathons/2027/');
+      await evaluate(`document.documentElement.dataset.theme=${JSON.stringify(theme)}`);
+      assert.equal(await evaluate(`document.querySelector('h1').textContent`),'ComingSoon');
+      assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth`),false);
+      await screenshot(`coming-soon-${width}-${theme}`);
+      if(mobile) await tap(menu,true);
+      const hackathon='[data-hackathon-navigation] summary';
+      await evaluate(`document.querySelector(${JSON.stringify(hackathon)}).focus()`);
+      await key('Enter','Enter',13);
+      assert.equal(await evaluate(`document.querySelector('[data-hackathon-navigation]').open`),true);
+      assert.equal(await evaluate(`document.querySelector(${JSON.stringify(hackathon)}).getAttribute('aria-expanded')`),'true');
+      for(const destination of ['/hackathons/','/hackathons/2027/']) {
+        await key('Tab','Tab',9);assert.equal(await evaluate(`document.activeElement.getAttribute('href')`),destination);
+      }
+      const hackNodes=await ax();
+      for(const name of ['AEGYTHON 2026','Hackathon 2027']) assert.ok(hackNodes.some(n=>n.role?.value==='link'&&n.name?.value===name));
+      assert.equal(await evaluate(`([...document.querySelectorAll('#hackathons-destinations a')].every(e=>{const r=e.getBoundingClientRect();return r.width>=44&&r.height>=44;}))`),true);
+      await screenshot(`hackathon-menu-${width}-${theme}`);
+      await key('Escape','Escape',27);
+      assert.equal(await evaluate(`document.querySelector('[data-hackathon-navigation]').open`),false);
+      assert.equal(await evaluate(`document.activeElement===document.querySelector(${JSON.stringify(mobile?menu:hackathon)})`),true);
+      if(mobile) await tap(menu,true);
+      await tap(hackathon,mobile);
+      await tap('#hackathons-destinations a[href="/hackathons/2027/"]',mobile);
+      assert.equal(await evaluate(`location.pathname`),'/hackathons/2027/');
+      if(mobile) assert.equal(await evaluate(`document.querySelector('dialog').open`),false);
       results.push({width,height,theme,compactHeader:mobile,keyboard:true,escape:true,focus:true,accessibilityTree:true,touch:mobile,targets44px:mobile,overflow:false,reducedMotion:mobile});
     }
     for(const fallbackTheme of ['light','dark']) {
@@ -160,6 +187,18 @@ try {
     await tap('.menu-fallback',mobile);await tap('.research-destinations a',mobile);
     for(let n=0;n<60;n++){if(await evaluate(`location.pathname==='/research/'&&document.readyState==='complete'`))break;await pause(50);}
     assert.equal(await evaluate(`location.pathname`),'/research/');
+    await navigate('/',true);
+    await tap('.menu-fallback',mobile);
+    await tap('[data-hackathon-navigation] summary',mobile);
+    assert.equal(await evaluate(`document.querySelector('[data-hackathon-navigation]').open`),true);
+    await tap('#hackathons-destinations a[href="/hackathons/2027/"]',mobile);
+    for(let n=0;n<60;n++){if(await evaluate(`location.pathname==='/hackathons/2027/'&&document.readyState==='complete'`))break;await pause(50);}
+    assert.equal(await evaluate(`location.pathname`),'/hackathons/2027/');
+    assert.equal(await evaluate(`document.documentElement.scrollWidth>innerWidth`),false);
+    await screenshot(`coming-soon-no-js-${width}-${fallbackTheme}`);
+    await tap('.next-event-copy a',mobile);
+    for(let n=0;n<60;n++){if(await evaluate(`location.pathname==='/hackathons/'&&document.readyState==='complete'`))break;await pause(50);}
+    assert.equal(await evaluate(`location.pathname`),'/hackathons/');
     results.push({width,theme:fallbackTheme,noJavaScriptDisclosureCloseAndDestination:true});
     }
     await call('Emulation.setEmulatedMedia',{features:[]});
@@ -172,7 +211,7 @@ try {
   assert.equal(await evaluate(`document.querySelector('dialog').open`),false);
   assert.equal(await evaluate(`document.body.style.overflow`),'');
   assert.equal(await evaluate(`document.querySelector('[data-site-menu]').open`),true);
-  for(const path of ['/research/','/experiments/','/publications/','/hackathons/','/community/']) {
+  for(const path of ['/research/','/experiments/','/publications/','/hackathons/','/hackathons/2027/','/community/']) {
     await navigate(path);
     assert.equal(await evaluate(`document.querySelector('.site-header [aria-current="page"]')?.getAttribute('href')`),path);
   }

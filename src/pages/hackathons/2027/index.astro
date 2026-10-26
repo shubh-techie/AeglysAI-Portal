@@ -1,0 +1,36 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { href } from "../../../data/project";
+---
+<Layout title="Hackathon 2027 — Coming Soon" description="A new chapter of innovation, collaboration and real-world problem solving. Hackathon 2027 details will be shared when officially confirmed.">
+  <section class="next-event container" aria-labelledby="next-event-title">
+    <div class="next-event-panel">
+      <div class="next-event-art" aria-hidden="true"><span>2027</span></div>
+      <div class="next-event-copy">
+        <p class="next-event-eyebrow">HACKATHON 2027</p>
+        <h1 id="next-event-title">Coming<br /><span>Soon</span></h1>
+        <p class="next-event-intro">A new chapter of innovation, collaboration and real-world problem solving is on the horizon.</p>
+        <div class="next-event-notice"><span class="next-event-line" aria-hidden="true"></span><p>Dates, challenges, participation details and announcements will be shared when officially confirmed.</p></div>
+        <a class="button" href={href("hackathons")}>Explore AEGYTHON 2026 <span aria-hidden="true">↗</span></a>
+      </div>
+      <p class="next-event-footer">CURIOSITY. COLLABORATION. WHAT COMES NEXT.</p>
+    </div>
+  </section>
+</Layout>
+<style>
+  .next-event { padding-block: clamp(2rem, 6vw, 5rem); }
+  .next-event-panel { position: relative; isolation: isolate; overflow: hidden; border: 1px solid var(--line); border-radius: 8px; padding: clamp(1.5rem, 6vw, 5rem); background: linear-gradient(135deg, var(--surface), var(--theme-band)); }
+  .next-event-copy { position: relative; max-width: 640px; }
+  .next-event-eyebrow { margin: 0 0 2rem; color: var(--cyan); font-family: var(--mono); font-size: .8rem; letter-spacing: .18em; font-weight: 600; }
+  h1 { margin: 0 0 1.5rem; font-size: clamp(3.5rem, 10vw, 8rem); line-height: .98; letter-spacing: -.06em; font-weight: 700; }
+  h1 span { color: var(--cyan); }
+  .next-event-intro { max-width: 36ch; font-size: clamp(1.1rem, 2vw, 1.4rem); line-height: 1.6; color: var(--text); }
+  .next-event-notice { display: flex; gap: 1rem; max-width: 46ch; margin-block: 2rem; color: var(--muted); }
+  .next-event-notice p { margin: 0; }
+  .next-event-line { flex: 0 0 2px; background: var(--violet); }
+  .next-event-copy .button { min-height: 48px; padding: .85rem 1.1rem; white-space: normal; }
+  .next-event-art { position: absolute; z-index: -1; right: -3%; top: 4%; width: 52%; aspect-ratio: 1; border: 1px solid var(--line); border-radius: 50%; box-shadow: 0 0 0 40px var(--visual-wash), 0 0 0 80px var(--visual-wash); transform: rotate(-15deg); }
+  .next-event-art span { position: absolute; right: 10%; top: 20%; font: 700 clamp(4rem, 14vw, 12rem)/1 var(--mono); letter-spacing: -.08em; color: var(--line); }
+  .next-event-footer { margin: clamp(3rem, 7vw, 6rem) 0 0; border-top: 1px solid var(--line); padding-top: 1.5rem; color: var(--muted); font-family: var(--mono); font-size: .65rem; letter-spacing: .12em; }
+  @media (max-width: 767px) { .next-event-art { right: -25%; top: 35%; width: 75%; } .next-event-art span { display: none; } }
+</style>
