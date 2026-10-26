@@ -1,5 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import RegistrationChannels from "../../components/hackathons/RegistrationChannels.astro";
+import CommunitySupport from "../../components/hackathons/CommunitySupport.astro";
 import EventNav from "../../components/hackathons/landing/EventNav.astro";
 import CompetitionTimeline from "../../components/hackathons/landing/CompetitionTimeline.astro";
 import SeriesHero from "../../components/hackathons/landing/EventHero.astro";
@@ -67,6 +69,7 @@ const resources = [
         <p class="hx-fine">Both tracks value correctness, security reasoning and clear evidence. Final prerequisites, track-specific evaluation and award allocation are pending.</p>
       </section>
       <ParticipantJourney/>
+      <RegistrationChannels/>
       <section class="hx-section" id="qualification" aria-labelledby="qualification-heading">
         <div class="hx-section-heading"><div><p class="hx-eyebrow">START WITH EVIDENCE</p><h2 id="qualification-heading">AeglysAI Contributor Qualification</h2></div><a class="hx-button" href="#qualification-guide">View Qualification Guide <span aria-hidden="true">↓</span></a></div>
         <p class="hx-section-copy">Before selection, applicants demonstrate they can fork, clone and run AeglysAI, understand its basic architecture, provide one meaningful technical observation, suggest one realistic improvement and explain how to validate it. Qualification is not a LeetCode-style elimination exercise. Qualification is mandatory for every team member and does not guarantee selection. The A/B/C baseline is sufficient; Model D knowledge is not required.</p>
@@ -88,6 +91,7 @@ const resources = [
       <section class="hx-section" id="faq" aria-labelledby="faq-heading">
         <p class="hx-eyebrow">BEFORE YOU START</p><h2 id="faq-heading">Frequently asked questions.</h2>
         <div class="hx-faq">{landingFaq.map(([question, answer]) => <details><summary>{question}</summary><p>{answer.replace("{prize}", commonPrize ? `${events[0].prize.currency} $${events[0].prize.amount}` : "event-specific")}</p></details>)}</div>
+        <CommunitySupport id="faq-community" variant="card"/>
       </section>
       <section class="hx-callout" id="code-of-conduct" aria-labelledby="conduct-heading"><h2 id="conduct-heading">Code of Conduct</h2><p>Treat others respectfully, welcome different backgrounds and experience levels, give constructive feedback, and credit collaborators and prior work. Harassment, discrimination and intimidation are unacceptable.</p><p>Test only systems and data you are authorized to use. Keep credentials and personal information out of submissions. Report vulnerabilities privately to the affected maintainer rather than exposing sensitive details publicly.</p><p>Reporting contact and enforcement procedure remain pending despite registration-link availability; official event terms require organizer completion. Do not post conduct reports or sensitive vulnerability details in public submissions.</p></section>
       <p class="hx-fine"><a class="hx-link" href={href("hackathons/sponsors")}>Become a Sponsor →</a></p>

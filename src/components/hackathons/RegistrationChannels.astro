@@ -1,0 +1,12 @@
+---
+import { registrationChannels } from '../../data/hackathonChannels';
+import CommunitySupport from './CommunitySupport.astro';
+---
+<section class="hx-section" id="registration-channels" aria-labelledby="registration-channels-heading">
+  <p class="hx-eyebrow">MORE WAYS TO FIND AEGYTHON 2026</p>
+  <h2 id="registration-channels-heading">External event channels.</h2>
+  <p class="hx-section-copy">Discover the event through Unstop or Luma. External registration does not complete AeglysAI technical qualification or indicate organizer selection. Follow the official registration and qualification steps on this page.</p>
+  <p class="hx-fine">External listings may show different dates, locations, eligibility or prize details. This official AeglysAI page remains authoritative; event dates and eligibility are still pending here.</p>
+  <div class="hx-grid hx-tracks">{registrationChannels.map(channel => <article class="hx-card" data-registration-channel={channel.id}><h3>{channel.title}</h3><p>{channel.description}</p><div class="hx-actions"><a class="hx-button" href={channel.url} target="_blank" rel="noopener noreferrer"><span>View {channel.title} listing (external)</span><span aria-hidden="true">↗</span></a></div></article>)}</div>
+  <CommunitySupport id="registration-community" />
+</section>

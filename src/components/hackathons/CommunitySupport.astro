@@ -1,0 +1,11 @@
+---
+import { discordCommunityUrl } from '../../data/hackathonChannels';
+interface Props { id: string; variant?: 'inline' | 'card'; }
+const { id, variant = 'inline' } = Astro.props;
+---
+<aside class={variant === 'card' ? 'hx-card' : 'hx-callout'} data-reg001-support={variant} aria-labelledby={`${id}-heading`}>
+  <h3 id={`${id}-heading`}>Community &amp; Support</h3>
+  <p>Connect with the AeglysAI community on Discord for discussions and event questions.</p>
+  <div class="hx-actions"><a class="hx-button" href={discordCommunityUrl} target="_blank" rel="noopener noreferrer" aria-describedby={`${id}-note`}><span>Join Discord Community (external)</span><span aria-hidden="true">↗</span></a></div>
+  <p class="hx-fine" id={`${id}-note`}>Discord participation does not constitute event registration, technical qualification or organizer selection.</p>
+</aside>
