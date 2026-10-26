@@ -506,3 +506,24 @@ Record meaningful engineering changes in chronological order. This is not a copy
 
 - User explicitly authorized committing and pushing the completed DESIGN-005 changes for PR review. This supersedes the earlier review-only restriction; prior entries retain their historical status. Stage only the 16 documented task files on the requested feature branch. Recorded validation remains zero Astro diagnostics, 27-page build, 53 passing tests and actual responsive/browser/lifecycle checks; no runtime changes made during commit preparation.
 - Commit message: feat(hackathon): AEGLYSAI-HACK-DESIGN-005 build interactive event experience. Push targets origin's same feature branch. Push outcome is reported from Git command evidence; no PR creation, merge or deployment performed in this authorization step.
+
+## 2026-10-26 — AEGLYSAI-PORTAL-UX-001 research navigation
+
+IMPLEMENTED locally on `feat/AEGLYSAI-PORTAL-UX-001-research-navigation` from freshly
+verified `origin/main`/HEAD `bc7c280b30520100d48893c0d0cae597ec67dc7a`.
+Shared Header now groups the original Research, Experiments and Publications links
+in one native disclosure, with an in-flow mobile accordion and scoped Escape/outside
+click/focus-exit enhancement. Reuses navigation records, theme tokens and components;
+no route, page content, dependency, global stylesheet or hackathon policy changes.
+
+Node 24 check passed (121 files, zero diagnostics), build passed (27 pages), tests
+passed 55/55. Chrome passed eight viewport/theme cases, four no-JavaScript cases,
+keyboard/touch/focus/accessibility-tree checks and five current-route checks. New
+byte guards preserve all output outside the header on every route; historical protected
+sources/styles remain checked. Existing hackathon browser regression also passed at
+1440/768/390px, including forms, qualification, judging and no-JavaScript behavior. Audit fails with existing six high/one moderate transitive
+findings; no waiver or remediation is claimed. Independent draft EVENT-001/SEC-001 PRs
+remain separate; shared test/log integration requires follow-up combined validation.
+Banner preserved and excluded. No staging, commit, push, merge or deployment.
+See [SPEC-022](specs/SPEC-022-research-navigation.md) and
+[UX-001 review](ux/UX-001-REVIEW.md) for exact scope, evidence and limitations.

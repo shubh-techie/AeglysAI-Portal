@@ -2,7 +2,11 @@
 import BrandMark from "./BrandMark.astro";
 import ThemeControls from "./ThemeControls.astro";
 import { href, navigation, project } from "../data/project";
+const researchPaths = ["research", "experiments", "publications"];
+const researchItems = navigation.filter(item => researchPaths.includes(item.path));
+const topLevelItems = navigation.filter(item => !researchPaths.includes(item.path) || item.path === "research");
 const current = Astro.url.pathname.replace(/\/$/, "");
+const isCurrent = (path: string) => current === href(path).replace(/\/$/, "") || (["speaking", "community"].includes(path) && current.startsWith(href(path)));
 ---
 
 <header class="site-header">
@@ -12,13 +16,19 @@ const current = Astro.url.pathname.replace(/\/$/, "");
       Aeglys<span>AI</span>
     </a>
     <nav aria-label="Main navigation">
-      {navigation.map((item) => (
-        <a
-          href={href(item.path)}
-          aria-current={
-            current === href(item.path).replace(/\/$/, "") || (["speaking", "community"].includes(item.path) && current.startsWith(href(item.path))) ? "page" : undefined
-          }
-        >
+      {topLevelItems.map((item) => item.path === "research" ? (
+        <details class="research-navigation" data-research-navigation>
+          <summary class:list={{ "research-current": researchItems.some(item => isCurrent(item.path)) }}>
+            Research
+          </summary>
+          <ul class="research-destinations" aria-label="Research destinations">
+            {researchItems.map(item => (
+              <li><a href={href(item.path)} aria-current={isCurrent(item.path) ? "page" : undefined}>{item.label}</a></li>
+            ))}
+          </ul>
+        </details>
+      ) : (
+        <a href={href(item.path)} aria-current={isCurrent(item.path) ? "page" : undefined}>
           {item.label}
         </a>
       ))}
@@ -34,4 +44,39 @@ const current = Astro.url.pathname.replace(/\/$/, "");
     </a>
     <ThemeControls />
   </div>
+  <style is:inline>
+    .research-navigation { position: relative; align-self: flex-start; }
+    .research-navigation summary { padding: 1rem 0; min-height: 44px; color: var(--muted); font-size: .82rem; cursor: pointer; }
+    .research-navigation summary:hover, .research-navigation .research-current { color: var(--text); }
+    .research-navigation summary:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+    .research-destinations { position: absolute; z-index: 20; top: 100%; left: 0; min-width: 190px; margin: 0; padding: 8px; list-style: none; border: 1px solid var(--line); background: var(--surface); box-shadow: 0 8px 24px #0002; }
+    .site-header .research-destinations a { display: block; padding: 12px; min-height: 44px; }
+    .site-header .research-destinations a:hover { background: var(--surface-raised); color: var(--text); }
+    .site-header .research-destinations a[aria-current]:after { left: 12px; right: 12px; bottom: 6px; }
+    @media (max-width: 760px) {
+      .research-navigation { flex-basis: 100%; }
+      .research-navigation summary { width: fit-content; padding: 12px 0; font-size: .74rem; }
+      .research-destinations { position: static; width: 100%; margin-bottom: 8px; box-shadow: none; }
+    }
+  </style>
+  <script is:inline data-research-nav-init>
+    (() => {
+      const disclosure = document.querySelector('[data-research-navigation]');
+      if (!disclosure) return;
+      const summary = disclosure.querySelector('summary');
+      disclosure.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && disclosure.open) {
+          event.preventDefault();
+          disclosure.open = false;
+          summary.focus();
+        }
+      });
+      document.addEventListener('click', event => {
+        if (!disclosure.contains(event.target)) disclosure.open = false;
+      });
+      document.addEventListener('focusin', event => {
+        if (!disclosure.contains(event.target)) disclosure.open = false;
+      });
+    })();
+  </script>
 </header>

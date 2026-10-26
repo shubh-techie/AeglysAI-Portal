@@ -79,3 +79,5 @@ and organizer follow-ups separately from public runtime records.
 2026-10-14: AEGLYSAI-HACK-DESIGN-002 extends the existing
 [Hackathon Experience specification](HACKATHON_EXPERIENCE_SPEC.md), SPEC-018 and SPEC-020
 with the exclusive international landing presentation. No duplicate hackathon SPEC created.
+
+- [SPEC-022 — Research navigation](SPEC-022-research-navigation.md): shared native Research disclosure, mobile accordion and unchanged destinations. SPEC-021 is reserved by the separate EVENT-001 branch.
