@@ -1,0 +1,219 @@
+{
+  "schemaVersion": "1.0.0",
+  "kind": "SYNTHETIC",
+  "snapshotId": "synthetic-snapshot",
+  "revision": 1,
+  "exportedAt": "2026-10-25T12:00:00Z",
+  "provenance": {
+    "method": "controlled-sanitized-export",
+    "exportId": "synthetic-export",
+    "sourceRevision": "synthetic-revision-one"
+  },
+  "data": {
+    "events": [
+      {
+        "id": "synthetic-event",
+        "title": "Synthetic demonstration event",
+        "timezone": "Asia/Kolkata"
+      }
+    ],
+    "people": [
+      {
+        "id": "synthetic-person",
+        "name": "Synthetic Registry Person",
+        "confirmed": true,
+        "approvals": {
+          "content": true,
+          "organizer": true,
+          "publicDisplayConsent": true,
+          "branding": true
+        },
+        "image": {
+          "path": "/images/aeglysai-social.png",
+          "alt": "Existing Portal preview used as a synthetic image fixture"
+        }
+      }
+    ],
+    "records": [
+      {
+        "eventId": "synthetic-event",
+        "status": "Published",
+        "approvedCopy": "Synthetic approved demonstration only.",
+        "approvals": {
+          "content": true,
+          "organizer": true,
+          "publicDisplayConsent": true,
+          "branding": true
+        },
+        "visibility": {
+          "public": true,
+          "suppressed": false
+        },
+        "id": "synthetic-keynote-speaker",
+        "category": "Keynote Speaker",
+        "personId": "synthetic-person"
+      },
+      {
+        "eventId": "synthetic-event",
+        "status": "Published",
+        "approvedCopy": "Synthetic approved demonstration only.",
+        "approvals": {
+          "content": true,
+          "organizer": true,
+          "publicDisplayConsent": true,
+          "branding": true
+        },
+        "visibility": {
+          "public": true,
+          "suppressed": false
+        },
+        "id": "synthetic-judge",
+        "category": "Judge",
+        "personId": "synthetic-person"
+      },
+      {
+        "eventId": "synthetic-event",
+        "status": "Published",
+        "approvedCopy": "Synthetic approved demonstration only.",
+        "approvals": {
+          "content": true,
+          "organizer": true,
+          "publicDisplayConsent": true,
+          "branding": true
+        },
+        "visibility": {
+          "public": true,
+          "suppressed": false
+        },
+        "id": "synthetic-mentor",
+        "category": "Mentor",
+        "personId": "synthetic-person"
+      },
+      {
+        "eventId": "synthetic-event",
+        "status": "Published",
+        "approvedCopy": "Synthetic approved demonstration only.",
+        "approvals": {
+          "content": true,
+          "organizer": true,
+          "publicDisplayConsent": true,
+          "branding": true
+        },
+        "visibility": {
+          "public": true,
+          "suppressed": false
+        },
+        "id": "synthetic-participant",
+        "category": "Participant",
+        "personId": "synthetic-person",
+        "qualificationVerified": true,
+        "selectionVerified": true
+      },
+      {
+        "eventId": "synthetic-event",
+        "status": "Published",
+        "approvedCopy": "Synthetic approved demonstration only.",
+        "approvals": {
+          "content": true,
+          "organizer": true,
+          "publicDisplayConsent": true,
+          "branding": true
+        },
+        "visibility": {
+          "public": true,
+          "suppressed": false
+        },
+        "id": "synthetic-partner",
+        "name": "Synthetic Partner",
+        "category": "Partner"
+      },
+      {
+        "eventId": "synthetic-event",
+        "status": "Published",
+        "approvedCopy": "Synthetic approved demonstration only.",
+        "approvals": {
+          "content": true,
+          "organizer": true,
+          "publicDisplayConsent": true,
+          "branding": true
+        },
+        "visibility": {
+          "public": true,
+          "suppressed": false
+        },
+        "id": "synthetic-team",
+        "name": "Synthetic Team",
+        "category": "Team",
+        "members": [
+          "synthetic-person"
+        ],
+        "qualificationVerified": true,
+        "selectionVerified": true
+      },
+      {
+        "eventId": "synthetic-event",
+        "status": "Published",
+        "approvedCopy": "Synthetic approved demonstration only.",
+        "approvals": {
+          "content": true,
+          "organizer": true,
+          "publicDisplayConsent": true,
+          "branding": true
+        },
+        "visibility": {
+          "public": true,
+          "suppressed": false
+        },
+        "id": "synthetic-event-announcement",
+        "name": "Synthetic Event Announcement",
+        "category": "Event Announcement"
+      }
+    ]
+  },
+  "assets": [
+    {
+      "path": "/images/aeglysai-social.png",
+      "sha256": "21a8722f5f4290b24070471a811caa2844e38da0bdf085af19efce6f4bedcce1",
+      "rights": "owned",
+      "attribution": "Existing Portal preview; synthetic demonstration only",
+      "approved": true,
+      "displayCreditRequired": false
+    }
+  ],
+  "recordDecisions": [
+    {
+      "recordId": "synthetic-keynote-speaker",
+      "state": "approved"
+    },
+    {
+      "recordId": "synthetic-judge",
+      "state": "approved"
+    },
+    {
+      "recordId": "synthetic-mentor",
+      "state": "approved"
+    },
+    {
+      "recordId": "synthetic-participant",
+      "state": "approved"
+    },
+    {
+      "recordId": "synthetic-partner",
+      "state": "approved"
+    },
+    {
+      "recordId": "synthetic-team",
+      "state": "approved"
+    },
+    {
+      "recordId": "synthetic-event-announcement",
+      "state": "approved"
+    }
+  ],
+  "profileConsents": [
+    {
+      "personId": "synthetic-person",
+      "state": "granted"
+    }
+  ]
+}

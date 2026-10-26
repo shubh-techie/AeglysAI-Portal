@@ -70,3 +70,5 @@ runtime metadata, with no private correspondence paths. No dependencies or hosti
 - [ADR-010 — sixth Portal challenge](ADR-010-everyday-ai-portal-extension.md): explicit COM-003A extension provenance and unchanged evidence schemas.
 
 - [ADR-011 — Scoped international event landing](ADR-011-scoped-hackathon-event-landing.md): exclusive landing components/styles; unchanged shared routes, policy and intake.
+
+- [ADR-013 — Controlled sanitized showcase snapshot](ADR-013-approved-public-showcase-registry.md): EVENT-002 export/review/build boundary extending the existing static showcase and private Workspace separation.
