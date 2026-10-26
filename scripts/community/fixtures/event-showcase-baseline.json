@@ -1,0 +1,7 @@
+{
+  "task": "AEGLYSAI-PORTAL-EVENT-001",
+  "baselineCommit": "bc7c280b30520100d48893c0d0cae597ec67dc7a",
+  "note": "Community permits only the new showcase section and its scoped CSS/controller. Existing inline CSS may be combined by Astro.",
+  "html": "9658740069a41f7a62b8281f418d0d9951c2cb4b471c6fdf55a2ec9fc3da3f5c",
+  "inlineStyles": "84bc03d4f6fac2dc9fd72a1ad8bc3442c88df5398cfe2f8e1760767ef09dc591"
+}

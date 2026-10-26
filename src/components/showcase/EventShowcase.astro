@@ -1,0 +1,48 @@
+---
+import controller from './showcase-controller.js?raw';
+import { existsSync } from 'node:fs';
+import { asset } from '../../data/project';
+import { eventShowcase, publicShowcase, type ShowcaseData, type Category } from '../../data/eventShowcase';
+interface Props {
+  id: string; eventId: string; title: string; description?: string;
+  layout?: 'cards' | 'carousel'; category?: Category; data?: ShowcaseData; now?: Date;
+}
+const { id, eventId, title, description, layout = 'cards', category, data = eventShowcase, now = new Date() } = Astro.props;
+const items = publicShowcase(data, eventId, now, category);
+const filters = [...new Set(items.map(item => item.category))];
+---
+<section class="section event-showcase" data-showcase data-layout={layout} aria-labelledby={`${id}-title`}>
+  <h2 id={`${id}-title`}>{title}</h2>
+  {description && <p>{description}</p>}
+  {filters.length > 1 && <label data-filter-label hidden>Show category <select aria-controls={`${id}-items`} data-category><option value="all">All categories</option>{filters.map(filter => <option value={filter}>{filter}</option>)}</select></label>}
+  <p data-status role="status" aria-live="polite" aria-atomic="true">{items.length ? `${items.length} approved items` : 'Approved profiles and announcements will appear here when available.'}</p>
+  <div id={`${id}-items`} class="showcase-track" tabindex={layout === 'carousel' && items.length ? '0' : undefined} role={layout === 'carousel' ? 'region' : undefined} aria-label={layout === 'carousel' ? `${title}; use Left and Right arrow keys or swipe to browse` : undefined}>
+    {items.map(item => <article class="info-card showcase-card" data-category={item.category}>
+      {item.image && existsSync(`public${item.image.path}`) ? <img src={asset(item.image.path.slice(1))} alt={item.image.alt} width="320" height="320" loading="lazy" decoding="async"/> : <div class="showcase-fallback" aria-hidden="true">{item.name.slice(0, 1)}</div>}
+      <p class="eyebrow">{item.category}</p><h3>{item.name}</h3>
+      {(item.designation || item.organization) && <p>{[item.designation, item.organization].filter(Boolean).join(' · ')}</p>}
+      <p>{item.copy}</p>{item.biography && <p>{item.biography}</p>}
+      {item.expertise.length > 0 && <p>Expertise: {item.expertise.join(', ')}</p>}
+      {item.session && <p>Session: {item.session}</p>}{item.challenge && <p>Challenge: {item.challenge}</p>}
+      {item.announcementDate && <p>Announcement date: <time datetime={item.announcementDate}>{item.announcementDate}</time></p>}
+      {item.website && <a href={item.website} rel="noopener noreferrer">{item.name} website</a>}
+      {item.linkedin && <p><a href={item.linkedin} rel="noopener noreferrer">{item.name} on LinkedIn</a></p>}
+    </article>)}
+  </div>
+  {layout === 'carousel' && items.length > 0 && <div data-navigation hidden><button type="button" data-previous aria-controls={`${id}-items`} aria-label={`Previous ${title} cards`}>Previous</button> <button type="button" data-next aria-controls={`${id}-items`} aria-label={`Next ${title} cards`}>Next</button></div>}
+</section>
+<script is:inline data-showcase-init set:html={controller} />
+<style>
+  .event-showcase { min-width: 0; }
+  .showcase-track { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+  .showcase-card { min-width: 0; overflow-wrap: anywhere; }
+  .showcase-card[hidden], [hidden] { display: none !important; }
+  .showcase-card img, .showcase-fallback { width: 100%; aspect-ratio: 1; object-fit: contain; height: auto; border-radius: .5rem; }
+  .showcase-fallback { display: grid; place-items: center; background: var(--surface); font-size: 3rem; border: 1px solid var(--line); }
+  select, button { font: inherit; padding: .6rem; color: var(--text); background: var(--surface); border: 1px solid var(--line); border-radius: .4rem; }
+  [data-layout='carousel'] .showcase-track { display: flex; position: relative; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding-inline: .3rem; gap: 1.5rem; padding: .3rem .3rem 1rem; }
+  [data-layout='carousel'] .showcase-card { flex: 0 0 calc((100% - 3rem) / 3); scroll-snap-align: start; }
+  @media (max-width: 900px) { .showcase-track { grid-template-columns: repeat(2, minmax(0, 1fr)); } [data-layout='carousel'] .showcase-card { flex-basis: calc((100% - 1.5rem) / 2); } }
+  @media (max-width: 600px) { .showcase-track { grid-template-columns: minmax(0, 1fr); } [data-layout='carousel'] .showcase-card { flex-basis: 100%; } }
+  @media (prefers-reduced-motion: reduce) { .showcase-track { scroll-behavior: auto; } }
+</style>
