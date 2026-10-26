@@ -81,3 +81,5 @@ and organizer follow-ups separately from public runtime records.
 with the exclusive international landing presentation. No duplicate hackathon SPEC created.
 
 - [SPEC-022 — Research navigation](SPEC-022-research-navigation.md): shared native Research disclosure, mobile accordion and unchanged destinations. SPEC-021 is reserved by the separate EVENT-001 branch.
+
+- [SPEC-023 — Hackathon 2027 coming soon](SPEC-023-hackathon-2027-coming-soon.md): future announcement route and shared Hackathon navigation disclosure; local review status and evidence recorded separately.

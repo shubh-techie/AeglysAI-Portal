@@ -5,6 +5,10 @@ import ThemeControls from "./ThemeControls.astro";
 import { href, navigation, project } from "../data/project";
 const researchPaths = ["research", "experiments", "publications"];
 const researchItems = navigation.filter(item => researchPaths.includes(item.path));
+const hackathonItems = [
+  { label: "AEGYTHON 2026", path: "hackathons" },
+  { label: "Hackathon 2027", path: "hackathons/2027" },
+];
 const topLevelItems = navigation.filter(item => !researchPaths.includes(item.path) || item.path === "research");
 const current = Astro.url.pathname.replace(/\/$/, "");
 const isCurrent = (path: string) => current === href(path).replace(/\/$/, "") || (["speaking", "community"].includes(path) && current.startsWith(href(path)));
@@ -27,13 +31,15 @@ const isCurrent = (path: string) => current === href(path).replace(/\/$/, "") ||
         <div class="mobile-menu-heading"><span id="navigation-title">Navigation</span><button type="button" data-menu-close>Close <span aria-hidden="true">×</span></button></div>
     <nav aria-label="Main navigation">
       <a class="mobile-home" href={href()} aria-current={current === href().replace(/\/$/, "") ? "page" : undefined}>Home</a>
-      {topLevelItems.map((item) => item.path === "research" ? (
-        <details class="research-navigation" data-research-navigation>
-          <summary aria-controls="research-destinations" class:list={{ "research-current": researchItems.some(item => isCurrent(item.path)) }}>
-            Research
+      {topLevelItems.map((item) => {
+        const children = item.path === "research" ? researchItems : item.path === "hackathons" ? hackathonItems : null;
+        return children ? (
+        <details class="research-navigation" data-navigation-disclosure data-research-navigation={item.path === "research" || undefined} data-hackathon-navigation={item.path === "hackathons" || undefined}>
+          <summary aria-controls={`${item.path}-destinations`} class:list={{ "research-current": children.some(child => isCurrent(child.path)) }}>
+            {item.label}
           </summary>
-          <ul id="research-destinations" class="research-destinations" aria-label="Research destinations">
-            {researchItems.map(item => (
+          <ul id={`${item.path}-destinations`} class="research-destinations" aria-label={`${item.label} destinations`}>
+            {children.map(item => (
               <li><a href={href(item.path)} aria-current={isCurrent(item.path) ? "page" : undefined}>{item.label}</a></li>
             ))}
           </ul>
@@ -42,7 +48,7 @@ const isCurrent = (path: string) => current === href(path).replace(/\/$/, "") ||
         <a href={href(item.path)} aria-current={isCurrent(item.path) ? "page" : undefined}>
           {item.label}
         </a>
-      ))}
+      ); })}
     </nav>
     <a
       class="button button-small header-github"
