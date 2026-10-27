@@ -5,7 +5,7 @@ import { createHash } from 'node:crypto';
 import sharp from 'sharp';
 const id=z.string().regex(/^[A-Za-z0-9_-]{10,150}$/);
 export const sourceConfigSchema=z.strictObject({schemaVersion:z.literal('1.0.0'),publicationEnabled:z.literal(false),
- sheetId:id,assetFolderId:id,maxRows:z.number().int().min(10).max(1000),demoAvatarUse:z.boolean(),
+ layout:z.enum(['multi-tab','people']).default('multi-tab'),sheetId:id,assetFolderId:id,maxRows:z.number().int().min(10).max(1000),demoAvatarUse:z.boolean(),
  approvedOwnerPermissionIds:z.array(z.string().regex(/^[A-Za-z0-9_-]+$/)),
  roleMap:z.record(z.string(),z.enum(['Judge','Mentor','Partner','Keynote Speaker'])),
  rightsMap:z.record(z.string(),z.enum(['owned','cc0','permission']))});
@@ -81,10 +81,17 @@ export async function sourceImage(fileId:string,c:SourceConfig,api:GoogleClient,
  if(production&&!meta.owners?.some((owner:{permissionId:string})=>c.approvedOwnerPermissionIds.includes(owner.permissionId)))fail('ASSET_OWNER_UNVERIFIED');
  const bytes=await api.bytes(`https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`,10*1024*1024);
  if(bytes.length!==+meta.size||!meta.md5Checksum||createHash('md5').update(bytes).digest('hex')!==meta.md5Checksum)fail('ASSET_CHANGED_DURING_SYNC');
+ return inspectSourceImage(bytes,meta.mimeType,+meta.size,production);
+}
+/** Shared byte validation for ADC downloads and authenticated connector materialization. */
+export async function inspectSourceImage(bytes:Buffer,mimeType:string,size:number,production=false){
+ const formats:Record<string,string>={'image/png':'png','image/jpeg':'jpg','image/webp':'webp','image/avif':'avif'};
+ if(!formats[mimeType]||bytes.length!==size||size<=0||size>10*1024*1024)fail('ASSET_METADATA');
  try{const image=sharp(bytes,{limitInputPixels:40000000}),m=await image.metadata();await image.stats();
- if(!m.width||!m.height||m.width*m.height>40000000||!(meta.mimeType==='image/avif'?['avif','heif'].includes(m.format!):m.format===({png:'png',jpg:'jpeg',webp:'webp'} as Record<string,string>)[formats[meta.mimeType]]))fail('ASSET_DECODE');
+ if(!m.width||!m.height||m.width*m.height>40000000||!(mimeType==='image/avif'?['avif','heif'].includes(m.format!):m.format===({png:'png',jpg:'jpeg',webp:'webp'} as Record<string,string>)[formats[mimeType]]))fail('ASSET_DECODE');
  if(production&&(m.exif||m.xmp||m.iptc))fail('ASSET_PRIVATE_METADATA');
  }catch(e){if(e instanceof SourceError)throw e;fail('ASSET_DECODE');}
- return {bytes,extension:formats[meta.mimeType],sha256:createHash('sha256').update(bytes).digest('hex')};
+ return {bytes,extension:formats[mimeType],sha256:createHash('sha256').update(bytes).digest('hex')};
 }
+
 export { yes as sourceBoolean };

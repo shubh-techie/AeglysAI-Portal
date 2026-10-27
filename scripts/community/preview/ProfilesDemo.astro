@@ -1,14 +1,36 @@
 ---
 import Layout from '../../../src/layouts/Layout.astro';
+import { publicShowcase } from '../../../src/data/eventShowcase.ts';
 import EventShowcase from '../../../src/components/showcase/EventShowcase.astro';
 import { makeDemoShowcase, readDemoFeed } from './profiles-demo.ts';
+import { readPeoplePreview, peoplePhoto } from '../profile-people.ts';
 const data = makeDemoShowcase(readDemoFeed());
+const demoItems = publicShowcase(data, 'demo-2026', new Date()).map(item => ({...item, approvalStatus: 'DEMO — NOT APPROVED', provenanceLabel: 'FICTIONAL DEMO'}));
+const real = readPeoplePreview();
+const previewItems = real.people.flatMap(person => person.roles.map((role, i) => ({
+  id: `${person.id}-preview-${i}`, category: role, name: person.name, designation: person.designation,
+  organization: person.organization, linkedin: person.linkedin, expertise: [],
+  copy: 'PREVIEW / NOT PUBLISHED. Source-supplied role and affiliation await review.',
+  provenanceLabel: 'REAL SOURCE / LOCAL PREVIEW', approvalStatus: person.status,
+  ...(peoplePhoto(person.id, real) ? {image: {path: `/images/content002-people/${person.id}.${person.imageExtension}`, alt: `Local preview photograph of ${person.name}`}} : {}),
+})));
 ---
-<Layout title="DEMO — profile import preview" description="Local synthetic preview. No event appointments or publication approvals." noindex={true}>
-  <div class="container page-content">
-    <h1>DEMO — not approved for publication</h1>
+<Layout title="PREVIEW / NOT PUBLISHED — profile dashboard" description="Local profile review with Pending source records and separately labeled fictional demos." noindex={true}>
+  <div class="container page-content profile-preview">
+    <h1>PREVIEW / NOT PUBLISHED</h1>
+    <p>Local organizer review only. Source status, including Pending or Approved, does not establish consent, verified appointments, photo rights or publication approval.</p>
+    <EventShowcase id="people-preview" eventId="local-only" title="Real source records — local review" previewItems={previewItems} imageAvailable={() => true} />
+    <h2>Fictional demos — visual testing only</h2>
     <p>Sample profiles only. No real appointments, partners, endorsements or consent are established. Existing category labels and approval counters below are simulated renderer states, not publication approvals.</p>
     <p>Avatar files are authorized only for this local DEMO. No public image rights or real publication approvals are established. Missing or changed images use initials fallbacks. Speaker samples exercise the existing Keynote Speaker category without asserting a keynote appointment.</p>
-    <EventShowcase id="demo-profiles" eventId="demo-2026" title="DEMO Judges, Speakers, Mentors and Partners" data={data} imageAvailable={() => true} />
+    <EventShowcase id="demo-profiles" eventId="demo-2026" title="Fictional DEMO Judges, Speakers, Mentors and Partners" data={data} previewItems={demoItems} itemLabel="fictional demo cards" imageAvailable={() => true} />
   </div>
 </Layout>
+
+<style>
+  .profile-preview :global(.showcase-card img), .profile-preview :global(.showcase-fallback) {
+    width: 9rem; height: 9rem; border-radius: 50%; object-fit: cover; aspect-ratio: 1;
+  }
+  .profile-preview :global(select:focus-visible) { outline: 2px solid var(--cyan); outline-offset: 3px; }
+  .profile-preview :global(.preview-approval) { font-weight: 600; }
+</style>

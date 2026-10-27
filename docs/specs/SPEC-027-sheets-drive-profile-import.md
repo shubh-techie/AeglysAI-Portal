@@ -42,3 +42,20 @@ Current real source grants/required initial public extension columns and usable 
 not established. [Operator guide](../hackathons/PROFILE_OPERATOR_GUIDE.md) and
 [final report](../hackathons/CONTENT-002A-FINAL-REVIEW.md) distinguish implementation,
 isolated acceptance and blocked live verification. No profiles published.
+
+
+## Single People tab preview extension — 2026-10-26
+
+Minimal read-only layout=people adapter checks header A:I, reads only A:H, excludes
+Notes values, and preserves raw roles/status for local review. It does not convert
+Pending or Approved into publication approval and cannot generate real publication
+candidates. Distinct repeated roles share one stable person; conflicting identities
+reject, Withdrawn/Revoked entries are suppressed. Authenticated local photo copies keep
+original bytes; circular display uses CSS only. Real and fictional sections reuse the
+existing card renderer via a DEV-only projection guarded against production builds.
+Local filter/status presentation must not alter normal production HTML/controller bytes.
+Operator staging is denied to Vite browser file serving while preserving existing deny
+rules; explicit local image middleware remains membership/digest gated. No credentials,
+private source IDs or Notes in public output. Existing EVENT-002 remains unchanged.
+[Guide](../hackathons/PEOPLE_PREVIEW_GUIDE.md),
+[review](../hackathons/CONTENT-002A-PEOPLE-REVIEW.md).
