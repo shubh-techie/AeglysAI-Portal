@@ -89,3 +89,5 @@ with the exclusive international landing presentation. No duplicate hackathon SP
 - [SPEC-025 — Approved public showcase registry](SPEC-025-approved-public-showcase-registry.md): sanitized JSON export, independent approval and integration with the existing EVENT-001 showcase; no live Sheet or real public seed.
 
 - [SPEC-026 — External registration channels](SPEC-026-registration-channels.md): Unstop/Luma discovery, Discord support and a planned private reconciliation boundary; official qualification/selection remains authoritative.
+
+- [SPEC-027 — Controlled Sheets/Drive profile imports](SPEC-027-sheets-drive-profile-import.md): sanitized adapter, pinned public-feed transport and regenerated development-only DEMO; no real publication.

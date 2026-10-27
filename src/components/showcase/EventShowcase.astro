@@ -5,9 +5,10 @@ import { asset } from '../../data/project';
 import { eventShowcase, publicShowcase, type ShowcaseData, type Category } from '../../data/eventShowcase';
 interface Props {
   id: string; eventId: string; title: string; description?: string;
+  imageAvailable?: (path: string) => boolean;
   layout?: 'cards' | 'carousel'; category?: Category; data?: ShowcaseData; now?: Date;
 }
-const { id, eventId, title, description, layout = 'cards', category, data = eventShowcase, now = new Date() } = Astro.props;
+const { id, eventId, title, description, layout = 'cards', category, data = eventShowcase, now = new Date(), imageAvailable = (path: string) => existsSync(`public${path}`) } = Astro.props;
 const items = publicShowcase(data, eventId, now, category);
 const filters = [...new Set(items.map(item => item.category))];
 ---
@@ -18,7 +19,7 @@ const filters = [...new Set(items.map(item => item.category))];
   <p data-status role="status" aria-live="polite" aria-atomic="true">{items.length ? `${items.length} approved items` : 'Approved profiles and announcements will appear here when available.'}</p>
   <div id={`${id}-items`} class="showcase-track" tabindex={layout === 'carousel' && items.length ? '0' : undefined} role={layout === 'carousel' ? 'region' : undefined} aria-label={layout === 'carousel' ? `${title}; use Left and Right arrow keys or swipe to browse` : undefined}>
     {items.map(item => <article class="info-card showcase-card" data-category={item.category}>
-      {item.image && existsSync(`public${item.image.path}`) ? <img src={asset(item.image.path.slice(1))} alt={item.image.alt} width="320" height="320" loading="lazy" decoding="async"/> : <div class="showcase-fallback" aria-hidden="true">{item.name.slice(0, 1)}</div>}
+      {item.image && imageAvailable(item.image.path) ? <img src={asset(item.image.path.slice(1))} alt={item.image.alt} width="320" height="320" loading="lazy" decoding="async"/> : <div class="showcase-fallback" aria-hidden="true">{item.name.slice(0, 1)}</div>}
       <p class="eyebrow">{item.category}</p><h3>{item.name}</h3>
       {(item.designation || item.organization) && <p>{[item.designation, item.organization].filter(Boolean).join(' · ')}</p>}
       <p>{item.copy}</p>{item.biography && <p>{item.biography}</p>}
