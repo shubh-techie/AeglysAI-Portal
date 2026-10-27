@@ -1,5 +1,7 @@
 # Profile operator quick guide
 
+Current single-tab source selection and local real-photo dashboard: [People preview guide](PEOPLE_PREVIEW_GUIDE.md). The multi-tab commands below remain supported for their original contract.
+
 CONTENT-002A-FINAL, local tooling pending review. **Publication is disabled.** No profiles
 are published by these commands. Current live-API prerequisite: `doctor` returns
 AUTH_REQUIRED because usable gcloud ADC was not available; source sharing URLs are not credentials.

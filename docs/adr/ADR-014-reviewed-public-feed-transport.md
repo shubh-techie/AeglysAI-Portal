@@ -34,3 +34,12 @@ change the existing Git/independent owner/publication boundary. Private config a
 remain outside Git, no browser URLs/credentials, no Google SDK dependency or backend.
 No service login/sharing or public resource was created; missing ADC is an explicit
 prerequisite, not inferred authorization from a sharing URL or connected plugin session.
+
+
+2026-10-26 People preview extension: the simpler single-tab source lacks independent
+publication evidence, so it feeds only the existing local preview. A source status and
+raw role cannot replace EVENT-002 approval/category decisions. A DEV-only card projection
+keeps Pending real entries out of simulated approval flags, and fails any production use.
+No parallel public store, backend or publishing path. Original bytes are preserved and
+only CSS clips local portraits. Private staging is explicitly denied from dev filesystem
+serving, in addition to the existing Vite deny rules.
