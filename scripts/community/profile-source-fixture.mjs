@@ -1,0 +1,14 @@
+import {createHash} from 'node:crypto';
+export function sourceFixture(bytes){
+ const config={schemaVersion:'1.0.0',publicationEnabled:false,sheetId:'synthetic-sheet-123',assetFolderId:'synthetic-folder-123',maxRows:200,demoAvatarUse:true,approvedOwnerPermissionIds:['synthetic-owner'],roleMap:{judge:'Judge',mentor:'Mentor',partner:'Partner','keynote speaker':'Keynote Speaker'},rightsMap:{'Permission granted':'permission'}};
+ const profiles=[['profile_id','display_name','category','event_year','public_title','organization','short_bio','public_linkedin_url','public_website_url','drive_photo_file_id','photo_filename','alt_text','publication_status','affiliation_verified'],['demo-fixture-01','Fictional profile','judge','2026','Fictional reviewer','','Fictional original biography','','','synthetic-photo-123','ignored.png','Fictional avatar','DEMO_DO_NOT_PUBLISH','Yes']];
+ const roles=[['profile_id','event_year','role'],['demo-fixture-01','2026','judge']],roleFlags=[['role_approved'],['No']],assets=[['profile_id','drive_photo_file_id'],['demo-fixture-01','synthetic-photo-123']],assetFlags=[['original_filename','asset_type','usage_permission','asset_approved','public_copy_path','public_attribution','display_credit_required'],['ignored.png','photo','Permission granted','Yes','','Synthetic test attribution','No']],approvals=[['profile_id'],['demo-fixture-01']],approvalFlags=[['consent_confirmed','content_approved','asset_approved','withdrawn'],['No','No','No','No']];
+ const state={config,profiles,roles,roleFlags,assets,assetFlags,approvals,approvalFlags,bytes,owner:'synthetic-owner',parent:config.assetFolderId,available:true,corrupt:false};
+ const api={json:async(url)=>{
+ if(!state.available)throw Error('unavailable');const u=new URL(url);
+ if(u.pathname.endsWith('/values:batchGet')){const ranges=u.searchParams.getAll('ranges');if(ranges[0]?.startsWith('Profiles!A201'))return {valueRanges:ranges.map(()=>({values:[]}))};if(ranges[0]==='Profiles!A1:N1')return {valueRanges:[profiles,roles,roleFlags,assets,assetFlags,approvals,approvalFlags].map(values=>({values:[values[0]]}))};return {valueRanges:[profiles,roles,roleFlags,assets,assetFlags,approvals,approvalFlags].map(values=>({values}))};}
+ if(u.hostname==='sheets.googleapis.com')return {sheets:['Profiles','Roles','Assets','Approvals'].map(title=>({properties:{title,gridProperties:{rowCount:1000,columnCount:26}}}))};
+ return {id:'synthetic-photo-123',mimeType:'image/png',size:state.bytes.length,parents:[state.parent],owners:[{permissionId:state.owner}],capabilities:{canDownload:true},md5Checksum:createHash('md5').update(state.bytes).digest('hex')};},bytes:async()=>state.corrupt?Buffer.from('corrupt'):state.bytes};
+ const approve=()=>{profiles[1][0]='real-test-profile';profiles[1][12]='PUBLIC_APPROVED';roles[1][0]=assets[1][0]=approvals[1][0]='real-test-profile';roleFlags[1][0]='Yes';approvalFlags[1]=['Yes','Yes','Yes','No'];};
+ return {state,api,approve};
+}

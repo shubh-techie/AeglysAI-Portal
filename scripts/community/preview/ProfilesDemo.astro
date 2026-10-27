@@ -1,0 +1,14 @@
+---
+import Layout from '../../../src/layouts/Layout.astro';
+import EventShowcase from '../../../src/components/showcase/EventShowcase.astro';
+import { makeDemoShowcase, readDemoFeed } from './profiles-demo.ts';
+const data = makeDemoShowcase(readDemoFeed());
+---
+<Layout title="DEMO — profile import preview" description="Local synthetic preview. No event appointments or publication approvals." noindex={true}>
+  <div class="container page-content">
+    <h1>DEMO — not approved for publication</h1>
+    <p>Sample profiles only. No real appointments, partners, endorsements or consent are established. Existing category labels and approval counters below are simulated renderer states, not publication approvals.</p>
+    <p>Avatar files are authorized only for this local DEMO. No public image rights or real publication approvals are established. Missing or changed images use initials fallbacks. Speaker samples exercise the existing Keynote Speaker category without asserting a keynote appointment.</p>
+    <EventShowcase id="demo-profiles" eventId="demo-2026" title="DEMO Judges, Speakers, Mentors and Partners" data={data} imageAvailable={() => true} />
+  </div>
+</Layout>
