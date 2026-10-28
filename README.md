@@ -139,7 +139,7 @@ The initial content follows TASK PORTAL-001; the separate application source has
 - A: RBAC.
 - B: RBAC + ABAC.
 - C: RBAC + deterministic contextual risk.
-- D: RBAC + ABAC + behavioral adaptive risk — **planned research**, not implemented.
+- D: **Research Implementation Complete** within bounded offline experimental research; `enforcement_authority=NONE`. It does not authorize access or establish field effectiveness/commercial readiness.
 
 Implementation is not evidence of measured research outcomes. Architecture diagrams are conceptual: solid nodes describe existing baseline capabilities, while dashed amber nodes describe proposed research. Telemetry instrumentation and the feedback loop are shown as planned, without asserting deployed service topology. The decision outputs are conceptual vocabulary, not a per-model capability matrix.
 
@@ -217,7 +217,7 @@ no active coding branch or completion date is inferred.
 | Live forms, event sessions, selection/results and certificate issuance | PLANNED | Seven verified responder URLs enabled by organizer instruction; sponsor intake null/closed; no live workflow or issued artifact established |
 | Speaking & Presentations module | IMPLEMENTED LOCALLY | Listing/nav, shared cards/detail/PDF viewer and approval gates exist; ATAI completed, GICITE confirmed/upcoming, ETIC awaiting written confirmation, two proposals and shared details; full PDF remains private |
 | PR-triggered CI | PLANNED | Current Pages workflow triggers on main push/manual dispatch only |
-| Model D, telemetry/feedback and comparative experiments | PLANNED RESEARCH | Separate research repository scope; no implemented Model D or validated comparisons asserted here |
+| Model D | RESEARCH IMPLEMENTATION COMPLETE / EXPERIMENTAL | Bounded offline implementation and internal validation in Research commit530da21f; non-enforcing, with unresolved drift/feedback/external-validation limitations |
 | Deployment of the current merged revision | UNVERIFIED | Workflow exists; no current successful Actions/environment record inspected in this documentation task |
 
 ### Next work

@@ -7,7 +7,7 @@ const id=z.string().regex(/^[A-Za-z0-9_-]{10,150}$/);
 export const sourceConfigSchema=z.strictObject({schemaVersion:z.literal('1.0.0'),publicationEnabled:z.literal(false),
  layout:z.enum(['multi-tab','people']).default('multi-tab'),sheetId:id,assetFolderId:id,maxRows:z.number().int().min(10).max(1000),demoAvatarUse:z.boolean(),
  approvedOwnerPermissionIds:z.array(z.string().regex(/^[A-Za-z0-9_-]+$/)),
- roleMap:z.record(z.string(),z.enum(['Judge','Mentor','Partner','Keynote Speaker'])),
+ roleMap:z.record(z.string(),z.enum(['Judge','Mentor','Partner','Keynote Speaker','Speaker','Organizer'])),
  rightsMap:z.record(z.string(),z.enum(['owned','cc0','permission']))});
 export type SourceConfig=z.infer<typeof sourceConfigSchema>;
 export class SourceError extends Error { code:string; constructor(code:string){super(code);this.code=code;} }

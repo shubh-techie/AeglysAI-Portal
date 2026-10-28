@@ -6,7 +6,7 @@ const sections = [["challenges", "Challenges"], ["how-it-works", "Qualification"
 ---
 <nav class="hx-event-nav" aria-label="Event sections">
   <span class="hx-nav-brand">AEGLYSAI / 2026</span>
-  <div>{sections.map(([id, title]) => <a href={`#${id}`} data-event-section={id}>{title}</a>)}</div>
+  <div>{sections.map(([id, title]) => <a href={`#${id}`} data-event-section={id}>{title}</a>)}<a href={`${href("hackathons/community")}#aegython-showcase-title`}>People &amp; Partners</a><a href="#faq-community-heading" data-event-section="faq-community-heading">Community</a></div>
   <a href={href("hackathons/events")}>Full rules ↗</a>
 </nav>
 <script is:inline data-event-nav-init set:html={motionController + "\n" + interactions}/>

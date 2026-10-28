@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { beforeFinal001, readHistoricalFile } from './final001-preservation.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -9,11 +10,11 @@ const sha = value => createHash('sha256').update(value).digest('hex');
 const baseline = JSON.parse(read('scripts/community/fixtures/homepage-baseline.json'));
 const html = read('dist/index.html');
 
-test('UX-002 retains every existing homepage byte except its three explicit additions, and all 27 other routes', () => {
+test('UX-002 retains historical bytes outside the pinned FINAL-001 status/navigation/showcase delta', () => {
   assert.equal(baseline.baseline, '6f56ec09a4556143e43d268fed24237cabb20bfd');
-  assert.equal(sha(originalHomepage(html)), baseline.homepage);
+  assert.equal(sha(originalHomepage(beforeFinal001('dist/index.html', html))), baseline.homepage);
   assert.equal(Object.keys(baseline.routes).length, 27);
-  for (const [path, hash] of Object.entries(baseline.routes)) assert.equal(sha(path==='hackathons/index.html'?originalHackathon(read(`dist/${path}`)):read(`dist/${path}`)), hash, path);
+  for (const [path, hash] of Object.entries(baseline.routes)) assert.equal(sha(path==='hackathons/index.html'?originalHackathon(readHistoricalFile(`dist/${path}`,'utf8')):readHistoricalFile(`dist/${path}`,'utf8')), hash, path);
   assert.equal((html.match(/<aside class="home-research-note"/g) ?? []).length, 1);
   assert.equal((html.match(/<section class="section container home-community"/g) ?? []).length, 1);
   assert.equal((html.match(/<style data-home-experience>/g) ?? []).length, 1);
@@ -23,7 +24,7 @@ test('UX-002 separates research implementation from validation and Model D enfor
   const note = html.match(/<aside class="home-research-note"[\s\S]*?<\/aside>/)[0];
   assert.match(note, /separate research repository/);
   assert.match(note, /does not independently validate their effectiveness/);
-  assert.match(note, /Model D is planned, non-enforcing research/);
+  assert.match(note, /Model D research implementation is complete and non-enforcing/);
   assert.match(note, /enforcement_authority=NONE/);
   assert.match(note, /not a production authorization mechanism/);
   assert.equal((html.match(/class="model-card(?: planned-card)?"/g) ?? []).length, 4);

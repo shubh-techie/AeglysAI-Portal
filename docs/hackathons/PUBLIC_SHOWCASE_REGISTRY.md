@@ -202,3 +202,14 @@ Known limits: lexical privacy screening cannot recognize all sensitive prose/enc
 contacts; image signatures are not exhaustive file-safety certification; approvals
 and provenance require trusted human review; static expiry/withdrawal needs deployment.
 Existing cache and embedded Magicast security findings remain OPEN without waiver.
+
+## FINAL-001 role/version extension
+
+Use1.1.0 for generic Speaker or Organizer associations. The same person may hold several
+independently approved roles through one profile. Do not label a generic speaker keynote.
+Existing1.0.0 approvals/snapshots still validate only with original categories; new roles
+under1.0 reject. Approval version must equal snapshot version and its exact digest.
+No source dropdown/status replaces confirmation, public copy, image rights, affiliation,
+consent or independent owner review. The public People & Partners route is circular CSS
+presentation only; original asset bytes are unchanged. Private People input still cannot
+produce publication candidates by changing Pending to Approved.

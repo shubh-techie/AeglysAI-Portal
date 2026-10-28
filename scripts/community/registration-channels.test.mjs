@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { beforeFinal001, readHistoricalFile } from './final001-preservation.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { createHash } from 'node:crypto';
@@ -18,15 +19,15 @@ test('REG-001 exact owner-supplied public links are safe and clearly identify ex
     for(const link of links){assert.match(link.attrs,/target="_blank"/);assert.match(link.attrs,/rel="noopener noreferrer"/);assert.match(link.text,/external/);}
   }
 });
-test('REG-001 preserves every original landing byte and all27 other routes, including2027 and navigation',()=>{
+test('REG-001 preserves historical bytes outside the pinned FINAL-001 delta, including2027 and navigation',()=>{
   assert.equal(baseline.baseline,'c85f80e5662d5d429ed098b260c6dc7a427edb65');
   assert.equal((html.match(/id="registration-channels"/g)||[]).length,1);
   assert.equal((html.match(/data-reg001-support="inline"/g)||[]).length,1);
   assert.equal((html.match(/data-reg001-support="card"/g)||[]).length,1);
-  assert.equal(sha(originalHackathon(html)),baseline.landingHtml);
-  assert.equal(sha(originalHackathonSource(readFileSync('src/pages/hackathons/index.astro','utf8'))),baseline.landingSource);
+  assert.equal(sha(originalHackathon(beforeFinal001('dist/hackathons/index.html',html))),baseline.landingHtml);
+  assert.equal(sha(originalHackathonSource(readHistoricalFile('src/pages/hackathons/index.astro','utf8'))),baseline.landingSource);
   assert.equal(Object.keys(baseline.otherRoutes).length,27);
-  for(const [path,hash] of Object.entries(baseline.otherRoutes))assert.equal(sha(readFileSync(`dist/${path}`)),hash,path);
+  for(const [path,hash] of Object.entries(baseline.otherRoutes))assert.equal(sha(readHistoricalFile(`dist/${path}`)),hash,path);
 });
 test('REG-001 keeps registration/qualification/selection authoritative and Discord separate',()=>{
   const section=html.match(/<section class="hx-section" id="registration-channels"[\s\S]*?<\/section>/)[0];

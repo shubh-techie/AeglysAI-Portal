@@ -17,9 +17,9 @@ const validate = (snapshot, approval=owner(snapshot)) => validateRegistry(snapsh
 const exported = () => exportRegistry(fixture(), {now});
 const rendered = snapshot => publicShowcase(snapshot.data, 'synthetic-event', now);
 
-test('EVENT-002 uses all existing categories, one shared profile and the original projection', () => {
+test('EVENT-002 v1.0 retains every legacy category, one shared profile and the original projection', () => {
   const snapshot=exported(); validate(snapshot); validateRegistryAssets(snapshot);
-  assert.deepEqual(new Set(rendered(snapshot).map(item=>item.category)),new Set(categories));
+  assert.deepEqual(new Set(rendered(snapshot).map(item=>item.category)),new Set(categories.filter(category=>!['Speaker','Organizer'].includes(category))));
   assert.equal(snapshot.data.people.length,1);
   assert.equal(snapshot.data.records.filter(record=>record.personId==='synthetic-person').length,4);
   assert.equal(rendered(snapshot).filter(item=>item.name==='Synthetic Registry Person').length,4);

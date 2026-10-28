@@ -1,4 +1,5 @@
 ---
+import { modelDStatus } from "../data/modelDStatus";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import SectionHeading from "../components/SectionHeading.astro";
@@ -9,7 +10,7 @@ import { project, models, href } from "../data/project";
 
 <Layout
   title="Research"
-  description="The AeglysAI research problem, deterministic baselines and proposed policy-bounded behavioral adaptive authorization model."
+  description="The AeglysAI research problem, deterministic baselines and completed experimental, non-enforcing Model D research implementation."
 >
   <Hero
     eyebrow="01 / Research"
@@ -55,24 +56,17 @@ import { project, models, href } from "../data/project";
         ))}
       </div>
     </section>
-    <section class="split-section">
+    <section class="split-section" id="model-d-status">
       <SectionHeading
-        eyebrow="The next investigation"
-        title="Proposed Model D"
+        eyebrow="Bounded offline research"
+        title={modelDStatus.title}
       />
       <div class="prose">
-        <StatusBadge status="Planned Research" />
-        <p>
-          {models[3].baseline}. The proposed model investigates behavioral
-          intelligence, operational state and continuous feedback within
-          explicit authorization policy boundaries.
-        </p>
-        <p>
-          AI-derived evidence would inform a decision; deterministic policy
-          would constrain the available actions. The research must establish
-          whether this approach improves security outcomes and at what
-          operational cost. Model D is not implemented.
-        </p>
+        <StatusBadge status={modelDStatus.label} />
+        <p>{modelDStatus.summary}</p>
+        <p>Completed work includes offline behavioral inference, eligibility and drift diagnostics, experimental integration, mock-feedback simulation and internal reproducibility checks. These research capabilities do not grant or deny access.</p>
+        <p><code>{modelDStatus.authority}</code>. {modelDStatus.limits}</p>
+        <p>Local engineering acceptance is not independent field validation, security/distribution clearance or a commercial product release. No model artifacts, datasets or internal evaluation results are published here.</p>
       </div>
     </section>
     <section class="section">

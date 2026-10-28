@@ -1,0 +1,576 @@
+{
+  "baseCommit": "94a38f84c4ceb73c32a4e262ce777af87591ac0c",
+  "purpose": "Explicit candidate delta projection for retained historical byte guards; raw current behavior tested independently",
+  "files": {
+    "dist/404.html": {
+      "beforeSHA256": "28906a0a732eb2d9d7c63929929ae7283e9fa27fc8638e614c1b3f89d516c59f",
+      "afterSHA256": "b5bf341c1c19a2a910ed5839fcc0740d5f882c0198b016b0731f3defce19e7b5",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/about/index.html": {
+      "beforeSHA256": "a9bfd3cfd2cf26cab46d16b010614b486b65222b364ae40080415188af884662",
+      "afterSHA256": "571fbf567095e3e737eb0b78bccd289b32acbda33a19f5c0301bb6f1ae3c008d",
+      "changes": [
+        {
+          "before": "<h3>Behavioral Risk Research</h3><p>Investigate behavioral evidence for the proposed Model D and define its evaluation conditions.</p></article><article class=\"info-card\">",
+          "after": "<h3>Behavioral Risk Research</h3><p>Evaluate the completed non-enforcing Model D research implementation and define its evaluation conditions.</p></article><article class=\"info-card\">"
+        },
+        {
+          "before": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/architecture/index.html": {
+      "beforeSHA256": "f5e0524466e18c252e892b14ad327a61ae2fbbbdeacb6276cdf85f7214d46408",
+      "afterSHA256": "aaa50d00debc6b396f35614b08209f4287f03dbc1447f95c49c439d892bf7e38",
+      "changes": [
+        {
+          "before": "ta name=\"description\" content=\"A conceptual AeglysAI authorization architecture separating implemented deterministic capabilities from planned behavioral intelligence and feedback.\"><meta name=\"author\" content=\"Shubh Prabhat\"><link rel=\"canonical\" href=\"https://aeglysai.com/architecture/\"><meta property=\"og:type\" content=\"website\"><meta property=\"og:site_name\" content=\"AeglysAI Research\"><meta property=\"og:title\" content=\"Architecture | AeglysAI Research\"><meta property=\"og:description\" content=\"A conceptual AeglysAI authorization architecture separating implemented deterministic capabilities from planned behavioral intelligence and feedback.\"><meta property=\"og:url\" content=\"https://aeglysai.com/architecture/\"><meta property=\"og:image\" content=\"https://aeglysai.com/images/aeglysai-social.png\">",
+          "after": "ta name=\"description\" content=\"A conceptual AeglysAI authorization architecture distinguishing implemented baselines and offline non-enforcing research from future production control integration.\"><meta name=\"author\" content=\"Shubh Prabhat\"><link rel=\"canonical\" href=\"https://aeglysai.com/architecture/\"><meta property=\"og:type\" content=\"website\"><meta property=\"og:site_name\" content=\"AeglysAI Research\"><meta property=\"og:title\" content=\"Architecture | AeglysAI Research\"><meta property=\"og:description\" content=\"A conceptual AeglysAI authorization architecture distinguishing implemented baselines and offline non-enforcing research from future production control integration.\"><meta property=\"og:url\" content=\"https://aeglysai.com/architecture/\"><meta property=\"og:image\" content=\"https://aeglysai.com/images/aeglysai-social.png\">"
+        },
+        {
+          "before": "<meta name=\"twitter:card\" content=\"summary_large_image\"><meta name=\"twitter:title\" content=\"Architecture | AeglysAI Research\"><meta name=\"twitter:description\" content=\"A conceptual AeglysAI authorization architecture separating implemented deterministic capabilities from planned behavioral intelligence and feedback.\"><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/brand/icons/favicon.png\"><link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/brand/icons/icon-180.png\">",
+          "after": "<meta name=\"twitter:card\" content=\"summary_large_image\"><meta name=\"twitter:title\" content=\"Architecture | AeglysAI Research\"><meta name=\"twitter:description\" content=\"A conceptual AeglysAI authorization architecture distinguishing implemented baselines and offline non-enforcing research from future production control integration.\"><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/brand/icons/favicon.png\"><link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/brand/icons/icon-180.png\">"
+        },
+        {
+          "before": "Conceptual research architecture, not a deployment schematic. Solid nodes represent capabilities of Models A–C; dashed nodes describe planned extensions. The output vocabulary does not assert that every model implements every action.</figcaption></figure><section class=\"section capability-list\" aria-label=\"Architecture capabilities\"><article><span class=\"card-index\">",
+          "after": "Conceptual research architecture, not a deployment schematic. Solid nodes represent capabilities of Models A–C; dashed nodes describe planned extensions. The output vocabulary does not assert that every model implements every action.</figcaption></figure><aside class=\"notice\"><h2>Research completion does not grant enforcement</h2><p>Model D research implementation is complete for its bounded offline experimental scope. The diagram remains a conceptual production architecture, not an implemented adaptive enforcement path. <code>enforcement_authority=NONE</code>; external validation, drift and mock-feedback limitations remain.</p></aside><section class=\"section capability-list\" aria-label=\"Architecture capabilities\"><article><span class=\"card-index\">"
+        },
+        {
+          "before": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/community/adoption/index.html": {
+      "beforeSHA256": "0a37e016968df4e8afdd199f47c2ce35845c91fb94adcb6b4368082ebc610cbf",
+      "afterSHA256": "bf3a157807248466d6382a4ceda1917d41867b1c2f7bf7310eedd4f4a61dc4cb",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/community/impact/index.html": {
+      "beforeSHA256": "5e0bb43f07287556ef745e00e4130cfac950cadaec0689d16cf69bf187edf1ed",
+      "afterSHA256": "5b723cdc5c7e7033b8318d36a658fd076aa633fecd722adf53d584d0fe294580",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/community/index.html": {
+      "beforeSHA256": "e56e806c76fed63c6cb89b9425f851dd16894f0950562c16ce2f0db912122ba1",
+      "afterSHA256": "2d0d170dce6329666cf499651a0172640b91c928e8d51614a847e42caa12a067",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/community/projects/index.html": {
+      "beforeSHA256": "512f9d30732de223bdd16f60cd01774c0d51dd37e046057b122a19c4d7112c00",
+      "afterSHA256": "3f5b691641865795c62e3ea6d71f771619ae558094ecb29e8041637cbea4e266",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/community/reports/index.html": {
+      "beforeSHA256": "7d53839a78cc83cef4654f7d8fd6a75e14395727d175df986f014af6387ff72c",
+      "afterSHA256": "2e576eda1e7decd5ef51289f7563001708b6c2c2e15e9502aa1d19bdecde39d5",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/community/submit/index.html": {
+      "beforeSHA256": "a9477ac3c4132a4f75d164044ac5485d27b31136cb596c4f5ad1b5ae54acf0ae",
+      "afterSHA256": "7c2eb53100f05a5427395996a4efdc88d1ce614586fff043b89f3cdae56e0d1f",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/experiments/index.html": {
+      "beforeSHA256": "c16afae225ec7bb52598a4a331acf5ef06e537d92e87b08812b15497a053d31d",
+      "afterSHA256": "94d296e93fe81626778ced9292713d4ef99d92d67a378f4dd4db98b4521bbc80",
+      "changes": [
+        {
+          "before": "RBAC + ABAC + behavioral adaptive risk</td><td><span class=\"badge planned\"><span aria-hidden=\"true\" class=\"status-dot\"></span>Planned Research</span></td></tr>",
+          "after": "RBAC + ABAC + behavioral adaptive risk</td><td><span class=\"badge experimental\"><span aria-hidden=\"true\" class=\"status-dot\"></span>Research Implementation Complete</span></td></tr>"
+        },
+        {
+          "before": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/hackathons/2027/index.html": {
+      "beforeSHA256": "50dab052c1be26dd2787fa2d348bdc9f551aae8f075b9d737128300577fafe3e",
+      "afterSHA256": "9294ac8693b78120b094fcaa7860cfbd027e25909da50e40f662b14e5fe823bc",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/hackathons/adaptive-authorization/index.html": {
+      "beforeSHA256": "a1ae61b74e0c8c5c2076c82c4fc034e9add31eba5b0cf00954e30c9a5cacef6d",
+      "afterSHA256": "2cc02556b75f82019f0b6214bc7543476b93c23680305194f48dc328025a0000",
+      "changes": [
+        {
+          "before": "/\">Challenges &amp; Rules</a><a class=\"text-link\" href=\"/hackathons/community/\">Community</a></div><section class=\"section\">",
+          "after": "/\">Challenges &amp; Rules</a><a class=\"text-link\" href=\"/hackathons/community/\">People &amp; Partners</a></div><section class=\"section\">"
+        },
+        {
+          "before": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/hackathons/autonomous-resilience/index.html": {
+      "beforeSHA256": "2ea359b1bfa31464f64bdb6d9fb82b48488892778f65a1b58b6d041fdcfc861f",
+      "afterSHA256": "d8c3840a6ece83ae8cf6b8a552c900ae4eaa91a956d31c2d8272a8f1f7e3902c",
+      "changes": [
+        {
+          "before": "/\">Challenges &amp; Rules</a><a class=\"text-link\" href=\"/hackathons/community/\">Community</a></div><section class=\"section\">",
+          "after": "/\">Challenges &amp; Rules</a><a class=\"text-link\" href=\"/hackathons/community/\">People &amp; Partners</a></div><section class=\"section\">"
+        },
+        {
+          "before": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/hackathons/behavioral-risk/index.html": {
+      "beforeSHA256": "6d4196d0f5c41ce5a592bc8d1674f2b44dabe005fd50ad71804de0e2f76cd4c7",
+      "afterSHA256": "ec51ffab44800734f81c13d3f57e086460cdb8aa35da414a1764ee21d7e1051a",
+      "changes": [
+        {
+          "before": "/\">Challenges &amp; Rules</a><a class=\"text-link\" href=\"/hackathons/community/\">Community</a></div><section class=\"section\">",
+          "after": "/\">Challenges &amp; Rules</a><a class=\"text-link\" href=\"/hackathons/community/\">People &amp; Partners</a></div><section class=\"section\">"
+        },
+        {
+          "before": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/hackathons/community/index.html": {
+      "beforeSHA256": "b175a504e54d5e01998155e7bf14c510c9062d8b1bd8e6a4777451b177529824",
+      "afterSHA256": "8d8b21794455a0886ea38c0940afd2287e2bc489eea8800bd4cbec511e656b35",
+      "changes": [
+        {
+          "before": "Rules</a><a class=\"text-link\" href=\"/hackathons/community/\" aria-current=\"true\">Community</a></div><section class=\"section\" aria-labelledby=\"keynote-heading\">",
+          "after": "Rules</a><a class=\"text-link\" href=\"/hackathons/community/\" aria-current=\"true\">People &amp; Partners</a></div><section class=\"section\" aria-labelledby=\"keynote-heading\">"
+        },
+        {
+          "before": "</section><section class=\"section event-showcase\" data-showcase data-layout=\"cards\" aria-labelledby=\"aegython-showcase-title\" data-astro-cid-wdv4ucb4><h2 id=\"aegython-showcase-title\" data-astro-cid-wdv4ucb4>AEGYTHON 2026 showcase</h2><p data-astro-cid-wdv4ucb4>Public profiles, teams and announcements require organizer review and publication approval.</p><p data-status role=\"status\" aria-live=\"polite\" aria-atomic=\"true\" data-astro-cid-wdv4ucb4>Approved profiles and announcements will appear here when available.</p>",
+          "after": "</section><section class=\"section event-showcase\" data-showcase data-layout=\"cards\" aria-labelledby=\"aegython-showcase-title\" data-astro-cid-wdv4ucb4><h2 id=\"aegython-showcase-title\" data-astro-cid-wdv4ucb4>People &amp; Partners</h2><p data-astro-cid-wdv4ucb4>Judges, speakers, mentors, organizers and partners appear only after role, content, affiliation, image-rights and publication approval. Source Pending or Approved labels alone are insufficient.</p><p data-status role=\"status\" aria-live=\"polite\" aria-atomic=\"true\" data-astro-cid-wdv4ucb4>Approved profiles and announcements will appear here when available.</p>"
+        },
+        {
+          "before": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles\"><li>",
+          "after": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles\"><li>"
+        },
+        {
+          "before": "</body></html>",
+          "after": "</body></html><style data-final-people-style>\n  #aegython-showcase-items .showcase-card img, #aegython-showcase-items .showcase-fallback { width: 9rem; height: 9rem; border-radius: 50%; object-fit: cover; aspect-ratio: 1; }\n  .event-showcase select:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }\n  #aegython-showcase-title { scroll-margin-top: 6rem; }\n</style>"
+        }
+      ]
+    },
+    "dist/hackathons/events/index.html": {
+      "beforeSHA256": "78a50e94e708c8dde40a725baa1155d95062b1b033c19e8e7f1b23e6f4f42d37",
+      "afterSHA256": "2b3b0047bb56275e011f49655a728b8bf6cbb7de1d4c3e82f2efb98755fbfe01",
+      "changes": [
+        {
+          "before": "e\">Challenges &amp; Rules</a><a class=\"text-link\" href=\"/hackathons/community/\">Community</a></div><section class=\"section\" data-astro-cid-mcvu6plu>",
+          "after": "e\">Challenges &amp; Rules</a><a class=\"text-link\" href=\"/hackathons/community/\">People &amp; Partners</a></div><section class=\"section\" data-astro-cid-mcvu6plu>"
+        },
+        {
+          "before": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/hackathons/index.html": {
+      "beforeSHA256": "24e569253b1204585590285014593c8536bbff38ea86fa1feaf1601000af728d",
+      "afterSHA256": "1840b67f675aadeb652c76cfd8ffb7ba943d1473e5c18b9559820e5f41b9f515",
+      "changes": [
+        {
+          "before": " href=\"/_astro/Layout.BTWogPZA.css\"><link rel=\"stylesheet\" href=\"/_astro/index.CHmrmd3w.css\"><style>.hx-form-unavailable[data-astro-cid-pophejud]{border:1px solid var(--line);color:var(--text);border-radius:.6rem;flex-wrap:wrap;align-items:center;gap:.75rem;padding:.8rem 1rem;display:flex}.hx-opening[data-astro-cid-pophejud]{color:var(--muted);font-size:.875rem}\n.challenge-diagram[data-astro-cid-hbrckvhf]{--diagram-text:var(--text);--diagram-muted:var(--muted);--diagram-surface:var(--surface);--diagram-line:var(--line);--diagram-wash:light-dark(#edf3f8,#122033);--diagram-accent:light-dark(#1463a5,#87bcf2);--diagram-secondary:light-dark(#0b766c,#6ed4bc);margin:0}[data-astro-cid-hbrckvhf][data-accent=teal]{--diagram-accent:light-dark(#0b766c,#6ed4bc)}[data-astro-cid-hbrckvhf][data-accent=indigo]{--diagram-accent:light-dark(#4a51a8,#aab0fa)}[data-astro-cid-hbrckvhf][data-accent=violet]{--diagram-accent:light-dark(#7051a0,#c4acf1)}[data-astro-cid-hbrckvhf][data-accent=cyan]{--diagram-accent:light-dark(#076b88,#78d7e9)}[data-astro-cid-hbrckvhf][data-accent=orange]{--diagram-accent:light-dark(#a45717,#eaba89)}[data-astro-cid-hbrckvhf][data-secondary=violet]{--diagram-secondary:light-dark(#7751a6,#c4acf1)}[data-astro-cid-hbrckvhf][data-secondary=blue]{--diagram-secondary:light-dark(#255ea0,#87bcf2)}[data-astro-cid-hbrckvhf][data-secondary=green]{--diagram-secondary:light-dark(#147453,#80dab6)}.diagram-canvas[data-astro-cid-hbrckvhf]{aspect-ratio:3/2;width:100%}.diagram-canvas[data-astro-cid-hbrckvhf] svg{width:100%;height:auto;display:block}figcaption[data-astro-cid-hbrckvhf]{color:var(--muted);padding-top:12px;font-size:.8rem;line-height:1.6}figcaption[data-astro-cid-hbrckvhf] span[data-astro-cid-hbrckvhf]{font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em;font-size:.7rem}figcaption[data-astro-cid-hbrckvhf] p[data-astro-cid-hbrckvhf]{margin:6px 0 0}\n.info-card[data-astro-cid-jbfgin4k]{overflow-wrap:anywhere;min-width:0}.creator-photo[data-astro-cid-jbfgin4k]{aspect-ratio:1;max-width:100%;height:auto}\n</style>",
+          "after": " href=\"/_astro/Layout.BTWogPZA.css\"><link rel=\"stylesheet\" href=\"/_astro/index.C2Gu3NB9.css\"><style>.hx-form-unavailable[data-astro-cid-pophejud]{border:1px solid var(--line);color:var(--text);border-radius:.6rem;flex-wrap:wrap;align-items:center;gap:.75rem;padding:.8rem 1rem;display:flex}.hx-opening[data-astro-cid-pophejud]{color:var(--muted);font-size:.875rem}\n.challenge-diagram[data-astro-cid-hbrckvhf]{--diagram-text:var(--text);--diagram-muted:var(--muted);--diagram-surface:var(--surface);--diagram-line:var(--line);--diagram-wash:light-dark(#edf3f8,#122033);--diagram-accent:light-dark(#1463a5,#87bcf2);--diagram-secondary:light-dark(#0b766c,#6ed4bc);margin:0}[data-astro-cid-hbrckvhf][data-accent=teal]{--diagram-accent:light-dark(#0b766c,#6ed4bc)}[data-astro-cid-hbrckvhf][data-accent=indigo]{--diagram-accent:light-dark(#4a51a8,#aab0fa)}[data-astro-cid-hbrckvhf][data-accent=violet]{--diagram-accent:light-dark(#7051a0,#c4acf1)}[data-astro-cid-hbrckvhf][data-accent=cyan]{--diagram-accent:light-dark(#076b88,#78d7e9)}[data-astro-cid-hbrckvhf][data-accent=orange]{--diagram-accent:light-dark(#a45717,#eaba89)}[data-astro-cid-hbrckvhf][data-secondary=violet]{--diagram-secondary:light-dark(#7751a6,#c4acf1)}[data-astro-cid-hbrckvhf][data-secondary=blue]{--diagram-secondary:light-dark(#255ea0,#87bcf2)}[data-astro-cid-hbrckvhf][data-secondary=green]{--diagram-secondary:light-dark(#147453,#80dab6)}.diagram-canvas[data-astro-cid-hbrckvhf]{aspect-ratio:3/2;width:100%}.diagram-canvas[data-astro-cid-hbrckvhf] svg{width:100%;height:auto;display:block}figcaption[data-astro-cid-hbrckvhf]{color:var(--muted);padding-top:12px;font-size:.8rem;line-height:1.6}figcaption[data-astro-cid-hbrckvhf] span[data-astro-cid-hbrckvhf]{font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em;font-size:.7rem}figcaption[data-astro-cid-hbrckvhf] p[data-astro-cid-hbrckvhf]{margin:6px 0 0}\n.info-card[data-astro-cid-jbfgin4k]{overflow-wrap:anywhere;min-width:0}.creator-photo[data-astro-cid-jbfgin4k]{aspect-ratio:1;max-width:100%;height:auto}\n</style>"
+        },
+        {
+          "before": "<a href=\"#faq\" data-event-section=\"faq\">FAQs</a></div><a href=\"/hackathons/events/\">Full rules ↗</a>",
+          "after": "<a href=\"#faq\" data-event-section=\"faq\">FAQs</a><a href=\"/hackathons/community/#aegython-showcase-title\">People &amp; Partners</a><a href=\"#faq-community-heading\" data-event-section=\"faq-community-heading\">Community</a></div><a href=\"/hackathons/events/\">Full rules ↗</a>"
+        },
+        {
+          "before": "</span></div><p class=\"hx-section-copy\">AeglysAI AI/ML and Cybersecurity Hackathon. Explore security problems across authorization, identity, risk, observability and incident response. Challenge themes describe work to investigate, not validated platform capabilities. Model D remains planned research.</p><div class=\"challenge-grid\"><article class=\"challenge-tile\" data-challenge=\"smart-login-guardian\" data-astro-cid-2swa3ppi>",
+          "after": "</span></div><p class=\"hx-section-copy\">AeglysAI AI/ML and Cybersecurity Hackathon. Explore security problems across authorization, identity, risk, observability and incident response. Challenge themes describe work to investigate, not validated platform capabilities. Model D research implementation is complete, experimental and non-enforcing; it is not required for qualification.</p><div class=\"challenge-grid\"><article class=\"challenge-tile\" data-challenge=\"smart-login-guardian\" data-astro-cid-2swa3ppi>"
+        },
+        {
+          "before": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/hackathons/sponsors/index.html": {
+      "beforeSHA256": "1f34d0d1855a8e034600dffbf1ff7f13354a0ee52aa8a75d7ef6e91a4f2b02c0",
+      "afterSHA256": "8d4bfc59bdca945802d961ca264befbbb40ebf803daaeba4650b3102c6ec549f",
+      "changes": [
+        {
+          "before": "/\">Challenges &amp; Rules</a><a class=\"text-link\" href=\"/hackathons/community/\">Community</a></div><section class=\"hx-section\" aria-labelledby=\"why-sponsor\">",
+          "after": "/\">Challenges &amp; Rules</a><a class=\"text-link\" href=\"/hackathons/community/\">People &amp; Partners</a></div><section class=\"hx-section\" aria-labelledby=\"why-sponsor\">"
+        },
+        {
+          "before": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/index.html": {
+      "beforeSHA256": "e7bbcba43dbfdfc4b2a04deaa8c302fb5b3ce58fefd545276e5d35dfd849c624",
+      "afterSHA256": "b9e9c172d9dfa7b95af0c6753f799e59654aebed70b61d5a27e55a578bba56cb",
+      "changes": [
+        {
+          "before": " represent implemented Models A, B and C. A dashed amber outer layer represents planned Model D.</desc><defs><pattern id=\"dots\" width=\"20\" height=\"20\" patternUnits=\"userSpaceOnUse\">",
+          "after": " represent implemented Models A, B and C. A dashed amber outer layer represents experimental, non-enforcing Model D research.</desc><defs><pattern id=\"dots\" width=\"20\" height=\"20\" patternUnits=\"userSpaceOnUse\">"
+        },
+        {
+          "before": "<text x=\"210\" y=\"178\" fill=\"var(--diagram-label)\" font-size=\"15\">POLICY</text><text x=\"210\" y=\"54\" fill=\"var(--amber)\" font-size=\"11\">D / PLANNED</text><text x=\"321\" y=\"235\" fill=\"var(--diagram-c-label)\" font-size=\"11\">C</text>",
+          "after": "<text x=\"210\" y=\"178\" fill=\"var(--diagram-label)\" font-size=\"15\">POLICY</text><text x=\"210\" y=\"54\" fill=\"var(--amber)\" font-size=\"11\">D / RESEARCH</text><text x=\"321\" y=\"235\" fill=\"var(--diagram-c-label)\" font-size=\"11\">C</text>"
+        },
+        {
+          "before": "</strong></p><span class=\"microcopy\">Conceptual progression · Model D planned</span></div></div>",
+          "after": "</strong></p><span class=\"microcopy\">Model D · Research Implementation Complete</span></div></div>"
+        },
+        {
+          "before": "<h2>A baseline for every next step.</h2><p>Three implemented authorization models establish the foundation for a planned behavioral research model.</p></div><a class=\"text-link\" href=\"/research/\">",
+          "after": "<h2>A baseline for every next step.</h2><p>Three implemented authorization baselines and a completed, experimental offline Model D research implementation.</p></div><a class=\"text-link\" href=\"/research/\">"
+        },
+        {
+          "before": "<h3>Behavioral Adaptive Authorization</h3><p>Proposed behavioral evidence and operational state inform explainable adaptation within policy boundaries.</p><span class=\"badge planned\"><span aria-hidden=\"true\" class=\"status-dot\"></span>Planned Research</span></article></div>",
+          "after": "<h3>Behavioral Adaptive Authorization</h3><p>The bounded offline research implementation is complete; internal synthetic validation has been performed. Model D remains experimental and non-enforcing.</p><span class=\"badge experimental\"><span aria-hidden=\"true\" class=\"status-dot\"></span>Research Implementation Complete</span></article></div>"
+        },
+        {
+          "before": "<strong>A research progression, not a product maturity scale.</strong><p>Models A–C describe implemented baselines in the separate research repository; this portal does not independently validate their effectiveness. Model D is planned, non-enforcing research (<code>enforcement_authority=NONE</code>), not a production authorization mechanism.</p></aside></section>",
+          "after": "<strong>A research progression, not a product maturity scale.</strong><p>Models A–C describe implemented baselines in the separate research repository; this portal does not independently validate their effectiveness. Model D research implementation is complete and non-enforcing (<code>enforcement_authority=NONE</code>), not a production authorization mechanism. Internal synthetic validation does not establish external field effectiveness or commercial readiness. Drift and mock-feedback limitations remain unresolved.</p></aside></section>"
+        },
+        {
+          "before": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/media/index.html": {
+      "beforeSHA256": "a1a242b5e752cfd7b9d9d90522ff3941b5cb9503b6f7d23ebdf5975223d45c85",
+      "afterSHA256": "69260299ecc93ee35af038a30dd5614f08f07038810a28c8ba3e76f29a4583bc",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/publications/index.html": {
+      "beforeSHA256": "ffda8eb95a27cb8e03218fa11280ac2395227aa85e474dc278ffb7aae83d94a0",
+      "afterSHA256": "c8f4165b16c329944bb450c3aec73ab584680fb5a687152be4f8862e018f57f8",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/research/index.html": {
+      "beforeSHA256": "065e2e077c8fe4a13eee4d7c8bb13abf822a737324aac622205fd465f911f1cc",
+      "afterSHA256": "9c0bb7cbee8a254787fd25bbc2f644bf86f612ab35efba1456c184d0533d00ea",
+      "changes": [
+        {
+          "before": "escription\" content=\"The AeglysAI research problem, deterministic baselines and proposed policy-bounded behavioral adaptive authorization model.\"><meta name=\"author\" content=\"Shubh Prabhat\"><link rel=\"canonical\" href=\"https://aeglysai.com/research/\"><meta property=\"og:type\" content=\"website\"><meta property=\"og:site_name\" content=\"AeglysAI Research\"><meta property=\"og:title\" content=\"Research | AeglysAI Research\"><meta property=\"og:description\" content=\"The AeglysAI research problem, deterministic baselines and proposed policy-bounded behavioral adaptive authorization model.\"><meta property=\"og:url\" content=\"https://aeglysai.com/research/\"><meta property=\"og:image\" content=\"https://aeglysai.com/images/aeglysai-social.png\">",
+          "after": "escription\" content=\"The AeglysAI research problem, deterministic baselines and completed experimental, non-enforcing Model D research implementation.\"><meta name=\"author\" content=\"Shubh Prabhat\"><link rel=\"canonical\" href=\"https://aeglysai.com/research/\"><meta property=\"og:type\" content=\"website\"><meta property=\"og:site_name\" content=\"AeglysAI Research\"><meta property=\"og:title\" content=\"Research | AeglysAI Research\"><meta property=\"og:description\" content=\"The AeglysAI research problem, deterministic baselines and completed experimental, non-enforcing Model D research implementation.\"><meta property=\"og:url\" content=\"https://aeglysai.com/research/\"><meta property=\"og:image\" content=\"https://aeglysai.com/images/aeglysai-social.png\">"
+        },
+        {
+          "before": "<meta name=\"twitter:card\" content=\"summary_large_image\"><meta name=\"twitter:title\" content=\"Research | AeglysAI Research\"><meta name=\"twitter:description\" content=\"The AeglysAI research problem, deterministic baselines and proposed policy-bounded behavioral adaptive authorization model.\"><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/brand/icons/favicon.png\"><link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/brand/icons/icon-180.png\">",
+          "after": "<meta name=\"twitter:card\" content=\"summary_large_image\"><meta name=\"twitter:title\" content=\"Research | AeglysAI Research\"><meta name=\"twitter:description\" content=\"The AeglysAI research problem, deterministic baselines and completed experimental, non-enforcing Model D research implementation.\"><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/brand/icons/favicon.png\"><link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/brand/icons/icon-180.png\">"
+        },
+        {
+          "before": "</div></section><section class=\"split-section\"><div class=\"section-heading\"><span class=\"eyebrow\">The next investigation</span><h2>Proposed Model D</h2></div><div class=\"prose\"><span class=\"badge planned\"><span aria-hidden=\"true\" class=\"status-dot\"></span>Planned Research</span><p>RBAC + ABAC + behavioral adaptive risk. The proposed model investigates behavioral intelligence, operational state and continuous feedback within explicit authorization policy boundaries.</p><p>AI-derived evidence would inform a decision; deterministic policy would constrain the available actions. The research must establish whether this approach improves security outcomes and at what operational cost. Model D is not implemented.</p></div></section>",
+          "after": "</div></section><section class=\"split-section\" id=\"model-d-status\"><div class=\"section-heading\"><span class=\"eyebrow\">Bounded offline research</span><h2>Model D — Research Implementation Complete</h2></div><div class=\"prose\"><span class=\"badge experimental\"><span aria-hidden=\"true\" class=\"status-dot\"></span>Research Implementation Complete</span><p>The bounded offline research implementation is complete; internal synthetic validation has been performed. Model D remains experimental and non-enforcing.</p><p>Completed work includes offline behavioral inference, eligibility and drift diagnostics, experimental integration, mock-feedback simulation and internal reproducibility checks. These research capabilities do not grant or deny access.</p><p><code>enforcement_authority=NONE</code>. Internal synthetic validation does not establish external field effectiveness, production authorization capability or commercial readiness. Drift coverage and mock-feedback effectiveness limitations remain unresolved.</p><p>Local engineering acceptance is not independent field validation, security/distribution clearance or a commercial product release. No model artifacts, datasets or internal evaluation results are published here.</p></div></section>"
+        },
+        {
+          "before": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "<span class=\"eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/speaking/beyond-static-access-control/index.html": {
+      "beforeSHA256": "37516c562e500419f2524e6359f58eb9f2d7bc9792699d2fd47a8dad1c470751",
+      "afterSHA256": "c6d0d647d6271e2ee007fa7f522303061a497966d9289e221b16b26f954c4411",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/speaking/building-ai-driven-incident-response/index.html": {
+      "beforeSHA256": "c595885aff67dc469d8e980b7d74dc4d275a32750719554a2da4586a265767a4",
+      "afterSHA256": "6e47b8b9fd4af8c0f23bf31a46e2248b6ddf056c8bf90d39273167095d9047bb",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/speaking/etic-2026/index.html": {
+      "beforeSHA256": "753cf6f441c89f982e4d4bfe47399815cd545e3c93e7eacf2c0b0f4c79cc141e",
+      "afterSHA256": "eb6576547b730beecd2c89875073efcf759ac72b4602cfee8150546b2c4c09a4",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/speaking/from-static-security-policies/index.html": {
+      "beforeSHA256": "3cd104a020330305cde4cd5f2c91fd633d4545de2eb468245361f7a2a5e28c0d",
+      "afterSHA256": "6f4fb0f9ceb78f65b47e56c6f9090d98cf56b5aca8132dc1699de084f3a22c90",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/speaking/gicite-2026-wru-key-talk/index.html": {
+      "beforeSHA256": "9f3658d74f124da75ffdda17f10dd594e35fb2ec0ced6d00b76fa294ab10302f",
+      "afterSHA256": "9b65ff9c80da10bd791b02d71ea61a9107328c755720c4d179a1539b02a6741d",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "dist/speaking/index.html": {
+      "beforeSHA256": "98591b5eda21183ee749e320b7964b55c190c54b455a5a5391307e4b22a9bc28",
+      "afterSHA256": "0e1c692f8f20059e3c1005179ac26bbdb1f86dc06288657f9d420991df8111de",
+      "changes": [
+        {
+          "before": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D is planned research.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles",
+          "after": "eyebrow\">Open research / evolving work</span><p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p><ul class=\"creator-links\" aria-label=\"Shubh Prabhat's professional profiles"
+        }
+      ]
+    },
+    "src/components/Footer.astro": {
+      "beforeSHA256": "4423ab00af9bf55dd5602ab466df69598c88e4ccca3e991ec7358ca211f6fc08",
+      "afterSHA256": "e4023f88d045a50a58ba8db935d188ce457ab7953b500274cd3d0e5feaf475e6",
+      "changes": [
+        {
+          "before": "\">Open research / evolving work</span>\n      <p>Models A–C implemented. Model D is planned research.</p>\n      <CreatorLinks />\n    </div>\n    <a\n      class=\"text-link\"\n      hre",
+          "after": "\">Open research / evolving work</span>\n      <p>Models A–C implemented. Model D research implementation complete; experimental and non-enforcing.</p>\n      <CreatorLinks />\n    </div>\n    <a\n      class=\"text-link\"\n      hre"
+        }
+      ]
+    },
+    "src/components/HackathonNav.astro": {
+      "beforeSHA256": "b760991ff32ec40ca2e93a20cebdb7fbf82c399e87713ef01c9686d442545c8a",
+      "afterSHA256": "345598d7a06b9fb6082c91c765b4d05e44a732f2bb669574bd992214da4f9751",
+      "changes": [
+        {
+          "before": "s = [ [\"Program\", \"hackathons\"], [\"Challenges & Rules\", \"hackathons/events\"], [\"Community\", \"hackathons/community\"] ];\n---\n<div class=\"hackathon-nav\" role=\"navigation\" a",
+          "after": "s = [ [\"Program\", \"hackathons\"], [\"Challenges & Rules\", \"hackathons/events\"], [\"People & Partners\", \"hackathons/community\"] ];\n---\n<div class=\"hackathon-nav\" role=\"navigation\" a"
+        }
+      ]
+    },
+    "src/components/StatusBadge.astro": {
+      "beforeSHA256": "542cfca9f03eb955d6f181f78758dc9643424be705740d275e2e83e00f277462",
+      "afterSHA256": "660c32dcf78bb19e6fa9381b3b8234a108ea0caf2cc6248f1e1c137be5e8a8d7",
+      "changes": [
+        {
+          "before": "=\n  status === \"Implemented\"\n    ? \"implemented\"\n    : status === \"Experimental\"\n      ? \"experimental\"\n      : \"planned\";\n---\n\n<span class:list={[\"badge\", kind",
+          "after": "=\n  status === \"Implemented\"\n    ? \"implemented\"\n    : status === \"Experimental\" || status === \"Research Implementation Complete\"\n      ? \"experimental\"\n      : \"planned\";\n---\n\n<span class:list={[\"badge\", kind"
+        }
+      ]
+    },
+    "src/components/hackathons/landing/EventNav.astro": {
+      "beforeSHA256": "a9fabaedd82368e00d5af50f2fd9569811535de2be583b6c79af86c4c0af3de4",
+      "afterSHA256": "237bbdcd053a9306ee2b1fc10f4f1ad8cdbacd7abab203b1b0774488379af237",
+      "changes": [
+        {
+          "before": "s.map(([id, title]) => <a href={`#${id}`} data-event-section={id}>{title}</a>)}</div>\n  <a href={href(\"hackathons/events\")}>Full rules ↗</a>\n</nav>\n<script is:i",
+          "after": "s.map(([id, title]) => <a href={`#${id}`} data-event-section={id}>{title}</a>)}<a href={`${href(\"hackathons/community\")}#aegython-showcase-title`}>People &amp; Partners</a><a href=\"#faq-community-heading\" data-event-section=\"faq-community-heading\">Community</a></div>\n  <a href={href(\"hackathons/events\")}>Full rules ↗</a>\n</nav>\n<script is:i"
+        }
+      ]
+    },
+    "src/data/eventRegistry.ts": {
+      "beforeSHA256": "4fa432197c12f54dd4e40f511f575805d089262604f305bbeaa655b9bd212543",
+      "afterSHA256": "19973b139532cd6d875263010f036a7c77f0f1a494c2c813b5e9db9efa5cf827",
+      "changes": [
+        {
+          "before": "../../scripts/community/public-export.mjs';\n\nexport const REGISTRY_VERSION = '1.0.0';\nconst id = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/);\nconst hash = z.string().regex(/^[a-f0-9]{64}$/);\nconst timestamp = z.iso.datetime({ offset: true });\nconst plainText = z.string().trim().min(1).max(2400);\nconst publicUrl = z.url().refine(value => {\n",
+          "after": "../../scripts/community/public-export.mjs';\n\nexport const REGISTRY_VERSION = '1.1.0';\nconst registryVersion = z.enum(['1.0.0', '1.1.0']);\nconst id = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/);\nconst hash = z.string().regex(/^[a-f0-9]{64}$/);\nconst timestamp = z.iso.datetime({ offset: true });\nconst plainText = z.string().trim().min(1).max(2400);\nconst publicUrl = z.url().refine(value => {\n"
+        },
+        {
+          "before": "  path: z.string().regex(/^\\/images\\/[A-Za-z0-9/_-]+\\.(png|jpg|jpeg|webp|avif)$/),\n  sha256: hash, rights: z.enum(['owned', 'cc0', 'permission']), attribution: plainText,\n  sourceUrl: publicUrl.optional(), approved: z.literal(true), displayCreditRequired: z.literal(false),\n});\nconst common = {\n  schemaVersion: z.literal(REGISTRY_VERSION), kind: z.enum(['PUBLIC_APPROVED', 'SYNTHETIC']),\n  snapshotId: id, revision: z.number().int().positive().max(Number.MAX_SAFE_INTEGER), exportedAt: timestamp,\n  provenance: z.strictObject({ method: z.literal('controlled-sanitized-export'), exportId: id, sourceRevision: id }),\n  data: showcaseSchema, assets: z.array(assetSchema).max(1000),\n};\nexport const registrySnapshotSchema = z.strictObject(common);\n",
+          "after": "  path: z.string().regex(/^\\/images\\/[A-Za-z0-9/_-]+\\.(png|jpg|jpeg|webp|avif)$/),\n  sha256: hash, rights: z.enum(['owned', 'cc0', 'permission']), attribution: plainText,\n  sourceUrl: publicUrl.optional(), approved: z.literal(true), displayCreditRequired: z.literal(false),\n});\nconst common = {\n  schemaVersion: registryVersion, kind: z.enum(['PUBLIC_APPROVED', 'SYNTHETIC']),\n  snapshotId: id, revision: z.number().int().positive().max(Number.MAX_SAFE_INTEGER), exportedAt: timestamp,\n  provenance: z.strictObject({ method: z.literal('controlled-sanitized-export'), exportId: id, sourceRevision: id }),\n  data: showcaseSchema, assets: z.array(assetSchema).max(1000),\n};\nexport const registrySnapshotSchema = z.strictObject(common);\n"
+        },
+        {
+          "before": "  ...common,\n  recordDecisions: z.array(z.strictObject({ recordId: id, state: z.enum(['approved', 'pending', 'revoked', 'withdrawn']) })).max(1000),\n  profileConsents: z.array(z.strictObject({ personId: id, state: z.enum(['granted', 'pending', 'revoked', 'withdrawn']) })).max(1000),\n});\nexport const registryApprovalSchema = z.strictObject({\n  schemaVersion: z.literal(REGISTRY_VERSION), snapshotId: id, revision: z.number().int().positive(),\n  sha256: hash, state: z.enum(['approved', 'revoked']), approvedAt: timestamp, expiresAt: timestamp,\n  reviewUrl: publicUrl, recordIds: z.array(id).max(1000),\n});\nexport type RegistrySnapshot = z.infer<typeof registrySnapshotSchema>;\nexport type RegistryApproval = z.infer<typeof registryApprovalSchema>;\n",
+          "after": "  ...common,\n  recordDecisions: z.array(z.strictObject({ recordId: id, state: z.enum(['approved', 'pending', 'revoked', 'withdrawn']) })).max(1000),\n  profileConsents: z.array(z.strictObject({ personId: id, state: z.enum(['granted', 'pending', 'revoked', 'withdrawn']) })).max(1000),\n});\nexport const registryApprovalSchema = z.strictObject({\n  schemaVersion: registryVersion, snapshotId: id, revision: z.number().int().positive(),\n  sha256: hash, state: z.enum(['approved', 'revoked']), approvedAt: timestamp, expiresAt: timestamp,\n  reviewUrl: publicUrl, recordIds: z.array(id).max(1000),\n});\nexport type RegistrySnapshot = z.infer<typeof registrySnapshotSchema>;\nexport type RegistryApproval = z.infer<typeof registryApprovalSchema>;\n"
+        },
+        {
+          "before": "  return new Set(data.events.flatMap(event => publicShowcase(probe, event.id, new Date('2000-01-01T00:00:00Z')).map(item => item.id)));\n}\nfunction validateSemantics(snapshot: RegistrySnapshot, now: Date) {\n  if (Date.parse(snapshot.exportedAt) > +now || snapshot.data.records.length > 1000 || snapshot.data.people.length > 1000) fail();\n  const data = snapshot.data;\n  const allowed = eligible(data);\n  const roles = new Set<string>();\n  for (const record of data.records) {\n    if (!['Published', 'Scheduled'].includes(record.status) || !record.visibility.public || record.visibility.suppressed || !allowed.has(record.id)) fail();\n    const event = data.events.find(event => event.id === record.eventId)!;\n    if ((record.visibility.from || record.visibility.until) && !event.timezone) fail();\n    if (record.members && record.category !== 'Team') fail();\n    if (record.personId && !['Keynote Speaker', 'Judge', 'Mentor', 'Participant'].includes(record.category)) fail();\n    if (record.challenge && !Object.hasOwn(challengeVisuals, record.challenge)) fail();\n    if (record.personId) {\n      const key = `${record.eventId}:${record.personId}:${record.category}`;\n      if (roles.has(key)) fail();\n      roles.add(key);\n",
+          "after": "  return new Set(data.events.flatMap(event => publicShowcase(probe, event.id, new Date('2000-01-01T00:00:00Z')).map(item => item.id)));\n}\nfunction validateSemantics(snapshot: RegistrySnapshot, now: Date) {\n  if (Date.parse(snapshot.exportedAt) > +now || snapshot.data.records.length > 1000 || snapshot.data.people.length > 1000) fail();\n  const data = snapshot.data;\n  if (snapshot.schemaVersion === '1.0.0' && data.records.some(record => ['Speaker', 'Organizer'].includes(record.category))) fail();\n  const allowed = eligible(data);\n  const roles = new Set<string>();\n  for (const record of data.records) {\n    if (!['Published', 'Scheduled'].includes(record.status) || !record.visibility.public || record.visibility.suppressed || !allowed.has(record.id)) fail();\n    const event = data.events.find(event => event.id === record.eventId)!;\n    if ((record.visibility.from || record.visibility.until) && !event.timezone) fail();\n    if (record.members && record.category !== 'Team') fail();\n    if (record.personId && !['Keynote Speaker', 'Speaker', 'Judge', 'Mentor', 'Organizer', 'Participant'].includes(record.category)) fail();\n    if (record.challenge && !Object.hasOwn(challengeVisuals, record.challenge)) fail();\n    if (record.personId) {\n      const key = `${record.eventId}:${record.personId}:${record.category}`;\n      if (roles.has(key)) fail();\n      roles.add(key);\n"
+        },
+        {
+          "before": "  instant(now); checkedInput(input); checkedInput(approvalInput);\n  const snapshot = registrySnapshotSchema.parse(input);\n  const approval = registryApprovalSchema.parse(approvalInput);\n  if (snapshot.kind !== 'PUBLIC_APPROVED' && !allowSynthetic) fail();\n  validateSemantics(snapshot, now);\n  if (approval.state !== 'approved' || approval.snapshotId !== snapshot.snapshotId || ",
+          "after": "  instant(now); checkedInput(input); checkedInput(approvalInput);\n  const snapshot = registrySnapshotSchema.parse(input);\n  const approval = registryApprovalSchema.parse(approvalInput);\n  if (snapshot.kind !== 'PUBLIC_APPROVED' && !allowSynthetic) fail();\n  validateSemantics(snapshot, now);\n  if (approval.schemaVersion !== snapshot.schemaVersion || approval.state !== 'approved' || approval.snapshotId !== snapshot.snapshotId || "
+        }
+      ]
+    },
+    "src/data/eventShowcase.ts": {
+      "beforeSHA256": "17d4ff82aec44e7548248ba37167ad766bb4e3c94ab911cfd45156fc367a65b5",
+      "afterSHA256": "0640e6a0a29b00aa23dcf8d9ca34721596160c5ba790f974bf55711104c1c139",
+      "changes": [
+        {
+          "before": " } from 'astro/zod';\n\nexport const categories = ['Partner', 'Keynote Speaker', 'Judge', 'Mentor', 'Participant', 'Team', 'Event Announcement'] as const;\nconst id = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9_-]*$/);\nconst text = z.string().trim().min(1).max(2400).refine(value => !/[\\w.+-]+@[\\w.-]+\\.[a-z]{2,}/i.test(value), 'Contact email is not public showcase content');\nconst day = z.iso.date();\nconst link = z.url().refine(value => {\n  const url = new URL(value);\n",
+          "after": " } from 'astro/zod';\n\nexport const categories = ['Partner', 'Keynote Speaker', 'Speaker', 'Judge', 'Mentor', 'Organizer', 'Participant', 'Team', 'Event Announcement'] as const;\nconst id = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9_-]*$/);\nconst text = z.string().trim().min(1).max(2400).refine(value => !/[\\w.+-]+@[\\w.-]+\\.[a-z]{2,}/i.test(value), 'Contact email is not public showcase content');\nconst day = z.iso.date();\nconst link = z.url().refine(value => {\n  const url = new URL(value);\n"
+        },
+        {
+          "before": "  status: z.enum(['Draft', 'Approved', 'Scheduled', 'Published', 'Archived']), approvals,\n  visibility: z.strictObject({ public: z.boolean(), suppressed: z.boolean(), from: day.optional(), until: day.optional() }),\n}).superRefine((value, ctx) => {\n  const fail = (message: string) => ctx.addIssue({ code: 'custom', message });\n  if (!value.name && !value.personId) fail('A display name or reusable person is required');\n  if (['Keynote Speaker', 'Judge', 'Mentor', 'Participant'].includes(value.category) && !value.personId) fail('Person rol",
+          "after": "  status: z.enum(['Draft', 'Approved', 'Scheduled', 'Published', 'Archived']), approvals,\n  visibility: z.strictObject({ public: z.boolean(), suppressed: z.boolean(), from: day.optional(), until: day.optional() }),\n}).superRefine((value, ctx) => {\n  const fail = (message: string) => ctx.addIssue({ code: 'custom', message });\n  if (!value.name && !value.personId) fail('A display name or reusable person is required');\n  if (['Keynote Speaker', 'Speaker', 'Judge', 'Mentor', 'Organizer', 'Participant'].includes(value.category) && !value.personId) fail('Person rol"
+        }
+      ]
+    },
+    "src/data/hackathons.ts": {
+      "beforeSHA256": "7061d946ddedcdd004f3f2202c56d1a92e9c22f11e0ec5a503dad089c00f0c6d",
+      "afterSHA256": "97ec341d992f8bc29b30bc2db0aca87abf99e082ac4ba8de07cab17a619c7007",
+      "changes": [
+        {
+          "before": "lain signal selection, assess false positives and document uncertainty. Model D is planned research, not an existing implemented capability.\",\n    deliverables: [\"Prototype or evaluation code with reproducible setup\", \"",
+          "after": "lain signal selection, assess false positives and document uncertainty. Model D has a completed experimental research implementation with no enforcement authority; this challenge does not claim field-validated effectiveness.\",\n    deliverables: [\"Prototype or evaluation code with reproducible setup\", \""
+        }
+      ]
+    },
+    "src/data/project.ts": {
+      "beforeSHA256": "bc181493ba84d49ac6aca4cf87909cc86a9ad6e55df254502395f9a39575205c",
+      "afterSHA256": "578b01bdf95d3623a943ca5497e0776530b6c25d641a9176748798575bdf9edf",
+      "changes": [
+        {
+          "before": "export type Status =\n  | \"Implemented\"\n  | \"Planned Research\"\n  | \"Experimental\"\n  | \"In Preparation\"\n  | \"Proposed / In Preparation\";\nexport const project = {\n",
+          "after": "import { modelDStatus } from './modelDStatus.ts';\nexport type Status =\n  | \"Implemented\"\n  | \"Research Implementation Complete\"\n  | \"Planned Research\"\n  | \"Experimental\"\n  | \"In Preparation\"\n  | \"Proposed / In Preparation\";\nexport const project = {\n"
+        },
+        {
+          "before": "  },\n  {\n    id: \"D\",\n    name: \"Behavioral Adaptive Authorization\",\n    baseline: \"RBAC + ABAC + behavioral adaptive risk\",\n    status: \"Planned Research\",\n    description:\n      \"Proposed behavioral evidence and operational state inform explainable adaptation within policy boundaries.\",\n  },\n];\nexport const papers = [\n  \"Adaptive Risk-Aware Authorization for Zero-",
+          "after": "  },\n  {\n    id: \"D\",\n    name: \"Behavioral Adaptive Authorization\",\n    baseline: \"RBAC + ABAC + behavioral adaptive risk\",\n    status: modelDStatus.label,\n    description: modelDStatus.summary,\n  },\n];\nexport const papers = [\n  \"Adaptive Risk-Aware Authorization for Zero-"
+        }
+      ]
+    },
+    "src/pages/about.astro": {
+      "beforeSHA256": "4ab88a92af7e7a92015d57e3240d230d126d2229e116f9a868f4d12fd0ac52b4",
+      "afterSHA256": "c9e318d1e9385617e1f9a0f89169bbf1008ae81e83651f8f0620097edac4757f",
+      "changes": [
+        {
+          "before": "   </div>\n          <h3>Behavioral Risk Research</h3>\n          <p>\n            Investigate behavioral evidence for the proposed Model D and define\n            its evaluation conditions.\n          </p>\n        </arti",
+          "after": "   </div>\n          <h3>Behavioral Risk Research</h3>\n          <p>\n            Evaluate the completed non-enforcing Model D research implementation and define\n            its evaluation conditions.\n          </p>\n        </arti"
+        }
+      ]
+    },
+    "src/pages/architecture.astro": {
+      "beforeSHA256": "0c2856b591e3a4b79b70444f7a99034f59badb4a22290251941518e0ac758702",
+      "afterSHA256": "5cf24c675af8816b02ba3b5109d58d809f52a28ea8fc2f10e21c79489f3cfbee",
+      "changes": [
+        {
+          "before": "=\"Architecture\"\n  description=\"A conceptual AeglysAI authorization architecture separating implemented deterministic capabilities from planned behavioral intelligence and feedback.\"\n>\n  <Hero\n    eyebrow=\"02 / Architecture\"\n    title=\"Explicit policy. Informed decisions.\"\n    description=\"A conceptual view of the authorization path and the research extensions that could connect evidence, bounded decisions and continuous feedback.\"\n  />\n  <div class=\"container page-content\">\n    <ArchitectureDiagram detailed />\n    <section\n      class=\"section capability-list\"\n      aria-label=\"Architect",
+          "after": "=\"Architecture\"\n  description=\"A conceptual AeglysAI authorization architecture distinguishing implemented baselines and offline non-enforcing research from future production control integration.\"\n>\n  <Hero\n    eyebrow=\"02 / Architecture\"\n    title=\"Explicit policy. Informed decisions.\"\n    description=\"A conceptual view of the authorization path and the research extensions that could connect evidence, bounded decisions and continuous feedback.\"\n  />\n  <div class=\"container page-content\">\n    <ArchitectureDiagram detailed />\n    <aside class=\"notice\"><h2>Research completion does not grant enforcement</h2><p>Model D research implementation is complete for its bounded offline experimental scope. The diagram remains a conceptual production architecture, not an implemented adaptive enforcement path. <code>enforcement_authority=NONE</code>; external validation, drift and mock-feedback limitations remain.</p></aside>\n    <section\n      class=\"section capability-list\"\n      aria-label=\"Architect"
+        }
+      ]
+    },
+    "src/pages/hackathons/community.astro": {
+      "beforeSHA256": "0348cc2d7d2572b1933ffb67ac3452f77429d76d4eb21b63ce01f62103828c73",
+      "afterSHA256": "2e05c0b029266c8956324508869c305e1bd83c68912e2bfe60017dcfac5a5c18",
+      "changes": [
+        {
+          "before": "ection>\n    <EventShowcase id=\"aegython-showcase\" eventId=\"aegython-2026\" title=\"AEGYTHON 2026 showcase\" description=\"Public profiles, teams and announcements require organizer review and publication approval.\" data={approvedEventShowcase} />\n    <section class=\"notice\"><h2>Reading program status</h2><dl class=\"program-status-guide\">{Object.entries(statusDefinitions).map(([status, meaning]) => <><dt>{status}</dt><dd>{meaning}</dd></>)}</dl><p>Events and unfilled roles remain PLANNED. Invited profiles are not published; public guest speaker and judge profiles require CONFIRMED status and explicit display approval. No completed events or winners are claimed.</p></section>\n  </div>\n</Layout>\n",
+          "after": "ection>\n    <EventShowcase id=\"aegython-showcase\" eventId=\"aegython-2026\" title={\"People & Partners\"} description=\"Judges, speakers, mentors, organizers and partners appear only after role, content, affiliation, image-rights and publication approval. Source Pending or Approved labels alone are insufficient.\" data={approvedEventShowcase} />\n    <section class=\"notice\"><h2>Reading program status</h2><dl class=\"program-status-guide\">{Object.entries(statusDefinitions).map(([status, meaning]) => <><dt>{status}</dt><dd>{meaning}</dd></>)}</dl><p>Events and unfilled roles remain PLANNED. Invited profiles are not published; public guest speaker and judge profiles require CONFIRMED status and explicit display approval. No completed events or winners are claimed.</p></section>\n  </div>\n</Layout>\n\n<style is:inline data-final-people-style>\n  #aegython-showcase-items .showcase-card img, #aegython-showcase-items .showcase-fallback { width: 9rem; height: 9rem; border-radius: 50%; object-fit: cover; aspect-ratio: 1; }\n  .event-showcase select:focus-visible { outline: 3px solid var(--cyan); outline-offset: 3px; }\n  #aegython-showcase-title { scroll-margin-top: 6rem; }\n</style>\n"
+        }
+      ]
+    },
+    "src/pages/hackathons/index.astro": {
+      "beforeSHA256": "850404c59a2bed4c6408cbca0fa23ea9db0aae3dfc66b753b61488d87c27e34e",
+      "afterSHA256": "bd9356a70cdc98341ec574aa3dd3ff1084c5753939ea37d9e41c2932c5252ef5",
+      "changes": [
+        {
+          "before": "es describe work to investigate, not validated platform capabilities. Model D remains planned research.</p>\n        <div class=\"challenge-grid\">{challenges.map((challenge,index)=><Ev",
+          "after": "es describe work to investigate, not validated platform capabilities. Model D research implementation is complete, experimental and non-enforcing; it is not required for qualification.</p>\n        <div class=\"challenge-grid\">{challenges.map((challenge,index)=><Ev"
+        }
+      ]
+    },
+    "src/pages/index.astro": {
+      "beforeSHA256": "37251531047fb6c6dc2b8790a7ee7262bef91c756870abc999a0b9b2a0ac24e5",
+      "afterSHA256": "aa02ae82338696bd5f9e70cba230fcf3fd24617cb7e334e6f7571f2f3fa1046f",
+      "changes": [
+        {
+          "before": " implemented Models A, B and C. A dashed\n          amber outer layer represents planned Model D.\n        </desc>\n        <defs>\n          <pattern\n            id=\"dots\"\n            width=\"20\"\n",
+          "after": " implemented Models A, B and C. A dashed\n          amber outer layer represents experimental, non-enforcing Model D research.\n        </desc>\n        <defs>\n          <pattern\n            id=\"dots\"\n            width=\"20\"\n"
+        },
+        {
+          "before": "        <g font-family=\"monospace\" text-anchor=\"middle\">\n          <text x=\"210\" y=\"178\" fill=\"var(--diagram-label)\" font-size=\"15\">\n            POLICY\n          </text>\n          <text x=\"210\" y=\"54\" fill=\"var(--amber)\" font-size=\"11\">\n            D / PLANNED\n          </text>\n          <text x=\"321\" y=\"235\" fill=\"var(--diagram-c-label)\" font-size=\"11\">\n            C\n          </text>\n          <text x=\"281\" y=\"211\" fill=\"var(--diagram-b-label)\" font-size=\"11\">\n",
+          "after": "        <g font-family=\"monospace\" text-anchor=\"middle\">\n          <text x=\"210\" y=\"178\" fill=\"var(--diagram-label)\" font-size=\"15\">\n            POLICY\n          </text>\n          <text x=\"210\" y=\"54\" fill=\"var(--amber)\" font-size=\"11\">\n            D / RESEARCH\n          </text>\n          <text x=\"321\" y=\"235\" fill=\"var(--diagram-c-label)\" font-size=\"11\">\n            C\n          </text>\n          <text x=\"281\" y=\"211\" fill=\"var(--diagram-b-label)\" font-size=\"11\">\n"
+        },
+        {
+          "before": "        <p>\n          From explicit rules.\n          <br />\n          <strong>Toward bounded adaptation.</strong>\n        </p>\n        <span class=\"microcopy\">Conceptual progression · Model D planned</span>\n      </div>\n    </div>\n  </section>\n  <div class=\"theme-band\">\n    <div class=\"container\">\n",
+          "after": "        <p>\n          From explicit rules.\n          <br />\n          <strong>Toward bounded adaptation.</strong>\n        </p>\n        <span class=\"microcopy\">Model D · Research Implementation Complete</span>\n      </div>\n    </div>\n  </section>\n  <div class=\"theme-band\">\n    <div class=\"container\">\n"
+        },
+        {
+          "before": "  <section class=\"section container\">\n    <div class=\"section-heading-row\">\n      <SectionHeading\n        eyebrow=\"01 / Research progression\"\n        title=\"A baseline for every next step.\"\n        description=\"Three implemented authorization models establish the foundation for a planned behavioral research model.\"\n      />\n      <a class=\"text-link\" href={href(\"research\")}>\n        Explore the models <span aria-hidden=\"true\">↗</span>\n      </a>\n    </div>\n    <div class=\"models-grid\">\n      {models.map((model) => (\n        <ModelCard model={model} />\n      ))}\n    </div>\n    <aside class=\"home-research-note\" aria-label=\"Research implementation boundary\"><strong>A research progression, not a product maturity scale.</strong><p>Models A–C describe implemented baselines in the separate research repository; this portal does not independently validate their effectiveness. Model D is planned, non-enforcing research (<code>enforcement_authority=NONE</code>), not a production authorization mechanism.</p></aside>\n  </section>\n  <section class=\"section container architecture-sect",
+          "after": "  <section class=\"section container\">\n    <div class=\"section-heading-row\">\n      <SectionHeading\n        eyebrow=\"01 / Research progression\"\n        title=\"A baseline for every next step.\"\n        description=\"Three implemented authorization baselines and a completed, experimental offline Model D research implementation.\"\n      />\n      <a class=\"text-link\" href={href(\"research\")}>\n        Explore the models <span aria-hidden=\"true\">↗</span>\n      </a>\n    </div>\n    <div class=\"models-grid\">\n      {models.map((model) => (\n        <ModelCard model={model} />\n      ))}\n    </div>\n    <aside class=\"home-research-note\" aria-label=\"Research implementation boundary\"><strong>A research progression, not a product maturity scale.</strong><p>Models A–C describe implemented baselines in the separate research repository; this portal does not independently validate their effectiveness. Model D research implementation is complete and non-enforcing (<code>enforcement_authority=NONE</code>), not a production authorization mechanism. Internal synthetic validation does not establish external field effectiveness or commercial readiness. Drift and mock-feedback limitations remain unresolved.</p></aside>\n  </section>\n  <section class=\"section container architecture-sect"
+        }
+      ]
+    },
+    "src/pages/research.astro": {
+      "beforeSHA256": "094a15465987f20a927a82d1fc99f2da64ef3424107befdd3c6d993715908869",
+      "afterSHA256": "73cde63557767de680329a1dad0478a0106e5fd38dcc9602d19212e4e54c0b6c",
+      "changes": [
+        {
+          "before": "---\nimport Layout from \"../layouts/Layout.astro\";\nimport Hero from \"../components/Hero.astro\";\nimport SectionHeading from \"../components/SectionHeading.astro\";\nimport ModelCard from \"../components/ModelCard.astro\";\nimport StatusBadge from \"../components/StatusBadge.astro\";\nimport { project, models, href } from \"../data/project\";\n---\n\n<Layout\n  title=\"Research\"\n  description=\"The AeglysAI research problem, deterministic baselines and proposed policy-bounded behavioral adaptive authorization model.\"\n>\n  <Hero\n    eyebrow=\"01 / Research\"\n    title=\"Authorization as a research question.\"\n    description=\"From deterministic access rules to explainable, policy-bounded adaptation. A research program grounded in comparison, transparency and reproducibility.\"\n",
+          "after": "---\nimport { modelDStatus } from \"../data/modelDStatus\";\nimport Layout from \"../layouts/Layout.astro\";\nimport Hero from \"../components/Hero.astro\";\nimport SectionHeading from \"../components/SectionHeading.astro\";\nimport ModelCard from \"../components/ModelCard.astro\";\nimport StatusBadge from \"../components/StatusBadge.astro\";\nimport { project, models, href } from \"../data/project\";\n---\n\n<Layout\n  title=\"Research\"\n  description=\"The AeglysAI research problem, deterministic baselines and completed experimental, non-enforcing Model D research implementation.\"\n>\n  <Hero\n    eyebrow=\"01 / Research\"\n    title=\"Authorization as a research question.\"\n    description=\"From deterministic access rules to explainable, policy-bounded adaptation. A research program grounded in comparison, transparency and reproducibility.\"\n"
+        },
+        {
+          "before": "        {models.slice(0, 3).map((model) => (\n          <ModelCard model={model} />\n        ))}\n      </div>\n    </section>\n    <section class=\"split-section\">\n      <SectionHeading\n        eyebrow=\"The next investigation\"\n        title=\"Proposed Model D\"\n      />\n      <div class=\"prose\">\n        <StatusBadge status=\"Planned Research\" />\n        <p>\n          {models[3].baseline}. The proposed model investigates behavioral\n          intelligence, operational state and continuous feedback within\n          explicit authorization policy boundaries.\n        </p>\n        <p>\n          AI-derived evidence would inform a decision; deterministic policy\n          would constrain the available actions. The research must establish\n          whether this approach improves security outcomes and at what\n          operational cost. Model D is not implemented.\n        </p>\n      </div>\n    </section>\n    <section class=\"section\">\n      <SectionHea",
+          "after": "        {models.slice(0, 3).map((model) => (\n          <ModelCard model={model} />\n        ))}\n      </div>\n    </section>\n    <section class=\"split-section\" id=\"model-d-status\">\n      <SectionHeading\n        eyebrow=\"Bounded offline research\"\n        title={modelDStatus.title}\n      />\n      <div class=\"prose\">\n        <StatusBadge status={modelDStatus.label} />\n        <p>{modelDStatus.summary}</p>\n        <p>Completed work includes offline behavioral inference, eligibility and drift diagnostics, experimental integration, mock-feedback simulation and internal reproducibility checks. These research capabilities do not grant or deny access.</p>\n        <p><code>{modelDStatus.authority}</code>. {modelDStatus.limits}</p>\n        <p>Local engineering acceptance is not independent field validation, security/distribution clearance or a commercial product release. No model artifacts, datasets or internal evaluation results are published here.</p>\n      </div>\n    </section>\n    <section class=\"section\">\n      <SectionHea"
+        }
+      ]
+    },
+    "src/styles/hackathon-landing.css": {
+      "beforeSHA256": "8be9b62883bfd7f8f6ffa1d0a8d75e4df13aed7f54c2cb795c400d8f6098b3e1",
+      "afterSHA256": "ee888f40ecc7799d8ab57b796d6033b4204e617d685a2ba35b08f768ed4e3426",
+      "changes": [
+        {
+          "before": "le) { font-size:10px; }\n.hx-global-event .hx-round { scroll-margin-top:100px; }\n",
+          "after": "le) { font-size:10px; }\n.hx-global-event .hx-round { scroll-margin-top:100px; }\n\n/* FINAL-001: route links and the existing support anchor share visible navigation states. */\n.hx-global-event .hx-event-nav a:hover, .hx-global-event .hx-event-nav a:focus-visible { color: #74e5f5; text-decoration: underline; text-underline-offset: 5px; }\n.hx-global-event #faq-community-heading { scroll-margin-top: 12rem; }\n"
+        }
+      ]
+    }
+  }
+}

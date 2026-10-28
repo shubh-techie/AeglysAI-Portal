@@ -44,3 +44,13 @@ and review hash belong in the EVENT-002 review report and development log.
 PLANNED separately: live private Sheet provisioning/access, real content/consent
 verification, real registry publication and any automated export. No new appointments,
 partners, event readiness, research effectiveness or security acceptance inferred.
+
+## FINAL-001 additive role contract
+
+Registry1.1.0 adds explicit Speaker and Organizer reusable-person roles; Keynote Speaker
+remains separate. Existing1.0.0 snapshots and approvals retain their original semantics.
+New categories cannot be labeled1.0.0, and owner/snapshot versions must match. The profile
+adapter emits1.1 only when needed; no automatic owner approval or version migration.
+Roll out validator support before using new producer categories; old validators fail
+closed on unknown versions/roles. All previous privacy/digest/asset/withdrawal gates and
+the private People preview-only boundary remain mandatory. No real data populated here.

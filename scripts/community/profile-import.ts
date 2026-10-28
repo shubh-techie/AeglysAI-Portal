@@ -17,7 +17,7 @@ const packetSchema = z.strictObject({
   Roles: z.array(z.strictObject({
     profile_id: id, event_year: z.literal('2026'),
     // "speaker" alone cannot establish a keynote appointment. This is a separate human decision.
-    registry_category: z.enum(['Keynote Speaker', 'Judge', 'Mentor', 'Partner']), role_approved: yes,
+    registry_category: z.enum(['Keynote Speaker', 'Speaker', 'Judge', 'Mentor', 'Organizer', 'Partner']), role_approved: yes,
   })).min(1).max(1000),
   Assets: z.array(z.strictObject({
     profile_id: id, public_copy_path: z.string(), sha256: z.string().regex(/^[a-f0-9]{64}$/), alt_text: text,
@@ -62,7 +62,7 @@ export function importProfiles(input: unknown, publicRoot = 'public') {
       if (asset) assets.push({ path: asset.public_copy_path, sha256: asset.sha256, rights: asset.rights,
         attribution: asset.attribution, approved: true, displayCreditRequired: false });
     }
-    const snapshot = exportRegistry({ schemaVersion: '1.0.0', kind: 'PUBLIC_APPROVED', snapshotId: p.snapshotId,
+    const snapshot = exportRegistry({ schemaVersion: records.some(record => ['Speaker', 'Organizer'].includes(record.category)) ? '1.1.0' : '1.0.0', kind: 'PUBLIC_APPROVED', snapshotId: p.snapshotId,
       revision: p.revision, exportedAt: p.exportedAt,
       provenance: { method: 'controlled-sanitized-export', exportId: p.exportId, sourceRevision: p.sourceRevision },
       data: { events: eventShowcase.events, people, records }, assets,
