@@ -52,7 +52,7 @@ const presentations = featuredPresentations();
         <title id="hero-diagram-title">From deterministic policies to adaptive authorization</title>
         <desc id="hero-diagram-description">
           Solid cyan layers represent implemented Models A, B and C. A dashed
-          amber outer layer represents planned Model D.
+          amber outer layer represents experimental, non-enforcing Model D research.
         </desc>
         <defs>
           <pattern
@@ -88,7 +88,7 @@ const presentations = featuredPresentations();
             POLICY
           </text>
           <text x="210" y="54" fill="var(--amber)" font-size="11">
-            D / PLANNED
+            D / RESEARCH
           </text>
           <text x="321" y="235" fill="var(--diagram-c-label)" font-size="11">
             C
@@ -113,7 +113,7 @@ const presentations = featuredPresentations();
           <br />
           <strong>Toward bounded adaptation.</strong>
         </p>
-        <span class="microcopy">Conceptual progression · Model D planned</span>
+        <span class="microcopy">Model D · Research Implementation Complete</span>
       </div>
     </div>
   </section>
@@ -128,7 +128,7 @@ const presentations = featuredPresentations();
       <SectionHeading
         eyebrow="01 / Research progression"
         title="A baseline for every next step."
-        description="Three implemented authorization models establish the foundation for a planned behavioral research model."
+        description="Three implemented authorization baselines and a completed, experimental offline Model D research implementation."
       />
       <a class="text-link" href={href("research")}>
         Explore the models <span aria-hidden="true">↗</span>
@@ -139,7 +139,7 @@ const presentations = featuredPresentations();
         <ModelCard model={model} />
       ))}
     </div>
-    <aside class="home-research-note" aria-label="Research implementation boundary"><strong>A research progression, not a product maturity scale.</strong><p>Models A–C describe implemented baselines in the separate research repository; this portal does not independently validate their effectiveness. Model D is planned, non-enforcing research (<code>enforcement_authority=NONE</code>), not a production authorization mechanism.</p></aside>
+    <aside class="home-research-note" aria-label="Research implementation boundary"><strong>A research progression, not a product maturity scale.</strong><p>Models A–C describe implemented baselines in the separate research repository; this portal does not independently validate their effectiveness. Model D research implementation is complete and non-enforcing (<code>enforcement_authority=NONE</code>), not a production authorization mechanism. Internal synthetic validation does not establish external field effectiveness or commercial readiness. Drift and mock-feedback limitations remain unresolved.</p></aside>
   </section>
   <section class="section container architecture-section">
     <SectionHeading

@@ -7,7 +7,8 @@ import { showcaseSchema, publicShowcase, type ShowcaseData } from './eventShowca
 import { challengeVisuals } from './hackathonVisuals.ts';
 import { assertPublicExport } from '../../scripts/community/public-export.mjs';
 
-export const REGISTRY_VERSION = '1.0.0';
+export const REGISTRY_VERSION = '1.1.0';
+const registryVersion = z.enum(['1.0.0', '1.1.0']);
 const id = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$/);
 const hash = z.string().regex(/^[a-f0-9]{64}$/);
 const timestamp = z.iso.datetime({ offset: true });
@@ -26,7 +27,7 @@ const assetSchema = z.strictObject({
   sourceUrl: publicUrl.optional(), approved: z.literal(true), displayCreditRequired: z.literal(false),
 });
 const common = {
-  schemaVersion: z.literal(REGISTRY_VERSION), kind: z.enum(['PUBLIC_APPROVED', 'SYNTHETIC']),
+  schemaVersion: registryVersion, kind: z.enum(['PUBLIC_APPROVED', 'SYNTHETIC']),
   snapshotId: id, revision: z.number().int().positive().max(Number.MAX_SAFE_INTEGER), exportedAt: timestamp,
   provenance: z.strictObject({ method: z.literal('controlled-sanitized-export'), exportId: id, sourceRevision: id }),
   data: showcaseSchema, assets: z.array(assetSchema).max(1000),
@@ -38,7 +39,7 @@ export const registryCandidateSchema = z.strictObject({
   profileConsents: z.array(z.strictObject({ personId: id, state: z.enum(['granted', 'pending', 'revoked', 'withdrawn']) })).max(1000),
 });
 export const registryApprovalSchema = z.strictObject({
-  schemaVersion: z.literal(REGISTRY_VERSION), snapshotId: id, revision: z.number().int().positive(),
+  schemaVersion: registryVersion, snapshotId: id, revision: z.number().int().positive(),
   sha256: hash, state: z.enum(['approved', 'revoked']), approvedAt: timestamp, expiresAt: timestamp,
   reviewUrl: publicUrl, recordIds: z.array(id).max(1000),
 });
@@ -86,6 +87,7 @@ function eligible(data: ShowcaseData) {
 function validateSemantics(snapshot: RegistrySnapshot, now: Date) {
   if (Date.parse(snapshot.exportedAt) > +now || snapshot.data.records.length > 1000 || snapshot.data.people.length > 1000) fail();
   const data = snapshot.data;
+  if (snapshot.schemaVersion === '1.0.0' && data.records.some(record => ['Speaker', 'Organizer'].includes(record.category))) fail();
   const allowed = eligible(data);
   const roles = new Set<string>();
   for (const record of data.records) {
@@ -93,7 +95,7 @@ function validateSemantics(snapshot: RegistrySnapshot, now: Date) {
     const event = data.events.find(event => event.id === record.eventId)!;
     if ((record.visibility.from || record.visibility.until) && !event.timezone) fail();
     if (record.members && record.category !== 'Team') fail();
-    if (record.personId && !['Keynote Speaker', 'Judge', 'Mentor', 'Participant'].includes(record.category)) fail();
+    if (record.personId && !['Keynote Speaker', 'Speaker', 'Judge', 'Mentor', 'Organizer', 'Participant'].includes(record.category)) fail();
     if (record.challenge && !Object.hasOwn(challengeVisuals, record.challenge)) fail();
     if (record.personId) {
       const key = `${record.eventId}:${record.personId}:${record.category}`;
@@ -133,7 +135,7 @@ export function validateRegistry(input: unknown, approvalInput: unknown, { now =
   const approval = registryApprovalSchema.parse(approvalInput);
   if (snapshot.kind !== 'PUBLIC_APPROVED' && !allowSynthetic) fail();
   validateSemantics(snapshot, now);
-  if (approval.state !== 'approved' || approval.snapshotId !== snapshot.snapshotId || approval.revision !== snapshot.revision
+  if (approval.schemaVersion !== snapshot.schemaVersion || approval.state !== 'approved' || approval.snapshotId !== snapshot.snapshotId || approval.revision !== snapshot.revision
     || approval.sha256 !== registryDigest(input) || Date.parse(approval.approvedAt) < Date.parse(snapshot.exportedAt)
     || Date.parse(approval.approvedAt) > +now || Date.parse(approval.expiresAt) <= +now
     || Date.parse(approval.expiresAt) <= Date.parse(approval.approvedAt)) fail();

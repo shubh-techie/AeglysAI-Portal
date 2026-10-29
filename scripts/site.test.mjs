@@ -111,7 +111,7 @@ test("research claims keep planned work and unpublished results explicit", () =>
     read("research/index.html"),
     /Research hypotheses will be published after the research specification is finalized\./,
   );
-  assert.match(read("research/index.html"), /Model D is not implemented\./);
+  assert.match(read("research/index.html"), /Research Implementation Complete/);
   assert.match(
     read("experiments/index.html"),
     /Experimental results in progress\./,
@@ -125,7 +125,7 @@ test("research claims keep planned work and unpublished results explicit", () =>
     /no publication or conference acceptance is claimed/,
   );
   for (const { html } of pages)
-    assert.match(html, /Model D is planned research/);
+    assert.match(html, /Model D research implementation complete; experimental and non-enforcing/);
 });
 
 test("production output contains only scoped inline scripts and approved local PDF embeds", () => {

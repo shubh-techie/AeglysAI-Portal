@@ -2,7 +2,7 @@ import test from 'node:test';
 import { originalHackathon, originalHackathonSource } from './registration-preservation.mjs';
 import { originalHomepage } from './homepage-preservation.mjs';
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { readHistoricalFile as readFileSync } from './final001-preservation.mjs';
 import { createHash } from 'node:crypto';
 const baseline = JSON.parse(readFileSync('scripts/community/fixtures/hackathon-motion-baseline.json','utf8'));
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
@@ -10,7 +10,7 @@ const navigation = JSON.parse(readFileSync('scripts/community/fixtures/research-
 // Restore only the verified pre-UX header for historical byte guards; new tests guard all remaining bytes.
 const originalHeader = (html, path) => html.replace(/<header class="site-header">[\s\S]*?<\/header>/, navigation.headers[navigation.routes[path].header]);
 const normalize = html => html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/g,'').replace(/\/_astro\/[^" ]+\.css/g,'/_astro/STYLES.css');
-test('DESIGN-005 preserves every non-network landing HTML byte and protected content source', () => {
+test('DESIGN-005 preserves non-network historical bytes outside the pinned FINAL-001 delta', () => {
  const revised = JSON.parse(readFileSync('scripts/community/fixtures/hackathon-interactions-baseline.json','utf8'));
  assert.equal(sha(normalize(originalHeader(originalHackathon(readFileSync('dist/hackathons/index.html','utf8')), 'hackathons/index.html')).replace(/<div class="hx-network\b[\s\S]*?(?=<\/section>)/,'NETWORK</div>')),revised.landingOutsideNetwork);
  for(const [path,hash] of Object.entries(baseline.protectedSources).filter(([path])=>path!=='src/components/hackathons/landing/EventHero.astro')) assert.equal(sha(path==='src/pages/hackathons/index.astro'?originalHackathonSource(readFileSync(path,'utf8')):readFileSync(path)),hash,path);

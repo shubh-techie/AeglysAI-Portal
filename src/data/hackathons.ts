@@ -48,7 +48,7 @@ export const legacyEvents: {
     launch: "December 2026", submission: "February 2027", prize: { amount: 300, currency: "USD", status: "PLANNED" },
     themes: ["Behavioral anomaly detection", "Risk evidence", "Identity/context signals", "Explainability", "False-positive reduction"],
     problem: "Behavioral signals can be noisy, and risk assessments need evidence that distinguishes suspicious activity from legitimate variation.",
-    challenge: "Prototype or evaluate behavioral risk methods using synthetic or appropriately licensed data. Explain signal selection, assess false positives and document uncertainty. Model D is planned research, not an existing implemented capability.",
+    challenge: "Prototype or evaluate behavioral risk methods using synthetic or appropriately licensed data. Explain signal selection, assess false positives and document uncertainty. Model D has a completed experimental research implementation with no enforcement authority; this challenge does not claim field-validated effectiveness.",
     deliverables: ["Prototype or evaluation code with reproducible setup", "Data provenance, signal definitions and privacy considerations", "Evaluation method, false-positive analysis and explainable risk evidence"],
     registrationUrl: null, submissionUrl: null,
   },

@@ -1,6 +1,6 @@
 import { z } from 'astro/zod';
 
-export const categories = ['Partner', 'Keynote Speaker', 'Judge', 'Mentor', 'Participant', 'Team', 'Event Announcement'] as const;
+export const categories = ['Partner', 'Keynote Speaker', 'Speaker', 'Judge', 'Mentor', 'Organizer', 'Participant', 'Team', 'Event Announcement'] as const;
 const id = z.string().regex(/^[A-Za-z0-9][A-Za-z0-9_-]*$/);
 const text = z.string().trim().min(1).max(2400).refine(value => !/[\w.+-]+@[\w.-]+\.[a-z]{2,}/i.test(value), 'Contact email is not public showcase content');
 const day = z.iso.date();
@@ -33,7 +33,7 @@ const record = z.strictObject({
 }).superRefine((value, ctx) => {
   const fail = (message: string) => ctx.addIssue({ code: 'custom', message });
   if (!value.name && !value.personId) fail('A display name or reusable person is required');
-  if (['Keynote Speaker', 'Judge', 'Mentor', 'Participant'].includes(value.category) && !value.personId) fail('Person roles require a reusable profile');
+  if (['Keynote Speaker', 'Speaker', 'Judge', 'Mentor', 'Organizer', 'Participant'].includes(value.category) && !value.personId) fail('Person roles require a reusable profile');
   if (value.category === 'Team' && !value.members?.length) fail('Teams require one to four reviewed members');
   if (value.members && new Set(value.members).size !== value.members.length) fail('Duplicate team member');
   if (value.status === 'Scheduled' && !value.visibility.from) fail('Scheduled records require a visibility start');

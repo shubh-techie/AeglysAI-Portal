@@ -21,7 +21,7 @@ export async function synchronize(config:unknown,api:GoogleClient,mode:'demo'|'c
  if(a.withdrawn||['REVOKED','WITHDRAWN'].includes(p.publication_status))fail('WITHDRAWN_OR_REVOKED');
  const rr=roles.filter(x=>x.profile_id===p.profile_id);if(!rr.length)fail('ROLE_MISSING');
  const categories=rr.map(r=>{if(String(r.event_year)!=='2026')fail('ROLE_EVENT');
- if(mode==='candidate'&&(r.role==='speaker'||!r.role_approved))fail('ROLE_APPROVAL_OR_CATEGORY');
+ if(mode==='candidate'&&(!r.role_approved))fail('ROLE_APPROVAL_OR_CATEGORY');
  const category=mode==='demo'&&r.role==='speaker'?'Keynote Speaker':c.roleMap[r.role];if(!category)fail('ROLE_CATEGORY');return category;});
  if(new Set(categories).size!==categories.length)fail('DUPLICATE_ROLE');
  if(categories.includes('Partner')&&categories.length!==1)fail('PARTNER_ROLE_CONFLICT');

@@ -482,3 +482,7 @@
 .hx-global-event .hx-progress-rail a { padding:0;display:block;line-height:1;min-width:0;font-size:0;box-sizing:border-box; }
 .hx-global-event .hx-progress-rail a:is(:hover,:focus-visible) { font-size:10px; }
 .hx-global-event .hx-round { scroll-margin-top:100px; }
+
+/* FINAL-001: route links and the existing support anchor share visible navigation states. */
+.hx-global-event .hx-event-nav a:hover, .hx-global-event .hx-event-nav a:focus-visible { color: #74e5f5; text-decoration: underline; text-underline-offset: 5px; }
+.hx-global-event #faq-community-heading { scroll-margin-top: 12rem; }

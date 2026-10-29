@@ -91,3 +91,5 @@ with the exclusive international landing presentation. No duplicate hackathon SP
 - [SPEC-026 — External registration channels](SPEC-026-registration-channels.md): Unstop/Luma discovery, Discord support and a planned private reconciliation boundary; official qualification/selection remains authoritative.
 
 - [SPEC-027 — Controlled Sheets/Drive profile imports](SPEC-027-sheets-drive-profile-import.md): sanitized adapter, pinned public-feed transport and regenerated development-only DEMO; no real publication.
+
+- [SPEC-028 — Coordinated Portal completion](SPEC-028-portal-final-completion.md): FINAL-001 navigation, approved showcase/versioned roles, bounded Model D status and maintenance review.

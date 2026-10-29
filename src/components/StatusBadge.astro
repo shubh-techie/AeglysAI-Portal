@@ -7,7 +7,7 @@ const { status } = Astro.props;
 const kind =
   status === "Implemented"
     ? "implemented"
-    : status === "Experimental"
+    : status === "Experimental" || status === "Research Implementation Complete"
       ? "experimental"
       : "planned";
 ---

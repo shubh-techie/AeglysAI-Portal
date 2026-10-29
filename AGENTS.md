@@ -23,7 +23,7 @@ Clearly distinguish:
 - **EXPERIMENTAL**: functionality under evaluation; do not imply validated results.
 - **IN PREPARATION**: documents, papers or talks being prepared, not accepted or published work.
 
-Models A–C are described as implemented in the separate research/application repository according to the portal's content specification; that source has not been audited here. Model D remains planned research. Never fabricate results, benchmarks, citations, publications, adoption, affiliations or project history. Preserve the distinction between a local change, a commit, a merge, a CI run and a live deployment.
+Models A–C are described as implemented in the separate research/application repository according to the portal's content specification; that source has not been audited here. Model D is research-implementation complete within the bounded offline experimental scope reviewed at Research commit530da21f; enforcement_authority=NONE. See src/data/modelDStatus.ts and docs/handoff/FINAL-001-RESEARCH-EVIDENCE.md; do not imply production authority, external effectiveness or commercial readiness. Never fabricate results, benchmarks, citations, publications, adoption, affiliations or project history. Preserve the distinction between a local change, a commit, a merge, a CI run and a live deployment.
 
 ## Git history and branch rules
 

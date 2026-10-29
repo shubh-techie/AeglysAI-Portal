@@ -1,5 +1,7 @@
+import { modelDStatus } from './modelDStatus.ts';
 export type Status =
   | "Implemented"
+  | "Research Implementation Complete"
   | "Planned Research"
   | "Experimental"
   | "In Preparation"
@@ -61,9 +63,8 @@ export const models: {
     id: "D",
     name: "Behavioral Adaptive Authorization",
     baseline: "RBAC + ABAC + behavioral adaptive risk",
-    status: "Planned Research",
-    description:
-      "Proposed behavioral evidence and operational state inform explainable adaptation within policy boundaries.",
+    status: modelDStatus.label,
+    description: modelDStatus.summary,
   },
 ];
 export const papers = [
