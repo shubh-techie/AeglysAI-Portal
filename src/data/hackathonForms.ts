@@ -6,7 +6,7 @@ export interface FormSetting { id: string; title: string; url: string | null; av
 export const hackathonForms: Record<"participant" | "team" | "speaker" | "judge" | "guest" | "project" | "qualification", FormSetting> = {
   "participant": {
     "id": "FORM-01",
-    "title": "AeglysAI Hackathon 2026 \u2014 Participant Registration",
+    "title": "AEGYTHON 2026 \u2014 Participant Registration",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSeNfr0ah_d2yHuBzVZmRY87gkt7e4mGOcIB0IqczaUSl8ok9w/viewform",
     "available": true,
     "verifiedAt": "2026-10-12T03:12:24.255884+00:00",
@@ -15,7 +15,7 @@ export const hackathonForms: Record<"participant" | "team" | "speaker" | "judge"
   },
   "team": {
     "id": "FORM-02",
-    "title": "AeglysAI Hackathon \u2014 Team Formation",
+    "title": "AEGYTHON 2026 \u2014 Team Formation",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSelZREdEyRWpHfvDAZj5-PLPgeH0cx9EJd_X8JeJIabJ7My2g/viewform",
     "available": true,
     "verifiedAt": "2026-10-12T03:12:24.542385+00:00",
@@ -24,7 +24,7 @@ export const hackathonForms: Record<"participant" | "team" | "speaker" | "judge"
   },
   "speaker": {
     "id": "FORM-03",
-    "title": "AeglysAI Hackathon \u2014 Speaker and Mentor Profile",
+    "title": "AEGYTHON 2026 \u2014 Speaker and Mentor Profile",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSf6ftQrbY8yjw__nbCvBQoviGLSh-h0-6dHHmXg8zIfu4cGHw/viewform",
     "available": true,
     "verifiedAt": "2026-10-12T03:12:24.931999+00:00",
@@ -33,7 +33,7 @@ export const hackathonForms: Record<"participant" | "team" | "speaker" | "judge"
   },
   "judge": {
     "id": "FORM-04",
-    "title": "AeglysAI Hackathon \u2014 Judge Profile and Acceptance",
+    "title": "AEGYTHON 2026 \u2014 Judge Profile and Acceptance",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSeRQCHmEQ3XmKqmBPId5nCDL4iFNP_ueMpVzaeYoVo60Hp-Ug/viewform",
     "available": true,
     "verifiedAt": "2026-10-12T03:12:25.241796+00:00",
@@ -42,7 +42,7 @@ export const hackathonForms: Record<"participant" | "team" | "speaker" | "judge"
   },
   "guest": {
     "id": "FORM-05",
-    "title": "AeglysAI Hackathon \u2014 Guest Invitation Response",
+    "title": "AEGYTHON 2026 \u2014 Guest Invitation Response",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSfPrYx04ZiHIIbjQVUkgjrO2eHRZK7YyHJhIkMLWNQU5AdmRQ/viewform",
     "available": true,
     "verifiedAt": "2026-10-12T03:12:25.550789+00:00",
@@ -51,7 +51,7 @@ export const hackathonForms: Record<"participant" | "team" | "speaker" | "judge"
   },
   "project": {
     "id": "FORM-06",
-    "title": "AeglysAI Hackathon \u2014 Final Project Submission",
+    "title": "AEGYTHON 2026 \u2014 Final Project Submission",
     "url": "https://docs.google.com/forms/d/e/1FAIpQLSeje4ie_BXjzsNpxu_NvNxIJcz5p9IoS3jEgiUaC6FPdh_Frg/viewform",
     "available": true,
     "verifiedAt": "2026-10-12T03:12:25.826367+00:00",

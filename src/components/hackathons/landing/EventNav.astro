@@ -5,7 +5,7 @@ import { href } from "../../../data/project";
 const sections = [["challenges", "Challenges"], ["how-it-works", "Qualification"], ["timeline", "Timeline"], ["prizes", "Awards"], ["judging", "Judging"], ["faq", "FAQs"]];
 ---
 <nav class="hx-event-nav" aria-label="Event sections">
-  <span class="hx-nav-brand">AEGLYSAI / 2026</span>
+  <span class="hx-nav-brand">AEGYTHON 2026</span>
   <div>{sections.map(([id, title]) => <a href={`#${id}`} data-event-section={id}>{title}</a>)}<a href={`${href("hackathons/community")}#aegython-showcase-title`}>People &amp; Partners</a><a href="#faq-community-heading" data-event-section="faq-community-heading">Community</a></div>
   <a href={href("hackathons/events")}>Full rules ↗</a>
 </nav>

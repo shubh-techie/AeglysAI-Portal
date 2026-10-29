@@ -2,6 +2,6 @@
 import { href } from "../data/project";
 const links = [ ["Program", "hackathons"], ["Challenges & Rules", "hackathons/events"], ["People & Partners", "hackathons/community"] ];
 ---
-<div class="hackathon-nav" role="navigation" aria-label="Hackathon navigation">
+<div class="hackathon-nav" role="navigation" aria-label="AEGYTHON 2026 navigation">
   {links.map(([label, path]) => <a class="text-link" href={href(path)} aria-current={Astro.url.pathname === href(path) ? "true" : undefined}>{label}</a>)}
 </div>

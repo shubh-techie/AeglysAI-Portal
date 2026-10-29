@@ -14,7 +14,7 @@ export const registrationLinks = {
   submission: SUBMISSION_FORM_URL,
 };
 export const program = {
-  title: "AeglysAI AI/ML and Cybersecurity Hackathon",
+  title: "AEGYTHON 2026",
   subtitle: "Build. Break. Measure. Improve.",
   description: "A community engineering program for exploring adaptive authorization, behavioral risk, cloud-native security and resilient distributed systems using the open-source AeglysAI research platform.",
   prize: "Existing planned USD $300 prize; funding unconfirmed",
