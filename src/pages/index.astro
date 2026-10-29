@@ -49,10 +49,10 @@ const presentations = featuredPresentations();
         role="img"
         aria-labelledby="hero-diagram-title hero-diagram-description"
       >
-        <title id="hero-diagram-title">From deterministic policies to adaptive authorization</title>
+        <title id="hero-diagram-title">Implemented baselines and completed offline Model D research</title>
         <desc id="hero-diagram-description">
-          Solid cyan layers represent implemented Models A, B and C. A dashed
-          amber outer layer represents experimental, non-enforcing Model D research.
+          Solid cyan layers represent implemented Models A, B and C. A double
+          outer boundary represents completed experimental, non-enforcing offline Model D research.
         </desc>
         <defs>
           <pattern
@@ -69,8 +69,9 @@ const presentations = featuredPresentations();
           <path
             d="M210 23 377 113v106L210 309 43 219V113Z"
             stroke="var(--amber)"
-            stroke-dasharray="5 6"
+            stroke-width="3"
           />
+          <path d="M210 29 371 117v98L210 303 49 215V117Z" stroke="var(--amber)" />
           <path d="m210 62 130 72v66l-130 71-130-71v-66Z" stroke="var(--diagram-c)" />
           <path d="m210 99 94 51v37l-94 51-94-51v-37Z" stroke="var(--diagram-b)" />
           <path
@@ -88,7 +89,7 @@ const presentations = featuredPresentations();
             POLICY
           </text>
           <text x="210" y="54" fill="var(--amber)" font-size="11">
-            D / RESEARCH
+            D / OFFLINE
           </text>
           <text x="321" y="235" fill="var(--diagram-c-label)" font-size="11">
             C

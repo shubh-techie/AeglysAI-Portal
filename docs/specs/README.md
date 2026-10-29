@@ -93,3 +93,5 @@ with the exclusive international landing presentation. No duplicate hackathon SP
 - [SPEC-027 — Controlled Sheets/Drive profile imports](SPEC-027-sheets-drive-profile-import.md): sanitized adapter, pinned public-feed transport and regenerated development-only DEMO; no real publication.
 
 - [SPEC-028 — Coordinated Portal completion](SPEC-028-portal-final-completion.md): FINAL-001 navigation, approved showcase/versioned roles, bounded Model D status and maintenance review.
+
+- [SPEC-029 — Model D status alignment](SPEC-029-model-d-status-alignment.md): three textual/structural statuses and explicit separation of offline research from production control.

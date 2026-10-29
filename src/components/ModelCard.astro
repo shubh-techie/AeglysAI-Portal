@@ -7,7 +7,7 @@ interface Props {
 const { model } = Astro.props;
 ---
 
-<article class:list={["model-card", { "planned-card": model.id === "D" }]}>
+<article class:list={["model-card", { "research-complete": model.status === "Research Implementation Complete" }]}>
   <div class="model-top">
     <span class="eyebrow">Model {model.id}</span>
     <span class="model-letter" aria-hidden="true">
@@ -18,3 +18,7 @@ const { model } = Astro.props;
   <p>{model.description}</p>
   <StatusBadge status={model.status} />
 </article>
+
+<style is:inline>
+.model-card.research-complete { border: 3px double var(--cyan); background: var(--surface); }
+</style>
