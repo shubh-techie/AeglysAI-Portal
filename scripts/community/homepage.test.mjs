@@ -27,7 +27,7 @@ test('UX-002 separates research implementation from validation and Model D enfor
   assert.match(note, /Model D research implementation is complete and non-enforcing/);
   assert.match(note, /enforcement_authority=NONE/);
   assert.match(note, /not a production authorization mechanism/);
-  assert.equal((html.match(/class="model-card(?: planned-card)?"/g) ?? []).length, 4);
+  assert.equal((html.match(/class="model-card(?: research-complete)?"/g) ?? []).length, 4);
 });
 
 test('UX-002 adds only approved event discovery, retaining media and presentation attribution', () => {

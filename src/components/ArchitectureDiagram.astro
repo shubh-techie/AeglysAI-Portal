@@ -1,107 +1,52 @@
 ---
-interface Props {
-  detailed?: boolean;
-}
+interface Props { detailed?: boolean; }
 const { detailed = false } = Astro.props;
 ---
-
-<figure class="architecture">
-  <div class="diagram-header">
-    <span class="eyebrow">
-      {detailed ? "02 / System architecture" : "01 / Research architecture"}
-    </span>
-    <span class="diagram-label">Conceptual flow</span>
+<figure class="architecture md002-diagram" data-md002-diagram>
+  <div class="diagram-header"><span class="eyebrow">{detailed ? "02 / System architecture" : "01 / Research architecture"}</span><span class="diagram-label">Scope and status map</span></div>
+  <div class="diagram-legend" aria-label="Three implementation statuses">
+    <span><i class="legend-solid" aria-hidden="true"></i>Implemented baseline · A–C · solid border</span>
+    <span><i class="md002-legend-complete" aria-hidden="true"></i>Research implementation complete · D · double border</span>
+    <span><i class="legend-dashed" aria-hidden="true"></i>Planned extension · dashed border</span>
   </div>
-  <div class="diagram-legend">
-    <span>
-      <i class="legend-solid" aria-hidden="true"></i>Implemented baseline
-      capabilities
-    </span>
-    <span>
-      <i class="legend-dashed" aria-hidden="true"></i>Planned research
-    </span>
-  </div>
-  {detailed && (
-    <div class="request-node">
-      Request <span aria-hidden="true">↓</span>
+  <section aria-label="Implemented baseline policy path">
+    <p class="eyebrow">Implemented baseline · Models A–C</p>
+    <div class="input-grid md002-baseline-inputs"><div class="diagram-node">Identity<small>Implemented baseline · roles and attributes</small></div><div class="diagram-node">Context<small>Implemented baseline · request evidence</small></div></div>
+    <div class="flow-arrow" aria-hidden="true">↓</div>
+    <div class="engine-grid"><div class="diagram-node">Policy Engine<small>Implemented baseline · deterministic policy</small></div><span class="inline-arrow" aria-hidden="true">→</span><div class="diagram-node">Contextual Risk<small>Implemented baseline · deterministic rules</small></div><span class="inline-arrow" aria-hidden="true">→</span><div class="diagram-node">Baseline Decision<small>Implemented baseline · policy evaluation</small></div></div>
+    <p class="md002-boundary">Conceptual policy outcome vocabulary below belongs to the baseline path. Not every baseline implements every outcome. Model D cannot issue these actions.</p>
+    <div class="decision-row" aria-label="Conceptual baseline policy outcomes; not Model D authority"><span>ALLOW</span><span>STEP-UP</span><span>LIMIT</span><span>DENY</span></div>
+  </section>
+  <section class="md002-offline" aria-label="Model D completed offline experimental research">
+    <h3>Model D · Research implementation complete</h3>
+    <p>Experimental offline scope only. Separate evidence and recommendation path; <code>enforcement_authority=NONE</code>. No access grants, denials or production control.</p>
+    <div class="md002-research-grid">
+      <div class="diagram-node research-complete">Behavioral inference<small>Research implementation complete · offline synthetic evidence</small></div>
+      <div class="diagram-node research-complete">Eligibility and drift diagnostics<small>Research implementation complete · bounded checks; robustness limitations remain</small></div>
+      <div class="diagram-node research-complete">Experimental integration<small>Research implementation complete · non-enforcing recommendations</small></div>
+      {detailed && <div class="diagram-node research-complete">Mock-feedback simulation<small>Research implementation complete · in-memory research only; effectiveness unestablished</small></div>}
     </div>
-  )}
-  <div class="input-grid">
-    <div class="diagram-node">
-      Identity<small>Roles & attributes</small>
+    <p>Internal synthetic validation does not establish independent field effectiveness, mature drift monitoring or production readiness.</p>
+  </section>
+  <section class="md002-planned" aria-label="Planned operational extensions">
+    <h3>Planned extensions · no completed operational claim</h3>
+    <div class="md002-research-grid">
+      <div class="diagram-node future">Operational telemetry<small>Planned extension · live evidence pipeline</small></div>
+      <div class="diagram-node future">Adaptive decision integration<small>Planned extension · production control, not Model D authority</small></div>
+      <div class="diagram-node future">Continuous feedback<small>Planned extension · live closed-loop adaptation</small></div>
     </div>
-    <div class="diagram-node">
-      Context<small>Request evidence</small>
-    </div>
-    <div class="diagram-node future">
-      Behavior<small>Planned research</small>
-    </div>
-    <div class="diagram-node future">
-      Operational State<small>Planned research</small>
-    </div>
-  </div>
-  <div class="flow-arrow" aria-hidden="true">
-    ↓
-  </div>
-  <div class="engine-grid">
-    <div class="diagram-node">
-      {detailed ? "Policy Engine" : "Risk Intelligence"}
-      <small>
-        {detailed ? "Deterministic policy" : "Deterministic contextual risk"}
-      </small>
-    </div>
-    <span class="inline-arrow" aria-hidden="true">
-      →
-    </span>
-    <div class="diagram-node">
-      {detailed ? "Risk Intelligence" : "Policy Engine"}
-      <small>
-        {detailed ? "Deterministic contextual risk" : "Deterministic policy"}
-      </small>
-    </div>
-    <span class="inline-arrow" aria-hidden="true">
-      →
-    </span>
-    <div class="diagram-node future">
-      {detailed ? "Decision Engine" : "Adaptive Decision"}
-      <small>Adaptive extension · planned</small>
-    </div>
-  </div>
-  <div class="planned-strip">
-    Behavioral intelligence + policy-bounded AI <span>Planned research</span>
-  </div>
-  <div class="flow-arrow" aria-hidden="true">
-    ↓
-  </div>
-  <div class="decision-row" aria-label="Conceptual decision outputs">
-    <span>ALLOW</span>
-    <span>STEP-UP</span>
-    <span>LIMIT</span>
-    <span>DENY</span>
-  </div>
-  {detailed && (
-    <>
-      <div class="flow-arrow" aria-hidden="true">
-        ↓
-      </div>
-      <div class="feedback-row">
-        <div class="diagram-node future">
-          Telemetry<small>Research instrumentation · planned</small>
-        </div>
-        <span aria-hidden="true">→</span>
-        <div class="diagram-node future">
-          Feedback<small>Continuous loop · planned research</small>
-        </div>
-      </div>
-      <div class="feedback-return">
-        ↳ Proposed feedback to risk assessment and policy-bounded adaptation
-      </div>
-    </>
-  )}
-  <figcaption>
-    Conceptual research architecture, not a deployment schematic. Solid nodes
-    represent capabilities of Models A–C; dashed nodes describe planned
-    extensions. The output vocabulary does not assert that every model
-    implements every action.
-  </figcaption>
+    <p>Independent external validation remains unestablished. Offline mock feedback does not complete a live feedback loop.</p>
+  </section>
+  <figcaption>Three statuses, not a product maturity scale: solid baseline, double-bordered completed experimental research, dashed planned extension. This conceptual scope map is not a deployment schematic or evidence of production enforcement. Models A–C implementation is recorded in the separate Research repository; this Portal does not independently establish effectiveness.</figcaption>
 </figure>
+<style is:inline>
+.md002-diagram .md002-legend-complete { border: 3px double var(--cyan); }
+.md002-diagram .research-complete { border: 3px double var(--cyan); background: var(--surface); }
+.md002-diagram .md002-baseline-inputs { grid-template-columns: repeat(2,minmax(0,1fr)); margin-top: 1rem; }
+.md002-research-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.md002-offline, .md002-planned { margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.md002-diagram p { line-height: 1.7; margin: 1rem 0; }
+.md002-diagram code { overflow-wrap: anywhere; }
+.md002-diagram .diagram-node { min-width: 0; overflow-wrap: anywhere; }
+@media(max-width:600px) { .md002-research-grid { grid-template-columns: 1fr; } }
+</style>

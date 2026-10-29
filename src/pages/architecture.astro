@@ -16,7 +16,7 @@ import StatusBadge from "../components/StatusBadge.astro";
   />
   <div class="container page-content">
     <ArchitectureDiagram detailed />
-    <aside class="notice"><h2>Research completion does not grant enforcement</h2><p>Model D research implementation is complete for its bounded offline experimental scope. The diagram remains a conceptual production architecture, not an implemented adaptive enforcement path. <code>enforcement_authority=NONE</code>; external validation, drift and mock-feedback limitations remain.</p></aside>
+    <aside class="notice"><h2>Research completion does not grant enforcement</h2><p>Model D research implementation is complete for its bounded offline experimental scope. The diagram separates the implemented baseline path, completed offline research and planned operational extensions. It is not an implemented adaptive enforcement path. <code>enforcement_authority=NONE</code>; external validation, drift and mock-feedback limitations remain.</p></aside>
     <section
       class="section capability-list"
       aria-label="Architecture capabilities"
@@ -49,34 +49,27 @@ import StatusBadge from "../components/StatusBadge.astro";
         <div>
           <h2>Behavioral Intelligence</h2>
           <p>
-            Planned investigation of behavioral evidence to help assess abnormal
-            or potentially compromised access. No learned behavioral model is
-            represented as implemented.
+            Completed offline experimental behavioral inference and bounded eligibility/drift diagnostics produce evidence, not access decisions. Internal synthetic checks do not establish external effectiveness or mature drift monitoring.
           </p>
         </div>
-        <StatusBadge status="Planned Research" />
+        <StatusBadge status="Research Implementation Complete" />
       </article>
       <article>
         <span class="card-index">04</span>
         <div>
-          <h2>Policy-Bounded AI</h2>
+          <h2>Experimental Recommendation Integration</h2>
           <p>
-            Proposed AI-derived evidence would operate within deterministic
-            policy constraints. The allowed actions, explanations and handling
-            of policy/AI disagreement require research specification and
-            evaluation.
+            Completed offline research integration produces non-enforcing recommendations. Model D has enforcement_authority=NONE; production adaptive decisions remain a planned extension.
           </p>
         </div>
-        <StatusBadge status="Planned Research" />
+        <StatusBadge status="Research Implementation Complete" />
       </article>
       <article>
         <span class="card-index">05</span>
         <div>
-          <h2>Continuous Feedback</h2>
+          <h2>Mock Feedback and Future Live Feedback</h2>
           <p>
-            A proposed feedback loop would connect telemetry and observed
-            outcomes to subsequent risk assessment. Its stability, usefulness
-            and operational costs remain open research questions.
+            In-memory mock-feedback simulation is implemented for offline research; response effectiveness remains unestablished. Live telemetry and continuous production feedback are planned extensions, with stability and operational costs unresolved.
           </p>
         </div>
         <StatusBadge status="Planned Research" />
@@ -85,9 +78,7 @@ import StatusBadge from "../components/StatusBadge.astro";
     <aside class="notice">
       <h2>A map of the investigation</h2>
       <p>
-        The diagram combines existing baseline capabilities with proposed
-        research elements. It does not specify deployed services, current
-        telemetry coverage or an implemented adaptive decision engine.
+        The diagram distinguishes existing baseline capabilities, completed offline experimental research and proposed operational extensions. It does not specify deployed services, live telemetry coverage or an implemented production adaptive decision engine.
       </p>
     </aside>
   </div>
