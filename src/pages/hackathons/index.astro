@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import { hackathonSeo } from "../../data/hackathonSeo";
 import RegistrationChannels from "../../components/hackathons/RegistrationChannels.astro";
 import CommunitySupport from "../../components/hackathons/CommunitySupport.astro";
 import EventNav from "../../components/hackathons/landing/EventNav.astro";
@@ -39,7 +40,7 @@ const resources = [
   { title: "Code of Conduct", note: "Expectations and pending reporting arrangements", url: "#code-of-conduct" },
 ];
 ---
-<Layout title="AI/ML and Cybersecurity Hackathon" description="One AeglysAI hackathon, six challenges, mandatory individual qualification and teams of one to four. Build a working project and compete through two rounds." socialImage={hackathonSocialPreview.image}>
+<Layout title={hackathonSeo.program.title} description="AEGYTHON 2026: one hackathon, six challenges, mandatory individual qualification and teams of one to four. Build a working project and compete through two rounds." socialImage={hackathonSocialPreview.image}>
   <div class="hackathon-experience hx-global-event">
     <SeriesHero/>
     <div class="container hx-facts" aria-label="Official event facts">{["ONE HACKATHON", "SIX CHALLENGES", "TEAMS OF 1–4", "FREE PARTICIPATION", "ANY TECH STACK", "TWO-ROUND JUDGING"].map((fact, i) => <div><span aria-hidden="true">{String(i + 1).padStart(2, "0")}</span><strong>{fact}</strong></div>)}</div>
