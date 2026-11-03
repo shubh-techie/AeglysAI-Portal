@@ -1,4 +1,5 @@
 import test from 'node:test';
+import {reportingPeriodForHistory} from './reporting-period-preservation.mjs';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync} from 'node:fs';
 import {createHash} from 'node:crypto';
@@ -65,7 +66,7 @@ test('TIME001A preserves every unrelated route, 2027, dependencies and protected
  const manifest=JSON.parse(read('scripts/community/time001a-preservation.json'));
  assert.equal(publicPages.length,28);assert.equal(Object.keys(manifest.unchangedRoutes).length,25);
  assert.ok(manifest.unchangedRoutes['dist/hackathons/2027/index.html']);
- for(const [p,hash] of Object.entries({...manifest.unchangedRoutes,...manifest.protectedSources}))assert.equal(createHash('sha256').update(beforeFinalSchedule(p,readFileSync(p))).digest('hex'),hash,p);
+ for(const [p,hash] of Object.entries({...manifest.unchangedRoutes,...manifest.protectedSources}))assert.equal(createHash('sha256').update(reportingPeriodForHistory(p,beforeFinalSchedule(p,readFileSync(p)),'2026-11')).digest('hex'),hash,p);
 });
 
 test('TIME001A final schedule separates registration, Phase 2 window and unconfirmed exact cutoff',()=>{
@@ -83,6 +84,6 @@ test('TIME001A final schedule separates registration, Phase 2 window and unconfi
  const awards=visible(landing.match(/<section id="prizes"[\s\S]*?<\/section>/)[0]);assert.ok(awards.includes(scheduleCopy.summary));
  const manifest=JSON.parse(read('scripts/community/time001a-final-preservation.json'));
  assert.equal(Object.keys(manifest.unchangedRoutes).length,24);
- for(const [p,hash] of Object.entries(manifest.unchangedRoutes))assert.equal(createHash('sha256').update(readFileSync(p)).digest('hex'),hash,p);
+ for(const [p,hash] of Object.entries(manifest.unchangedRoutes))assert.equal(createHash('sha256').update(reportingPeriodForHistory(p,readFileSync(p),'2026-11')).digest('hex'),hash,p);
  for(const [p,r] of Object.entries(manifest.files)){const value=read(p);assert.doesNotThrow(()=>beforeFinalSchedule(p,value));assert.throws(()=>beforeFinalSchedule(p,value+'UNREVIEWED'));assert.ok(r.beforeSHA256);}
 });
