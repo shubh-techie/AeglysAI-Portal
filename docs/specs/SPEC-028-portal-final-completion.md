@@ -36,3 +36,26 @@ security waiver or Git/production action. Delivery is a review checkpoint only. 
 [release review](../handoff/FINAL-001-REVIEW.md),
 [evidence boundaries](../handoff/FINAL-001-RESEARCH-EVIDENCE.md) and
 [maintenance runbook](../handoff/PORTAL-MAINTENANCE.md).
+
+## CI-003 — Clock-aware historical report guards, 2026-11-03
+
+IMPLEMENTED locally for review, no deployment: retain every existing historical byte pin
+while validating the reports archive's live UTC open period independently. The page already
+renders the current UTC month; FINAL-001 pins recorded October2026, whereas TIME-001A pins
+recorded November2026. Only the exact paragraph's validated current month projects to its
+historical value for byte comparisons. Stale, missing, duplicate or invalid periods fail;
+all non-period bytes remain protected. No global normalization or stale production output.
+
+Actual Pages41681904433 on merged main17d159e failed npm test with four reports-route pin
+errors; preceding main14f3637 reproduces the same four with pinned Python setup. Five earlier
+local contract failures were missing-jsonschema environment failures, not hosted failures.
+Four new tests cover raw current output, month/year/leap transitions, both original pins,
+Buffer behavior, tamper rejection and isolation from the five approved timeline endpoints.
+Two TIME-001A hash loops retain their original November target for future rollovers.
+
+Unchanged workflow shell commands pass in an isolated repaired copy:130/130 tests, no skips;
+175-file Astro check clean;28-page build. All28 HTML files byte-identical to main;96responsive/
+theme/JS/no-JS browser cases,16registration cases and28-route rendering pass. No application,
+workflow, dependency, configuration or security-control change. Existing environment and
+artifacts preserved; security findings OPEN. Hosted CI and authorized release/production
+verification remain required; see [CI-003 review](../qa/CI-003-REVIEW.md).
