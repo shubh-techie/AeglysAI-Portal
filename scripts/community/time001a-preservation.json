@@ -1,0 +1,393 @@
+{
+  "baseline": "TIME-001 uncommitted checkpoint eff146f4b93cfb1a1d93e8e2fc2002f2d12f5c484bb9cb4f25277169554b5b91",
+  "files": {
+    "src/components/hackathons/CertificateShowcase.astro": {
+      "beforeSHA256": "5d12184f215fc5e0a9492827e0083b596890f08fbf08738613afc7e6c2135808",
+      "afterSHA256": "18057f3091a77043caa83acb5318219e346edc24450d4beb1ac91a46102ccf04",
+      "changes": [
+        {
+          "before": "---\nimport TechnicalIcon from \"./TechnicalIcon.astro\";\nimport { asset } from \"../..",
+          "after": "---\nimport { scheduleCopy } from \"../../data/hackathons\";\nimport TechnicalIcon from \"./TechnicalIcon.astro\";\nimport { asset } from \"../.."
+        },
+        {
+          "before": "orting evidence and correction records stay in private Google Sheets and Drive. Verification channel and issuance dates remain to be announced.</p>\n</section>\n",
+          "after": "orting evidence and correction records stay in private Google Sheets and Drive. {scheduleCopy.certificates}</p>\n</section>\n"
+        }
+      ]
+    },
+    "src/components/hackathons/HackathonRules.astro": {
+      "beforeSHA256": "3a717cd1c36624a459b35f8e3fe3932bb2760b1b281f5a9332f74fffd736f372",
+      "afterSHA256": "57298487a528e2446af01bae008474d2de1c8ed9e907aadaafcdc0e5ab2b8918",
+      "changes": [
+        {
+          "before": "---\nimport { teamRules, submissionRequirements, scoringFramework, finalistRubric } ",
+          "after": "---\nimport { scheduleCopy } from \"../../data/hackathons\";\nimport { teamRules, submissionRequirements, scoringFramework, finalistRubric } "
+        },
+        {
+          "before": " \u2192</a></section>\n<section class=\"section\" id=\"judging\"><h2>Two-round judging</h2><h3>Round 1 \u2014 technical screening</h3><p>Review source code, working prototype,",
+          "after": " \u2192</a></section>\n<section class=\"section\" id=\"judging\"><h2>Two-round judging</h2><p>{scheduleCopy.judging}</p><p>{scheduleCopy.submissionDeadline}</p><h3>Round 1 \u2014 technical screening</h3><p>Review source code, working prototype,"
+        },
+        {
+          "before": "oster mappings and private comments remain in private Google Sheets/Drive. Judges, dates and results are not confirmed.</p></section>\n",
+          "after": "oster mappings and private comments remain in private Google Sheets/Drive. Judge appointments and results are not confirmed.</p></section>\n"
+        }
+      ]
+    },
+    "src/components/hackathons/RegistrationChannels.astro": {
+      "beforeSHA256": "303530661814247cb139c5ce64eb842f6afa841cd1564e4939d7d6678ace2f60",
+      "afterSHA256": "e6546efe5b0b2874fcbaefbb46452205eb8cd39e4e214d99344c0ba6aecf7526",
+      "changes": [
+        {
+          "before": "---\nimport { registrationChannels } from '../../data/hackathonChannels';\nimport Com",
+          "after": "---\nimport { scheduleCopy } from \"../../data/hackathons\";\nimport { registrationChannels } from '../../data/hackathonChannels';\nimport Com"
+        },
+        {
+          "before": "ligibility or prize details. This official AeglysAI page remains authoritative; event dates and eligibility are still pending here.</p>\n  <div class=\"hx-grid hx-tracks\">{registrationChannels.map(channel => <art",
+          "after": "ligibility or prize details. This official AeglysAI page remains authoritative; {scheduleCopy.summary} {scheduleCopy.submissionDeadline} Age and geographic eligibility remain subject to official terms.</p>\n  <div class=\"hx-grid hx-tracks\">{registrationChannels.map(channel => <art"
+        }
+      ]
+    },
+    "src/components/hackathons/SeriesHero.astro": {
+      "beforeSHA256": "c1d6086f800e1c1c71e32deec76d295e0106d6bd9ef3f4d803b427b78daa801e",
+      "afterSHA256": "27d458b5cd0a4666352139b657e3d3c584c5a400265b5ed65423de01ee4f4efc",
+      "changes": [
+        {
+          "before": "---\nimport FormCta from \"./FormCta.astro\";\n---\n<section class=\"hx-hero\" aria-labell",
+          "after": "---\nimport { scheduleCopy } from \"../../data/hackathons\";\nimport FormCta from \"./FormCta.astro\";\n---\n<section class=\"hx-hero\" aria-labell"
+        },
+        {
+          "before": "-hidden=\"true\">\u2193</span></a></div>\n      <p class=\"hx-fine\">Participation is FREE \u00b7 Dates to be announced</p>\n    </div>\n    <div class=\"hx-network\" aria-hidden=\"true\">\n      <div class",
+          "after": "-hidden=\"true\">\u2193</span></a></div>\n      <p class=\"hx-fine\">Participation is FREE<br/>{scheduleCopy.registrationShort}<br/>{scheduleCopy.finaleShort}</p>\n    </div>\n    <div class=\"hx-network\" aria-hidden=\"true\">\n      <div class"
+        }
+      ]
+    },
+    "src/components/hackathons/landing/CompetitionRules.astro": {
+      "beforeSHA256": "6fa9b3074b41a51c3e3a9dbacfa9b954dea7a655ac34fc4a0ebcef1d255a35a2",
+      "afterSHA256": "0c66e1195bf09ca1b63692b0aced8c7d1cef6c5f8a588e0a5d18b01276680095",
+      "changes": [
+        {
+          "before": "---\nimport { teamRules, submissionRequirements, scoringFramework, finalistRubric } ",
+          "after": "---\nimport { scheduleCopy } from \"../../../data/hackathons\";\nimport { teamRules, submissionRequirements, scoringFramework, finalistRubric } "
+        },
+        {
+          "before": " \u2192</a></section>\n<section class=\"section\" id=\"judging\"><h2>Two-round judging</h2><div class=\"hx-round-grid\"><article class=\"hx-round\"><p class=\"hx-eyebrow\">ROUN",
+          "after": " \u2192</a></section>\n<section class=\"section\" id=\"judging\"><h2>Two-round judging</h2><p>{scheduleCopy.judging}</p><p>{scheduleCopy.submissionDeadline}</p><div class=\"hx-round-grid\"><article class=\"hx-round\"><p class=\"hx-eyebrow\">ROUN"
+        },
+        {
+          "before": "oster mappings and private comments remain in private Google Sheets/Drive. Judges, dates and results are not confirmed.</p></section>\n",
+          "after": "oster mappings and private comments remain in private Google Sheets/Drive. Judge appointments and results are not confirmed.</p></section>\n"
+        }
+      ]
+    },
+    "src/components/hackathons/landing/CompetitionTimeline.astro": {
+      "beforeSHA256": "6c08cdcd96f8ded647f2cf37867e63352454c5fdfb14df89d5b6fde87f31c719",
+      "afterSHA256": "587271a04ceaa7eddb7789cf113f4178c1bd803de65f5b304c6764787e7c4b63",
+      "changes": [
+        {
+          "before": "---\nimport FormCta from \"../FormCta.astro\";\nconst phases = [\n { title: \"Registration & Technical Qualification\", mode: \"Online\", start: \"2026-10-01\", end: \"2026-11-06\", detail: \"Participants register, complete mandatory technical qualification req",
+          "after": "---\nimport { eventSchedule, scheduleCopy, eventDate } from \"../../../data/hackathons\";\nimport FormCta from \"../FormCta.astro\";\nconst phases = [\n { title: \"Registration & Technical Qualification\", mode: eventSchedule.registration.mode, start: eventSchedule.registration.start, end: eventSchedule.registration.end, dateLabel: scheduleCopy.registration, detail: \"Participants register, complete mandatory technical qualification req"
+        },
+        {
+          "before": "rganizer review.\" },\n { title: \"Project Submission & Finalist Selection\", mode: \"Virtual judging\", detail: \"Qualified participants submit their project or prototype along with t",
+          "after": "rganizer review.\" },\n { title: \"Project Submission & Finalist Selection\", mode: eventSchedule.submission.mode, dateLabel: scheduleCopy.submission, detail: \"Qualified participants submit their project or prototype along with t"
+        },
+        {
+          "before": " eligible submissions and select finalists.\" },\n { title: \"Grand Finale\", mode: \"Hybrid \u2014 Online & On-site\", start: \"2026-11-28\", detail: \"Selected finalists demonstrate their solutions and present their work",
+          "after": " eligible submissions and select finalists.\" },\n { title: \"Grand Finale\", mode: eventSchedule.finale.mode, start: eventSchedule.finale.date, dateLabel: scheduleCopy.finale, detail: \"Selected finalists demonstrate their solutions and present their work"
+        },
+        {
+          "before": "judging evaluates the finished project.</p>\n <ol class=\"hx-competition-timeline\">{phases.map((phase, i) => <li><span class=\"hx-step-number\">Phase {i + 1}</span>",
+          "after": "judging evaluates the finished project.</p>\n <ol class=\"hx-competition-timeline\" data-selection-note={scheduleCopy.selectionNote}>{phases.map((phase, i) => <li><span class=\"hx-step-number\">Phase {i + 1}</span>"
+        },
+        {
+          "before": "iv><h3>{phase.title}</h3><p><strong>{phase.end ? <><time datetime={phase.start}>October 1</time> \u2013 <time datetime={phase.end}>November 6, 2026</time></> : phase.start ? <time datetime={phase.start}>November 28, 2026</time> : \"Schedule to be announced\"}</strong></p><p>{phase.detail}</p></div><span class=\"hx-status\">{phase.mode}</s",
+          "after": "iv><h3>{phase.title}</h3><p><strong>{phase.end ? <><time datetime={phase.start}>{eventDate(phase.start).replace(/, \\d{4}$/, \"\")}</time> \u2013 <time datetime={phase.end}>{eventDate(phase.end)}</time></> : phase.start ? <time datetime={phase.start}>{phase.dateLabel}</time> : phase.dateLabel}</strong></p><p>{phase.detail}</p></div><span class=\"hx-status\">{phase.mode}</s"
+        }
+      ]
+    },
+    "src/components/hackathons/landing/EventHero.astro": {
+      "beforeSHA256": "649d720328188dcd55998d2ade0ff7ec4170c2e9e34f6b565ce016343ce166bb",
+      "afterSHA256": "1c32ee4c076429ecb05cf380852c37fdb155912baf603c8b5601a27e1db1ec9c",
+      "changes": [
+        {
+          "before": "---\nimport IntelligenceNetwork from \"./IntelligenceNetwork.astro\";\nimport FormCta f",
+          "after": "---\nimport { scheduleCopy } from \"../../../data/hackathons\";\nimport IntelligenceNetwork from \"./IntelligenceNetwork.astro\";\nimport FormCta f"
+        },
+        {
+          "before": "of 1\u20134<br/>Any programming language \u00b7 Mandatory individual prequalification<br/>Event dates to be announced</p>\n    </div>\n    <IntelligenceNetwork/>\n  </div>\n</section>\n",
+          "after": "of 1\u20134<br/>Any programming language \u00b7 Mandatory individual prequalification<br/>{scheduleCopy.registrationShort}<br/>{scheduleCopy.finaleShort}</p>\n    </div>\n    <IntelligenceNetwork/>\n  </div>\n</section>\n"
+        }
+      ]
+    },
+    "src/components/hackathons/landing/QualificationJourney.astro": {
+      "beforeSHA256": "2af12b8318749220bb87ce13bb215b0d5a01f9b1cc1317564b63b6dbef918a30",
+      "afterSHA256": "07593abb25ff8603f566796f707c92d8be6625c11e33f0c1bde23eac2c35a9c4",
+      "changes": [
+        {
+          "before": "---\nimport FormCta from \"../FormCta.astro\";\nimport { journey as existingJourney } f",
+          "after": "---\nimport { scheduleCopy } from \"../../../data/hackathons\";\nimport FormCta from \"../FormCta.astro\";\nimport { journey as existingJourney } f"
+        },
+        {
+          "before": "adStart(2, \"0\")}</span><h3>{step.title}</h3><p>{step.detail}</p></li>)}</ol>\n  <div id=\"registration\" class=\"hx-actions\"><FormCta kind=\"participant\" label=\"Regi",
+          "after": "adStart(2, \"0\")}</span><h3>{step.title}</h3><p>{step.detail}</p></li>)}</ol>\n  <p class=\"hx-fine\">{scheduleCopy.registrationShort}<br/>{scheduleCopy.finaleShort}</p>\n  <div id=\"registration\" class=\"hx-actions\"><FormCta kind=\"participant\" label=\"Regi"
+        }
+      ]
+    },
+    "src/components/hackathons/landing/landing-interactions.js": {
+      "beforeSHA256": "7930e24ada47ee0df1b465cb8fcc59e00d85cb179bdd2c56890114b565e1dfaf",
+      "afterSHA256": "aa3ad236d31e3691106498e8871352a0ebc1218757302a145c4621c913ae6c08",
+      "changes": [
+        {
+          "before": "des('Qualification')?'Selection is a reading aid, not completed qualification.':'Selected phase is a reading aid. Phase 2 schedule remains to be announced.';panel.append(note);\n  }\n  navigator('.hx-journey','Qualification step selection",
+          "after": "des('Qualification')?'Selection is a reading aid, not completed qualification.':list.dataset.selectionNote;panel.append(note);\n  }\n  navigator('.hx-journey','Qualification step selection"
+        }
+      ]
+    },
+    "src/data/hackathonExperience.ts": {
+      "beforeSHA256": "b018f7612218b825118b4b58a0aed0645ef6c0859036dcd84917c79e1c8450ff",
+      "afterSHA256": "b9b3c3ed5b1c7b2514fb437f5cfb8e1b8fe35dd0d7ca42250cf0905723a932dd",
+      "changes": [
+        {
+          "before": "/** Landing-only editorial presentation. Events/dates/prizes stay in hackathons.",
+          "after": "import { scheduleCopy } from \"./hackathons\";\n/** Landing-only editorial presentation. Events/dates/prizes stay in hackathons."
+        },
+        {
+          "before": "bution does not require an accepted upstream PR.\"],\n];\nexport const faq = [\n  [\"Is participation free?\", \"Participation is FREE. Final eligibility and event ter",
+          "after": "bution does not require an accepted upstream PR.\"],\n];\nexport const faq = [\n  [\"When are registration, qualification and the grand finale?\", `${scheduleCopy.summary} Registration and qualification are online. ${scheduleCopy.submissionDeadline}`],\n  [\"When are projects judged?\", scheduleCopy.judging],\n  [\"Where is the grand finale?\", scheduleCopy.venue],\n  [\"How will certificate verification and issuance details be shared?\", scheduleCopy.certificates],\n  [\"Is participation free?\", \"Participation is FREE. Final eligibility and event ter"
+        }
+      ]
+    },
+    "src/data/hackathonSeo.ts": {
+      "beforeSHA256": "fc2d30f2a2bda681c9d80f76c7a6778162b650ae8148433e99276b10f9c59e35",
+      "afterSHA256": "10609af499652620aafaff948d0a00df8857cf8498b9d914f23713960f102577",
+      "changes": [
+        {
+          "before": "/** Approved public social assets only; null means text-only previews.\n * Image ",
+          "after": "import { scheduleCopy } from \"./hackathons\";\n/** Approved public social assets only; null means text-only previews.\n * Image "
+        },
+        {
+          "before": "export const hackathonSeo = {\n  program: { title: \"AEGYTHON 2026\", description: \"AEGYTHON 2026: one free hackathon with six challenge choices, mandatory individual qualification and teams of one to four.\" },\n  events: { title: \"AEGYTHON 2026 \u2014 Challenges and Rules\", description: \"Six challenges for AEGYTHON 2026. Read mandatory qualification, team rules, working project and two-minute video requirements, and two-round judging.\" },\n  community: { title: \"AEGYTHON 2026 \u2014 People & Partners\", description: \"Mee",
+          "after": "export const hackathonSeo = {\n  program: { title: \"AEGYTHON 2026\", description: `AEGYTHON 2026: one free hackathon with six challenge choices, mandatory individual qualification and teams of one to four. ${scheduleCopy.summary}` },\n  events: { title: \"AEGYTHON 2026 \u2014 Challenges and Rules\", description: `Six challenges for AEGYTHON 2026. Read mandatory qualification, team rules, working project and two-minute video requirements, and two-round judging. ${scheduleCopy.summary}` },\n  community: { title: \"AEGYTHON 2026 \u2014 People & Partners\", description: \"Mee"
+        }
+      ]
+    },
+    "src/data/hackathons.ts": {
+      "beforeSHA256": "593f510dae94ca53dacf44963289be5cb76edca12e623b4a7d56a06b7335a1bd",
+      "afterSHA256": "50981c0a582c8860a94f17a7e6a54392bb40a628258ffd6d3ac2a48d76dc868a",
+      "changes": [
+        {
+          "before": "RM_URL,\n  judge: JUDGE_INVITATION_FORM_URL,\n  submission: SUBMISSION_FORM_URL,\n};\nexport const program = {\n  title: \"AEGYTHON 2026\",\n  subtitle: \"Build. Break. ",
+          "after": "RM_URL,\n  judge: JUDGE_INVITATION_FORM_URL,\n  submission: SUBMISSION_FORM_URL,\n};\n/** TIME-001A: organizer-confirmed 2026 facts; null never supplies a deadline or venue. */\nexport type Announcement<T> = { status: \"CONFIRMED\"; value: T } | { status: \"UNCONFIRMED\"; value: null };\nexport interface EventSchedule {\n  registration: { status: \"CONFIRMED\"; start: string; end: string; mode: string };\n  submission: { dates: Announcement<{ start: string; end: string }>; deadline: Announcement<string>; mode: string };\n  finale: { status: \"CONFIRMED\"; date: string; mode: string };\n  judging: { schedule: Announcement<string> };\n  venue: Announcement<string>;\n  certificates: { verificationChannel: Announcement<string>; issuanceDate: Announcement<string> };\n}\nexport const eventSchedule: EventSchedule = {\n  registration: { status: \"CONFIRMED\", start: \"2026-10-01\", end: \"2026-11-06\", mode: \"Online\" },\n  submission: { dates: { status: \"UNCONFIRMED\", value: null }, deadline: { status: \"UNCONFIRMED\", value: null }, mode: \"Virtual judging\" },\n  finale: { status: \"CONFIRMED\", date: \"2026-11-28\", mode: \"Hybrid \u2014 Online & On-site\" },\n  judging: { schedule: { status: \"UNCONFIRMED\", value: null } },\n  venue: { status: \"UNCONFIRMED\", value: null },\n  certificates: { verificationChannel: { status: \"UNCONFIRMED\", value: null }, issuanceDate: { status: \"UNCONFIRMED\", value: null } },\n};\n// These are calendar days, not local midnight timestamps or invented start times.\nexport function eventDate(date: string, month: \"long\" | \"short\" = \"long\"): string {\n  return new Intl.DateTimeFormat(\"en-US\", { month, day: \"numeric\", year: \"numeric\", timeZone: \"UTC\" }).format(new Date(`${date}T00:00:00Z`));\n}\nexport function eventDateRange(start: string, end: string, month: \"long\" | \"short\" = \"long\"): string {\n  const first = eventDate(start, month);\n  return `${start.slice(0, 4) === end.slice(0, 4) ? first.replace(/, \\d{4}$/, \"\") : first} \u2013 ${eventDate(end, month)}`;\n}\n/** Shared copy is derived from the schedule; consumers do not duplicate confirmed dates. */\nexport function eventScheduleCopy(schedule: EventSchedule) {\n  const registration = eventDateRange(schedule.registration.start, schedule.registration.end);\n  const registrationShort = `Registration & Qualification: ${eventDateRange(schedule.registration.start, schedule.registration.end, \"short\")}`;\n  const finale = eventDate(schedule.finale.date);\n  const finaleShort = `Grand Finale: ${eventDate(schedule.finale.date, \"short\")}`;\n  const submission = schedule.submission.dates.status === \"CONFIRMED\"\n    ? eventDateRange(schedule.submission.dates.value.start, schedule.submission.dates.value.end) : \"Schedule to be announced\";\n  const judging = schedule.judging.schedule.status === \"CONFIRMED\" ? schedule.judging.schedule.value\n    : \"Virtual project review and finalist selection. Detailed judging and submission schedule will be announced separately.\";\n  const venue = `Grand Finale: ${finale} \u2014 ${schedule.finale.mode.replace(\"Hybrid \u2014 \", \"Hybrid (\")}${schedule.finale.mode.startsWith(\"Hybrid \u2014 \") ? \")\" : \"\"}. ${schedule.venue.status === \"CONFIRMED\" ? `On-site venue: ${schedule.venue.value}.` : \"On-site venue details will be announced separately.\"}`;\n  const certificates = schedule.certificates.verificationChannel.status === \"CONFIRMED\" && schedule.certificates.issuanceDate.status === \"CONFIRMED\"\n    ? `Certificate verification: ${schedule.certificates.verificationChannel.value}. Certificate issuance date: ${eventDate(schedule.certificates.issuanceDate.value)}.`\n    : \"Certificate verification and issuance details will be communicated through official AEGYTHON channels.\";\n  return { registration, registrationShort, finale, finaleShort, submission, judging, venue, certificates,\n    summary: `${registrationShort}. ${finaleShort}.`,\n    submissionDeadline: schedule.submission.deadline.status === \"CONFIRMED\" ? `Submission deadline: ${eventDate(schedule.submission.deadline.value)}.` : \"Project submission dates and deadlines are not yet confirmed.\",\n    selectionNote: schedule.submission.dates.status === \"CONFIRMED\" ? \"Selected phase is a reading aid.\" : \"Selected phase is a reading aid. Phase 2 schedule remains to be announced.\",\n  };\n}\nexport const scheduleCopy = eventScheduleCopy(eventSchedule);\nexport const program = {\n  title: \"AEGYTHON 2026\",\n  subtitle: \"Build. Break. "
+        },
+        {
+          "before": " { speakers, judges } from \"./hackathonPeople\";\n\n/** Finalized operating rules; dates, forms and judging appointments remain unavailable. */\nexport { default as challenges } from './community/challenges.json';\nexport",
+          "after": " { speakers, judges } from \"./hackathonPeople\";\n\n/** Finalized operating rules; schedule confirmation and approved forms are tracked separately. */\nexport { default as challenges } from './community/challenges.json';\nexport"
+        },
+        {
+          "before": "{ ...legacyEvents[0], id: \"ai-ml-cybersecurity\", title: program.title,\n launch: \"To be announced\", submission: \"To be announced\", themes: [\"AI/ML\", \"Cybersecurity\"],\n problem: \"Build and explain a working int",
+          "after": "{ ...legacyEvents[0], id: \"ai-ml-cybersecurity\", title: program.title,\n launch: scheduleCopy.registration, submission: scheduleCopy.submission, schedule: eventSchedule, themes: [\"AI/ML\", \"Cybersecurity\"],\n problem: \"Build and explain a working int"
+        }
+      ]
+    },
+    "src/pages/hackathons/events.astro": {
+      "beforeSHA256": "082776b71e7a8e9bfd429470be19be1f4a3680d6ddc67ad8c44bb6ac0819f6af",
+      "afterSHA256": "55aca3226e7dcad2ef0bf438b400768b2d97653c33dc170084348a4245ebcb4d",
+      "changes": [
+        {
+          "before": "---\nimport { hackathonSeo, hackathonSocialPreview } from '../../data/hackathonSeo';",
+          "after": "---\nimport { scheduleCopy } from \"../../data/hackathons\";\nimport { hackathonSeo, hackathonSocialPreview } from '../../data/hackathonSeo';"
+        },
+        {
+          "before": "brow=\"One hackathon / Six challenges\" title=\"Build a working idea.\" description=\"Mandatory individual qualification, teams of one to four, executable projects and two-round judging. Registration Opening Soon; dates to be announced.\"/>\n<div class=\"container page-content\"><HackathonNav/><section class=\"section\"><",
+          "after": "brow=\"One hackathon / Six challenges\" title=\"Build a working idea.\" description={`Mandatory individual qualification, teams of one to four, executable projects and two-round judging. ${scheduleCopy.summary}`}/>\n<div class=\"container page-content\"><HackathonNav/><section class=\"section\"><"
+        }
+      ]
+    },
+    "src/pages/hackathons/index.astro": {
+      "beforeSHA256": "e27ef0bd9147919bd3a76c903b1d17c7f26a72f6219345d8c098a75f748a18b0",
+      "afterSHA256": "9c3a3aac4b051c798dcb3c9cc5cf77b56a4ca9fffa0d838793e819a828f34d3b",
+      "changes": [
+        {
+          "before": "---\nimport Layout from \"../../layouts/Layout.astro\";\nimport { hackathonSeo } from \"",
+          "after": "---\nimport { scheduleCopy } from \"../../data/hackathons\";\nimport Layout from \"../../layouts/Layout.astro\";\nimport { hackathonSeo } from \""
+        },
+        {
+          "before": "rkflow\" },\n  { title: \"Challenge Rules\", note: \"Finalized participation rules; dates pending\", url: href(\"hackathons/events\") },\n  { title: \"Judging Rubric\", note: \"Two-rou",
+          "after": "rkflow\" },\n  { title: \"Challenge Rules\", note: \"Finalized participation rules; detailed submission schedule unconfirmed\", url: href(\"hackathons/events\") },\n  { title: \"Judging Rubric\", note: \"Two-rou"
+        },
+        {
+          "before": "de-of-conduct\" },\n];\n---\n<Layout title={hackathonSeo.program.title} description=\"AEGYTHON 2026: one hackathon, six challenges, mandatory individual qualification and teams of one to four. Build a working project and compete through two rounds.\" socialImage={hackathonSocialPreview.image}>\n  <div class=\"hackathon-experience ",
+          "after": "de-of-conduct\" },\n];\n---\n<Layout title={hackathonSeo.program.title} description={hackathonSeo.program.description} socialImage={hackathonSocialPreview.image}>\n  <div class=\"hackathon-experience "
+        },
+        {
+          "before": "ON</p><h2 id=\"challenges-heading\">Six ways to build what comes next.</h2></div><span class=\"hx-status\">DATES TO BE ANNOUNCED</span></div>\n        <p class=\"hx-section-copy\">{program.title}. Explore security pro",
+          "after": "ON</p><h2 id=\"challenges-heading\">Six ways to build what comes next.</h2></div><p class=\"hx-fine\">{scheduleCopy.registrationShort}<br/>{scheduleCopy.finaleShort}</p></div>\n        <p class=\"hx-section-copy\">{program.title}. Explore security pro"
+        },
+        {
+          "before": "form-note\" primary/></div>\n      </section>\n      <CompetitionTimeline/>\n      <section id=\"prizes\" class=\"hx-prize hx-card\" aria-labelledby=\"prize-heading\">\n  ",
+          "after": "form-note\" primary/></div>\n      </section>\n      <CompetitionTimeline/>\n      <p class=\"hx-fine\">{scheduleCopy.venue}</p>\n      <section id=\"prizes\" class=\"hx-prize hx-card\" aria-labelledby=\"prize-heading\">\n  "
+        },
+        {
+          "before": "a-hidden=\"true\">\u2197</span></a></div>\n        <p class=\"hx-fine\">Free participation \u00b7 Event dates pending \u00b7 Eligibility and official terms pending</p>\n      </section>\n    </div>\n  </div>\n",
+          "after": "a-hidden=\"true\">\u2197</span></a></div>\n        <p class=\"hx-fine\">Free participation<br/>{scheduleCopy.registrationShort}<br/>{scheduleCopy.finaleShort}<br/>Eligibility and official terms pending</p>\n      </section>\n    </div>\n  </div>\n"
+        }
+      ]
+    },
+    "dist/community/submit/index.html": {
+      "beforeSHA256": "7c2eb53100f05a5427395996a4efdc88d1ce614586fff043b89f3cdae56e0d1f",
+      "afterSHA256": "0c66fe5686e27c662a527145b9bd81f10db94a88ebe24a8890d8a169d11709db",
+      "changes": [
+        {
+          "before": "\u2192</a></section><section class=\"section\" id=\"judging\"><h2>Two-round judging</h2><h3>Round 1 \u2014 technical screening</h3><p>Review source code, working prototype, r",
+          "after": "\u2192</a></section><section class=\"section\" id=\"judging\"><h2>Two-round judging</h2><p>Virtual project review and finalist selection. Detailed judging and submission schedule will be announced separately.</p><p>Project submission dates and deadlines are not yet confirmed.</p><h3>Round 1 \u2014 technical screening</h3><p>Review source code, working prototype, r"
+        },
+        {
+          "before": "oster mappings and private comments remain in private Google Sheets/Drive. Judges, dates and results are not confirmed.</p></section></div></main><footer class=\"site-f",
+          "after": "oster mappings and private comments remain in private Google Sheets/Drive. Judge appointments and results are not confirmed.</p></section></div></main><footer class=\"site-f"
+        }
+      ]
+    },
+    "dist/hackathons/events/index.html": {
+      "beforeSHA256": "7b8fb59c64f7603c93289c229164d66ced037fc8702388cb177baae7e50f5588",
+      "afterSHA256": "687e7c42b8644ed9dae745c848c964a20d39ce1ddac0beaf46d5832518c7ccfc",
+      "changes": [
+        {
+          "before": "rules, working project and two-minute video requirements, and two-round judging.\"><meta name=\"author\" content=\"Shubh Prabhat\"><link rel=\"canonical\" href=\"https:",
+          "after": "rules, working project and two-minute video requirements, and two-round judging. Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026. Grand Finale: Nov 28, 2026.\"><meta name=\"author\" content=\"Shubh Prabhat\"><link rel=\"canonical\" href=\"https:"
+        },
+        {
+          "before": " rules, working project and two-minute video requirements, and two-round judging.\"><meta property=\"og:url\" content=\"https://aeglysai.com/hackathons/events/\"><me",
+          "after": " rules, working project and two-minute video requirements, and two-round judging. Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026. Grand Finale: Nov 28, 2026.\"><meta property=\"og:url\" content=\"https://aeglysai.com/hackathons/events/\"><me"
+        },
+        {
+          "before": " rules, working project and two-minute video requirements, and two-round judging.\"><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/brand/icons/favicon.pn",
+          "after": " rules, working project and two-minute video requirements, and two-round judging. Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026. Grand Finale: Nov 28, 2026.\"><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/brand/icons/favicon.pn"
+        },
+        {
+          "before": ", teams of one to four, executable projects and two-round judging. Registration Opening Soon; dates to be announced.</p></section><div class=\"container page-content\" data-astro-cid-mcvu6plu><div ",
+          "after": ", teams of one to four, executable projects and two-round judging. Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026. Grand Finale: Nov 28, 2026.</p></section><div class=\"container page-content\" data-astro-cid-mcvu6plu><div "
+        },
+        {
+          "before": "\u2192</a></section><section class=\"section\" id=\"judging\"><h2>Two-round judging</h2><h3>Round 1 \u2014 technical screening</h3><p>Review source code, working prototype, r",
+          "after": "\u2192</a></section><section class=\"section\" id=\"judging\"><h2>Two-round judging</h2><p>Virtual project review and finalist selection. Detailed judging and submission schedule will be announced separately.</p><p>Project submission dates and deadlines are not yet confirmed.</p><h3>Round 1 \u2014 technical screening</h3><p>Review source code, working prototype, r"
+        },
+        {
+          "before": "oster mappings and private comments remain in private Google Sheets/Drive. Judges, dates and results are not confirmed.</p></section><section class=\"section\" data-astr",
+          "after": "oster mappings and private comments remain in private Google Sheets/Drive. Judge appointments and results are not confirmed.</p></section><section class=\"section\" data-astr"
+        }
+      ]
+    },
+    "dist/hackathons/index.html": {
+      "beforeSHA256": "874373a388b28559086c2d0f0be215840707c8097c452d89a90ef25a74a9f8a6",
+      "afterSHA256": "44c033f38ecf4936a1157348935233db769313b2ce6a4683125c7714008e702a",
+      "changes": [
+        {
+          "before": "| AeglysAI Research</title><meta name=\"description\" content=\"AEGYTHON 2026: one hackathon, six challenges, mandatory individual qualification and teams of one to four. Build a working project and compete through two rounds.\"><meta name=\"author\" content=\"Shubh Prabhat\"><link rel=\"canonical\" href=\"https",
+          "after": "| AeglysAI Research</title><meta name=\"description\" content=\"AEGYTHON 2026: one free hackathon with six challenge choices, mandatory individual qualification and teams of one to four. Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026. Grand Finale: Nov 28, 2026.\"><meta name=\"author\" content=\"Shubh Prabhat\"><link rel=\"canonical\" href=\"https"
+        },
+        {
+          "before": " AeglysAI Research\"><meta property=\"og:description\" content=\"AEGYTHON 2026: one hackathon, six challenges, mandatory individual qualification and teams of one to four. Build a working project and compete through two rounds.\"><meta property=\"og:url\" content=\"https://aeglysai.com/hackathons/\"><meta prop",
+          "after": " AeglysAI Research\"><meta property=\"og:description\" content=\"AEGYTHON 2026: one free hackathon with six challenge choices, mandatory individual qualification and teams of one to four. Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026. Grand Finale: Nov 28, 2026.\"><meta property=\"og:url\" content=\"https://aeglysai.com/hackathons/\"><meta prop"
+        },
+        {
+          "before": "AeglysAI Research\"><meta name=\"twitter:description\" content=\"AEGYTHON 2026: one hackathon, six challenges, mandatory individual qualification and teams of one to four. Build a working project and compete through two rounds.\"><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/brand/icons/favicon.pn",
+          "after": "AeglysAI Research\"><meta name=\"twitter:description\" content=\"AEGYTHON 2026: one free hackathon with six challenge choices, mandatory individual qualification and teams of one to four. Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026. Grand Finale: Nov 28, 2026.\"><link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/brand/icons/favicon.pn"
+        },
+        {
+          "before": "s of 1\u20134<br>Any programming language \u00b7 Mandatory individual prequalification<br>Event dates to be announced</p></div><div class=\"hx-network hx-intelligence\" aria-label=\"AeglysAI Intellige",
+          "after": "s of 1\u20134<br>Any programming language \u00b7 Mandatory individual prequalification<br>Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026<br>Grand Finale: Nov 28, 2026</p></div><div class=\"hx-network hx-intelligence\" aria-label=\"AeglysAI Intellige"
+        },
+        {
+          "before": "des('Qualification')?'Selection is a reading aid, not completed qualification.':'Selected phase is a reading aid. Phase 2 schedule remains to be announced.';panel.append(note);\n  }\n  navigator('.hx-journey','Qualification step selection",
+          "after": "des('Qualification')?'Selection is a reading aid, not completed qualification.':list.dataset.selectionNote;panel.append(note);\n  }\n  navigator('.hx-journey','Qualification step selection"
+        },
+        {
+          "before": "ON</p><h2 id=\"challenges-heading\">Six ways to build what comes next.</h2></div><span class=\"hx-status\">DATES TO BE ANNOUNCED</span></div><p class=\"hx-section-copy\">AEGYTHON 2026. Explore security problems acros",
+          "after": "ON</p><h2 id=\"challenges-heading\">Six ways to build what comes next.</h2></div><p class=\"hx-fine\">Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026<br>Grand Finale: Nov 28, 2026</p></div><p class=\"hx-section-copy\">AEGYTHON 2026. Explore security problems acros"
+        },
+        {
+          "before": "ETE</h3><p>Develop a scoped challenge with reproducible evidence.</p></li></ol><div id=\"registration\" class=\"hx-actions\"><div class=\"hx-form-cta\" data-astro-cid",
+          "after": "ETE</h3><p>Develop a scoped challenge with reproducible evidence.</p></li></ol><p class=\"hx-fine\">Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026<br>Grand Finale: Nov 28, 2026</p><div id=\"registration\" class=\"hx-actions\"><div class=\"hx-form-cta\" data-astro-cid"
+        },
+        {
+          "before": "ligibility or prize details. This official AeglysAI page remains authoritative; event dates and eligibility are still pending here.</p><div class=\"hx-grid hx-tracks\"><article class=\"hx-card\" data-registration-c",
+          "after": "ligibility or prize details. This official AeglysAI page remains authoritative; Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026. Grand Finale: Nov 28, 2026. Project submission dates and deadlines are not yet confirmed. Age and geographic eligibility remain subject to official terms.</p><div class=\"hx-grid hx-tracks\"><article class=\"hx-card\" data-registration-c"
+        },
+        {
+          "before": "n judging evaluates the finished project.</p><ol class=\"hx-competition-timeline\"><li><span class=\"hx-step-number\">Phase 1</span><div><h3>Registration &amp; Tech",
+          "after": "n judging evaluates the finished project.</p><ol class=\"hx-competition-timeline\" data-selection-note=\"Selected phase is a reading aid. Phase 2 schedule remains to be announced.\"><li><span class=\"hx-step-number\">Phase 1</span><div><h3>Registration &amp; Tech"
+        },
+        {
+          "before": " }\n #timeline .hx-status { grid-column: 1 / -1; letter-spacing: .04em; }\n</style><section id=\"prizes\" class=\"hx-prize hx-card\" aria-labelledby=\"prize-heading\"><",
+          "after": " }\n #timeline .hx-status { grid-column: 1 / -1; letter-spacing: .04em; }\n</style><p class=\"hx-fine\">Grand Finale: November 28, 2026 \u2014 Hybrid (Online &amp; On-site). On-site venue details will be announced separately.</p><section id=\"prizes\" class=\"hx-prize hx-card\" aria-labelledby=\"prize-heading\"><"
+        },
+        {
+          "before": "orting evidence and correction records stay in private Google Sheets and Drive. Verification channel and issuance dates remain to be announced.</p></section><section class=\"section\" id=\"teams\"><h2>Individual entry and team",
+          "after": "orting evidence and correction records stay in private Google Sheets and Drive. Certificate verification and issuance details will be communicated through official AEGYTHON channels.</p></section><section class=\"section\" id=\"teams\"><h2>Individual entry and team"
+        },
+        {
+          "before": "n \u2192</a></section><section class=\"section\" id=\"judging\"><h2>Two-round judging</h2><div class=\"hx-round-grid\"><article class=\"hx-round\"><p class=\"hx-eyebrow\">ROUN",
+          "after": "n \u2192</a></section><section class=\"section\" id=\"judging\"><h2>Two-round judging</h2><p>Virtual project review and finalist selection. Detailed judging and submission schedule will be announced separately.</p><p>Project submission dates and deadlines are not yet confirmed.</p><div class=\"hx-round-grid\"><article class=\"hx-round\"><p class=\"hx-eyebrow\">ROUN"
+        },
+        {
+          "before": "oster mappings and private comments remain in private Google Sheets/Drive. Judges, dates and results are not confirmed.</p></section><section class=\"hx-section\" id=\"sp",
+          "after": "oster mappings and private comments remain in private Google Sheets/Drive. Judge appointments and results are not confirmed.</p></section><section class=\"hx-section\" id=\"sp"
+        },
+        {
+          "before": "e Rules<span aria-hidden=\"true\">\u2197</span></h3><p>Finalized participation rules; dates pending</p></a><a class=\"hx-card hx-resource\" href=\"https://github.com/shubh-techie/Aeg",
+          "after": "e Rules<span aria-hidden=\"true\">\u2197</span></h3><p>Finalized participation rules; detailed submission schedule unconfirmed</p></a><a class=\"hx-card hx-resource\" href=\"https://github.com/shubh-techie/Aeg"
+        },
+        {
+          "before": "TART</p><h2 id=\"faq-heading\">Frequently asked questions.</h2><div class=\"hx-faq\"><details><summary>Is participation free?</summary><p>Participation is FREE. Fin",
+          "after": "TART</p><h2 id=\"faq-heading\">Frequently asked questions.</h2><div class=\"hx-faq\"><details><summary>When are registration, qualification and the grand finale?</summary><p>Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026. Grand Finale: Nov 28, 2026. Registration and qualification are online. Project submission dates and deadlines are not yet confirmed.</p></details><details><summary>When are projects judged?</summary><p>Virtual project review and finalist selection. Detailed judging and submission schedule will be announced separately.</p></details><details><summary>Where is the grand finale?</summary><p>Grand Finale: November 28, 2026 \u2014 Hybrid (Online &amp; On-site). On-site venue details will be announced separately.</p></details><details><summary>How will certificate verification and issuance details be shared?</summary><p>Certificate verification and issuance details will be communicated through official AEGYTHON channels.</p></details><details><summary>Is participation free?</summary><p>Participation is FREE. Fin"
+        },
+        {
+          "before": "<span aria-hidden=\"true\">\u2197</span></a></div><p class=\"hx-fine\">Free participation \u00b7 Event dates pending \u00b7 Eligibility and official terms pending</p></section></div></div></main><footer c",
+          "after": "<span aria-hidden=\"true\">\u2197</span></a></div><p class=\"hx-fine\">Free participation<br>Registration &amp; Qualification: Oct 1 \u2013 Nov 6, 2026<br>Grand Finale: Nov 28, 2026<br>Eligibility and official terms pending</p></section></div></div></main><footer c"
+        }
+      ]
+    }
+  },
+  "unchangedRoutes": {
+    "dist/404.html": "b5bf341c1c19a2a910ed5839fcc0740d5f882c0198b016b0731f3defce19e7b5",
+    "dist/about/index.html": "571fbf567095e3e737eb0b78bccd289b32acbda33a19f5c0301bb6f1ae3c008d",
+    "dist/architecture/index.html": "cb923c34a295cb749030c2f257bfdea979dd174a7325d86cbb02d75dbd458f65",
+    "dist/community/adoption/index.html": "bf3a157807248466d6382a4ceda1917d41867b1c2f7bf7310eedd4f4a61dc4cb",
+    "dist/community/impact/index.html": "5b723cdc5c7e7033b8318d36a658fd076aa633fecd722adf53d584d0fe294580",
+    "dist/community/index.html": "2d0d170dce6329666cf499651a0172640b91c928e8d51614a847e42caa12a067",
+    "dist/community/projects/index.html": "3f5b691641865795c62e3ea6d71f771619ae558094ecb29e8041637cbea4e266",
+    "dist/community/reports/index.html": "4a1b8f971d2dd50187f134219fe8454074e1cdb10062a46aea3ae93fdcd8c68a",
+    "dist/experiments/index.html": "94d296e93fe81626778ced9292713d4ef99d92d67a378f4dd4db98b4521bbc80",
+    "dist/hackathons/2027/index.html": "9294ac8693b78120b094fcaa7860cfbd027e25909da50e40f662b14e5fe823bc",
+    "dist/hackathons/adaptive-authorization/index.html": "631e23aa9fd0b8437f8e1f3bb8c451db5e6389feefb274315e1d110c33050c76",
+    "dist/hackathons/autonomous-resilience/index.html": "8e75f2d3be63dfe14290c5ca0c86239059d61a75f9271d35bf6fbc226cd60266",
+    "dist/hackathons/behavioral-risk/index.html": "85d425a77790935d143aaedcf1dd948dd48d900958c8fdff6eac94724c94337b",
+    "dist/hackathons/community/index.html": "9e967d79f981bd313db2c0b4ab5f9a29fe45b2546e7fa2375b2e36e2202a6aa9",
+    "dist/hackathons/sponsors/index.html": "952eb30f0551807bd8f8e8d6bf3dd3fc72838d2caa6411f9631caf777d4ae984",
+    "dist/index.html": "e0a8ba59ffb752bce8111f07336f675e5a20772b37b3e19f0e56d83ab0b1bda5",
+    "dist/media/index.html": "69260299ecc93ee35af038a30dd5614f08f07038810a28c8ba3e76f29a4583bc",
+    "dist/publications/index.html": "c8f4165b16c329944bb450c3aec73ab584680fb5a687152be4f8862e018f57f8",
+    "dist/research/index.html": "c6f2d15afc42a3d3b059da5a18b9d0961cccca1e9e4c22fe874d3acecb7d97e9",
+    "dist/speaking/beyond-static-access-control/index.html": "c6d0d647d6271e2ee007fa7f522303061a497966d9289e221b16b26f954c4411",
+    "dist/speaking/building-ai-driven-incident-response/index.html": "6e47b8b9fd4af8c0f23bf31a46e2248b6ddf056c8bf90d39273167095d9047bb",
+    "dist/speaking/etic-2026/index.html": "eb6576547b730beecd2c89875073efcf759ac72b4602cfee8150546b2c4c09a4",
+    "dist/speaking/from-static-security-policies/index.html": "6f4fb0f9ceb78f65b47e56c6f9090d98cf56b5aca8132dc1699de084f3a22c90",
+    "dist/speaking/gicite-2026-wru-key-talk/index.html": "9b65ff9c80da10bd791b02d71ea61a9107328c755720c4d179a1539b02a6741d",
+    "dist/speaking/index.html": "0e1c692f8f20059e3c1005179ac26bbdb1f86dc06288657f9d420991df8111de"
+  },
+  "protectedSources": {
+    ".nvmrc": "68ca3fba3b7e864770cb61aeb306d4bd4354b68ab4dd38450860c5d823e42a53",
+    "package.json": "aaec6e54edf35ff58760ae6dd9b0831ca5c6bc36c8552db6c37359d1f86d4bc9",
+    "package-lock.json": "3d6b0320d7a575b0c759d66b029e1fd7c6b728f661b63994349b01ac25bcf5f4",
+    "astro.config.mjs": "3a8d6e2972838b1b5e10aec897480215bdde66b7827e37d33a0dab78c3ba4be1",
+    "astro.dev.config.mjs": "e865b16c075ea1ad01670a70e93cf5bac5ebec72b883a47eef3eaa4b9095cfe4",
+    "src/data/community/challenges.json": "ad4b03c0143865a275575059a1c40be688cf8875e137e5be244af7a26631038a",
+    "src/data/hackathonForms.ts": "9513b3dabd927bbd04776e7b95f1dadbfeba06847119940a338560eaf6043bee",
+    "src/data/hackathonPeople.ts": "507ce42c4bbf9f3b0a2f3b9d6afa0d3581a1a3c1e7f753ef3f6ea80bfb63c592",
+    "src/data/hackathonCertificates.ts": "9020d0dc3789ebb618684c541dde7f4c86ae25de17b3f4a0acbe1ae5e3c177e6",
+    "src/data/hackathonChannels.ts": "758b259a50042f31432ed94ff85fe3b381089359d7c9316b6146dfd54d2f58c5",
+    "src/data/modelDStatus.ts": "029ae62134e9049fbcb5e550707e671b2d8ae9c76e8a14568ee14b690344281b",
+    "src/styles/hackathon-landing.css": "ee888f40ecc7799d8ab57b796d6033b4204e617d685a2ba35b08f768ed4e3426",
+    "src/pages/hackathons/2027/index.astro": "d5a3206959794c49a7b2ae39020369453cd4719275a3ba40417381887d9d48ae"
+  }
+}

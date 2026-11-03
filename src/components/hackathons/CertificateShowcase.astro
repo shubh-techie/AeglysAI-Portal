@@ -1,4 +1,5 @@
 ---
+import { scheduleCopy } from "../../data/hackathons";
 import TechnicalIcon from "./TechnicalIcon.astro";
 import { asset } from "../../data/project";
 import { certificateCategories, certificatePreview, canShowCertificatePreview } from "../../data/hackathonCertificates";
@@ -23,5 +24,5 @@ import { certificateCategories, certificatePreview, canShowCertificatePreview } 
     <figcaption id="certificate-sample-caption">Sample — Not Valid for Verification</figcaption>
   </figure> : <div class="hx-callout"><h3>Certificate design preview pending</h3><p>The sample preview is currently unavailable. Certificates are managed privately through Google Workspace; this website does not issue them.</p></div>}
   <div class="hx-grid hx-certificate-categories">{certificateCategories.map(category => <article class="hx-card"><h3>{category.title}</h3><p>{category.criteria}</p><p class="hx-fine">Separate organizer approval required.</p></article>)}</div>
-  <p class="hx-fine">Issuance, consent, supporting evidence and correction records stay in private Google Sheets and Drive. Verification channel and issuance dates remain to be announced.</p>
+  <p class="hx-fine">Issuance, consent, supporting evidence and correction records stay in private Google Sheets and Drive. {scheduleCopy.certificates}</p>
 </section>

@@ -4,9 +4,11 @@
  */
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
+import {beforeTime001} from './time001-preservation.mjs';
 const manifest=JSON.parse(readFileSync(new URL('./md002-preservation.json',import.meta.url),'utf8'));
 const sha=value=>createHash('sha256').update(value).digest('hex');
 export function beforeMD002(path,value){
+ value=beforeTime001(path,value);
  const record=manifest.files[String(path).replace(/^\.\//,'')];if(!record)return value;
  if(sha(value)!==record.afterSHA256)throw Error(`MD-002 current byte pin differs: ${path}`);
  let text=Buffer.isBuffer(value)?value.toString('utf8'):value;

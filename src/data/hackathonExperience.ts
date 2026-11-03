@@ -1,3 +1,4 @@
+import { scheduleCopy } from "./hackathons";
 /** Landing-only editorial presentation. Events/dates/prizes stay in hackathons.ts. */
 export const challengePresentation: Record<string, { stage: string; focus: string[]; question: string }> = {
   "adaptive-authorization": { stage: "UNDERSTAND & EXTEND", focus: ["RBAC", "ABAC", "Zero Trust", "Contextual Risk", "Risk-Aware Authorization", "Explainability"], question: "How can authorization decisions adapt to changing risk while remaining explainable and policy-controlled?" },
@@ -35,6 +36,10 @@ export const qualification = [
   ["Suggest one improvement", "Explain a realistic scoped change, its value and how you would validate it. A contribution does not require an accepted upstream PR."],
 ];
 export const faq = [
+  ["When are registration, qualification and the grand finale?", `${scheduleCopy.summary} Registration and qualification are online. ${scheduleCopy.submissionDeadline}`],
+  ["When are projects judged?", scheduleCopy.judging],
+  ["Where is the grand finale?", scheduleCopy.venue],
+  ["How will certificate verification and issuance details be shared?", scheduleCopy.certificates],
   ["Is participation free?", "Participation is FREE. Final eligibility and event terms will be published before applications open."],
   ["Who can participate?", "Students, engineers and researchers are welcome to explore the program. Age and geographic eligibility are TBD."],
   ["Can students participate?", "Students are part of the intended audience. The Foundation track is designed for students and first-time contributors; final eligibility is TBD."],

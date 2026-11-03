@@ -1,4 +1,5 @@
 ---
+import { scheduleCopy } from "../../data/hackathons";
 import Layout from "../../layouts/Layout.astro";
 import { hackathonSeo } from "../../data/hackathonSeo";
 import RegistrationChannels from "../../components/hackathons/RegistrationChannels.astro";
@@ -35,12 +36,12 @@ const resources = [
   { title: "Hackathon Guide", note: "Draft participation and event workflow", url: "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/hackathons/OPERATIONS.md" },
   { title: "Qualification Guide", note: "Mandatory evidence checklist · on this page", url: "#qualification-guide" },
   { title: "GitHub Workflow", note: "Work in your own fork · on this page", url: "#github-workflow" },
-  { title: "Challenge Rules", note: "Finalized participation rules; dates pending", url: href("hackathons/events") },
+  { title: "Challenge Rules", note: scheduleCopy.submissionShort, url: href("hackathons/events") },
   { title: "Judging Rubric", note: "Two-round technical scoring framework", url: "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/hackathons/JUDGING_FRAMEWORK.md" },
   { title: "Code of Conduct", note: "Expectations and pending reporting arrangements", url: "#code-of-conduct" },
 ];
 ---
-<Layout title={hackathonSeo.program.title} description="AEGYTHON 2026: one hackathon, six challenges, mandatory individual qualification and teams of one to four. Build a working project and compete through two rounds." socialImage={hackathonSocialPreview.image}>
+<Layout title={hackathonSeo.program.title} description={hackathonSeo.program.description} socialImage={hackathonSocialPreview.image}>
   <div class="hackathon-experience hx-global-event">
     <SeriesHero/>
     <div class="container hx-facts" aria-label="Official event facts">{["ONE HACKATHON", "SIX CHALLENGES", "TEAMS OF 1–4", "FREE PARTICIPATION", "ANY TECH STACK", "TWO-ROUND JUDGING"].map((fact, i) => <div><span aria-hidden="true">{String(i + 1).padStart(2, "0")}</span><strong>{fact}</strong></div>)}</div>
@@ -48,7 +49,7 @@ const resources = [
       <EventNav/>
       <section class="hx-section hx-manifesto" id="mission" aria-labelledby="mission-heading"><p class="hx-eyebrow">THE NEXT GENERATION OF BUILDERS</p><h2 id="mission-heading">Intelligence is powerful.<br/><span>Make it useful. Make it safe.</span></h2><p class="hx-section-copy">From suspicious logins to everyday human problems, this is an invitation to turn curiosity into working software. Choose a practical problem, explain your decisions and show the evidence.</p><p class="hx-fine">An international-facing invitation. Geographic and age eligibility remain TBA; no countries, partners or participants are confirmed here.</p></section>
       <section class="hx-section" id="challenges" aria-labelledby="challenges-heading">
-        <div class="hx-section-heading"><div><p class="hx-eyebrow">SIX CHALLENGES / ONE HACKATHON</p><h2 id="challenges-heading">Six ways to build what comes next.</h2></div><span class="hx-status">DATES TO BE ANNOUNCED</span></div>
+        <div class="hx-section-heading"><div><p class="hx-eyebrow">SIX CHALLENGES / ONE HACKATHON</p><h2 id="challenges-heading">Six ways to build what comes next.</h2></div><p class="hx-fine">{scheduleCopy.registrationShort}<br/>{scheduleCopy.submissionShort}<br/>{scheduleCopy.finaleShort}</p></div>
         <p class="hx-section-copy">{program.title}. Explore security problems across authorization, identity, risk, observability and incident response. Challenge themes describe work to investigate, not validated platform capabilities. Model D research implementation is complete, experimental and non-enforcing; it is not required for qualification.</p>
         <div class="challenge-grid">{challenges.map((challenge,index)=><EventCard challenge={challenge} index={index}/>)}</div>
       </section>
@@ -78,9 +79,10 @@ const resources = [
         <div class="hx-callout" id="github-workflow"><h3>Your fork. Your evidence.</h3><p>Fork <a class="hx-link" href={project.github}>AeglysAI on GitHub</a>, clone your own fork and follow the official repository setup instructions. Participants do not receive write access to the official repository or official main.</p><p>Create <code>qualification/&lt;github-username&gt;</code> in your fork, for example <code>qualification/example-user</code>. Record evidence in <code>community/qualification/&lt;github-username&gt;.md</code>: environment, OS, runtime, actual build/test results, architecture understanding, technical observation, improvement idea, engineering value and validation approach. Never use emails, phone numbers, student IDs or other PII in branch names.</p><p>Push to your fork. Submit your GitHub username, fork URL, qualification branch URL and qualification file URL and sanitized build-log URLs through the official Google Form. Organizer review uses published selection criteria; completing qualification does not guarantee selection.</p><p>Selected participants build in their own forks under <code>hackathon/&lt;team-id&gt;</code>. The organizer issues team IDs and verifies individual qualification and selection in private Google Sheets. No duplicate active team membership; changes require organizer approval. Final submission does not guarantee an AeglysAI merge. An optional upstream PR retains normal maintainer review.</p><p>Use Google Forms for registration, qualification and final submission, private Google Sheets for applicants/teams/judging, private Google Drive for supporting evidence and Google Meet for finalist presentations. No accounts, database or private-data API. Never publish private participant, credential or patent-related data.</p><FormCta kind="qualification" label="Submit Qualification" id="qualification-form-note" primary/></div>
       </section>
       <CompetitionTimeline/>
+      <p class="hx-fine">{scheduleCopy.venue}</p>
       <section id="prizes" class="hx-prize hx-card" aria-labelledby="prize-heading">
         <div><svg class="hx-trophy" viewBox="0 0 120 120" fill="none" aria-hidden="true"><path d="M35 18h50v30c0 22-12 34-25 34S35 70 35 48V18Z"/><path d="M35 26H18v15c0 17 9 23 22 23m45-38h17v15c0 17-9 23-22 23M60 82v18m-22 6h44M44 100h32"/><path d="m60 31 4 8 9 1-7 6 2 9-8-4-8 4 2-9-7-6 9-1Z"/></svg><p class="hx-eyebrow">FIRST-PLACE SPOTLIGHT · USD</p><h2 id="prize-heading">{commonPrize ? `$${events[0].prize.amount}` : "Event prizes"}</h2><p class="hx-eyebrow">PROPOSED AWARD — SUBJECT TO CONFIRMATION</p></div>
-        <div><h3>Build for the breakthrough.</h3><p>Planned award; funding is unconfirmed. Final prize structure to be announced. The first-place spotlight is a proposed presentation, not an approved allocation.</p><p>Prize eligibility and payment are subject to official event rules. Award allocation requires organizer approval.</p><p class="hx-fine">Prize details subject to official event rules. {program.terms}</p>{!commonPrize && <ul>{events.map(event => <li>{event.title}: {event.prize.currency} ${event.prize.amount} · {event.prize.status}</li>)}</ul>}</div>
+        <div><h3>Build for the breakthrough.</h3><p>Planned award; funding is unconfirmed. Final prize structure to be announced. The first-place spotlight is a proposed presentation, not an approved allocation.</p><p>Prize eligibility and payment are subject to official event rules. Award allocation requires organizer approval.</p><p class="hx-fine">Event schedule: {scheduleCopy.summary} {scheduleCopy.sessionTimes}</p><p class="hx-fine">Prize details subject to official event rules. {program.terms}</p>{!commonPrize && <ul>{events.map(event => <li>{event.title}: {event.prize.currency} ${event.prize.amount} · {event.prize.status}</li>)}</ul>}</div>
       </section>
       <CertificateShowcase/>
       <HackathonRules/>
@@ -99,7 +101,7 @@ const resources = [
       <section class="hx-final" aria-labelledby="final-heading">
         <p class="hx-eyebrow">READY TO BUILD?</p><h2 id="final-heading">Bring a question.<br/>Build the evidence.</h2><p>Join engineers, students and researchers exploring the future of adaptive security and resilient distributed systems.</p>
         <div class="hx-actions"><FormCta kind="participant" label="Register for Hackathon" id="final-form-note" primary/><a class="hx-button" href={project.github}>View AeglysAI on GitHub <span aria-hidden="true">↗</span></a></div>
-        <p class="hx-fine">Free participation · Event dates pending · Eligibility and official terms pending</p>
+        <p class="hx-fine">Free participation<br/>{scheduleCopy.registrationShort}<br/>{scheduleCopy.submissionShort}<br/>{scheduleCopy.finaleShort}<br/>Eligibility and official terms pending</p>
       </section>
     </div>
   </div>

@@ -89,9 +89,9 @@
    const controls=document.createElement('div');controls.className='hx-process-controls';controls.setAttribute('aria-label',label);
    const panel=document.createElement('div');panel.className='hx-selection-panel';panel.setAttribute('role','status');panel.setAttribute('aria-live','polite');
    const title=document.createElement('strong'), detail=document.createElement('p');panel.append(title,detail);
-   const select=i=>{items.forEach((item,j)=>item.classList.toggle('hx-process-selected',i===j));controls.querySelectorAll('button').forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));title.textContent=items[i].querySelector('h3').textContent;detail.textContent=items[i].querySelector('p').textContent;};
+   const select=i=>{items.forEach((item,j)=>item.classList.toggle('hx-process-selected',i===j));controls.querySelectorAll('button').forEach((b,j)=>b.setAttribute('aria-pressed',String(i===j)));title.textContent=items[i].querySelector('h3').textContent;detail.textContent=[...items[i].querySelectorAll('p')].map(p=>p.textContent).join(' ');};
    items.forEach((item,i)=>{const button=document.createElement('button');button.type='button';button.textContent=`${String(i+1).padStart(2,'0')} / ${item.querySelector('h3').textContent}`;on(button,'click',()=>select(i));on(button,'keydown',e=>{if(['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const next=e.key==='Home'?0:e.key==='End'?items.length-1:(i+(e.key==='ArrowRight'?1:-1)+items.length)%items.length;controls.children[next].focus();select(next);}});controls.append(button);});list.before(controls,panel);additions.push(controls,panel);select(0);observer.observe(list);
-   const note=document.createElement('p');note.className='hx-fine';note.textContent=label.includes('Qualification')?'Selection is a reading aid, not completed qualification.':'Selected milestone is a reading aid. All dates remain TBA.';panel.append(note);
+   const note=document.createElement('p');note.className='hx-fine';note.textContent=label.includes('Qualification')?'Selection is a reading aid, not completed qualification.':list.dataset.selectionNote;panel.append(note);
   }
   navigator('.hx-journey','Qualification step selection');navigator('.hx-competition-timeline','Event milestone selection');
   const rounds=[...root.querySelectorAll('.hx-round')];
