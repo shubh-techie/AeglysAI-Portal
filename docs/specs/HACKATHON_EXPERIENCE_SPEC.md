@@ -560,3 +560,87 @@ HTML comparison; protected content/shared sources and other routes remain checke
 
 Actual outcomes, screenshot evidence and limits: [DESIGN-005 review](../hackathons/HACK-DESIGN-005-REVIEW.md).
 No commit, remote CI, merge or deployment claimed.
+
+## TIME-001 — Three-phase timeline, 2026-11-03
+
+IMPLEMENTED locally for review: replace nine undated milestones in the existing timeline
+with Phase 1 Registration & Technical Qualification (October 1–November 6, 2026, Online),
+Phase 2 Project Submission & Finalist Selection (Schedule to be announced, Virtual judging),
+and Phase 3 Grand Finale (November 28, 2026, Hybrid — Online & On-site). User-supplied
+confirmed dates govern this section; no Phase 2 deadline, venue or start time is inferred.
+Preserve full qualification/rubric/evidence/team/registration policies elsewhere. Native ordered
+list, machine-readable confirmed dates and existing responsive/theme/selection behavior remain.
+Acceptance: exactly three ordered phases, accurate descriptions/modes, no timeline TBA/TBD
+or blanket pending-date message in enhanced controls, readable without JS and keyboard accessible.
+Validation: zero Astro diagnostics, 28-page build, two new timeline tests pass; full suite
+111/120 with the same nine failures reproduced on untouched main (109/118). Only hackathon
+HTML changes. Focused preservation tests and before/after Chromium evidence are recorded in
+[TIME-001 review](../hackathons/TIME-001-REVIEW.md), including source discrepancies and limits.
+No architecture/dependency change, commit or deployment.
+
+## TIME-001A — Authoritative 2026 announcements, 2026-11-03
+
+IMPLEMENTED locally for review, extending the uncommitted TIME-001 candidate on the same
+branch. `src/data/hackathons.ts` now owns `eventSchedule`, typed confirmation/value pairs,
+calendar-day formatting and derived `scheduleCopy`. Reuse this existing event configuration;
+no new CMS, backend, dependency or architectural boundary. Registration October 1–November 6
+and finale November 28, 2026 remain confirmed. Phase 2 dates/deadline, detailed judging
+schedule, venue, certificate verification channel and issuance date each remain unconfirmed.
+Modes: Online, Virtual judging, Hybrid — Online & On-site, respectively.
+
+Hero, Challenges, qualification/registration, timeline, resource/final callout, shared/landing
+judging, challenge detail hero, new FAQ answers and main/challenge SEO consume the central
+copy. Certificate and venue wording follow the owner's precise operational qualification;
+no start time, venue, certificate link, issuance promise or additional deadline is inferred.
+The selection controller reads the pending-phase note from server-rendered data. Existing
+fork/clone/run steps, forms/links, eligibility/team rules, rubric/evidence requirements,
+awards, sample disclaimer and people/publication/security gates remain authoritative.
+
+Acceptance: no blanket event-date placeholder in active 2026 public text or metadata;
+specific operational uncertainty remains explicit; a schedule edit updates labels from one
+source; semantic dates, ordered phases, responsive reading, themes, keyboard and no-JS
+behavior preserved. 2027 and retired proposals retain their independent status.
+
+Observed validation: 172-file Astro check zero diagnostics, 28-page production build,
+125 automated tests (116 pass, 9 verified baseline failures); 13 focused date/timeline/
+qualification/operations/design/2027 tests pass. Untouched main in an isolated source copy
+has 109/118 passing with the identical nine failures; no suppression or unrelated repairs.
+64 before/after Chromium route/width/theme/JS cases and 28-route render sweep pass;
+25 unrelated HTML routes, including 2027, remain byte-identical to main. No physical-device,
+Safari/Firefox, manual-AT or complete WCAG certification. See the
+[combined TIME-001A review](../hackathons/TIME-001A-REVIEW.md) and
+[placeholder inventory](../hackathons/TIME-001A-PLACEHOLDER-INVENTORY.md).
+Existing development process/runtime/port/worktrees and prior evidence remain preserved;
+no staging, commit, push, merge or deployment authorized.
+
+## TIME-001A — Final three-phase schedule alignment, 2026-11-03
+
+This owner-authorized revision supersedes the pending Phase 2 statements in the earlier
+TIME-001/TIME-001A snapshots above, without rewriting those historical review records.
+IMPLEMENTED locally, still uncommitted: Phase 2 is now Project Submission & Finalist
+Qualification, November 15–22, 2026, with virtual judging and finalist selection.
+Registration/technical qualification remains October 1–November 6 online; the hybrid finale
+remains November 28. `eventSchedule.submission.dates` and judging schedule are confirmed;
+submission deadline, exact session times, on-site venue, certificate verification channel
+and issuance date remain independently unconfirmed. November 22 is a phase boundary,
+not an inferred hour-specific cutoff. No registration extension to the finale.
+
+All three windows derive from existing hackathons.ts contracts and scheduleCopy. Hero,
+Challenges, Registration/Qualification, judging, FAQ, final callout, homepage event card,
+Awards event-schedule note and applicable hackathon SEO consume that source. Timeline Phase 2
+now includes two semantic time elements; its enhanced reading note no longer claims the
+phase is pending. Award funding/results remain conditional, with no invented award date.
+No phase dates were added to the separate 2027 announcement or research homepage metadata.
+
+Acceptance: exact five ISO phase endpoints, three correct titles/modes; explicit November 6
+registration end distinct from November 22 phase end and November 28 finale; no stale Phase 2
+pending copy in current output; remaining operational uncertainty stays accurate. Preserve
+all qualification/team/form/rubric/challenge/publication/security boundaries and active server.
+Validation: clean173-file Astro check;28-page build;126 full tests117pass/9 baseline failures,
+with the same nine names reproduced on untouched main109/118;14 focused tests pass.
+96 before/after Chromium cases cover Home/2026 landing/challenges at320/390/768/1440px,
+both themes and JS/no-JS, plus28-route rendering and16 existing registration browser cases.
+24 unrelated HTML routes, including2027, remain byte-identical to main. Final exact inverse
+pins preserve previous review/historical assertions and reject unrelated current-byte drift.
+See [final schedule review](../hackathons/TIME-001A-FINAL-REVIEW.md) for inventories, evidence,
+limits and separate review/delivery authorization boundary. Both security findings stay OPEN.

@@ -1,4 +1,5 @@
 ---
+import { scheduleCopy } from "../../../data/hackathons";
 import IntelligenceNetwork from "./IntelligenceNetwork.astro";
 import FormCta from "../FormCta.astro";
 import { asset } from "../../../data/project";
@@ -10,7 +11,7 @@ import { asset } from "../../../data/project";
       <h1 id="series-heading"><span>BUILD</span> <span>INTELLIGENCE.</span> <span class="hx-emphasis">SECURE</span> <span class="hx-emphasis">TOMORROW.</span></h1>
       <p class="hx-event-title">AEGYTHON 2026</p><p class="hx-lead">Six challenges. One hackathon. Developers, students and innovators building practical intelligent solutions for a safer and more resilient digital future.</p>
       <div class="hx-actions"><FormCta kind="participant" label="Register for AEGYTHON 2026" id="hero-form-note" primary/><a class="hx-button" href="#challenges">Explore Challenges <span aria-hidden="true">↓</span></a></div>
-      <p class="hx-fine">Six challenges · Free participation · Teams of 1–4<br/>Any programming language · Mandatory individual prequalification<br/>Event dates to be announced</p>
+      <p class="hx-fine">Six challenges · Free participation · Teams of 1–4<br/>Any programming language · Mandatory individual prequalification<br/>{scheduleCopy.registrationShort}<br/>{scheduleCopy.submissionShort}<br/>{scheduleCopy.finaleShort}</p>
     </div>
     <IntelligenceNetwork/>
   </div>

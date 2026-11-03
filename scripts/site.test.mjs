@@ -220,12 +220,16 @@ test("production routes and metadata use the aeglysai.com root", () => {
 });
 
 
-test("hackathon foundation keeps events provisional with authorized registration links", () => {
+test("hackathon foundation separates confirmed schedule from pending operations with authorized registration links", () => {
   const landing = read("hackathons/index.html");
   const events = read("hackathons/events/index.html");
   const community = read("hackathons/community/index.html");
   for (const html of [landing, events, community]) {
-    assert.match(html, /PLANNED|Opening Soon/);
+    if (html === events) {
+      assert.match(html, /Registration &amp; Qualification: Oct 1 – Nov 6, 2026/);
+      assert.match(html, /Grand Finale: Nov 28, 2026/);
+      assert.match(html, /The phase window does not specify an hour-specific submission deadline/);
+    } else assert.match(html, /PLANNED|Opening Soon/);
     assert.match(html, /docs\.google\.com\/forms\/d\/e\//);
     assert.doesNotMatch(html, /immigration|profile.building/i);
     const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map(match => match[1]);
