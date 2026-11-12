@@ -1,0 +1,22 @@
+---
+import { href } from '../../../data/project';
+import { eventStatus, type SpeakingEvent } from '../../../data/speakingShowcase';
+import { formatPresentationDate } from '../../../data/presentations';
+import PhotoGallery from './PhotoGallery.astro';
+interface Props { event: SpeakingEvent; featured?: boolean; }
+const {event,featured=false}=Astro.props;
+const state=eventStatus(event);
+const elapsed=event.endDate<new Date().toISOString().slice(0,10)&&event.status!=='Completed';
+const summary=elapsed?event.summary.replace('Participation is confirmed and upcoming','Participation was recorded as confirmed; completion has not been verified'):event.summary;
+---
+<article class:list={['sp-event',{'sp-featured-event':featured}]} data-engagement-status={event.status} data-speaking-event={event.id}>
+ <div class="sp-event-heading"><p class="sp-kicker">{event.shortName} · {event.role}</p><span class:list={['sp-status',`sp-${state.tone}`]}>{state.label}</span></div>
+ <div class="sp-event-date"><time datetime={event.startDate}>{formatPresentationDate(event.startDate)}</time>{event.endDate!==event.startDate&&<> — <time datetime={event.endDate}>{formatPresentationDate(event.endDate)}</time></>}</div>
+ <h3>{featured?(event.talkTitle??event.name):event.shortName}</h3>
+ {!featured&&<p class="sp-event-name">{event.name}</p>}
+ <p class="sp-status-note">{state.note}</p>
+ {featured?<p class="sp-abstract">{event.abstract??summary}</p>:<p>{event.talkTitle??'Talk title to be confirmed.'}</p>}
+ <dl class="sp-event-facts"><div><dt>Location</dt><dd>{event.location}</dd></div><div><dt>Format</dt><dd>{event.mode}</dd></div><div><dt>Organizer</dt><dd>{event.organizer}</dd></div></dl>
+ {!featured&&<PhotoGallery photos={event.photos} eventName={event.shortName}/>}
+ <div class="sp-event-links"><a href={href(`speaking/${event.presentationId}`)}>Engagement details <span aria-hidden="true">↗</span><span class="sr-only">: {event.shortName}</span></a><a href={event.eventUrl} target="_blank" rel="noopener noreferrer">Event website<span class="sr-only">: {event.shortName} (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></div>
+</article>

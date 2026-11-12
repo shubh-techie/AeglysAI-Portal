@@ -344,3 +344,44 @@ uses /speaking/etic-2026/ in the existing dynamic template. Shared SpeakerProfil
 and approved portrait; CreatorProfile consumes the same role/focus. Full ATAI title comes from
 certificate; original cover and slide author text remain unchanged. Evidence tracker is linked
 from README/specs, not public correspondence. See [tracker](../speaking/SPEAKING_EVIDENCE_TRACKER.md).
+
+## SPEAK-001 — Conference and recording showcase, 2026-11-12
+
+IMPLEMENTED locally for review. Main baseline6ee5480 includes merged CI003; successful Pages
+run41685813558/build+deploy verified. Preserve canonical presentations.ts and all detail URLs,
+Home/Publications/Media, hackathons/navigation and research boundaries. Only the Speaking
+listing changes; no public conference photos or full PDFs added.
+
+The new theme-aware research hero leads to delivered ATAI feature, three status-filtered
+conference records, separate AEGYTHON community recordings, approved technical resource and
+compact proposed-topic cards, plus research collaboration CTA. Omit unavailable media areas;
+no slide-placeholder panels on the listing. Preserve three events, two proposals and exact
+approved title/role/status/source data. GICITE date passage cannot imply delivery: display a
+completion-unverified note while retaining stored Upcoming metadata. ETIC remains awaiting
+written confirmation; no keynote inferred.
+
+Versioned strict1.0.0 event/photo/recording schema derives metadata from existing approved
+presentations; no duplicated event facts in markup. Photos require matching event IDs,
+rights/subject/content/publication approvals, credit/source, exact digest and confined local
+asset;0–4initially. Astro creates responsive lazy WebP images and bounded full views. Native
+links work without JS; dialog enhancement supports arrows, Tab/Shift+Tab containment, Escape,
+focus return and unavailable-image text. No unapproved/candidate original copied.
+
+Official YouTube oEmbed returned exact titles/channel for all three supplied IDs on2026-11-12.
+They identify AEGYTHON2026 community sessions, not conference-session delivery, and remain in
+a distinct recording section. Watch links only: no autoplay, initial remote thumbnail or player.
+Full metadata/approval/status inventory is in
+[SPEAK-001 inventory](../speaking/SPEAK-001-CONTENT-INVENTORY.json).
+
+Acceptance: preserve the approved source distinctions/links, all routes and27unrelated HTML
+outputs; all seven requested viewport widths, both themes, keyboard/focus/Escape, no-JS
+fallbacks, metadata/rights rejection and actual0–4image pipeline tested. All old historical
+content/CSS pins remain, with an explicit test-only inverse Speaking delta and retained
+historical stylesheet bytes; new raw-output/style checks reject drift. New initializer is
+allowed only on Speaking, retaining other script/iframe restrictions.
+
+Actual results, before/after evidence and limitations are recorded in
+[SPEAK-001 review](../speaking/SPEAK-001-REVIEW.md). No commit/push/PR/merge/deployment.
+See [authoring guide](../speaking/SPEAK-001-AUTHORING.md) and
+[ADR-015](../adr/ADR-015-speaking-showcase-media.md). No new dependency/backend/CMS/feed;
+future approved Google publishing remains a separate operator workflow. Security findings OPEN.

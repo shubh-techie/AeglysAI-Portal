@@ -1,4 +1,5 @@
 import test from 'node:test';
+import {beforeSpeakingShowcase} from './speak001-preservation.mjs';
 import {reportingPeriodForHistory} from './reporting-period-preservation.mjs';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync} from 'node:fs';
@@ -84,6 +85,6 @@ test('TIME001A final schedule separates registration, Phase 2 window and unconfi
  const awards=visible(landing.match(/<section id="prizes"[\s\S]*?<\/section>/)[0]);assert.ok(awards.includes(scheduleCopy.summary));
  const manifest=JSON.parse(read('scripts/community/time001a-final-preservation.json'));
  assert.equal(Object.keys(manifest.unchangedRoutes).length,24);
- for(const [p,hash] of Object.entries(manifest.unchangedRoutes))assert.equal(createHash('sha256').update(reportingPeriodForHistory(p,readFileSync(p),'2026-11')).digest('hex'),hash,p);
+ for(const [p,hash] of Object.entries(manifest.unchangedRoutes))assert.equal(createHash('sha256').update(reportingPeriodForHistory(p,beforeSpeakingShowcase(p,readFileSync(p)),'2026-11')).digest('hex'),hash,p);
  for(const [p,r] of Object.entries(manifest.files)){const value=read(p);assert.doesNotThrow(()=>beforeFinalSchedule(p,value));assert.throws(()=>beforeFinalSchedule(p,value+'UNREVIEWED'));assert.ok(r.beforeSHA256);}
 });

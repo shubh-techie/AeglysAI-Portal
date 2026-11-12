@@ -129,7 +129,7 @@ test("research claims keep planned work and unpublished results explicit", () =>
 });
 
 test("production output contains only scoped inline scripts and approved local PDF embeds", () => {
-  for (const { html } of pages) {
+  for (const { route, html } of pages) {
     if (html.includes('aria-label="Submission field preview"')) { assert.match(html, /<fieldset disabled/); assert.doesNotMatch(html, /<form[^>]+action=/); } else assert.doesNotMatch(html, /<form\b/);
     if (!html.includes('class="presentation-pdf-viewer"')) assert.doesNotMatch(html, /<iframe\b/);
     else {
@@ -143,13 +143,18 @@ test("production output contains only scoped inline scripts and approved local P
     const scripts = [...html.matchAll(/<script\b[^>]*>[\s\S]*?<\/script>/g)];
     // Count each approved initializer independently: navigation coexists with page enhancements.
     const initializers = ["data-theme-init", "data-research-nav-init", "data-media-carousel-init", "data-event-nav-init", "data-showcase-init"];
+    if (route === "speaking") initializers.push("data-speaking-gallery-init");
     const expected = initializers.filter(marker => html.includes(marker));
     assert.equal(scripts.length, expected.length);
     for (const marker of expected)
       assert.equal(scripts.filter(script => script[0].includes(marker)).length, 1, marker);
     for (const script of scripts.slice(1)) {
-      assert.match(script[0], /data-media-carousel-init|data-event-nav-init|data-research-nav-init|data-showcase-init/);
-      assert.doesNotMatch(script[0], /\bsrc=|fetch\(|XMLHttpRequest/);
+      assert.match(script[0], /data-media-carousel-init|data-event-nav-init|data-research-nav-init|data-showcase-init|data-speaking-gallery-init/);
+      if (script[0].includes("data-speaking-gallery-init")) {
+        assert.equal(route, "speaking");
+        assert.doesNotMatch(script[0].match(/^<script[^>]*>/)[0], /\bsrc=/);
+        assert.doesNotMatch(script[0], /fetch\(|XMLHttpRequest|createElement\(["']script/);
+      } else assert.doesNotMatch(script[0], /\bsrc=|fetch\(|XMLHttpRequest/);
     }
     assert.match(scripts[0][0], /data-theme-init/);
     assert.doesNotMatch(scripts[0][0], /\bsrc=|fetch\(|XMLHttpRequest/);
@@ -561,7 +566,9 @@ test("publications and speaking separate proposals from manuscripts and invitati
   assert.match(publications, /href="\/speaking\/"/);
   assert.match(publications, /Manuscript in preparation/);
   const speaking = read("speaking/index.html");
-  assert.match(speaking, /Ideas Worth Sharing/);
+  assert.match(speaking, /Research,/);
+  assert.match(speaking, /in conversation/);
+  assert.match(speaking, /data-schema-version="1.0.0"/);
   for (const section of ["featured-engagement-heading", "engagements-heading", "library-heading", "collaboration-heading"]) assert.ok(speaking.includes(`id="${section}"`));
   assert.ok(!speaking.includes('id="engagement-invited"'));
   assert.ok(speaking.includes('id="engagement-completed"'));
