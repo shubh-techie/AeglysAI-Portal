@@ -1,3 +1,4 @@
+import {discoveryForHistory} from './speaking-discovery-preservation.mjs';
 import {beforeNavigationFix} from './design002c-preservation.mjs';
 import test from 'node:test';import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';import {createHash} from 'node:crypto';
@@ -6,7 +7,12 @@ const read=p=>readFileSync(p,'utf8'),sha=v=>createHash('sha256').update(v).diges
 const html=read('dist/index.html'),pins=JSON.parse(read('scripts/community/design002-preservation.json'));
 test('DESIGN002 limits the change to the approved homepage and rejects unknown current bytes',()=>{
  assert.equal(Object.keys(pins.unchangedRoutes).length,27);
- for(const[p,hash]of Object.entries(pins.unchangedRoutes))assert.equal(sha(beforeNavigationFix(p,readFileSync(p))),hash,p);
+ for(const[p,hash]of Object.entries(pins.unchangedRoutes)){
+  // Generated gallery URLs vary with approved photos and native image encoders.
+  // The existing discovery guard pins every byte outside exactly six media interiors.
+  if(p==='dist/speaking/index.html')assert.doesNotThrow(()=>discoveryForHistory(p,readFileSync(p)),p);
+  else assert.equal(sha(beforeNavigationFix(p,readFileSync(p))),hash,p);
+ }
  for(const[p,record]of Object.entries(pins.files)){assert.equal(sha(beforeNavigationFix(p,read(p))),record.afterSHA256);assert.equal(sha(beforeEditorialDesign(p,read(p))),record.beforeSHA256);assert.throws(()=>beforeEditorialDesign(p,read(p)+'UNREVIEWED'));}
  assert.throws(()=>beforeEditorialDesign('dist/index.html',html.replace('enforcement_authority=NONE','enforcement_authority=FULL')));
 });
