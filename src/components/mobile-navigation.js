@@ -7,6 +7,9 @@
   const toggle = header?.querySelector('[data-menu-toggle]');
   const disclosures = [...(header?.querySelectorAll('[data-navigation-disclosure]') ?? [])];
   if (!shell || !panel || !toggle || !disclosures.length || typeof dialog?.showModal !== 'function') return;
+  const themeControls = header.querySelector('.theme-controls');
+  const themeHome = document.createComment('theme-controls-home');
+  themeControls?.before(themeHome);
   const mobile = window.matchMedia('(max-width: 1024px)');
   let previousOverflow = '';
   const sync = disclosure => disclosure.querySelector('summary').setAttribute('aria-expanded', String(disclosure.open));
@@ -16,6 +19,7 @@
     sync(disclosure);
   });
   const finishClose = (restore = true) => {
+    if (themeControls) themeHome.after(themeControls);
     shell.append(panel);
     shell.open = !mobile.matches;
     toggle.setAttribute('aria-expanded', 'false');
@@ -33,6 +37,7 @@
     if (!mobile.matches || dialog.open) return;
     previousOverflow = document.body.style.overflow;
     dialog.append(panel);
+    if (themeControls) panel.insertBefore(themeControls, panel.querySelector('nav'));
     dialog.showModal();
     document.body.style.overflow = 'hidden';
     toggle.setAttribute('aria-expanded', 'true');
@@ -70,13 +75,22 @@
     }
   });
   document.addEventListener('click', event => { disclosures.forEach(disclosure => { if (!disclosure.contains(event.target)) closeDisclosure(disclosure); }); });
-  document.addEventListener('focusin', event => { disclosures.forEach(disclosure => { if (!disclosure.contains(event.target)) closeDisclosure(disclosure); }); });
+  document.addEventListener('focusin', event => {
+    // Mobile disclosures are in flow: collapsing on pointer-induced focus moves the
+    // intended target before click. Close siblings on click, after hit testing.
+    if (!mobile.matches) disclosures.forEach(disclosure => { if (!disclosure.contains(event.target)) closeDisclosure(disclosure); });
+  });
   const resize = () => {
     if (dialog.open) { close(false); header.querySelector('.wordmark').focus(); }
     shell.open = !mobile.matches;
     toggle.hidden = !mobile.matches;
     if (mobile.matches && panel.contains(document.activeElement)) toggle.focus();
   };
+  window.addEventListener('pagehide', () => {
+    if (dialog.open) close(false);
+    else disclosures.forEach(closeDisclosure);
+  });
+  window.addEventListener('pageshow', event => { if (event.persisted) resize(); });
   header.classList.add('navigation-ready');
   mobile.addEventListener('change', resize);
   resize();

@@ -43,3 +43,9 @@ IMPLEMENTED locally: a shared light/dark palette, first-visit system preference,
 Local Astro check/build and twelve output tests passed. Chrome covered 88 combinations: eleven routes (including missing-route 404), both themes and 1440/768/390/320px widths. Keyboard/focus, saved reload, system changes/reset, invalid storage and blocked storage passed. Desktop/mobile screenshots reviewed. Eleven representative text pairs per theme exceed 4.5:1 contrast; minimum sampled ratio 4.93:1. This is a bounded review, not full WCAG certification or cross-browser testing.
 
 Evidence: theme components, Header/Layout, shared CSS and `scripts/site.test.mjs`; [development log](../DEVELOPMENT_LOG.md). No architectural change requiring an ADR. No commit, remote CI or deployment claimed. This branch still has existing AegisAI labels; rebranding remains outside this task.
+
+## DESIGN-002C — Mobile control accessibility validation (2026-11-12)
+
+No theme implementation or palette change. The original ThemeInit/ThemeControls behavior, storage key and system/storage listeners remain unchanged. Navigation temporarily moves the original control group into its modal, then restores it, because modal inertness blocked the header toggle while the drawer was open. Current native system-reset action still delegates to the original reset control. No duplicated controls/listeners or second theme state.
+
+Verified Day/Night header/menu/footer/Media control contrast, theme switching with menu open, preference persistence after reload, system reset and subsequent OS preference changes. White Speaking photo overlay and four click-only privacy-enhanced video players work in both themes. Editorial Home surface islands intentionally remain fixed; approved styling/content is unchanged. Details/evidence in ../design/DESIGN-002C-REVIEW.md; this is local validation, not a new deployment or cross-browser/manual-screen-reader certification.

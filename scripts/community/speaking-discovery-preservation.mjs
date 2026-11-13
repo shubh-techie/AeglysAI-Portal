@@ -1,6 +1,7 @@
 /** Only the six approved gallery interiors vary with publication-ready input files.
  * All surrounding Speaking bytes and exact approved package-script changes stay pinned.
  */
+import{beforeNavigationFix}from'./design002c-preservation.mjs';
 import{readFileSync,existsSync}from'node:fs';import{createHash}from'node:crypto';
 const sha=value=>createHash('sha256').update(value).digest('hex');
 const path=new URL('./speaking-discovery-preservation.json',import.meta.url);
@@ -12,6 +13,7 @@ export function speakingMediaRegions(html){
 }
 export function normalizeSpeakingMedia(html){let normalized=html;const regions=speakingMediaRegions(html);for(let i=regions.length-1;i>=0;i--)normalized=normalized.slice(0,regions[i].start)+`<!-- approved-conference-media-${i} -->`+normalized.slice(regions[i].end);return normalized;}
 export function discoveryForHistory(path,value){
+ value=beforeNavigationFix(path,value);
  if(!pin)return value;const wasBuffer=Buffer.isBuffer(value);let text=wasBuffer?value.toString('utf8'):value;
  if(path==='package.json'){if(sha(value)!==pin.packageAfterSHA256)throw Error('Unexpected package change outside approved discovery scripts');text=pin.packageBefore;}
  else if(path==='dist/speaking/index.html'){
