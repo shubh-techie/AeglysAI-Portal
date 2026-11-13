@@ -52,6 +52,7 @@ test('SPEAK001 preserves all 27 unrelated routes, historical bytes and current s
 });
 test('SPEAK001 actual Astro gallery build optimizes four approved synthetic photos and preserves no-media fallback',()=>{
  // Local synthetic assets prove the real Image pipeline. They never enter normal source/public output.
+ mkdirSync(resolve('.community-drafts/speak001'),{recursive:true});
  const root=mkdtempSync(resolve('.community-drafts/speak001/gallery-fixture-'));
  for(const dir of ['src','public','scripts'])cpSync(dir,join(root,dir),{recursive:true});
  for(const file of ['package.json','package-lock.json','astro.config.mjs','tsconfig.json'])cpSync(file,join(root,file));
@@ -83,6 +84,7 @@ test('SPEAK001H separates all four Watch & Learn recordings from optional confer
  d.recordings[0].metadataVerification='OWNER_SUPPLIED';d.recordings.push({...d.recordings[0]});assert.equal(speakingShowcaseSchema.safeParse(d).success,false);
 });
 test('SPEAK001H conferences render unchanged when the video configuration is empty',()=>{
+ mkdirSync(resolve('.community-drafts/speak001'),{recursive:true});
  const root=mkdtempSync(resolve('.community-drafts/speak001/no-recordings-'));
  for(const dir of['src','public','scripts'])cpSync(dir,join(root,dir),{recursive:true});for(const file of['package.json','package-lock.json','astro.config.mjs','tsconfig.json'])cpSync(file,join(root,file));symlinkSync(resolve('node_modules'),join(root,'node_modules'),'dir');
  writeFileSync(join(root,'src/data/speakingRecordings.json'),'[]\n');
