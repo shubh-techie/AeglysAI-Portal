@@ -1,0 +1,5 @@
+---
+interface Props { eyebrow: string; title: string; description: string; href: string; label: string; }
+const {eyebrow,title,description,href,label}=Astro.props;
+---
+<section class="ed-collaboration"><p class="ed-meta">{eyebrow}</p><h2>{title}</h2><div><p>{description}</p><a class="ed-action" href={href}>{label}<span aria-hidden="true"> ↗</span></a></div></section>

@@ -1,0 +1,27 @@
+---
+import '../../../../src/styles/global.css';
+import '../../../../src/styles/editorial.css';
+import BrandMark from '../../../../src/components/BrandMark.astro';
+import ThemeInit from '../../../../src/components/ThemeInit.astro';
+import ThemeControls from '../../../../src/components/ThemeControls.astro';
+import StatusBadge from '../../../../src/components/StatusBadge.astro';
+import EditorialSectionHeader from '../../../../src/components/editorial/EditorialSectionHeader.astro';
+import EditorialContentRow from '../../../../src/components/editorial/EditorialContentRow.astro';
+import FeaturedStory from '../../../../src/components/editorial/FeaturedStory.astro';
+import CollaborationCTA from '../../../../src/components/editorial/CollaborationCTA.astro';
+import {modelDStatus} from '../../../../src/data/modelDStatus';
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="robots" content="noindex, nofollow"/><meta name="description" content="Isolated AeglysAI editorial design-system review. Not a published homepage."/><meta name="color-scheme" content="light dark"/><title>Editorial foundations — AeglysAI design review</title><ThemeInit/></head>
+<body data-editorial><a class="skip-link" href="#main">Skip to content</a>
+<div class="ed-prototype-note"><div class="ed-container"><p>DESIGN REVIEW / 001 — Editorial foundations. Isolated prototype, not a public homepage.</p></div></div>
+<div class="ed-container"><header class="ed-masthead"><a class="ed-brand" href="https://aeglysai.com/" aria-label="AeglysAI — public website"><BrandMark/>AeglysAI</a><nav aria-label="Prototype navigation"><a href="#patterns">Patterns</a><a href="#research">Research</a><ThemeControls/></nav></header>
+<main id="main" tabindex="-1"><section class="ed-hero" aria-labelledby="prototype-title"><p class="ed-meta">Research / Systems / Engineering</p><h1 id="prototype-title">Intelligence,<br/>with <em>boundaries.</em></h1><div class="ed-hero-bottom"><p>A research and engineering practice exploring secure systems, identity and risk. Clear questions. Reproducible evidence. Explicit limits.</p><div class="ed-actions"><a class="ed-action" href="#research">Explore the patterns <span aria-hidden="true">↓</span></a><a class="ed-link" href="https://aeglysai.com/research/">Public research ↗</a></div></div></section>
+<section class="ed-section" id="research" aria-label="Featured story component"><FeaturedStory eyebrow="01 / Featured story specimen" title="Research needs a clear boundary." description={modelDStatus.summary} href="https://aeglysai.com/research/" label="Read the research"><div slot="status"><StatusBadge status="Research Implementation Complete"/></div><figure slot="visual"><div class="ed-architecture" aria-label="Conceptual research reading sequence"><div><span>01</span><strong>Question</strong></div><div><span>02</span><strong>Implementation</strong></div><div><span>03</span><strong>Evidence</strong></div><div><span>04</span><strong>Limitations</strong></div></div><figcaption>Conceptual reading sequence. A visual specimen, not a system architecture or performance result.</figcaption></figure></FeaturedStory></section>
+<section class="ed-section" id="patterns" aria-label="Editorial content components"><EditorialSectionHeader eyebrow="02 / Editorial rows" title="Make room for the evidence." description="Reusable rows replace repeated card containers when content is best read as a sequence."/>
+<EditorialContentRow index="01" title="Identity & authorization" description="A compact summary introduces the question; the linked research retains the technical detail." href="https://aeglysai.com/research/" label="Explore identity research" metadata="Research topic"/>
+<EditorialContentRow index="02" title="Reproducible systems" description="Separate implementation evidence from claims of effectiveness. Keep limitations next to the work." href="https://aeglysai.com/publications/" label="View publications" metadata="Engineering practice"/>
+<EditorialContentRow index="03" title="Research in conversation" description="Conference engagement, approved photographs and technical recordings remain in the dedicated showcase." href="https://aeglysai.com/speaking/" label="Visit Speaking" metadata="Community"/>
+</section>
+<section class="ed-section" aria-label="Status and disclosure components"><EditorialSectionHeader eyebrow="03 / Integrity patterns" title="Say what the evidence supports." description="Existing status badges are reused, rather than introducing a second classification system."/><div class="ed-specimens"><StatusBadge status="Implemented"/><StatusBadge status="Experimental"/><StatusBadge status="Planned Research"/></div><details class="ed-evidence"><summary>Model D — scope and limitations</summary><p>{modelDStatus.authority}</p><p>{modelDStatus.limits}</p><a class="ed-link" href="https://aeglysai.com/research/">Read the detailed research ↗</a></details></section>
+<CollaborationCTA eyebrow="04 / Collaboration specimen" title="Better questions. Stronger systems." description="Explore research questions and engineering work through the established public channels." href="https://aeglysai.com/about/" label="About the initiative"/>
+</main><footer class="ed-footer"><p>AeglysAI / Editorial foundations</p><a class="ed-link" href="https://aeglysai.com/">Return to the public portal ↗</a></footer></div></body></html>

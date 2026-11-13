@@ -1,0 +1,43 @@
+/* Opt-in aliases of the existing Portal palette. Never loaded by the public layout. */
+[data-editorial] {
+  --ed-color-ink: var(--text);
+  --ed-color-muted: var(--muted);
+  --ed-color-accent: var(--cyan);
+  --ed-color-paper: var(--bg);
+  --ed-color-panel: var(--surface);
+  --ed-color-rule: var(--line);
+  --ed-color-focus: var(--cyan);
+  --ed-font-display: Georgia, 'Times New Roman', serif;
+  --ed-font-body: var(--font);
+  --ed-font-meta: var(--mono);
+  --ed-type-display: clamp(3rem, 7vw, 6.75rem);
+  --ed-type-heading: clamp(2rem, 4.2vw, 3.75rem);
+  --ed-type-subheading: clamp(1.4rem, 2.4vw, 2rem);
+  --ed-type-body: clamp(1rem, .95rem + .2vw, 1.125rem);
+  --ed-type-meta: .75rem;
+  --ed-space-1: .5rem;
+  --ed-space-2: 1rem;
+  --ed-space-3: 1.5rem;
+  --ed-space-4: 2rem;
+  --ed-space-5: 3rem;
+  --ed-space-6: 4rem;
+  --ed-section-space: clamp(3.5rem, 7vw, 7rem);
+  --ed-container: 76rem;
+  --ed-gutter: clamp(1.125rem, 4vw, 3rem);
+  --ed-measure: 62ch;
+  --ed-border: 1px solid var(--ed-color-rule);
+  --ed-radius: .25rem;
+  --ed-focus-width: 3px;
+  --ed-focus-offset: 5px;
+  /* CSS media queries use matching literals: custom properties cannot be query conditions. */
+  --ed-breakpoint-tablet: 48rem;
+  --ed-breakpoint-desktop: 64rem;
+  --ed-motion-duration: 160ms;
+  --ed-motion-easing: ease-out;
+  color: var(--ed-color-ink);
+  background: var(--ed-color-paper);
+  font: 400 var(--ed-type-body)/1.7 var(--ed-font-body);
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-editorial] { --ed-motion-duration: 0ms; scroll-behavior: auto; }
+}
