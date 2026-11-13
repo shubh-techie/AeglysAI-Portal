@@ -1,3 +1,4 @@
+import {beforeEditorialDesign} from './design002-preservation.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync,readdirSync,mkdirSync,mkdtempSync,writeFileSync,symlinkSync,cpSync} from 'node:fs';
@@ -42,7 +43,7 @@ test('SPEAK001 galleries require approved, consented, digest-matched confined as
 });
 test('SPEAK001 preserves all 27 unrelated routes, historical bytes and current styles',()=>{
  const manifest=JSON.parse(read('scripts/community/speak001-preservation.json'));assert.equal(Object.keys(manifest.unchangedRoutes).length,27);assertSpeakingStyles();
- for(const [p,hash] of Object.entries(manifest.unchangedRoutes))assert.equal(createHash('sha256').update(readFileSync(p)).digest('hex'),hash,p);
+ for(const [p,hash] of Object.entries(manifest.unchangedRoutes))assert.equal(createHash('sha256').update(beforeEditorialDesign(p,readFileSync(p))).digest('hex'),hash,p);
  assert.doesNotThrow(()=>beforeSpeakingShowcase('dist/speaking/index.html',html));assert.throws(()=>beforeSpeakingShowcase('dist/speaking/index.html',html+'UNREVIEWED'));
  for(const [p,r] of Object.entries(manifest.historicalStyles))assert.equal(createHash('sha256').update(readSpeakingHistoricalStyle(p)).digest('hex'),r.sha256);
  assert.match(html,/<h3>Beyond Static Access Control: AI-Driven Adaptive Security for Resilient Cloud-Native Systems<\/h3>/);

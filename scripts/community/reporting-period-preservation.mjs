@@ -1,9 +1,11 @@
+import {beforeNavigationFix} from './design002c-preservation.mjs';
 /** Test-only projection for the one clock-derived month in the empty reports archive.
  * Validate current UTC output before restoring a historical month for exact byte guards.
  * All surrounding HTML, report content and event dates remain protected by existing pins.
  */
 export function reportingPeriodForHistory(path, value, historicalMonth, currentMonth = new Date().toISOString().slice(0, 7)) {
   if (String(path).replace(/^\.\//, '') !== 'dist/community/reports/index.html') return value;
+  value = beforeNavigationFix(path, value);
   const month = /^\d{4}-(?:0[1-9]|1[0-2])$/;
   if (!month.test(historicalMonth) || !month.test(currentMonth)) throw Error('Invalid reporting month in preservation check');
   const text = Buffer.isBuffer(value) ? value.toString('utf8') : value;

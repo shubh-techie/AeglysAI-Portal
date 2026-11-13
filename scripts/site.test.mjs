@@ -144,12 +144,17 @@ test("production output contains only scoped inline scripts and approved local P
     // Count each approved initializer independently: navigation coexists with page enhancements.
     const initializers = ["data-theme-init", "data-research-nav-init", "data-media-carousel-init", "data-event-nav-init", "data-showcase-init"];
     if (route === "speaking") initializers.push("data-speaking-gallery-init", "data-speaking-video-init", "data-speaking-conference-init");
+    if (route === "") initializers.push("data-model-carousel-init");
     const expected = initializers.filter(marker => html.includes(marker));
     assert.equal(scripts.length, expected.length);
     for (const marker of expected)
       assert.equal(scripts.filter(script => script[0].includes(marker)).length, 1, marker);
     for (const script of scripts.slice(1)) {
-      assert.match(script[0], /data-media-carousel-init|data-event-nav-init|data-research-nav-init|data-showcase-init|data-speaking-gallery-init|data-speaking-video-init|data-speaking-conference-init/);
+      assert.match(script[0], /data-model-carousel-init|data-media-carousel-init|data-event-nav-init|data-research-nav-init|data-showcase-init|data-speaking-gallery-init|data-speaking-video-init|data-speaking-conference-init/);
+      if (script[0].includes('data-model-carousel-init')) {
+        assert.equal(route, "");
+        assert.equal(script[0], '<script data-model-carousel-init>'+readFileSync('src/components/research-model-carousel.js','utf8')+'</script>');
+      }
       if (/data-speaking-(gallery|video|conference)-init/.test(script[0])) {
         assert.equal(route, "speaking");
         assert.doesNotMatch(script[0].match(/^<script[^>]*>/)[0], /\bsrc=/);

@@ -151,3 +151,9 @@ can recreate it. Continue using only localhost:4321 for source development.
 The external terminal recreated preview again (PID82310); exact command/cwd/lock
 were verified before native stop. Recurrence is an observed operational limitation,
 not a claim that the external launcher is disabled. The4321 source server stays75231.
+
+## Strict preview port follow-up — 2026-11-12 (local change)
+
+npm run preview now selects astro.preview.config.mjs: localhost4321 with Vite preview.strictPort=true. It serves dist, not source. If the source dev server already owns4321, preview exits with Port4321 is already in use; it never silently starts on4322. Open the existing http://localhost:4321/ instead. Dev and preview cannot both bind the same port. To switch modes, stop only the verified owning server before starting the other; never stop an unidentified process. The running development server was preserved while validating this correction.
+
+Production astro.config.mjs and source astro.dev.config.mjs remain unchanged. The npm script supplies the preview-only configuration; do not replace it with an unconfigured direct astro preview command. For ordinary editing use npm run dev and its existing lifecycle commands.

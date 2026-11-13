@@ -1,4 +1,5 @@
 import test from 'node:test';
+import {beforeEditorialDesign} from './design002-preservation.mjs';
 import { beforeFinal001, readHistoricalFile } from './final001-preservation.mjs';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -8,7 +9,8 @@ import { originalHackathon } from './registration-preservation.mjs';
 const read = path => readFileSync(path, 'utf8');
 const sha = value => createHash('sha256').update(value).digest('hex');
 const baseline = JSON.parse(read('scripts/community/fixtures/homepage-baseline.json'));
-const html = read('dist/index.html');
+// Keep UX002's historical assertions intact; DESIGN002 tests assert raw current output.
+const html = beforeEditorialDesign('dist/index.html',read('dist/index.html'));
 
 test('UX-002 retains historical bytes outside the pinned FINAL-001 status/navigation/showcase delta', () => {
   assert.equal(baseline.baseline, '6f56ec09a4556143e43d268fed24237cabb20bfd');

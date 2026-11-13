@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev --config astro.dev.config.mjs",
     "build": "node scripts/community/discover-speaking-images.mjs && astro build && node scripts/community/discover-speaking-images.mjs --finalize",
-    "preview": "astro preview",
+    "preview": "astro preview --config astro.preview.config.mjs",
     "check": "astro check",
     "test": "node --test scripts/site.test.mjs scripts/community/*.test.mjs",
     "community:metrics": "node scripts/community/metrics.mjs",

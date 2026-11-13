@@ -2,12 +2,14 @@
  * Current bytes must match the new pin; every prior hash assertion remains in place.
  * This helper is test-only. New functionality is asserted against raw current output.
  */
+import {beforeEditorialDesign} from './design002-preservation.mjs';
 import {discoveryForHistory} from './speaking-discovery-preservation.mjs';
 import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 const manifest=JSON.parse(readFileSync(new URL('./speak001-preservation.json',import.meta.url),'utf8'));
 const sha=value=>createHash('sha256').update(value).digest('hex');
 export function beforeSpeakingShowcase(path,value){
+ value=beforeEditorialDesign(path,value);
  value=discoveryForHistory(String(path).replace(/^\.\//,''),value);
  const record=manifest.files[String(path).replace(/^\.\//,'')];if(!record)return value;
  if(String(path).replace(/^\.\//,'')==='dist/speaking/index.html')assertSpeakingStyles();
