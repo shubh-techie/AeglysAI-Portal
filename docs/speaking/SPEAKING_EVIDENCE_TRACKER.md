@@ -62,3 +62,18 @@ Obtain GICITE organizer confirmation/title/session/venue confirmation and ETIC w
 exact role/title/organizer identity. Obtain public speaker/agenda links for all three where available.
 Seek explicit publication approval for any event photographs, certificates or recordings; none linked
 until actually located and approved. No release, deployment or external organizer action claimed.
+
+## SPEAK-001 inventory refresh — 2026-11-12
+
+Earlier evidence/status decisions remain their dated snapshots. This task reuses approved
+public metadata and does not inspect or publish private invitation, certificate, full-deck
+or candidate-photo files. No new photo-rights packet supplied; real event galleries remain
+empty. GICITE's scheduled date has passed; completion has not been verified, so the new
+listing says so without promoting its recorded status to Completed. ETIC's written-record
+gate remains intact. Only the actual ATAI cover remains approved/public.
+
+Official YouTube oEmbed metadata for owner-supplied Uw6hD61RqNM, OLASKGI-aFw and tn5RhKbzRcw
+identifies AEGYTHON2026 community sessions from the AeglysAI channel. No association to any of
+the three conferences is configured or implied. Exact titles, public source references and
+unresolved media/approval fields: [structured inventory](SPEAK-001-CONTENT-INVENTORY.json).
+No media publication rights are inferred beyond the requested public watch links.

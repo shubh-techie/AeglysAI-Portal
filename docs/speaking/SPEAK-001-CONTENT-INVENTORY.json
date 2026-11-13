@@ -1,0 +1,159 @@
+{
+  "recordedAt": "2026-11-12",
+  "baseline": "6ee5480130490b8f90b4d38cd00c226cb20529b0",
+  "approvalBoundary": "Prior approved portal metadata retained; no new organizer, delivery, photo-rights or full-deck approval inferred.",
+  "events": [
+    {
+      "id": "beyond-static-access-control",
+      "name": "International Conference on Advanced Technology and Artificial Intelligence",
+      "shortName": "ATAI 2026",
+      "organizer": {
+        "name": "ACM Houston Chapter USA",
+        "url": "https://houston.acm.org/"
+      },
+      "startDate": "2026-09-26",
+      "endDate": "2026-09-27",
+      "location": "Hybrid · Online presentation",
+      "venue": null,
+      "format": "Hybrid",
+      "speaker": "Shubh Prabhat",
+      "role": "Keynote Speaker",
+      "talkTitle": "Beyond Static Access Control: AI-Driven Adaptive Security for Resilient Cloud-Native Systems",
+      "abstract": "A research brief on contextual, behavioral and operational risk in cloud-native authorization, explainable decisions and policy-bounded responses.",
+      "recordedStatus": "Completed",
+      "statusInterpretation": "Completed",
+      "delivery": {
+        "event": "ATAI 2026",
+        "date": "2026-09-26"
+      },
+      "eventWebsite": "https://houston.acm.org/atai2026.html",
+      "approvedPhotos": [],
+      "recordingIds": [],
+      "slides": null,
+      "preview": {
+        "path": "presentations/beyond-static-access-control.png",
+        "source": "PDF_FIRST_PAGE"
+      },
+      "sourceAndApprovalReferences": [
+        "https://houston.acm.org/atai2026.html",
+        "docs/speaking/SPEAKING_EVIDENCE_TRACKER.md",
+        "src/data/presentations.ts"
+      ]
+    },
+    {
+      "id": "etic-2026",
+      "name": "Engineering, Technology & Innovation Conference",
+      "shortName": "ETIC 2026",
+      "organizer": {
+        "name": "Organizer to be confirmed",
+        "url": "https://eticonference.com/"
+      },
+      "startDate": "2026-12-11",
+      "endDate": "2026-12-12",
+      "location": "Los Angeles, California, USA",
+      "venue": "Pacific States University, Los Angeles (venue stated by organizer)",
+      "format": "Hybrid",
+      "speaker": "Shubh Prabhat",
+      "role": "To Be Confirmed",
+      "talkTitle": null,
+      "abstract": "Shubh Prabhat's ETIC 2026 engagement is awaiting written organizer confirmation. The speaking role and talk title are to be confirmed.",
+      "recordedStatus": "Acceptance Sent",
+      "statusInterpretation": "Acceptance sent — awaiting confirmation",
+      "delivery": null,
+      "eventWebsite": "https://eticonference.com/",
+      "approvedPhotos": [],
+      "recordingIds": [],
+      "slides": null,
+      "preview": null,
+      "sourceAndApprovalReferences": [
+        "https://eticonference.com/",
+        "docs/speaking/SPEAKING_EVIDENCE_TRACKER.md",
+        "src/data/presentations.ts"
+      ]
+    },
+    {
+      "id": "gicite-2026-wru-key-talk",
+      "name": "Germany–India Conference on Innovation, Technology, and Engineering",
+      "shortName": "GICITE 2026",
+      "organizer": {
+        "name": "World Research Union (WRU) and Organising Committee",
+        "url": "https://gicite.com/"
+      },
+      "startDate": "2026-11-06",
+      "endDate": "2026-11-07",
+      "location": "Berlin, Germany",
+      "venue": "Technische Universität Berlin, Germany (venue stated by organizer)",
+      "format": "Participation format to be confirmed",
+      "speaker": "Shubh Prabhat",
+      "role": "Invited Keynote Speaker",
+      "talkTitle": null,
+      "abstract": "Shubh Prabhat has received an invitation from the World Research Union to deliver a WRU Key Talk as a keynote speaker at GICITE 2026, scheduled for November 6–7 in Berlin, Germany. Participation is confirmed and upcoming; the talk title is to be announced.",
+      "recordedStatus": "Upcoming",
+      "statusInterpretation": "Confirmed engagement; scheduled date passed, completion unverified",
+      "delivery": null,
+      "eventWebsite": "https://gicite.com/",
+      "approvedPhotos": [],
+      "recordingIds": [],
+      "slides": null,
+      "preview": null,
+      "sourceAndApprovalReferences": [
+        "https://gicite.com/",
+        "docs/speaking/SPEAKING_EVIDENCE_TRACKER.md",
+        "src/data/presentations.ts"
+      ]
+    }
+  ],
+  "recordings": [
+    {
+      "id": "Uw6hD61RqNM",
+      "status": "VERIFIED_OEMBED",
+      "title": "Special Interaction and Q&A Session by Industry Experts and Leaders | AEGYTHON 2026 | AeglysAI",
+      "author_name": "AeglysAI",
+      "author_url": "https://www.youtube.com/@AeglysAI",
+      "thumbnail_url": "https://i.ytimg.com/vi/Uw6hD61RqNM/hqdefault.jpg",
+      "provider": "YouTube oEmbed",
+      "conferenceAssociation": null,
+      "context": "AEGYTHON 2026 community recording, as stated in official title",
+      "publicationBasis": "Owner-supplied public video link; exact title/channel verified via YouTube oEmbed; no conference delivery association inferred."
+    },
+    {
+      "id": "OLASKGI-aFw",
+      "status": "VERIFIED_OEMBED",
+      "title": "QnA Session by Founder | AEGYTHON 2026",
+      "author_name": "AeglysAI",
+      "author_url": "https://www.youtube.com/@AeglysAI",
+      "thumbnail_url": "https://i.ytimg.com/vi/OLASKGI-aFw/hqdefault.jpg",
+      "provider": "YouTube oEmbed",
+      "conferenceAssociation": null,
+      "context": "AEGYTHON 2026 community recording, as stated in official title",
+      "publicationBasis": "Owner-supplied public video link; exact title/channel verified via YouTube oEmbed; no conference delivery association inferred."
+    },
+    {
+      "id": "tn5RhKbzRcw",
+      "status": "VERIFIED_OEMBED",
+      "title": "How to Register & Qualify for AEGYTHON 2026 | Step-by-Step Guide | AeglysAI",
+      "author_name": "AeglysAI",
+      "author_url": "https://www.youtube.com/@AeglysAI",
+      "thumbnail_url": "https://i.ytimg.com/vi/tn5RhKbzRcw/hqdefault.jpg",
+      "provider": "YouTube oEmbed",
+      "conferenceAssociation": null,
+      "context": "AEGYTHON 2026 community recording, as stated in official title",
+      "publicationBasis": "Owner-supplied public video link; exact title/channel verified via YouTube oEmbed; no conference delivery association inferred."
+    }
+  ],
+  "proposedTopics": [
+    {
+      "id": "building-ai-driven-incident-response",
+      "title": "Building AI-Driven Incident Response for Distributed Systems",
+      "status": "Proposed",
+      "description": "Building AI-Driven Incident Response for Distributed Systems: proposed talk in preparation. Event and participation details are not confirmed."
+    },
+    {
+      "id": "from-static-security-policies",
+      "title": "From Static Security Policies to Risk-Aware Cloud Authorization",
+      "status": "Proposed",
+      "description": "From Static Security Policies to Risk-Aware Cloud Authorization: proposed talk in preparation. Event and participation details are not confirmed."
+    }
+  ],
+  "missingMedia": "No approved conference photographs located in Portal assets. Candidate private photos and full ATAI deck remain unpublished. No owner response or new source/rights packet supplied during implementation."
+}

@@ -1,80 +1,55 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import PresentationCard from '../../components/speaking/PresentationCard.astro';
-import EngagementCard from '../../components/speaking/EngagementCard.astro';
-import FeaturedEngagement from '../../components/speaking/FeaturedEngagement.astro';
-import { speakingPortfolio } from '../../data/presentations';
+import EventCard from '../../components/speaking/showcase/EventCard.astro';
+import { speakingShowcase, featuredSpeakingEvent, speakingResources, proposedSpeakingTopics } from '../../data/speakingContent';
+import VideoCarousel from '../../components/speaking/showcase/VideoCarousel.astro';
+import videoScript from '../../components/speaking/showcase/video.js?raw';
+import videoCarouselScript from '../../components/speaking/showcase/video-carousel.js?raw';
+import { asset, href } from '../../data/project';
 import { creator } from '../../data/creator';
-const { engagements, featured, library } = speakingPortfolio();
-const filters = [
-  { id: 'invited', label: 'Invited', statuses: ['Invited'] },
-  { id: 'confirmed', label: 'Confirmed / Upcoming', statuses: ['Confirmed', 'Upcoming'] },
-  { id: 'completed', label: 'Completed', statuses: ['Completed'] },
-  { id: 'awaiting', label: 'Awaiting confirmation', statuses: ['Acceptance Sent'] },
-].filter(filter => engagements.some(record => filter.statuses.includes(record.participationStatus!)));
-const topics = ['Adaptive Security and Zero Trust', 'Policy-Bounded AI', 'Resilient Distributed Systems', 'Cloud-Native Security', 'AI-Driven Automation'];
+import conferenceScript from '../../components/speaking/showcase/conference.js?raw';
+import galleryScript from '../../components/speaking/showcase/gallery.js?raw';
+import '../../styles/speaking-showcase.css';
+const filters=[{id:'completed',label:'Completed'},{id:'accepted',label:'Invitation Accepted'}];
+const cover=speakingResources.find(p=>p.slug===featuredSpeakingEvent?.presentationId)?.thumbnail;
 ---
-<Layout title="Speaking & Technical Presentations" description="Technical talks, research presentations and speaking invitations on adaptive security, zero-trust architecture and resilient distributed systems. Participation and slide availability are stated separately.">
-  <section class="speaking-hero" aria-labelledby="speaking-title">
-    <div class="container">
-      <p class="eyebrow">Speaking & Technical Presentations</p>
-      <h1 id="speaking-title">Ideas Worth Sharing.</h1>
-      <p class="speaking-lead">Exploring adaptive security, AI-driven engineering, zero-trust architecture, and resilient distributed systems through technical talks, research presentations, and community discussions.</p>
-      <nav aria-label="Speaking sections"><a href="#engagements">Engagements ↓</a><a href="#slide-library">Technical talks & slides ↓</a></nav>
-    </div>
+<Layout title="Speaking & Technical Presentations" description="Research conversations, verified conference engagements, technical resources and AeglysAI community recordings. Event participation, delivery and media availability are stated separately.">
+<div class="sp-showcase" data-speaking-showcase data-schema-version={speakingShowcase.schemaVersion}>
+ <section class="sp-hero container" aria-labelledby="speaking-title">
+  <div><p class="sp-kicker">AEGLYSAI / RESEARCH EXCHANGE</p><h1 id="speaking-title">Research,<br/><span>in conversation.</span></h1><p class="sp-lead">Technical talks and open discussions on adaptive security, policy-bounded AI and resilient distributed systems.</p><p class="sp-hero-note">Ideas worth sharing. Context worth keeping.</p></div>
+  <nav class="sp-section-index" aria-label="Speaking sections"><a href="#engagements"><span>01</span> Conference engagements <span aria-hidden="true">↘</span></a><a href="#recordings"><span>02</span> Watch & learn <span aria-hidden="true">↘</span></a><a href="#slide-library"><span>03</span> Technical resources <span aria-hidden="true">↘</span></a></nav>
+ </section>
+ <div class="container sp-content">
+  {featuredSpeakingEvent&&<section class="sp-section" aria-labelledby="featured-engagement-heading">
+   <div class="sp-section-heading"><div><p class="sp-kicker">FEATURED / TECHNICAL ENGAGEMENT</p><h2 id="featured-engagement-heading">From research to the room.</h2></div><span class="sp-small-label">{featuredSpeakingEvent.shortName}</span></div>
+   <div class="sp-featured-grid"><EventCard event={featuredSpeakingEvent} featured/>{cover&&<figure class="sp-cover"><div class="sp-cover-label"><span>THE TALK</span><span aria-hidden="true">↗</span></div><a href={href(`speaking/${featuredSpeakingEvent.presentationId}`)} aria-label={`Explore ${featuredSpeakingEvent.talkTitle}`}><img src={asset(cover.path)} alt="First-slide preview: Beyond Static Access Control" width="960" height="540" loading="lazy" decoding="async"/></a><figcaption>Approved first-slide preview. Full PDF not published.</figcaption></figure>}</div>
+  </section>}
+  <section id="engagements" class="sp-section" aria-labelledby="engagements-heading">
+   <div class="sp-section-heading"><div><p class="sp-kicker">01 / CONFERENCE ENGAGEMENTS</p><h2 id="engagements-heading">Research, beyond the page.</h2></div></div>
+   <div class="sp-engagement-gallery"><fieldset class="sp-filters"><legend class="sr-only">Filter conference engagements</legend><label><input type="radio" name="engagement-filter" id="engagement-all" checked/><span>All engagements</span></label>{filters.map(f=><label><input type="radio" name="engagement-filter" id={`engagement-${f.id}`}/><span>{f.label}</span></label>)}</fieldset><div class="sp-event-grid">{speakingShowcase.events.toSorted((a,b)=>a.startDate.localeCompare(b.startDate)).map(event=><EventCard event={event}/>)}</div></div>
   </section>
-  <div class="container speaking-content">
-    {featured && <FeaturedEngagement presentation={featured}/>}
-    <section id="engagements" class="portfolio-section" aria-labelledby="engagements-heading">
-      <p class="eyebrow">02 / Speaking engagements</p>
-      <h2 id="engagements-heading">Conversations with context.</h2>
-      <p class="section-intro">Invitations and event participation, with their current status clearly stated.</p>
-      {engagements.length ? <div class="engagement-gallery">
-        <fieldset class="engagement-filters"><legend class="sr-only">Filter speaking engagements</legend>
-          <label><input type="radio" name="engagement-filter" id="engagement-all" checked/><span>All</span></label>
-          {filters.map(filter => <label><input type="radio" name="engagement-filter" id={`engagement-${filter.id}`}/><span>{filter.label}</span></label>)}
-        </fieldset>
-        <div class="engagement-grid">{engagements.map(presentation => <EngagementCard presentation={presentation}/>)}</div>
-      </div> : <p>No event engagements listed.</p>}
-    </section>
-    <section id="slide-library" class="portfolio-section" aria-labelledby="library-heading">
-      <p class="eyebrow">03 / Technical talks & slide library</p>
-      <h2 id="library-heading">From research to discussion.</h2>
-      <p class="section-intro">Presentation resources and topics in development. A slide preview does not establish event delivery.</p>
-      <div class="cards-grid three slide-grid">{library.map(presentation => <PresentationCard presentation={presentation}/>)}</div>
-    </section>
-    <section class="portfolio-section collaboration" aria-labelledby="collaboration-heading">
-      <div><p class="eyebrow">04 / Speaking topics & collaboration</p><h2 id="collaboration-heading">Let’s explore the hard questions.</h2><p class="section-intro">Technical discussions and research exchanges around secure, explainable and resilient systems.</p><a class="text-link contact-link" href={creator.links.github} target="_blank" rel="noopener noreferrer">Connect via GitHub ↗<span class="sr-only"> (opens in a new tab)</span></a></div>
-      <ul>{topics.map(topic => <li>{topic}</li>)}</ul>
-    </section>
+  <section id="recordings" class="sp-section" aria-labelledby="recordings-heading">
+   <div class="sp-section-heading"><div><p class="sp-kicker">02 / WATCH & LEARN</p><h2 id="recordings-heading">Keep the conversation going.</h2></div><p>AEGYTHON 2026 community recordings <br/>and the GICITE 2026 conference recording.</p></div>
+   <VideoCarousel recordings={speakingShowcase.recordings}/><p class="sp-footnote">Thumbnails are served locally. Play loads YouTube’s privacy-enhanced player and contacts YouTube. If playback is unavailable, use Watch on YouTube.</p>
+  </section>
+  <section id="slide-library" class="sp-section" aria-labelledby="library-heading">
+   <div class="sp-section-heading"><div><p class="sp-kicker">03 / TECHNICAL RESOURCES</p><h2 id="library-heading">Take the ideas further.</h2></div><p>Approved previews and technical material.<br/>Availability is independent of event delivery.</p></div>
+   <div class="sp-resource-list">{speakingResources.map(p=><article class="sp-resource" data-presentation-slug={p.slug}><span class="sp-resource-number" aria-hidden="true">01</span><div><p class="sp-kicker">PRESENTATION RESOURCE</p><h3>{p.title}</h3><p>{p.description}</p><p class="sp-footnote">{p.pdf?'Approved PDF available':'First-slide preview · Full PDF not published'}</p></div><a href={href(`speaking/${p.slug}`)}>Explore presentation <span aria-hidden="true">↗</span><span class="sr-only">: {p.title}</span></a></article>)}</div>
+   <div class="sp-proposals" aria-labelledby="proposed-heading"><p class="sp-kicker">PROPOSED / IN PREPARATION</p><h3 id="proposed-heading">Questions for future conversations.</h3><div class="sp-proposal-grid">{proposedSpeakingTopics.map(p=><article data-presentation-slug={p.slug}><span class="sp-status">Proposed · In Development</span><h4>{p.title}</h4><p>{p.description}</p><a href={href(`speaking/${p.slug}`)}>Explore topic <span aria-hidden="true">↗</span><span class="sr-only">: {p.title}</span></a></article>)}</div></div>
+  </section>
+  <section class="sp-collaboration sp-section" aria-labelledby="collaboration-heading"><div><p class="sp-kicker">OPEN QUESTIONS / SHARED LEARNING</p><h2 id="collaboration-heading">Bring a hard question.<br/>Start a useful conversation.</h2><p>Research discussions and technical exchanges on explainable security, policy-bounded adaptation and resilient systems.</p></div><a class="button button-primary" href={creator.links.github} target="_blank" rel="noopener noreferrer">Discuss research on GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></section>
+ </div>
+ <dialog id="speaking-photo-viewer" class="sp-lightbox" data-speaking-lightbox aria-labelledby="speaking-photo-heading" aria-describedby="speaking-photo-description">
+  <header class="sp-lightbox-toolbar"><h2 id="speaking-photo-heading" data-viewer-name>Conference photo viewer</h2><button type="button" data-photo-close aria-label="Close conference photo viewer">Close <span aria-hidden="true">×</span></button></header>
+  <div class="sp-viewer-body">
+   <figure class="sp-viewer-stage" data-viewer-stage><img data-viewer-image alt="" draggable="false"/><p data-photo-error role="status" hidden>Photo unavailable. Try Next or use the image link in event details.</p></figure>
+   <p id="speaking-photo-description" data-photo-description aria-live="polite"></p>
+   <section class="sp-photo-event-meta" aria-label="Conference details"><p data-viewer-dates></p><p class="sp-photo-event-status" data-viewer-status></p><a data-viewer-website target="_blank" rel="noopener noreferrer">Event website <span class="sr-only">(opens in a new tab)</span> ↗</a><details data-viewer-more><summary>Full event details</summary><div data-viewer-extra></div></details></section>
   </div>
+  <div class="sp-lightbox-controls"><button type="button" data-photo-prev aria-label="Previous photograph">← Previous</button><p data-photo-counter aria-live="polite"></p><button type="button" data-photo-next aria-label="Next photograph">Next →</button></div>
+ </dialog>
+</div>
+<script is:inline data-speaking-conference-init set:html={conferenceScript}/>
+<script is:inline data-speaking-video-init set:html={videoCarouselScript+'\n'+videoScript}/>
+<script is:inline data-speaking-gallery-init set:html={galleryScript}/>
 </Layout>
-<style>
-  .speaking-hero { background: #0d1b31; color: #f4f7fb; padding: 72px 0 56px; border-bottom: 1px solid #294467; }
-  .speaking-hero .eyebrow { color: #9dbfea; }
-  .speaking-hero h1 { font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.08; letter-spacing: -.045em; margin: 24px 0; max-width: 100%; }
-  .speaking-lead { color: #c9d6e8; font-size: clamp(1rem, 1.5vw, 1.2rem); line-height: 1.8; max-width: 850px; }
-  .speaking-hero nav { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 24px; }
-  .speaking-hero nav a { color: #afcdf4; min-height: 44px; display: inline-flex; align-items: center; }
-  .speaking-content { padding-top: 48px; padding-bottom: 64px; }
-  .portfolio-section { margin-top: 56px; scroll-margin-top: 24px; }
-  h2 { margin: 12px 0 16px; font-size: clamp(1.65rem, 3vw, 2.2rem); line-height: 1.3; }
-  .section-intro { color: var(--muted); line-height: 1.8; max-width: 750px; margin-bottom: 24px; }
-  .engagement-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
-  .engagement-filters { border: 0; padding: 0; margin: 0 0 24px; display: flex; flex-wrap: wrap; gap: 12px; }
-  .engagement-filters label { position: relative; cursor: pointer; }
-  .engagement-filters input { position: absolute; opacity: 0; width: 1px; height: 1px; }
-  .engagement-filters span { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px; border: 1px solid var(--line); border-radius: 4px; color: var(--muted); background: var(--surface); }
-  .engagement-filters input:checked + span { color: var(--cyan); background: var(--implemented-bg); border-color: var(--accent-border); }
-  .engagement-filters input:focus-visible + span { outline: 3px solid var(--cyan); outline-offset: 3px; }
-  .engagement-gallery:has(#engagement-invited:checked) :global([data-engagement-status]:not([data-engagement-status="Invited"])),
-  .engagement-gallery:has(#engagement-confirmed:checked) :global([data-engagement-status]:not([data-engagement-status="Confirmed"]):not([data-engagement-status="Upcoming"])),
-  .engagement-gallery:has(#engagement-completed:checked) :global([data-engagement-status]:not([data-engagement-status="Completed"])) { display: none; }
-  .engagement-gallery:has(#engagement-awaiting:checked) :global([data-engagement-status]:not([data-engagement-status="Acceptance Sent"])) { display: none; }
-  .slide-grid { margin-top: 24px; }
-  .collaboration { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 40px; padding-top: 36px; border-top: 1px solid var(--line); }
-  .collaboration ul { list-style: none; padding: 0; margin: 0; }
-  .collaboration li { padding: 14px 0; border-bottom: 1px solid var(--line); line-height: 1.6; }
-  .contact-link { display: inline-flex; align-items: center; min-height: 44px; }
-  @media (max-width: 767px) { .engagement-grid, .collaboration { grid-template-columns: 1fr; } .speaking-hero { padding: 48px 0 36px; } .speaking-content { padding-top: 32px; } .portfolio-section { margin-top: 40px; } }
-</style>

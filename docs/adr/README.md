@@ -74,3 +74,6 @@ runtime metadata, with no private correspondence paths. No dependencies or hosti
 - [ADR-013 — Controlled sanitized showcase snapshot](ADR-013-approved-public-showcase-registry.md): EVENT-002 export/review/build boundary extending the existing static showcase and private Workspace separation.
 
 - [ADR-014 — Reviewed public-feed transport](ADR-014-reviewed-public-feed-transport.md): operator-side pinned feed/staging, bounded fallback and isolated local demo.
+
+- [ADR-015 — Speaking showcase media](ADR-015-speaking-showcase-media.md): versioned derived
+  event bundle, approval-gated bundled photos and lightweight recording links.

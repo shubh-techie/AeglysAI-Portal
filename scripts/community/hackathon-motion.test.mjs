@@ -1,4 +1,5 @@
 import test from 'node:test';
+import {readSpeakingHistoricalStyle} from './speak001-preservation.mjs';
 import { originalHackathon, originalHackathonSource } from './registration-preservation.mjs';
 import { originalHomepage } from './homepage-preservation.mjs';
 import assert from 'node:assert/strict';
@@ -25,7 +26,7 @@ test('EVENT-001 preserves 25 other routes and all pre-existing community content
    assert.equal(sha(withoutShowcase.replace(/<style>[\s\S]*?<\/style>/g,'')),eventBaseline.html,path);
    assert.equal(sha([...withoutShowcase.matchAll(/<style>([\s\S]*?)<\/style>/g)].map(x=>x[1]).join('').replace(/\s/g,'')),eventBaseline.inlineStyles,'Existing community inline styles');
   } else assert.equal(sha(normalize(originalHeader(html,path))),record.html,path);
-  const styles=[...html.matchAll(/href="(\/_astro\/[^" ]+\.css)"/g)].map(match=>sha(readFileSync(`dist${match[1]}`)));
+  const styles=[...html.matchAll(/href="(\/_astro\/[^" ]+\.css)"/g)].map(match=>sha(readSpeakingHistoricalStyle(`dist${match[1]}`)));
   assert.deepEqual(styles,record.styles,`${path} CSS`);
  }
 });

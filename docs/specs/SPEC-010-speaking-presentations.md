@@ -344,3 +344,185 @@ uses /speaking/etic-2026/ in the existing dynamic template. Shared SpeakerProfil
 and approved portrait; CreatorProfile consumes the same role/focus. Full ATAI title comes from
 certificate; original cover and slide author text remain unchanged. Evidence tracker is linked
 from README/specs, not public correspondence. See [tracker](../speaking/SPEAKING_EVIDENCE_TRACKER.md).
+
+## SPEAK-001 — Conference and recording showcase, 2026-11-12
+
+IMPLEMENTED locally for review. Main baseline6ee5480 includes merged CI003; successful Pages
+run41685813558/build+deploy verified. Preserve canonical presentations.ts and all detail URLs,
+Home/Publications/Media, hackathons/navigation and research boundaries. Only the Speaking
+listing changes; no public conference photos or full PDFs added.
+
+The new theme-aware research hero leads to delivered ATAI feature, three status-filtered
+conference records, separate AEGYTHON community recordings, approved technical resource and
+compact proposed-topic cards, plus research collaboration CTA. Omit unavailable media areas;
+no slide-placeholder panels on the listing. Preserve three events, two proposals and exact
+approved title/role/status/source data. GICITE date passage cannot imply delivery: display a
+completion-unverified note while retaining stored Upcoming metadata. ETIC remains awaiting
+written confirmation; no keynote inferred.
+
+Versioned strict1.0.0 event/photo/recording schema derives metadata from existing approved
+presentations; no duplicated event facts in markup. Photos require matching event IDs,
+rights/subject/content/publication approvals, credit/source, exact digest and confined local
+asset;0–4initially. Astro creates responsive lazy WebP images and bounded full views. Native
+links work without JS; dialog enhancement supports arrows, Tab/Shift+Tab containment, Escape,
+focus return and unavailable-image text. No unapproved/candidate original copied.
+
+Official YouTube oEmbed returned exact titles/channel for all three supplied IDs on2026-11-12.
+They identify AEGYTHON2026 community sessions, not conference-session delivery, and remain in
+a distinct recording section. Watch links only: no autoplay, initial remote thumbnail or player.
+Full metadata/approval/status inventory is in
+[SPEAK-001 inventory](../speaking/SPEAK-001-CONTENT-INVENTORY.json).
+
+Acceptance: preserve the approved source distinctions/links, all routes and27unrelated HTML
+outputs; all seven requested viewport widths, both themes, keyboard/focus/Escape, no-JS
+fallbacks, metadata/rights rejection and actual0–4image pipeline tested. All old historical
+content/CSS pins remain, with an explicit test-only inverse Speaking delta and retained
+historical stylesheet bytes; new raw-output/style checks reject drift. New initializer is
+allowed only on Speaking, retaining other script/iframe restrictions.
+
+Actual results, before/after evidence and limitations are recorded in
+[SPEAK-001 review](../speaking/SPEAK-001-REVIEW.md). No commit/push/PR/merge/deployment.
+See [authoring guide](../speaking/SPEAK-001-AUTHORING.md) and
+[ADR-015](../adr/ADR-015-speaking-showcase-media.md). No new dependency/backend/CMS/feed;
+future approved Google publishing remains a separate operator workflow. Security findings OPEN.
+
+### SPEAK-001A — thumbnails and inline video activation
+
+Owner-authorized focused follow-up on the existing Speaking feature branch. Replace only
+decorative recording visuals with inspected, pinned, locally optimized YouTube thumbnails.
+Accept validated IDs and standard HTTPS video URLs. Keep all three exact titles and AEGYTHON
+community classifications. User activation creates only that card's youtube-nocookie iframe;
+fullscreen, descriptive title, keyboard/focus and separate external viewing action required.
+No initial player/API/third-party thumbnail requests; no-JavaScript links and styled broken
+thumbnail fallback remain usable. Seven-width/theme/JS matrix, local decode/source digests,
+correct iframe/watch mapping, full suite and27-route preservation required. No dependencies,
+CSP relaxation or event/photo/publication changes. See SPEAK-001A-REVIEW.md for evidence limits.
+
+### SPEAK-001B — approved event gallery configuration
+
+Owner authorized ten genuine submitted images and attribution Courtesy of Shubh Prabhat.
+Publish only confidently mapped, privacy-reviewed variants: one ATAI webpage capture and
+four GICITE images, including one real desk-photo crop. Preserve originals privately,
+record exact original/variant hashes and crop coordinates, and distinguish photographs
+from slides/posters/webpage captures in captions. Exclude ambiguous Zoom/speaker-list
+associations, participant-group screenshots and ETIC artwork conflicting with retained
+confirmation status. Existing EventCard/PhotoGallery/gallery script and video behavior
+remain unchanged; configure approved metadata only. Real-image loading, keyboard/Escape/
+focus restoration, no-JavaScript and seven-width/theme regression checks required.
+
+### SPEAK-001C — compact conference presentation
+
+Scope only Conference Engagements cards:16:9 manual1–4image carousel, short verified
+content/status/date and View Event Details. Three/two/one columns across desktop/tablet/
+mobile. Reuse approved mappings and PhotoGallery; no new event/delivery claims or video
+changes. Detail dialog contains full event facts, approved descriptions/links and captioned
+images; native details fallback remains usable withoutJavaScript. Escape/close/backdrop,
+focus containment/restoration, scrollable narrow content and nested-lightbox scroll locking
+required. No autoplay/animation/dependency. Seven-width/theme/JS tests plus full suite and
+27route/Watch&Learn preservation required. Raw public originals require an explicit owner
+privacy decision; task review inventory excludes them. See SPEAK-001C-REVIEW.md.
+
+### SPEAK-001D — automatic approved image discovery
+
+Mapped publication-ready directories, case-insensitive JPEG/PNG/WebP discovery, actual
+decoding/limits validation and deterministic sorting replace manually maintained photo
+arrays. Keep source originals; create uncropped optimized display and thumbnail assets.
+Counts/controls derive from discovered files, without a four-photo maximum. Refresh must
+update the existing dev server without Node/config/process changes; production and Pages
+use automatic discovery through npmrunbuild. Unknown/unapproved directories must not enter
+the production artifact. Test real Astro builds at ATAI3→4 and GICITE5→6, removal, corruption,
+unknown folders, metadata stripping, production inclusion and unchanged surrounding content.
+Reference SPEAK-001D-DISCOVERY.md and SPEAK-001D-REVIEW.md.
+
+### SPEAK-001E — fullscreen conference photo viewer
+
+Scope only the photo popup:90–95%viewport, desktop70/30 uncropped photo and verified-event
+context, mobile stacked image/controls/details with accessible fixed Close and independent
+scrolling. Use discovered images and automatic counters/thumbnails; no count hardcoding.
+Keyboard arrows/Home/End, roving thumbnail focus, Escape/close/backdrop, focus containment/
+restoration, shared background lock and noninterfering horizontal swipe required. Preserve
+full approved image, caption/credit, source event facts, conditional verified recording links,
+no-JS native links, existing page/video sections and all assets. Test all7widths/both themes,
+image errors and nested dialogs; no animation/autoplay or new dependencies.
+
+
+## 2026-11-12 — SPEAK-001E final card and viewer alignment (local review)
+
+Equal-height conference cards now use fixed 16:9 media, aligned statuses/dates and bottom actions. Photo and event-detail actions share one accessible fullscreen viewer, including an empty-gallery event. Extended metadata stays in that viewer; native disclosures/image links remain usable without JavaScript. Explicit owner-folder aliases are supported by existing build-time discovery; publication approval boundaries remain unchanged. No video implementation or event-status changes.
+
+Validated Astro check (204 files, zero errors/warnings/hints), production build (28 routes), 151/151 tests, and 28 Chromium viewport/theme/JavaScript cases. All 27 unrelated HTML pages and Watch & Learn HTML are unchanged; 20 public files and ten private originals retain their hashes. See docs/speaking/SPEAK-001E-FINAL-REVIEW.md for screenshots, dimensions, exact inventory and limitations. Cache/Magicast findings remain OPEN. Uncommitted review only; no staging, delivery or deployment.
+
+
+## 2026-11-12 — SPEAK-001F dynamic event/media-card closure (local review)
+
+Reconciled all ten submitted originals and nine archived owner-folder image copies against saved hashes; no original missing, no Git restoration required. Existing publication exclusions remain private. Current ready count remains ATAI1/GICITE4/ETIC0. Added a complete factual asset inventory, generic validated conference asset paths and derived photo-directory/approval/attribution fields to the existing event contract. Existing presentations.ts and approved folder policy configure future events without Astro changes; no parallel event store or CMS. Compact summaries use existing approved descriptions. Card surface, image and action open the same accessible viewer. MediaCard/MediaCarousel and YouTube sources remain unchanged.
+
+Validated clean Astro check204files, 28-route production build, 152/152 automated tests and28 Chromium viewport/theme/JS cases. New isolated real-build fixture proves a future approved event/photo directory renders while draft events and rejected/unknown folders stay unpublished. Existing image add/remove and production-inclusion tests pass.27unrelated HTML routes and Watch&Learn HTML unchanged; credential/private-meeting scans clear. See docs/speaking/SPEAK-001F-REVIEW.md and SPEAK-001F-ASSETS.json for exact evidence/inventories. No staging,commit,push,PR mutation,merge or deployment; PR42 remains draft/open. Cache and Magicast findings remain OPEN.
+
+
+## 2026-11-12 — SPEAK-001G editorial conference presentation (local review)
+
+Owner rejected the prior dashboard-like card presentation. Replaced only the Conference Engagements visual layer with two larger photo-backed cards, concise title/date/role summaries, restrained inline status/count labels and Explore Event actions. ETIC is a compact text entry without an oversized blank media panel. Events render chronologically; complete names, verified talk titles, full descriptions and status qualifications remain in the existing native disclosure/fullscreen overlay. Existing filters remain functional with understated text-tab styling. No discovery, viewer script, schema, event record, image, video or Media component changes.
+
+Verified original F combined hash b74465120dd2ca4493dff81f94947dd5abbd3b6e942f642945f9be209cb1e9f5 before editing. Ten original hashes and20public asset files preserved; approved countsATAI1/GICITE4/ETIC0. Final Astro204files clean;28-route build;152/152tests;28Chromium cases across7widths/light/dark/JS/no-JS with reduced motion. Desktop photo cards573.84px each and empty ETIC121.75px at1440. Other27HTMLroutes and Watch&Learn HTML unchanged. Privacy/credential scans clear. Prior action-label/mobile-identical-height assertions were updated to the expressly revised editorial requirements, retaining desktop alignment, compact-empty, count, image and accessibility checks. See docs/speaking/SPEAK-001G-REVIEW.md for exact inventories/screenshots/hashes/limits. PR42 remains draft/open; localhost4321PID58050/Node24.22.1 untouched. Cache/Magicast findings OPEN. No staging,commit,push,merge or deployment.
+
+
+## 2026-11-12 — SPEAK-001H conference collage tiles and owner status update (local review)
+
+Owner supersedes the prior two-column/compact-empty treatment: restored three equal-height desktop cards with16:9 media, count-driven1/2/3/4-cell previews, branded empty fallback and bottom View Event Details. All discovered photos remain in the existing fullscreen viewer, with current/total counter, thumbnail navigation and accessible focus/keyboard behavior. Added approved ATAI-2026/GICITE-2026 folder aliases alongside ETIC-2026 and natural numeric filename sorting. No new photos supplied yet; current1/4/0 counts remain. Ten originals and all15public image bytes preserved; two caption sidecars updated to remove obsolete unverified-completion wording while retaining non-delivery-evidence caveats.
+
+Owner explicitly supplies ATAICompleted/GICITECompleted/ETICInvitationAccepted. Existing derived event contract now accepts explicit OWNER_CONFIRMED statusEvidence with public provenance, so GICITE can be completed without inventing a delivery date. Photos or calendar passage still cannot establish completion. ETIC is not completed and retains unconfirmed organizer/role/title details. To preserve all27other routes, earlier engagement-record pages remain byte-identical and are labelled Earlier engagement record from updated cards; owner status update is scoped to the current showcase/overlay. No independent verification of an exact GICITE delivery date is claimed.
+
+Validated clean204-file Astro check,28-route build,154/154tests,28Chromium cases at7widths/light/dark/JS/no-JS/reduced motion. Pointer and keyboard filters3/2/1, allcollage-cell opening, equalheight/media bounds, thumbnail/arrow/swipe/counter, Escape/focus/lock/error/no-JS pass. Real build photo add/remove and2/3/4/5/6-photo collage discovery tests pass; unknown/rejected/invalid inputs remain excluded. Other27routes, Watch&Learn/Media, dependencies/config and localhost4321PID58050 preserved. Cache/Magicast remain OPEN. See docs/speaking/SPEAK-001H-REVIEW.md for screenshots/exact inventory/hashes/limitations. No staging,commit,push,merge or deployment.
+
+
+## 2026-11-12 — SPEAK-001H owner-uploaded photo refresh (local review)
+
+Owner uploaded and explicitly approved ten event-folder images:ATAI3/GICITE6/ETIC1. Inspected all images and verified decoding/type/dimensions/hashes. Preserved uploaded bytes privately; prepared reviewed WebP copies with privacy crops where needed to exclude browser meeting URLs, participant strips or private desk screens. Owner-approved group images retain their subjects; browser/meeting chrome is excluded. ETIC announcement artwork is labelled as artwork; InvitationAccepted status remains unchanged. Archived five superseded prepared inputs/sidecars privately to prevent duplicate gallery items. All ten uploads represented with attribution Courtesy of Shubh Prabhat.
+
+Existing refresh/build automatically updates3/6/1counts,3-cell ATAI and4-cell GICITE previews, single ETIC hero and all10overlay images. No Astro/component/schema/discovery/status changes and no manual preservation-pin edits. Fixed one historical test's erroneous coupling of the original ten-image review count to the current dynamic gallery size; all historical hashes and current source/digest/count assertions remain. Clean204-file Astro check,28-route build,154/154tests,28browser cases/all28routes pass;27unrelated route hashes and Watch&Learn unchanged. Original localPID58050 preserved; security findingsOPEN. Review/inventory under docs/speaking/SPEAK-001H-UPLOAD*. No staging,commit,push,merge or deployment.
+
+
+## 2026-11-12 — SPEAK-001H compact white photo dialog (local review)
+
+Replaced only the photo dialog's fullscreen split layout with a centered content-sized white/light-gray surface, max900px/92vw desktop and96vw mobile, capped720px/88dvh desktop and90dvh mobile. Only name/image/short caption/Previous-counter-Next/Close remain; no dialog sidebar or thumbnails. Full metadata/evidence/links/attribution stay in the existing native event disclosure; ViewEventDetails opens it rather than intercepting into the photo viewer. Photo selection opens the compact dialog. Single-image navigation hides; keyboard/focus/scroll-lock/swipe/no-JS preserved. Cards/filters/data/discovery/YouTube/Media unchanged.
+
+Noted external source-input refresh from prepared ATAI/GICITEWebPs to owner-originalPNG/JPEGs during this working session; preserved current uploads rather than restoring prior files. Normal build refreshed the stale generated inventory, counts3/6/1. All10current source hashes match owner upload/ready inventory, ten private originals remain intact. Photo pixels were not edited in this viewer-only scope; some raw meeting captures retain visible browser/meeting details. Before/after image framing can therefore differ independently of the viewer change.
+
+Astro204files clean, production28routes,154/154tests and28Chromiumcases pass at7widths/light/dark/JS/no-JS/reduced motion. All10photos decoded/navigated; white palette, no oversized blank area, natural aspect ratio, centered dimensions, keys/focus/error/close and native details tested.27other routes andWatch&Learn HTML unchanged; originalPID58050/localhost4321 serves updated markup. Cache/Magicast findingsOPEN. Review/screenshots/inventories/hashes in docs/speaking/SPEAK-001H-WHITE-REVIEW.md and ignored checkpoint. No staging,commit,push,merge or deployment.
+
+
+## 2026-11-12 — SPEAK-001H current photo refresh and GICITE recording link
+
+Owner replaced source photographs and supplied https://www.youtube.com/watch?v=CEEVv2PYkfg explicitly for Germany–India Conference on Innovation, Technology, and Engineering (GICITE). Refreshed actual inputs automatically (ATAI3/GICITE6/ETIC1), including replacement GICITE_2026_5.png; no source-image edits. Added this recording only to GICITE's native event details, with safe external link and neutral title. Three existing AEGYTHON Watch&Learn cards remain byte-identical. Compact white viewer/styles and gallery/discovery logic unchanged.
+
+Official YouTube page/oEmbed metadata could not be retrieved in this environment (oEmbedHTTP401, web cache failure and PythonTLStrust failure); no TLS bypass. Exact title/channel/playability not claimed. Extended existing recording contract with explicit OWNER_SUPPLIED metadata state and null metadata verification fields, while verified recordings still require channel/source/date. Owner association reference is docs/speaking/SPEAK-001H-RECORDING-REVIEW.md. Bidirectional event/recording association validation remains enforced.
+
+Clean204-file Astro check,28-route build,155/155tests and28browsercases pass. Verified GICITE-only link, targetblank/noopener/noreferrer and JS/no-JS access; unchanged3video cards,27other routes, image hashes and localPID58050. Cache/Magicast OPEN; no staging,commit,push,merge or deployment. Exact inventory/screenshots/canonical hashes in local review/checkpoint.
+
+
+## 2026-11-12 — SPEAK-001H-FIX card interaction regression (local review)
+
+Reproduced all3events ×photo/title/body/whitespace/action on the existing localhost4321 page with real pointer input, mutation/event traces, computed grid styles and card bounds. Photo clicks opened the dialog; other surfaces opened native details. The existing :has(details[open]) grid-column:1/-1 rule plus equal grid rows expanded cards from490.75px to2347–2563px. No runtime errors. Also measured classic-scrollbar removal shifting desktop cards7.5px and changing tablet widths336.5→344px.
+
+Unified intended card surfaces and primary ViewPhotos&Details action through the existing white dialog, preventing disclosure default/bubbling while retaining independent links and no-JS native details. No card CSS/Grid changes; card markup differs only in action label. Added only dialog-contained date/status/website and collapsible complete event details, with trusted DOM copies excluding photos and removing IDs; courtesy retained in photo caption. Initialization guard avoids duplicate handlers. Scroll lock now reserves removed scrollbar space and restores original padding/overflow. Empty ETIC opens metadata without stale photos.
+
+Clean204-file check,28-route build,155/155tests;28Chromiumcases with294real-pointer/Enter/Space combinations and84gallery sessions: exact0px geometry difference before/during/after. Live15-case replay also has identical boxes, no console.error/exception, invalid nesting or duplicateIDs. Empty-ETIC, external default navigation, focus/Escape/scroll restoration, theme/no-JS and YouTube pass. All photos/data/discovery/GICITE recording/27other routes preserved. PID58050/Node/worktree preserved, PR42draft/open. Cache/MagicastOPEN. Review/screenshots/hashes in SPEAK-001H-FIX-REVIEW.md; no staging,commit,push,merge or deployment.
+
+
+## 2026-11-12 — SPEAK-001H-FIX final conference/video separation (local review)
+
+Owner mandates independent Conference Engagements and Watch&Learn. Removed recordingIds/YouTube attributes/links/imports from the strict conference event contract and EventCard. Removed bidirectional video/event rendering requirements; recording eventId remains optional classification with required provenance when associated. Conferences render unchanged with videos=[] in a real isolated Astro build. Existing white unified photo/details dialog and layout-stability fix remain untouched.
+
+Watch&Learn independently renders all4existing configured records exactly once, including previously filtered GICITECEEVv2PYkfg. Reused VideoCard/video.js; fallback labels use conference classification and missing channel does not show an empty separator. Original3AEGYTHON card HTML is byte-identical. Cached/decoded official GICITE hqdefault thumbnail480×360,21574bytes, SHA256b6564cae0c233c77784a61bcfa5fbb3f0036a35efd8306431e85a266f18641bf; manifest verifies all4cached sources. Neutral GICITE title and null unverified channel/date retained, no metadata invented.
+
+Astro204files clean,28-route build,156/156tests.28Chromium7width/theme/JS cases pass with4thumbs/players/external links, noinitialiframes, no-JS links and correct classification;294conference pointer/keyboard cases remain0pxshift, one dialog, allphotos/details, emptyETIC and focus/Escape intact.27other routes/Media/photo files/data/discovery/styles preserved. LocalPID58050/Node/worktree unchanged; cache/MagicastOPEN. Review/screenshots/inventory/hashes in SPEAK-001H-SEPARATION-REVIEW.md. No staging,commit,push,merge or deployment.
+
+
+## SPEAK-001I — Configurable Watch & Learn carousel (2026-11-12, local review)
+
+Implemented the native scroll-snap video carousel on the existing Speaking branch: three cards above 1023px, two at 640–1023px and one below 640px. Controls and live range counter derive from configured recordings; keyboard, mouse drag and native touch navigation preserve click-only playback. Reduced motion is supported. No dependencies or security-gate changes. Conference UI, original photographs, Featured Media and the other 27 generated routes remain unchanged relative to the preceding working state.
+
+Approved recordings now live in src/data/speakingRecordings.json, using the existing typed schema and shared YouTube ID normalization. Optional metadata defaults to owner-supplied rather than verified. Explicit approval remains mandatory. The thumbnail sync command validates and caches missing approved images before building; production remains offline. Existing four caches and rendered card contents are unchanged.
+
+Validation: Astro check 208 files, zero diagnostics; production build 28 routes; full suite 159/159. Browser evidence covers seven widths, both themes, JavaScript/no-JavaScript, carousel controls, native touch, drag suppression, four players and an isolated fifth-record build. All 27 other HTML routes and conference HTML are unchanged. Existing cache and Magicast findings remain OPEN. No staging, commit, push, merge or deployment. See docs/speaking/SPEAK-001I-REVIEW.md and ignored .community-drafts/speak001i evidence.

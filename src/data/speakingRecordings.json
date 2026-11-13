@@ -1,0 +1,54 @@
+[
+  {
+    "id": "Uw6hD61RqNM",
+    "title": "Special Interaction and Q&A Session by Industry Experts and Leaders | AEGYTHON 2026 | AeglysAI",
+    "category": "Community recording",
+    "channel": "AeglysAI",
+    "context": "AEGYTHON 2026 · Community recording",
+    "eventId": null,
+    "associationSource": null,
+    "metadataVerification": "VERIFIED",
+    "metadataSource": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DUw6hD61RqNM&format=json",
+    "metadataVerifiedAt": "2026-11-12",
+    "publicationApproved": true
+  },
+  {
+    "id": "OLASKGI-aFw",
+    "title": "QnA Session by Founder | AEGYTHON 2026",
+    "category": "Community recording",
+    "channel": "AeglysAI",
+    "context": "AEGYTHON 2026 · Community recording",
+    "eventId": null,
+    "associationSource": null,
+    "metadataVerification": "VERIFIED",
+    "metadataSource": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DOLASKGI-aFw&format=json",
+    "metadataVerifiedAt": "2026-11-12",
+    "publicationApproved": true
+  },
+  {
+    "id": "tn5RhKbzRcw",
+    "title": "How to Register & Qualify for AEGYTHON 2026 | Step-by-Step Guide | AeglysAI",
+    "category": "Community recording",
+    "channel": "AeglysAI",
+    "context": "AEGYTHON 2026 · Community recording",
+    "eventId": null,
+    "associationSource": null,
+    "metadataVerification": "VERIFIED",
+    "metadataSource": "https://www.youtube.com/oembed?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dtn5RhKbzRcw&format=json",
+    "metadataVerifiedAt": "2026-11-12",
+    "publicationApproved": true
+  },
+  {
+    "id": "CEEVv2PYkfg",
+    "title": "GICITE 2026 conference recording",
+    "category": "Conference recording",
+    "channel": null,
+    "context": "GICITE 2026 · Conference recording",
+    "eventId": "gicite-2026-wru-key-talk",
+    "associationSource": "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/speaking/SPEAK-001H-RECORDING-REVIEW.md",
+    "metadataVerification": "OWNER_SUPPLIED",
+    "metadataSource": null,
+    "metadataVerifiedAt": null,
+    "publicationApproved": true
+  }
+]

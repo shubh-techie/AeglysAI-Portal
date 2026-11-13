@@ -1,0 +1,37 @@
+---
+import VideoCard from './VideoCard.astro';
+import type { SpeakingShowcase } from '../../../data/speakingShowcase';
+interface Props { recordings: SpeakingShowcase['recordings']; id?: string; }
+const {recordings,id='speaking-video-track'}=Astro.props;
+---
+<section class="sp-video-carousel" data-video-carousel aria-label="Watch & Learn recordings" aria-roledescription="carousel">
+ {recordings.length>0?<>
+  <p id={`${id}-help`} class="sr-only">Scroll horizontally to browse recordings. Focus the list and use arrow keys for navigation.</p>
+  <div id={id} class="sp-video-track" data-video-track tabindex="0" role="group" aria-label="Video recordings" aria-describedby={`${id}-help`}>
+   {recordings.map((recording,index)=><div class="sp-video-slide" data-video-slide role="group" aria-roledescription="slide" aria-label={`${index+1} of ${recordings.length}`}><VideoCard recording={recording}/></div>)}
+  </div>
+  <div class="sp-video-controls" data-video-controls hidden>
+   <button type="button" data-video-prev aria-label="Previous recordings" aria-controls={id}>←</button>
+   <p data-video-position role="status" aria-live="polite" aria-atomic="true"></p>
+   <button type="button" data-video-next aria-label="Next recordings" aria-controls={id}>→</button>
+  </div>
+ </>:<p class="sp-footnote">No recordings published.</p>}
+</section>
+<style>
+ .sp-video-carousel{min-width:0}
+ .sp-video-track{position:relative;display:flex;align-items:stretch;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:thin;padding:4px 0 14px;min-width:0}
+ .sp-video-slide{flex:0 0 calc((100% - 48px)/3);min-width:0;scroll-snap-align:start;display:flex}
+ .sp-video-slide :global(.sp-recording){width:100%;height:100%}
+ .sp-video-track :global(img){user-select:none;-webkit-user-drag:none}
+ .sp-video-track:focus-visible,.sp-video-controls button:focus-visible{outline:3px solid var(--cyan);outline-offset:4px}
+ .sp-video-track :global(.sp-video-visual:focus-visible){outline-offset:-4px}
+ .sp-video-controls{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:18px}
+ .sp-video-controls[hidden]{display:none}
+ .sp-video-controls button{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--cyan);font:inherit;cursor:pointer}
+ .sp-video-controls button:hover:not(:disabled){border-color:var(--cyan)}
+ .sp-video-controls button:disabled{opacity:.4;cursor:default}
+ .sp-video-controls p{min-width:140px;text-align:center;font:.75rem/1.6 var(--mono);color:var(--muted);margin:0}
+ @media(max-width:1023px){.sp-video-slide{flex-basis:calc((100% - 24px)/2)}}
+ @media(max-width:639px){.sp-video-slide{flex-basis:100%}.sp-video-controls{gap:12px}}
+ @media(prefers-reduced-motion:reduce){.sp-video-track{scroll-behavior:auto}}
+</style>

@@ -1,0 +1,365 @@
+{
+  "inventoryVersion": "1.0.0",
+  "policyVersion": "operator-publication-v1",
+  "photos": {
+    "beyond-static-access-control": [
+      {
+        "id": "atai-2026-abbd50259c2df6c6",
+        "eventId": "beyond-static-access-control",
+        "assetPath": "conference/_generated/atai-2026/5cd2cff44c0a49a6a728d611591dbbf79c3bc528a9b29d265dda2c7a653fb8f5-display.webp",
+        "sha256": "5cd2cff44c0a49a6a728d611591dbbf79c3bc528a9b29d265dda2c7a653fb8f5",
+        "thumbnail": {
+          "path": "conference/_generated/atai-2026/f58803c9aa5eee6ad7cbe11ac2a8cb51a47e47ab5d15d61f9a4788d7d996b528-thumb.webp",
+          "sha256": "f58803c9aa5eee6ad7cbe11ac2a8cb51a47e47ab5d15d61f9a4788d7d996b528"
+        },
+        "fit": "contain",
+        "alt": "ATAI 2026: approved speaking-engagement image 1.",
+        "caption": "ATAI 2026: owner-approved image 1. Image availability does not establish delivery.",
+        "credit": "Courtesy of Shubh Prabhat",
+        "sourceUrl": "https://houston.acm.org/atai2026.html",
+        "rightsBasis": "OWNER_AUTHORIZED",
+        "rightsReference": "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/speaking/SPEAK-001D-DISCOVERY.md",
+        "contentApproved": true,
+        "publicationApproved": true,
+        "subjectsConsentConfirmed": true
+      },
+      {
+        "id": "atai-2026-a31386dbd4ffe61e",
+        "eventId": "beyond-static-access-control",
+        "assetPath": "conference/_generated/atai-2026/86eb3efefe2741e14ac78afb00d3429ba9756583e281e696e184164a6a97f3c9-display.webp",
+        "sha256": "86eb3efefe2741e14ac78afb00d3429ba9756583e281e696e184164a6a97f3c9",
+        "thumbnail": {
+          "path": "conference/_generated/atai-2026/74abaec8385c6f2ceef5e66a9ee99d6b5775a798115ef3515dd20b1345297c4c-thumb.webp",
+          "sha256": "74abaec8385c6f2ceef5e66a9ee99d6b5775a798115ef3515dd20b1345297c4c"
+        },
+        "fit": "contain",
+        "alt": "ATAI 2026: approved speaking-engagement image 2.",
+        "caption": "ATAI 2026: owner-approved image 2. Image availability does not establish delivery.",
+        "credit": "Courtesy of Shubh Prabhat",
+        "sourceUrl": "https://houston.acm.org/atai2026.html",
+        "rightsBasis": "OWNER_AUTHORIZED",
+        "rightsReference": "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/speaking/SPEAK-001D-DISCOVERY.md",
+        "contentApproved": true,
+        "publicationApproved": true,
+        "subjectsConsentConfirmed": true
+      },
+      {
+        "id": "atai-2026-95fd88349e0b1d26",
+        "eventId": "beyond-static-access-control",
+        "assetPath": "conference/_generated/atai-2026/87d2f083ba9359919fbb295cd53aaddfaae6ead896e476e8345951b1b7e5e860-display.webp",
+        "sha256": "87d2f083ba9359919fbb295cd53aaddfaae6ead896e476e8345951b1b7e5e860",
+        "thumbnail": {
+          "path": "conference/_generated/atai-2026/0d0d0b2b82d0cb4c47382f13293a46d418e6b95982a0ddbb8f9ca34e5d273c3c-thumb.webp",
+          "sha256": "0d0d0b2b82d0cb4c47382f13293a46d418e6b95982a0ddbb8f9ca34e5d273c3c"
+        },
+        "fit": "contain",
+        "alt": "ATAI 2026: approved speaking-engagement image 3.",
+        "caption": "ATAI 2026: owner-approved image 3. Image availability does not establish delivery.",
+        "credit": "Courtesy of Shubh Prabhat",
+        "sourceUrl": "https://houston.acm.org/atai2026.html",
+        "rightsBasis": "OWNER_AUTHORIZED",
+        "rightsReference": "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/speaking/SPEAK-001D-DISCOVERY.md",
+        "contentApproved": true,
+        "publicationApproved": true,
+        "subjectsConsentConfirmed": true
+      }
+    ],
+    "gicite-2026-wru-key-talk": [
+      {
+        "id": "gicite-2026-8aaf807ab9a9bd04",
+        "eventId": "gicite-2026-wru-key-talk",
+        "assetPath": "conference/_generated/gicite-2026/ccb15e5f67013e100e1ccd078325d1bda784fd6cbaa1047a2acb5edab6bea621-display.webp",
+        "sha256": "ccb15e5f67013e100e1ccd078325d1bda784fd6cbaa1047a2acb5edab6bea621",
+        "thumbnail": {
+          "path": "conference/_generated/gicite-2026/6d078fde109ada35135f8a1410c9504a735f9627bafb947b4877d27a4503332d-thumb.webp",
+          "sha256": "6d078fde109ada35135f8a1410c9504a735f9627bafb947b4877d27a4503332d"
+        },
+        "fit": "contain",
+        "alt": "GICITE 2026: approved speaking-engagement image 1.",
+        "caption": "GICITE 2026: owner-approved image 1. Image availability does not establish delivery.",
+        "credit": "Courtesy of Shubh Prabhat",
+        "sourceUrl": "https://gicite.com/",
+        "rightsBasis": "OWNER_AUTHORIZED",
+        "rightsReference": "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/speaking/SPEAK-001D-DISCOVERY.md",
+        "contentApproved": true,
+        "publicationApproved": true,
+        "subjectsConsentConfirmed": true
+      },
+      {
+        "id": "gicite-2026-5ec418aa605f4f74",
+        "eventId": "gicite-2026-wru-key-talk",
+        "assetPath": "conference/_generated/gicite-2026/2218e7a80a809e4fe836e92c58191e61941cdccdd141e744d20090e75862ab50-display.webp",
+        "sha256": "2218e7a80a809e4fe836e92c58191e61941cdccdd141e744d20090e75862ab50",
+        "thumbnail": {
+          "path": "conference/_generated/gicite-2026/248b228d85f0276b93923a0c7cb4dcd5a2ac3178e0c23b7dad881f82a8b4d327-thumb.webp",
+          "sha256": "248b228d85f0276b93923a0c7cb4dcd5a2ac3178e0c23b7dad881f82a8b4d327"
+        },
+        "fit": "contain",
+        "alt": "GICITE 2026: approved speaking-engagement image 2.",
+        "caption": "GICITE 2026: owner-approved image 2. Image availability does not establish delivery.",
+        "credit": "Courtesy of Shubh Prabhat",
+        "sourceUrl": "https://gicite.com/",
+        "rightsBasis": "OWNER_AUTHORIZED",
+        "rightsReference": "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/speaking/SPEAK-001D-DISCOVERY.md",
+        "contentApproved": true,
+        "publicationApproved": true,
+        "subjectsConsentConfirmed": true
+      },
+      {
+        "id": "gicite-2026-e9ef12ba3a6d65ff",
+        "eventId": "gicite-2026-wru-key-talk",
+        "assetPath": "conference/_generated/gicite-2026/51cb8ac93f3bfeaadae1207057cdb62fd374ebf6c47eee2f8e0a25a8b6e57b86-display.webp",
+        "sha256": "51cb8ac93f3bfeaadae1207057cdb62fd374ebf6c47eee2f8e0a25a8b6e57b86",
+        "thumbnail": {
+          "path": "conference/_generated/gicite-2026/02e9c426ce250b5a2fa1594fe5691e4a89c389d2e559f1ce9e37fec65926eca9-thumb.webp",
+          "sha256": "02e9c426ce250b5a2fa1594fe5691e4a89c389d2e559f1ce9e37fec65926eca9"
+        },
+        "fit": "contain",
+        "alt": "GICITE 2026: approved speaking-engagement image 3.",
+        "caption": "GICITE 2026: owner-approved image 3. Image availability does not establish delivery.",
+        "credit": "Courtesy of Shubh Prabhat",
+        "sourceUrl": "https://gicite.com/",
+        "rightsBasis": "OWNER_AUTHORIZED",
+        "rightsReference": "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/speaking/SPEAK-001D-DISCOVERY.md",
+        "contentApproved": true,
+        "publicationApproved": true,
+        "subjectsConsentConfirmed": true
+      },
+      {
+        "id": "gicite-2026-2d15f507ac5703f7",
+        "eventId": "gicite-2026-wru-key-talk",
+        "assetPath": "conference/_generated/gicite-2026/0839b009d3e1a9bea2e24bc07e76950fde47ba70943c353ea26f5033b2948f7b-display.webp",
+        "sha256": "0839b009d3e1a9bea2e24bc07e76950fde47ba70943c353ea26f5033b2948f7b",
+        "thumbnail": {
+          "path": "conference/_generated/gicite-2026/849d7fa02d67d892d01897d37ebb0cb4e08dbed6fd9d2508a6e14c1c8d2d60cb-thumb.webp",
+          "sha256": "849d7fa02d67d892d01897d37ebb0cb4e08dbed6fd9d2508a6e14c1c8d2d60cb"
+        },
+        "fit": "contain",
+        "alt": "GICITE 2026: approved speaking-engagement image 4.",
+        "caption": "GICITE 2026: owner-approved image 4. Image availability does not establish delivery.",
+        "credit": "Courtesy of Shubh Prabhat",
+        "sourceUrl": "https://gicite.com/",
+        "rightsBasis": "OWNER_AUTHORIZED",
+        "rightsReference": "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/speaking/SPEAK-001D-DISCOVERY.md",
+        "contentApproved": true,
+        "publicationApproved": true,
+        "subjectsConsentConfirmed": true
+      },
+      {
+        "id": "gicite-2026-98ecb4be3a1e3be7",
+        "eventId": "gicite-2026-wru-key-talk",
+        "assetPath": "conference/_generated/gicite-2026/2abf925b095da983afd2f161f9454dfae120b94048aa83fd5577976ce280cfdc-display.webp",
+        "sha256": "2abf925b095da983afd2f161f9454dfae120b94048aa83fd5577976ce280cfdc",
+        "thumbnail": {
+          "path": "conference/_generated/gicite-2026/512af7fba515fe5392cee81b89ff44ab5284fe3d53eefc49912d857a1739f287-thumb.webp",
+          "sha256": "512af7fba515fe5392cee81b89ff44ab5284fe3d53eefc49912d857a1739f287"
+        },
+        "fit": "contain",
+        "alt": "GICITE 2026: approved speaking-engagement image 5.",
+        "caption": "GICITE 2026: owner-approved image 5. Image availability does not establish delivery.",
+        "credit": "Courtesy of Shubh Prabhat",
+        "sourceUrl": "https://gicite.com/",
+        "rightsBasis": "OWNER_AUTHORIZED",
+        "rightsReference": "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/speaking/SPEAK-001D-DISCOVERY.md",
+        "contentApproved": true,
+        "publicationApproved": true,
+        "subjectsConsentConfirmed": true
+      },
+      {
+        "id": "gicite-2026-3fd1c8d262e0f78d",
+        "eventId": "gicite-2026-wru-key-talk",
+        "assetPath": "conference/_generated/gicite-2026/ec68842da6db4f7b6341e72b14831c19e3e6d355cf33a336ef310d61fad9672c-display.webp",
+        "sha256": "ec68842da6db4f7b6341e72b14831c19e3e6d355cf33a336ef310d61fad9672c",
+        "thumbnail": {
+          "path": "conference/_generated/gicite-2026/8be1aaa56e203de349df469baf9bca131258d621489ab15e65072e4f985fc8b7-thumb.webp",
+          "sha256": "8be1aaa56e203de349df469baf9bca131258d621489ab15e65072e4f985fc8b7"
+        },
+        "fit": "contain",
+        "alt": "GICITE 2026: approved speaking-engagement image 6.",
+        "caption": "GICITE 2026: owner-approved image 6. Image availability does not establish delivery.",
+        "credit": "Courtesy of Shubh Prabhat",
+        "sourceUrl": "https://gicite.com/",
+        "rightsBasis": "OWNER_AUTHORIZED",
+        "rightsReference": "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/speaking/SPEAK-001D-DISCOVERY.md",
+        "contentApproved": true,
+        "publicationApproved": true,
+        "subjectsConsentConfirmed": true
+      }
+    ],
+    "etic-2026": [
+      {
+        "id": "etic-2026-93b98b0e3119bd34",
+        "eventId": "etic-2026",
+        "assetPath": "conference/_generated/etic-2026/0c418a65db7ced49723d0be301e82bd9d7fb6d9b3748c6e284284f2cd990e65d-display.webp",
+        "sha256": "0c418a65db7ced49723d0be301e82bd9d7fb6d9b3748c6e284284f2cd990e65d",
+        "thumbnail": {
+          "path": "conference/_generated/etic-2026/b8d4d982ed7a3acaabc6426e863d52d8e263d2b4d8106449687d68446643b9ac-thumb.webp",
+          "sha256": "b8d4d982ed7a3acaabc6426e863d52d8e263d2b4d8106449687d68446643b9ac"
+        },
+        "fit": "contain",
+        "alt": "Owner-approved ETIC 2026 speaker-announcement artwork naming Shubh Prabhat.",
+        "caption": "ETIC announcement artwork supplied and approved by the owner. The current portal status remains Invitation Accepted; this poster is not evidence of completed delivery.",
+        "credit": "Courtesy of Shubh Prabhat",
+        "sourceUrl": "https://eticonference.com/",
+        "rightsBasis": "OWNER_AUTHORIZED",
+        "rightsReference": "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/speaking/SPEAK-001D-DISCOVERY.md",
+        "contentApproved": true,
+        "publicationApproved": true,
+        "subjectsConsentConfirmed": true
+      }
+    ]
+  },
+  "sources": [
+    {
+      "eventId": "beyond-static-access-control",
+      "folder": "atai-2026",
+      "filename": "ATAI2026_1.png",
+      "sourceSHA256": "0a6b02bcd2248d50e008254c906fdaca5e6f48bf1a2360889ca1203dae8e67c0",
+      "format": "png",
+      "width": 2494,
+      "height": 1344,
+      "bytes": 629496,
+      "sourceHasMetadata": true,
+      "displayPath": "conference/_generated/atai-2026/5cd2cff44c0a49a6a728d611591dbbf79c3bc528a9b29d265dda2c7a653fb8f5-display.webp",
+      "displaySHA256": "5cd2cff44c0a49a6a728d611591dbbf79c3bc528a9b29d265dda2c7a653fb8f5",
+      "thumbnailPath": "conference/_generated/atai-2026/f58803c9aa5eee6ad7cbe11ac2a8cb51a47e47ab5d15d61f9a4788d7d996b528-thumb.webp",
+      "thumbnailSHA256": "f58803c9aa5eee6ad7cbe11ac2a8cb51a47e47ab5d15d61f9a4788d7d996b528"
+    },
+    {
+      "eventId": "beyond-static-access-control",
+      "folder": "atai-2026",
+      "filename": "ATAI2026_2.png",
+      "sourceSHA256": "6947a3c70378cdefa10651cd85ee3afbf6b883e1fc7b1c4dce78570e713efa00",
+      "format": "png",
+      "width": 2548,
+      "height": 1400,
+      "bytes": 1247102,
+      "sourceHasMetadata": true,
+      "displayPath": "conference/_generated/atai-2026/86eb3efefe2741e14ac78afb00d3429ba9756583e281e696e184164a6a97f3c9-display.webp",
+      "displaySHA256": "86eb3efefe2741e14ac78afb00d3429ba9756583e281e696e184164a6a97f3c9",
+      "thumbnailPath": "conference/_generated/atai-2026/74abaec8385c6f2ceef5e66a9ee99d6b5775a798115ef3515dd20b1345297c4c-thumb.webp",
+      "thumbnailSHA256": "74abaec8385c6f2ceef5e66a9ee99d6b5775a798115ef3515dd20b1345297c4c"
+    },
+    {
+      "eventId": "beyond-static-access-control",
+      "folder": "atai-2026",
+      "filename": "ATAI2026_3.png",
+      "sourceSHA256": "7b1cc19e9b6669bb92fc5dd96d585a2203588a8b1578f4986f89759887369b25",
+      "format": "png",
+      "width": 1619,
+      "height": 972,
+      "bytes": 1462749,
+      "sourceHasMetadata": false,
+      "displayPath": "conference/_generated/atai-2026/87d2f083ba9359919fbb295cd53aaddfaae6ead896e476e8345951b1b7e5e860-display.webp",
+      "displaySHA256": "87d2f083ba9359919fbb295cd53aaddfaae6ead896e476e8345951b1b7e5e860",
+      "thumbnailPath": "conference/_generated/atai-2026/0d0d0b2b82d0cb4c47382f13293a46d418e6b95982a0ddbb8f9ca34e5d273c3c-thumb.webp",
+      "thumbnailSHA256": "0d0d0b2b82d0cb4c47382f13293a46d418e6b95982a0ddbb8f9ca34e5d273c3c"
+    },
+    {
+      "eventId": "gicite-2026-wru-key-talk",
+      "folder": "gicite-2026",
+      "filename": "GICITE_2026_1.jpeg",
+      "sourceSHA256": "861aeed01ceb8ec46ee56ff97289c3f6c4cf539168ee73a35a2eb0022964d769",
+      "format": "jpeg",
+      "width": 1600,
+      "height": 900,
+      "bytes": 216695,
+      "sourceHasMetadata": false,
+      "displayPath": "conference/_generated/gicite-2026/ccb15e5f67013e100e1ccd078325d1bda784fd6cbaa1047a2acb5edab6bea621-display.webp",
+      "displaySHA256": "ccb15e5f67013e100e1ccd078325d1bda784fd6cbaa1047a2acb5edab6bea621",
+      "thumbnailPath": "conference/_generated/gicite-2026/6d078fde109ada35135f8a1410c9504a735f9627bafb947b4877d27a4503332d-thumb.webp",
+      "thumbnailSHA256": "6d078fde109ada35135f8a1410c9504a735f9627bafb947b4877d27a4503332d"
+    },
+    {
+      "eventId": "gicite-2026-wru-key-talk",
+      "folder": "gicite-2026",
+      "filename": "GICITE_2026_2.jpeg",
+      "sourceSHA256": "6a86812784991b97284dfeeed3613f6ea1d03a033592bf9e30eef8380a9d0a57",
+      "format": "jpeg",
+      "width": 1926,
+      "height": 1218,
+      "bytes": 271557,
+      "sourceHasMetadata": false,
+      "displayPath": "conference/_generated/gicite-2026/2218e7a80a809e4fe836e92c58191e61941cdccdd141e744d20090e75862ab50-display.webp",
+      "displaySHA256": "2218e7a80a809e4fe836e92c58191e61941cdccdd141e744d20090e75862ab50",
+      "thumbnailPath": "conference/_generated/gicite-2026/248b228d85f0276b93923a0c7cb4dcd5a2ac3178e0c23b7dad881f82a8b4d327-thumb.webp",
+      "thumbnailSHA256": "248b228d85f0276b93923a0c7cb4dcd5a2ac3178e0c23b7dad881f82a8b4d327"
+    },
+    {
+      "eventId": "gicite-2026-wru-key-talk",
+      "folder": "gicite-2026",
+      "filename": "GICITE_2026_3.JPG",
+      "sourceSHA256": "7f5288990fe20967828efe4eb50b9056e015b5fde863bb8e1b12354f2c180032",
+      "format": "jpeg",
+      "width": 4177,
+      "height": 2626,
+      "bytes": 3422600,
+      "sourceHasMetadata": true,
+      "displayPath": "conference/_generated/gicite-2026/51cb8ac93f3bfeaadae1207057cdb62fd374ebf6c47eee2f8e0a25a8b6e57b86-display.webp",
+      "displaySHA256": "51cb8ac93f3bfeaadae1207057cdb62fd374ebf6c47eee2f8e0a25a8b6e57b86",
+      "thumbnailPath": "conference/_generated/gicite-2026/02e9c426ce250b5a2fa1594fe5691e4a89c389d2e559f1ce9e37fec65926eca9-thumb.webp",
+      "thumbnailSHA256": "02e9c426ce250b5a2fa1594fe5691e4a89c389d2e559f1ce9e37fec65926eca9"
+    },
+    {
+      "eventId": "gicite-2026-wru-key-talk",
+      "folder": "gicite-2026",
+      "filename": "GICITE_2026_4.jpg",
+      "sourceSHA256": "a021c4793498429dd3aa822838ac248ba8563893197e18d716331caf78a6ec40",
+      "format": "jpeg",
+      "width": 1755,
+      "height": 2340,
+      "bytes": 679991,
+      "sourceHasMetadata": false,
+      "displayPath": "conference/_generated/gicite-2026/0839b009d3e1a9bea2e24bc07e76950fde47ba70943c353ea26f5033b2948f7b-display.webp",
+      "displaySHA256": "0839b009d3e1a9bea2e24bc07e76950fde47ba70943c353ea26f5033b2948f7b",
+      "thumbnailPath": "conference/_generated/gicite-2026/849d7fa02d67d892d01897d37ebb0cb4e08dbed6fd9d2508a6e14c1c8d2d60cb-thumb.webp",
+      "thumbnailSHA256": "849d7fa02d67d892d01897d37ebb0cb4e08dbed6fd9d2508a6e14c1c8d2d60cb"
+    },
+    {
+      "eventId": "gicite-2026-wru-key-talk",
+      "folder": "gicite-2026",
+      "filename": "GICITE_2026_5.png",
+      "sourceSHA256": "e3237f79eb2798c9f2463645f92d82dcccf463e8c502fda373ce4232b75ba051",
+      "format": "png",
+      "width": 2462,
+      "height": 1412,
+      "bytes": 3892653,
+      "sourceHasMetadata": true,
+      "displayPath": "conference/_generated/gicite-2026/2abf925b095da983afd2f161f9454dfae120b94048aa83fd5577976ce280cfdc-display.webp",
+      "displaySHA256": "2abf925b095da983afd2f161f9454dfae120b94048aa83fd5577976ce280cfdc",
+      "thumbnailPath": "conference/_generated/gicite-2026/512af7fba515fe5392cee81b89ff44ab5284fe3d53eefc49912d857a1739f287-thumb.webp",
+      "thumbnailSHA256": "512af7fba515fe5392cee81b89ff44ab5284fe3d53eefc49912d857a1739f287"
+    },
+    {
+      "eventId": "gicite-2026-wru-key-talk",
+      "folder": "gicite-2026",
+      "filename": "GICITE_2026_6.jpeg",
+      "sourceSHA256": "539a5149764dacb0a3e96b2eeb3eaf59a6dc1d1c92a8b0da20319bbb1a9c897f",
+      "format": "jpeg",
+      "width": 1937,
+      "height": 1093,
+      "bytes": 203339,
+      "sourceHasMetadata": true,
+      "displayPath": "conference/_generated/gicite-2026/ec68842da6db4f7b6341e72b14831c19e3e6d355cf33a336ef310d61fad9672c-display.webp",
+      "displaySHA256": "ec68842da6db4f7b6341e72b14831c19e3e6d355cf33a336ef310d61fad9672c",
+      "thumbnailPath": "conference/_generated/gicite-2026/8be1aaa56e203de349df469baf9bca131258d621489ab15e65072e4f985fc8b7-thumb.webp",
+      "thumbnailSHA256": "8be1aaa56e203de349df469baf9bca131258d621489ab15e65072e4f985fc8b7"
+    },
+    {
+      "eventId": "etic-2026",
+      "folder": "etic-2026",
+      "inputFolder": "ETIC-2026",
+      "filename": "ETIC_2026_1.webp",
+      "sourceSHA256": "2813aed17c0cbf4aca20b8739893f997e0f7fb90cb8b10e49064fdb2d30882da",
+      "format": "webp",
+      "width": 1920,
+      "height": 1069,
+      "bytes": 334276,
+      "sourceHasMetadata": false,
+      "displayPath": "conference/_generated/etic-2026/0c418a65db7ced49723d0be301e82bd9d7fb6d9b3748c6e284284f2cd990e65d-display.webp",
+      "displaySHA256": "0c418a65db7ced49723d0be301e82bd9d7fb6d9b3748c6e284284f2cd990e65d",
+      "thumbnailPath": "conference/_generated/etic-2026/b8d4d982ed7a3acaabc6426e863d52d8e263d2b4d8106449687d68446643b9ac-thumb.webp",
+      "thumbnailSHA256": "b8d4d982ed7a3acaabc6426e863d52d8e263d2b4d8106449687d68446643b9ac"
+    }
+  ]
+}

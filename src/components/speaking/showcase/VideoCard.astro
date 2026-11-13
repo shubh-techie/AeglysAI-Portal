@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import type { SpeakingShowcase } from '../../../data/speakingShowcase';
+import { youtubeUrl, youtubeEmbed } from '../../../data/speakingShowcase';
+interface Props { recording: SpeakingShowcase['recordings'][number]; }
+const {recording} = Astro.props;
+const sources = import.meta.glob<{default: ImageMetadata}>('/src/assets/speaking-videos/*.jpg');
+const load = sources[`/src/assets/speaking-videos/${recording.id}.jpg`];
+const image = load ? (await load()).default : null;
+---
+<article class="sp-recording" data-recording-id={recording.id}>
+ <div class="sp-video-stage">
+  <a class="sp-video-visual" data-video-play data-video-embed={youtubeEmbed(recording.id)} data-video-title={recording.title} href={youtubeUrl(recording.id)} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${recording.title} on YouTube (opens in a new tab)`}>
+   {image&&<Image src={image} width={480} height={360} format="webp" quality={82} alt={`YouTube thumbnail: ${recording.title}`} loading="lazy" decoding="async" data-video-thumbnail/>}
+   <span class="sp-thumbnail-fallback">{recording.eventId?recording.title:'AEGYTHON 2026 · Recording'}</span><span class="sp-play" aria-hidden="true">▶</span>
+  </a>
+ </div>
+ <div class="sp-recording-copy"><p class="sp-kicker">{recording.context??recording.category}</p><h3>{recording.title}</h3>{recording.description&&<p>{recording.description}</p>}<p>YouTube{recording.channel&&<> · {recording.channel}</>}</p><a href={youtubeUrl(recording.id)} target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span><span class="sr-only">: {recording.title} (opens in a new tab)</span></a></div>
+</article>
