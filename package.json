@@ -8,13 +8,15 @@
   },
   "scripts": {
     "dev": "astro dev --config astro.dev.config.mjs",
-    "build": "astro build",
+    "build": "node scripts/community/discover-speaking-images.mjs && astro build && node scripts/community/discover-speaking-images.mjs --finalize",
     "preview": "astro preview",
     "check": "astro check",
     "test": "node --test scripts/site.test.mjs scripts/community/*.test.mjs",
     "community:metrics": "node scripts/community/metrics.mjs",
     "community:report": "node scripts/community/reports.mjs",
-    "community:impact-report": "node scripts/community/impact-cli.mjs"
+    "community:impact-report": "node scripts/community/impact-cli.mjs",
+    "conference:refresh": "node scripts/community/discover-speaking-images.mjs",
+    "speaking:thumbnails": "node scripts/community/cache-speaking-thumbnails.mjs --sync"
   },
   "dependencies": {
     "astro": "^7.3.4",

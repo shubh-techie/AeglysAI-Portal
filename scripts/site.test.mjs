@@ -143,14 +143,14 @@ test("production output contains only scoped inline scripts and approved local P
     const scripts = [...html.matchAll(/<script\b[^>]*>[\s\S]*?<\/script>/g)];
     // Count each approved initializer independently: navigation coexists with page enhancements.
     const initializers = ["data-theme-init", "data-research-nav-init", "data-media-carousel-init", "data-event-nav-init", "data-showcase-init"];
-    if (route === "speaking") initializers.push("data-speaking-gallery-init");
+    if (route === "speaking") initializers.push("data-speaking-gallery-init", "data-speaking-video-init", "data-speaking-conference-init");
     const expected = initializers.filter(marker => html.includes(marker));
     assert.equal(scripts.length, expected.length);
     for (const marker of expected)
       assert.equal(scripts.filter(script => script[0].includes(marker)).length, 1, marker);
     for (const script of scripts.slice(1)) {
-      assert.match(script[0], /data-media-carousel-init|data-event-nav-init|data-research-nav-init|data-showcase-init|data-speaking-gallery-init/);
-      if (script[0].includes("data-speaking-gallery-init")) {
+      assert.match(script[0], /data-media-carousel-init|data-event-nav-init|data-research-nav-init|data-showcase-init|data-speaking-gallery-init|data-speaking-video-init|data-speaking-conference-init/);
+      if (/data-speaking-(gallery|video|conference)-init/.test(script[0])) {
         assert.equal(route, "speaking");
         assert.doesNotMatch(script[0].match(/^<script[^>]*>/)[0], /\bsrc=/);
         assert.doesNotMatch(script[0], /fetch\(|XMLHttpRequest|createElement\(["']script/);
@@ -572,8 +572,9 @@ test("publications and speaking separate proposals from manuscripts and invitati
   for (const section of ["featured-engagement-heading", "engagements-heading", "library-heading", "collaboration-heading"]) assert.ok(speaking.includes(`id="${section}"`));
   assert.ok(!speaking.includes('id="engagement-invited"'));
   assert.ok(speaking.includes('id="engagement-completed"'));
-  assert.ok(speaking.includes('id="engagement-confirmed"'));
-  assert.ok(speaking.includes('id="engagement-awaiting"'));
+  assert.ok(speaking.includes('id="engagement-accepted"'));
+  assert.ok(!speaking.includes('id="engagement-confirmed"'));
+  assert.ok(!speaking.includes('id="engagement-awaiting"'));
   assert.equal((speaking.match(/data-presentation-slug=/g) ?? []).length, 3);
   assert.doesNotMatch(speaking, /No confirmed talks listed|No upcoming talks listed|No completed talks listed/);
   const invitation = read("speaking/gicite-2026-wru-key-talk/index.html");

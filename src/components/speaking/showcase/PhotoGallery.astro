@@ -2,20 +2,29 @@
 import { Image, getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import type { SpeakingPhoto } from '../../../data/speakingShowcase';
-interface Props { photos: SpeakingPhoto[]; eventName: string; }
-const {photos,eventName}=Astro.props;
+import { asset } from '../../../data/project';
+interface Props { photos: SpeakingPhoto[]; eventName: string; compact?: boolean; }
+const {photos,eventName,compact=false}=Astro.props;
 const loaders=import.meta.glob<{default:ImageMetadata}>('/src/assets/speaking/**/*.{png,jpg,jpeg,webp,avif}');
 const images=await Promise.all(photos.map(async photo=>{
+ if(photo.assetPath.startsWith('conference/'))return {...photo,image:null,full:{src:asset(photo.assetPath)},thumb:asset(photo.thumbnail?.path??photo.assetPath)};
  const load=loaders[`/src/assets/${photo.assetPath}`];if(!load)throw Error('Approved photo has no bundled source asset');
  const image=(await load()).default;const full=await getImage({src:image,width:Math.min(image.width,1920),format:'webp',quality:85});
- return {...photo,image,full};
+ const thumb=await getImage({src:image,width:Math.min(image.width,160),format:'webp',quality:75});
+ return {...photo,image,full,thumb:thumb.src};
 }));
 ---
-{images.length>0&&<div class="sp-photo-gallery" data-speaking-gallery aria-label={`${eventName} photographs`}>
- {images.map((photo,i)=><figure class:list={['sp-photo',{'sp-photo-featured':i===0}]}>
-  <a href={photo.full.src} data-speaking-photo data-photo-alt={photo.alt} data-photo-caption={`${photo.caption} · ${photo.credit}`} aria-label={`Expand photo ${i+1} of ${images.length}: ${photo.alt}`}>
-   <Image src={photo.image} widths={[320,640,960,1280].filter(n=>n<=photo.image.width)} sizes="(max-width: 640px) 90vw, 50vw" width={Math.min(photo.image.width,960)} format="webp" quality={78} alt={photo.alt} loading="lazy" decoding="async" data-speaking-image/>
-   <span class="sp-image-fallback" hidden>Photo unavailable</span><span class="sp-expand" aria-hidden="true">↗</span>
-  </a><figcaption>{photo.caption}<span>{photo.credit}</span></figcaption>
+{images.length>0&&<div class:list={['sp-photo-gallery',{'sp-card-gallery':compact,'sp-detail-gallery':!compact}]} data-speaking-gallery data-card-preview={compact||undefined} data-preview-count={compact?Math.min(images.length,4):undefined} data-conference-carousel={!compact||undefined} aria-label={`${eventName} images`}>
+ <div class="sp-gallery-stage">
+ {images.map((photo,i)=><figure class="sp-photo" data-current={i===0||undefined} hidden={compact&&i>=4||undefined}>
+  <a href={photo.full.src} target={compact?undefined:'_blank'} rel={compact?undefined:'noopener noreferrer'} data-speaking-photo data-photo-alt={photo.alt} data-photo-caption={photo.caption} data-photo-credit={photo.credit} data-photo-thumb={photo.thumb} aria-label={`${compact?'Expand':'Open full'} image ${i+1} of ${images.length}: ${photo.alt}${compact?'':' (opens in a new tab)'}`}>
+   {photo.image?<Image src={photo.image} widths={[320,640,960,1280].filter(n=>n<=photo.image.width)} sizes="(max-width: 640px) 90vw, 50vw" width={Math.min(photo.image.width,960)} format="webp" quality={78} alt={photo.alt} loading="lazy" decoding="async" data-speaking-image style={`object-fit:${compact?photo.fit??'contain':'contain'}`}/>:<img src={photo.full.src} width="1600" height="900" alt={photo.alt} loading="lazy" decoding="async" data-speaking-image style={`object-fit:${compact?photo.fit??'contain':'contain'}`}/>}
+   <span class="sp-image-fallback" hidden>Photo unavailable. Use the image thumbnails or event details.</span>
+  </a><figcaption>{photo.caption}<span>{photo.credit}</span><a href={photo.full.src} target="_blank" rel="noopener noreferrer">Open full image <span class="sr-only">(opens in a new tab)</span> ↗</a></figcaption>
  </figure>)}
+ </div>
+ {!compact&&<div class="sp-carousel-controls" hidden><button type="button" data-carousel-prev aria-label={`Previous ${eventName} image`}>← Previous</button><span data-carousel-counter aria-live="polite">1 / {images.length}</span><button type="button" data-carousel-next aria-label={`Next ${eventName} image`}>Next →</button></div>}
+ {!compact&&images.length>1&&<div class="sp-gallery-thumbnails" data-carousel-thumbnails hidden aria-label={`${eventName} image thumbnails`}>
+  {images.map((photo,i)=><button type="button" data-carousel-select={i} aria-current={i===0?'true':'false'} aria-label={`Show image ${i+1} of ${images.length}: ${photo.alt}`}><img src={photo.thumb} width="80" height="60" alt="" loading="lazy" decoding="async"/><span aria-hidden="true">{i+1}</span></button>)}
+ </div>}
 </div>}

@@ -7,9 +7,12 @@ interface Props { event: SpeakingEvent; featured?: boolean; }
 const {event,featured=false}=Astro.props;
 const state=eventStatus(event);
 const elapsed=event.endDate<new Date().toISOString().slice(0,10)&&event.status!=='Completed';
-const summary=elapsed?event.summary.replace('Participation is confirmed and upcoming','Participation was recorded as confirmed; completion has not been verified'):event.summary;
+const describe=(text:string)=>elapsed?text.replace('Participation is confirmed and upcoming','Participation was recorded as confirmed; completion has not been verified'):text;
+const summary=describe(event.summary);
+const cardSummary=[event.role,event.mode].filter(value=>!/to be confirmed/i.test(value)).join(' · ');
+const cardStatus=state.label==='Confirmed engagement'?'Confirmed engagement':state.label;
 ---
-<article class:list={['sp-event',{'sp-featured-event':featured}]} data-engagement-status={event.status} data-speaking-event={event.id}>
+{featured?<article class:list={['sp-event',{'sp-featured-event':featured}]} data-engagement-status={event.status} data-speaking-event={event.id}>
  <div class="sp-event-heading"><p class="sp-kicker">{event.shortName} · {event.role}</p><span class:list={['sp-status',`sp-${state.tone}`]}>{state.label}</span></div>
  <div class="sp-event-date"><time datetime={event.startDate}>{formatPresentationDate(event.startDate)}</time>{event.endDate!==event.startDate&&<> — <time datetime={event.endDate}>{formatPresentationDate(event.endDate)}</time></>}</div>
  <h3>{featured?(event.talkTitle??event.name):event.shortName}</h3>
@@ -19,4 +22,21 @@ const summary=elapsed?event.summary.replace('Participation is confirmed and upco
  <dl class="sp-event-facts"><div><dt>Location</dt><dd>{event.location}</dd></div><div><dt>Format</dt><dd>{event.mode}</dd></div><div><dt>Organizer</dt><dd>{event.organizer}</dd></div></dl>
  {!featured&&<PhotoGallery photos={event.photos} eventName={event.shortName}/>}
  <div class="sp-event-links"><a href={href(`speaking/${event.presentationId}`)}>Engagement details <span aria-hidden="true">↗</span><span class="sr-only">: {event.shortName}</span></a><a href={event.eventUrl} target="_blank" rel="noopener noreferrer">Event website<span class="sr-only">: {event.shortName} (opens in a new tab)</span><span aria-hidden="true"> ↗</span></a></div>
-</article>
+</article>:<article class="sp-event sp-compact-event" data-engagement-status={event.status} data-speaking-event={event.id}>
+ <div class="sp-compact-media"><div class="sp-card-media-frame">{event.photos.length>0?<PhotoGallery photos={event.photos} eventName={event.shortName} compact/>:<button class="sp-event-no-photo" type="button" data-empty-preview aria-label={`View ${event.shortName} event details`}><span class="sp-kicker">AEGLYSAI / CONFERENCE</span><strong>{event.shortName}</strong><span>Conference engagement</span></button>}</div><p class="sp-card-photo-count">{event.photos.length?`${event.photos.length} ${event.photos.length===1?'photo':'photos'}`:'No photos published'}</p></div>
+ <div class="sp-compact-copy">
+  <div class="sp-editorial-meta"><p class="sp-event-date"><time datetime={event.startDate}>{formatPresentationDate(event.startDate)}</time>{event.endDate!==event.startDate&&<> — <time datetime={event.endDate}>{formatPresentationDate(event.endDate)}</time></>}</p><div class="sp-card-status"><span class:list={['sp-status',`sp-${state.tone}`]} aria-label={`${state.label}. ${state.note}`}>{cardStatus}</span></div></div>
+  <h3>{event.shortName}</h3>
+  <p class="sp-card-summary">{cardSummary}</p>
+  <details class="sp-event-details" data-event-details><summary data-event-trigger>View Photos &amp; Details<span class="sr-only">: {event.shortName}</span> <span aria-hidden="true">↗</span></summary>
+   <div class="sp-event-detail-content" data-event-content data-viewer-location={event.location} data-viewer-format={event.mode} data-viewer-organizer={event.organizer} data-viewer-description={summary} data-viewer-abstract={event.abstract&&describe(event.abstract)!==summary?describe(event.abstract):''} data-viewer-evidence={event.statusNote??''} data-viewer-event={event.id} data-viewer-name={event.name} data-viewer-dates={`${formatPresentationDate(event.startDate)} — ${formatPresentationDate(event.endDate)}`} data-viewer-role={event.role} data-viewer-status={`${state.label} · ${state.note}`} data-viewer-talk={event.talkTitle??'Talk title to be confirmed.'} data-viewer-website={event.eventUrl}>
+    <p class="sp-kicker">{event.shortName} · {event.role}</p><h3 id={`event-detail-${event.id}`}>{event.name}</h3>
+    <p><strong>{state.label}</strong> · {state.note}</p>{event.statusNote&&<p>{event.statusNote}</p>}
+    <dl class="sp-event-facts"><div><dt>Dates</dt><dd><time datetime={event.startDate}>{formatPresentationDate(event.startDate)}</time> — <time datetime={event.endDate}>{formatPresentationDate(event.endDate)}</time></dd></div><div><dt>Location</dt><dd>{event.location}</dd></div><div><dt>Format</dt><dd>{event.mode}</dd></div><div><dt>Organizer</dt><dd>{event.organizer}</dd></div><div><dt>Speaking role</dt><dd>{event.role}</dd></div></dl>
+    <h4>Talk</h4><p>{event.talkTitle??'Talk title to be confirmed.'}</p><p>{summary}</p>{event.abstract&&describe(event.abstract)!==summary&&<p>{describe(event.abstract)}</p>}
+    <div class="sp-event-links"><a href={event.eventUrl} target="_blank" rel="noopener noreferrer">Event website<span class="sr-only"> (opens in a new tab)</span> ↗</a><a href={href(`speaking/${event.presentationId}`)}>{event.statusEvidence?'Earlier engagement record':'Approved engagement record'} ↗</a></div>
+    <section data-event-media>{event.photos.length>0&&<><h4>Event images</h4><PhotoGallery photos={event.photos} eventName={event.shortName}/></>}</section>
+   </div>
+  </details>
+ </div>
+</article>}

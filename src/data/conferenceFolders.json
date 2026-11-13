@@ -1,0 +1,41 @@
+{
+  "policyVersion": "operator-publication-v1",
+  "approvalReference": "https://github.com/shubh-techie/AeglysAI-Portal/blob/main/docs/speaking/SPEAK-001D-DISCOVERY.md",
+  "folders": [
+    {
+      "folder": "atai-2026",
+      "eventId": "beyond-static-access-control",
+      "name": "ATAI 2026",
+      "sourceUrl": "https://houston.acm.org/atai2026.html",
+      "credit": "Courtesy of Shubh Prabhat",
+      "publicationReady": true,
+      "aliases": [
+        "ATAI 2026",
+        "ATAI-2026"
+      ]
+    },
+    {
+      "folder": "gicite-2026",
+      "eventId": "gicite-2026-wru-key-talk",
+      "name": "GICITE 2026",
+      "sourceUrl": "https://gicite.com/",
+      "credit": "Courtesy of Shubh Prabhat",
+      "publicationReady": true,
+      "aliases": [
+        "GICITE_2026",
+        "GICITE-2026"
+      ]
+    },
+    {
+      "folder": "etic-2026",
+      "eventId": "etic-2026",
+      "name": "ETIC 2026",
+      "sourceUrl": "https://eticonference.com/",
+      "credit": "Courtesy of Shubh Prabhat",
+      "publicationReady": true,
+      "aliases": [
+        "ETIC-2026"
+      ]
+    }
+  ]
+}

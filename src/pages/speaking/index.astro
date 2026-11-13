@@ -2,12 +2,15 @@
 import Layout from '../../layouts/Layout.astro';
 import EventCard from '../../components/speaking/showcase/EventCard.astro';
 import { speakingShowcase, featuredSpeakingEvent, speakingResources, proposedSpeakingTopics } from '../../data/speakingContent';
-import { youtubeUrl } from '../../data/speakingShowcase';
+import VideoCarousel from '../../components/speaking/showcase/VideoCarousel.astro';
+import videoScript from '../../components/speaking/showcase/video.js?raw';
+import videoCarouselScript from '../../components/speaking/showcase/video-carousel.js?raw';
 import { asset, href } from '../../data/project';
 import { creator } from '../../data/creator';
+import conferenceScript from '../../components/speaking/showcase/conference.js?raw';
 import galleryScript from '../../components/speaking/showcase/gallery.js?raw';
 import '../../styles/speaking-showcase.css';
-const filters=[{id:'completed',label:'Completed'},{id:'confirmed',label:'Confirmed engagement'},{id:'awaiting',label:'Awaiting confirmation'}];
+const filters=[{id:'completed',label:'Completed'},{id:'accepted',label:'Invitation Accepted'}];
 const cover=speakingResources.find(p=>p.slug===featuredSpeakingEvent?.presentationId)?.thumbnail;
 ---
 <Layout title="Speaking & Technical Presentations" description="Research conversations, verified conference engagements, technical resources and AeglysAI community recordings. Event participation, delivery and media availability are stated separately.">
@@ -22,15 +25,12 @@ const cover=speakingResources.find(p=>p.slug===featuredSpeakingEvent?.presentati
    <div class="sp-featured-grid"><EventCard event={featuredSpeakingEvent} featured/>{cover&&<figure class="sp-cover"><div class="sp-cover-label"><span>THE TALK</span><span aria-hidden="true">↗</span></div><a href={href(`speaking/${featuredSpeakingEvent.presentationId}`)} aria-label={`Explore ${featuredSpeakingEvent.talkTitle}`}><img src={asset(cover.path)} alt="First-slide preview: Beyond Static Access Control" width="960" height="540" loading="lazy" decoding="async"/></a><figcaption>Approved first-slide preview. Full PDF not published.</figcaption></figure>}</div>
   </section>}
   <section id="engagements" class="sp-section" aria-labelledby="engagements-heading">
-   <div class="sp-section-heading"><div><p class="sp-kicker">01 / CONFERENCE ENGAGEMENTS</p><h2 id="engagements-heading">Every event has its context.</h2></div><p>Completed talks, confirmed engagements<br/>and invitations awaiting confirmation.</p></div>
-   <div class="sp-engagement-gallery"><fieldset class="sp-filters"><legend class="sr-only">Filter conference engagements</legend><label><input type="radio" name="engagement-filter" id="engagement-all" checked/><span>All engagements</span></label>{filters.map(f=><label><input type="radio" name="engagement-filter" id={`engagement-${f.id}`}/><span>{f.label}</span></label>)}</fieldset><div class="sp-event-grid">{speakingShowcase.events.map(event=><EventCard event={event}/>)}</div></div>
+   <div class="sp-section-heading"><div><p class="sp-kicker">01 / CONFERENCE ENGAGEMENTS</p><h2 id="engagements-heading">Research, beyond the page.</h2></div></div>
+   <div class="sp-engagement-gallery"><fieldset class="sp-filters"><legend class="sr-only">Filter conference engagements</legend><label><input type="radio" name="engagement-filter" id="engagement-all" checked/><span>All engagements</span></label>{filters.map(f=><label><input type="radio" name="engagement-filter" id={`engagement-${f.id}`}/><span>{f.label}</span></label>)}</fieldset><div class="sp-event-grid">{speakingShowcase.events.toSorted((a,b)=>a.startDate.localeCompare(b.startDate)).map(event=><EventCard event={event}/>)}</div></div>
   </section>
   <section id="recordings" class="sp-section" aria-labelledby="recordings-heading">
-   <div class="sp-section-heading"><div><p class="sp-kicker">02 / WATCH & LEARN</p><h2 id="recordings-heading">Keep the conversation going.</h2></div><p>AEGYTHON 2026 community recordings<br/>from the AeglysAI channel.</p></div>
-   <div class="sp-recording-grid">{speakingShowcase.recordings.map((recording,i)=><article class="sp-recording" data-recording-id={recording.id}>
-    <a class="sp-video-visual" href={youtubeUrl(recording.id)} target="_blank" rel="noopener noreferrer" aria-label={`Watch ${recording.title} on YouTube (opens in a new tab)`}><span class="sp-video-index">{String(i+1).padStart(2,'0')} / AEGYTHON 2026</span><span class="sp-play" aria-hidden="true">▶</span><span class="sp-video-caption">THE CONVERSATION CONTINUES <span aria-hidden="true">↗</span></span></a>
-    <div class="sp-recording-copy"><p class="sp-kicker">{recording.context}</p><h3>{recording.title}</h3><p>YouTube · {recording.channel}</p><a href={youtubeUrl(recording.id)} target="_blank" rel="noopener noreferrer">Watch recording <span aria-hidden="true">↗</span><span class="sr-only">: {recording.title} (opens in a new tab)</span></a></div>
-   </article>)}</div><p class="sp-footnote">Videos open on YouTube when selected. No video player or third-party thumbnail loads with this page.</p>
+   <div class="sp-section-heading"><div><p class="sp-kicker">02 / WATCH & LEARN</p><h2 id="recordings-heading">Keep the conversation going.</h2></div><p>AEGYTHON 2026 community recordings <br/>and the GICITE 2026 conference recording.</p></div>
+   <VideoCarousel recordings={speakingShowcase.recordings}/><p class="sp-footnote">Thumbnails are served locally. Play loads YouTube’s privacy-enhanced player and contacts YouTube. If playback is unavailable, use Watch on YouTube.</p>
   </section>
   <section id="slide-library" class="sp-section" aria-labelledby="library-heading">
    <div class="sp-section-heading"><div><p class="sp-kicker">03 / TECHNICAL RESOURCES</p><h2 id="library-heading">Take the ideas further.</h2></div><p>Approved previews and technical material.<br/>Availability is independent of event delivery.</p></div>
@@ -39,7 +39,17 @@ const cover=speakingResources.find(p=>p.slug===featuredSpeakingEvent?.presentati
   </section>
   <section class="sp-collaboration sp-section" aria-labelledby="collaboration-heading"><div><p class="sp-kicker">OPEN QUESTIONS / SHARED LEARNING</p><h2 id="collaboration-heading">Bring a hard question.<br/>Start a useful conversation.</h2><p>Research discussions and technical exchanges on explainable security, policy-bounded adaptation and resilient systems.</p></div><a class="button button-primary" href={creator.links.github} target="_blank" rel="noopener noreferrer">Discuss research on GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a></section>
  </div>
- <dialog class="sp-lightbox" data-speaking-lightbox aria-labelledby="speaking-photo-heading"><div class="sp-lightbox-toolbar"><h2 id="speaking-photo-heading">Conference photograph</h2><button type="button" data-photo-close>Close <span aria-hidden="true">×</span></button></div><figure><img alt="" width="1280" height="960"/><figcaption data-photo-description></figcaption></figure><div class="sp-lightbox-controls"><button type="button" data-photo-prev aria-label="Previous photograph">← Previous</button><p data-photo-counter aria-live="polite"></p><button type="button" data-photo-next aria-label="Next photograph">Next →</button></div><a data-original-photo>Open full image</a></dialog>
+ <dialog id="speaking-photo-viewer" class="sp-lightbox" data-speaking-lightbox aria-labelledby="speaking-photo-heading" aria-describedby="speaking-photo-description">
+  <header class="sp-lightbox-toolbar"><h2 id="speaking-photo-heading" data-viewer-name>Conference photo viewer</h2><button type="button" data-photo-close aria-label="Close conference photo viewer">Close <span aria-hidden="true">×</span></button></header>
+  <div class="sp-viewer-body">
+   <figure class="sp-viewer-stage" data-viewer-stage><img data-viewer-image alt="" draggable="false"/><p data-photo-error role="status" hidden>Photo unavailable. Try Next or use the image link in event details.</p></figure>
+   <p id="speaking-photo-description" data-photo-description aria-live="polite"></p>
+   <section class="sp-photo-event-meta" aria-label="Conference details"><p data-viewer-dates></p><p class="sp-photo-event-status" data-viewer-status></p><a data-viewer-website target="_blank" rel="noopener noreferrer">Event website <span class="sr-only">(opens in a new tab)</span> ↗</a><details data-viewer-more><summary>Full event details</summary><div data-viewer-extra></div></details></section>
+  </div>
+  <div class="sp-lightbox-controls"><button type="button" data-photo-prev aria-label="Previous photograph">← Previous</button><p data-photo-counter aria-live="polite"></p><button type="button" data-photo-next aria-label="Next photograph">Next →</button></div>
+ </dialog>
 </div>
+<script is:inline data-speaking-conference-init set:html={conferenceScript}/>
+<script is:inline data-speaking-video-init set:html={videoCarouselScript+'\n'+videoScript}/>
 <script is:inline data-speaking-gallery-init set:html={galleryScript}/>
 </Layout>
