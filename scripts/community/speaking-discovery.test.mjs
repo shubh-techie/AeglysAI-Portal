@@ -2,7 +2,7 @@ import test from'node:test';import assert from'node:assert/strict';import{mkdtem
 import{discoverSpeakingImages,finalizeConferenceOutput}from'./discover-speaking-images.mjs';
 import{normalizeSpeakingMedia,discoveryForHistory}from'./speaking-discovery-preservation.mjs';
 const sha=b=>createHash('sha256').update(b).digest('hex');
-const setup=async()=>{const root=await mkdtemp(resolve('.community-drafts/speak001d-auto/discovery-'));await mkdir(join(root,'src/data'),{recursive:true});await cp('src/data/conferenceFolders.json',join(root,'src/data/conferenceFolders.json'));for(const event of['atai-2026','gicite-2026'])await mkdir(join(root,'public/conference',event),{recursive:true});return root;};
+const setup=async()=>{await mkdir(resolve('.community-drafts/speak001d-auto'),{recursive:true});const root=await mkdtemp(resolve('.community-drafts/speak001d-auto/discovery-'));await mkdir(join(root,'src/data'),{recursive:true});await cp('src/data/conferenceFolders.json',join(root,'src/data/conferenceFolders.json'));for(const event of['atai-2026','gicite-2026'])await mkdir(join(root,'public/conference',event),{recursive:true});return root;};
 const image=await sharp({create:{width:120,height:80,channels:3,background:'#365f70'}}).png().toBuffer();
 test('SPEAK001D discovery handles ATAI3→4, GICITE5→6, removal and deterministic mixed-case names',async()=>{
  const root=await setup();for(let i=1;i<=3;i++)await writeFile(join(root,`public/conference/atai-2026/${i}.PnG`),image);for(let i=1;i<=5;i++)await writeFile(join(root,`public/conference/gicite-2026/${i}.PNG`),image);
@@ -28,7 +28,7 @@ test('SPEAK001D strips optimized metadata without modifying original publication
  const root=await setup();const original=await sharp(image).jpeg().withMetadata().toBuffer();const path=join(root,'public/conference/atai-2026/camera.JPG');await writeFile(path,original);const result=await discoverSpeakingImages({root});assert.equal(sha(await readFile(path)),sha(original));assert.equal(result.sources[0].sourceHasMetadata,true);const display=await sharp(await readFile(join(root,'public',result.sources[0].displayPath))).metadata();assert.ok(!display.exif&&!display.xmp&&!display.iptc);
 });
 test('SPEAK001D real Astro builds reflect 3/5→4/6→3/5 without image-array or preservation-pin edits',async()=>{
- const {spawnSync}=await import('node:child_process');const root=await mkdtemp(resolve('.community-drafts/speak001d-auto/render-'));
+ const {spawnSync}=await import('node:child_process');await mkdir(resolve('.community-drafts/speak001d-auto'),{recursive:true});const root=await mkdtemp(resolve('.community-drafts/speak001d-auto/render-'));
  for(const dir of['src','scripts','public'])await cp(dir,join(root,dir),{recursive:true});
  for(const file of['package.json','package-lock.json','astro.config.mjs','tsconfig.json'])await cp(file,join(root,file));
  const{symlink}=await import('node:fs/promises');await symlink(resolve('node_modules'),join(root,'node_modules'),'dir');
@@ -45,7 +45,7 @@ test('SPEAK001E explicit owner folder aliases map safely, including case-insensi
  const data=await discoverSpeakingImages({root});assert.equal(data.photos['beyond-static-access-control'].length,1);assert.equal(data.photos['gicite-2026-wru-key-talk'].length,1);assert.equal(data.photos['etic-2026'].length,1);assert.equal(data.sources.length,3);
 });
 test('SPEAK001F a future approved event and photo directory render without Astro edits; draft and unknown folders do not publish',async()=>{
- const {spawnSync}=await import('node:child_process');const root=await mkdtemp(resolve('.community-drafts/speak001d-auto/future-'));
+ const {spawnSync}=await import('node:child_process');await mkdir(resolve('.community-drafts/speak001d-auto'),{recursive:true});const root=await mkdtemp(resolve('.community-drafts/speak001d-auto/future-'));
  for(const dir of['src','scripts','public'])await cp(dir,join(root,dir),{recursive:true});for(const file of['package.json','package-lock.json','astro.config.mjs','tsconfig.json'])await cp(file,join(root,file));
  const{symlink,appendFile}=await import('node:fs/promises');await symlink(resolve('node_modules'),join(root,'node_modules'),'dir');
  const policyPath=join(root,'src/data/conferenceFolders.json'),policy=JSON.parse(await readFile(policyPath,'utf8'));
