@@ -77,3 +77,5 @@ runtime metadata, with no private correspondence paths. No dependencies or hosti
 
 - [ADR-015 — Speaking showcase media](ADR-015-speaking-showcase-media.md): versioned derived
   event bundle, approval-gated bundled photos and lightweight recording links.
+
+- [ADR-016 — Editorial foundations](ADR-016-editorial-foundations.md): proposed opt-in aliases/composition and review-only prototype, preserving public output.

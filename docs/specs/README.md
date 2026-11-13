@@ -95,3 +95,5 @@ with the exclusive international landing presentation. No duplicate hackathon SP
 - [SPEC-028 — Coordinated Portal completion](SPEC-028-portal-final-completion.md): FINAL-001 navigation, approved showcase/versioned roles, bounded Model D status and maintenance review.
 
 - [SPEC-029 — Model D status alignment](SPEC-029-model-d-status-alignment.md): three textual/structural statuses and explicit separation of offline research from production control.
+
+- [SPEC-030 — Editorial foundations](SPEC-030-editorial-foundations.md): DESIGN001 opt-in semantic tokens, four reusable Astro patterns and isolated review prototype; public adoption remains gated.

@@ -1,0 +1,9 @@
+---
+interface Props { index: string; title: string; description: string; href: string; label: string; metadata?: string; }
+const {index,title,description,href,label,metadata}=Astro.props;
+---
+<article class="ed-content-row">
+  <span class="ed-index" aria-hidden="true">{index}</span>
+  <div><h3>{title}</h3><p>{description}</p></div>
+  <div class="ed-row-end">{metadata&&<span class="ed-meta">{metadata}</span>}<a class="ed-link" href={href}>{label}<span aria-hidden="true"> ↗</span></a></div>
+</article>
