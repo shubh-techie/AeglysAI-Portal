@@ -7,6 +7,13 @@ import Footer from "../components/Footer.astro";
 import { creator } from "../data/creator";
 import { project, asset } from "../data/project";
 import "../styles/global.css";
+import { editorialPresentation } from "./editorial-policy";
+import editorialTokens from "../styles/editorial-tokens.css?raw";
+import editorialBase from "../styles/editorial.css?raw";
+import editorialAlignment from "../styles/editorial-alignment.css?raw";
+import editorialPageStyles from "../styles/editorial-page.css?raw";
+const presentation = editorialPresentation(Astro.url.pathname);
+const editorialCSS = editorialTokens+editorialBase.replace(/^@import[^;]+;/,'')+editorialAlignment+editorialPageStyles;
 interface Props {
   title: string;
   description?: string;
@@ -64,9 +71,10 @@ const socialImageUrl = socialImage ? new URL(asset(socialImage.path), Astro.site
       Skip to content
     </a>
     <Header />
-    <main id="main" tabindex="-1">
+    <main id="main" tabindex="-1" class={presentation.editorial?"editorial-page":undefined} data-editorial={presentation.editorial||undefined} data-editorial-page={presentation.editorial||undefined}>
       <slot />
+      {presentation.editorial&&<style is:inline data-editorial-page-styles set:html={editorialCSS}/>}
     </main>
-    <Footer />
+    <Footer editorial={presentation.editorialFooter}/>
   </body>
 </html>

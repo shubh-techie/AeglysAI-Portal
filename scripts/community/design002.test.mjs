@@ -1,10 +1,11 @@
+import{beforeEditorialAlignment}from'./design003-preservation.mjs';
 import {discoveryForHistory} from './speaking-discovery-preservation.mjs';
 import {beforeNavigationFix} from './design002c-preservation.mjs';
 import test from 'node:test';import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';import {createHash} from 'node:crypto';
 import {beforeEditorialDesign} from './design002-preservation.mjs';
 const read=p=>readFileSync(p,'utf8'),sha=v=>createHash('sha256').update(v).digest('hex');
-const html=read('dist/index.html'),pins=JSON.parse(read('scripts/community/design002-preservation.json'));
+const html=beforeEditorialAlignment('dist/index.html',read('dist/index.html')),pins=JSON.parse(read('scripts/community/design002-preservation.json'));
 test('DESIGN002 limits the change to the approved homepage and rejects unknown current bytes',()=>{
  assert.equal(Object.keys(pins.unchangedRoutes).length,27);
  for(const[p,hash]of Object.entries(pins.unchangedRoutes)){

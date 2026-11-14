@@ -1,8 +1,8 @@
 ---
-interface Props { eyebrow: string; title: string; description: string; href: string; label: string; }
-const {eyebrow,title,description,href,label}=Astro.props;
+interface Props { eyebrow: string; title: string; description: string; href: string; label: string; external?: boolean; }
+const {eyebrow,title,description,href,label,external=false}=Astro.props;
 ---
 <article class="ed-feature">
-  <div class="ed-feature-copy"><p class="ed-meta">{eyebrow}</p><h2>{title}</h2><p>{description}</p><slot name="status"/><a class="ed-link" href={href}>{label}<span aria-hidden="true"> ↗</span></a></div>
+  <div class="ed-feature-copy"><p class="ed-meta">{eyebrow}</p><h2>{title}</h2><p>{description}</p><slot name="status"/><a class="ed-link" href={href} target={external?"_blank":undefined} rel={external?"noopener noreferrer":undefined} aria-label={external?`${label}: ${title} (opens in a new tab)`:undefined}>{label}<span aria-hidden="true"> ↗</span>{external&&<span class="sr-only"> (opens in a new tab)</span>}</a></div>
   <div class="ed-feature-visual"><slot name="visual"/></div>
 </article>
