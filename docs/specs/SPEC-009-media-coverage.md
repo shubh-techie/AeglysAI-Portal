@@ -126,3 +126,7 @@ check/build and nineteen tests passed, with responsive Chrome/control/touch/redu
 and no-JavaScript checks. These are earlier observed local outcomes; no build/browser test
 or remote CI/deployment is claimed by this documentation-only synchronization. Ongoing
 metadata/image maintenance and independent deployment verification remain follow-up work.
+
+## DESIGN-003 presentation alignment — 2026-11-13 (local review)
+
+Six records, original destinations/metadata/thumbnails and publisher-date order remain unchanged. On /media/ only, newest dated coverage receives the existing FeaturedStory treatment, followed by the other five records through the existing MediaCarousel. No duplication or additional carousel. FeaturedStory now supports optional safe external-link semantics; Media headlines wrap fully on this opt-in route. Homepage Media stays exact. Full source/editorial-arrangement caveat remains. All six existing thumbnail URLs returned200 and decoded for private QA screenshots; no source assets/data changed or new coverage/endorsement inferred. SPEC031 and DESIGN003 review document validation, privacy/performance costs and owner visual approval pending delivery.

@@ -1,19 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import EditorialSectionHeader from "../components/editorial/EditorialSectionHeader.astro";
 import Hero from "../components/Hero.astro";
 import MediaCarousel from "../components/media/MediaCarousel.astro";
-import { sortedMediaArticles } from "../data/media";
+import FeaturedStory from "../components/editorial/FeaturedStory.astro";
+import { asset } from "../data/project";
+import { sortedMediaArticles, formatPublicationDate } from "../data/media";
 const articles = sortedMediaArticles();
 ---
 <Layout title="AeglysAI in the Media" description="External articles covering AeglysAI, Shubh Prabhat, adaptive security, policy-bounded AI and resilient distributed systems.">
+  <div class="editorial-alignment alignment-media">
   <Hero eyebrow="Media Coverage" title="AeglysAI in the Media" description="Explore external publications covering AeglysAI's research direction, adaptive security architecture, policy-bounded AI, and the engineering community working toward more resilient distributed systems."/>
   <div class="container page-content">
     <section aria-labelledby="media-articles-heading">
-      <h2 id="media-articles-heading">External publications</h2>
+      <div id="media-articles-heading"><EditorialSectionHeader eyebrow="Publisher-reported coverage" title="External publications"/></div>
       <p class="media-context">Newest first by publisher-reported publication date. Summaries are brief portal descriptions; external coverage is not an endorsement or validation of research results. Editorial arrangements have not been independently verified.</p>
-      <MediaCarousel articles={articles} id="all-media-track" label="All media articles" compact={false}/>
+      <div data-media-id={articles[0].id}><FeaturedStory eyebrow={`Latest dated coverage / ${articles[0].publication}`} title={articles[0].title} description={articles[0].summary} href={articles[0].url} label="Read Article" external>
+      <div slot="status"><time datetime={articles[0].publishedDate!}>{formatPublicationDate(articles[0].publishedDate!)}</time><p>{articles[0].category}</p></div>
+      <div slot="visual" class="media-fallback">AeglysAI · Media Coverage{articles[0].thumbnail&&<img class="media-thumbnail" src={articles[0].thumbnail.path.startsWith('https://')?articles[0].thumbnail.path:asset(articles[0].thumbnail.path)} alt={articles[0].thumbnail.alt} width="800" height="450" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.setAttribute('hidden','')"/>}</div>
+      </FeaturedStory></div>
+      <MediaCarousel articles={articles.slice(1)} id="all-media-track" label="All media articles" compact={false}/>
     </section>
   </div>
+</div>
 </Layout>
 <style>
   .media-context { max-width: 850px; color: var(--muted); line-height: 1.8; margin: 18px 0 32px; font-size: 0.9rem; }

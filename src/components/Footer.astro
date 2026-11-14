@@ -3,9 +3,13 @@ import { project, href } from "../data/project";
 import { creator } from "../data/creator";
 import BrandMark from "./BrandMark.astro";
 import CreatorLinks from "./CreatorLinks.astro";
+import editorialTokens from "../styles/editorial-tokens.css?raw";
+import footerStyles from "../styles/footer-editorial.css?raw";
+interface Props { editorial?: boolean; }
+const { editorial = true } = Astro.props;
 ---
 
-<footer class="site-footer">
+<footer class="site-footer" data-editorial={editorial||undefined}>
   <div class="container footer-inner">
     <div class="footer-project">
       <a class="wordmark" href={href()} aria-label="AeglysAI home">
@@ -32,4 +36,5 @@ import CreatorLinks from "./CreatorLinks.astro";
       Research repository ↗<span class="sr-only"> (opens in a new tab)</span>
     </a>
   </div>
+{editorial&&<style is:inline data-footer-editorial set:html={editorialTokens.replaceAll('[data-editorial]', '.site-footer')+footerStyles}/>}
 </footer>

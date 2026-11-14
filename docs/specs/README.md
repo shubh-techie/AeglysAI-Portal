@@ -97,3 +97,5 @@ with the exclusive international landing presentation. No duplicate hackathon SP
 - [SPEC-029 — Model D status alignment](SPEC-029-model-d-status-alignment.md): three textual/structural statuses and explicit separation of offline research from production control.
 
 - [SPEC-030 — Editorial foundations](SPEC-030-editorial-foundations.md): DESIGN001 opt-in semantic tokens, four reusable Astro patterns and isolated review prototype; public adoption remains gated.
+
+- [SPEC-031 — Editorial alignment](SPEC-031-editorial-alignment.md): DESIGN003/A shared editorial Layout variants, scoped Footer and explicit event exclusions, with content preservation and owner visual-review gate.

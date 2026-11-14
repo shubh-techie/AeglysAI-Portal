@@ -1,8 +1,8 @@
 ---
 import { modelDStatus } from "../data/modelDStatus";
 import Layout from "../layouts/Layout.astro";
+import EditorialSectionHeader from "../components/editorial/EditorialSectionHeader.astro";
 import Hero from "../components/Hero.astro";
-import SectionHeading from "../components/SectionHeading.astro";
 import ModelCard from "../components/ModelCard.astro";
 import StatusBadge from "../components/StatusBadge.astro";
 import { project, models, href } from "../data/project";
@@ -12,6 +12,7 @@ import { project, models, href } from "../data/project";
   title="Research"
   description="The AeglysAI research problem, deterministic baselines and completed experimental, non-enforcing Model D research implementation."
 >
+  <div class="editorial-alignment alignment-research">
   <Hero
     eyebrow="01 / Research"
     title="Authorization as a research question."
@@ -19,7 +20,7 @@ import { project, models, href } from "../data/project";
   />
   <div class="container page-content">
     <section class="split-section">
-      <SectionHeading
+      <EditorialSectionHeader
         eyebrow="The problem"
         title="Decisions in changing systems."
       />
@@ -45,7 +46,7 @@ import { project, models, href } from "../data/project";
       <h2>{project.question}</h2>
     </section>
     <section class="section">
-      <SectionHeading
+      <EditorialSectionHeader
         eyebrow="Comparative foundation"
         title="Baselines"
         description="Implementation status refers to the separate AeglysAI research/application repository. This portal presents the research program."
@@ -56,8 +57,8 @@ import { project, models, href } from "../data/project";
         ))}
       </div>
     </section>
-    <section class="split-section" id="model-d-status">
-      <SectionHeading
+    <section class="split-section editorial-technical" id="model-d-status">
+      <EditorialSectionHeader
         eyebrow="Bounded offline research"
         title={modelDStatus.title}
       />
@@ -70,7 +71,7 @@ import { project, models, href } from "../data/project";
       </div>
     </section>
     <section class="section">
-      <SectionHeading
+      <EditorialSectionHeader
         eyebrow="How we investigate"
         title="Research Principles"
       />
@@ -102,7 +103,7 @@ import { project, models, href } from "../data/project";
       </div>
     </section>
     <section class="split-section">
-      <SectionHeading eyebrow="Open methodology" title="Reproducibility" />
+      <EditorialSectionHeader eyebrow="Open methodology" title="Reproducibility" />
       <div class="prose">
         <p>
           The intended experimental program compares models under documented
@@ -124,4 +125,5 @@ import { project, models, href } from "../data/project";
       </p>
     </section>
   </div>
+</div>
 </Layout>

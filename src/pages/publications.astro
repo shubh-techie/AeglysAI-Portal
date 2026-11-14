@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import EditorialSectionHeader from "../components/editorial/EditorialSectionHeader.astro";
 import Hero from "../components/Hero.astro";
-import SectionHeading from "../components/SectionHeading.astro";
 import StatusBadge from "../components/StatusBadge.astro";
 import { papers, href } from "../data/project";
 import { publishedPresentations } from "../data/presentations";
@@ -13,6 +13,7 @@ const presentations = publishedPresentations();
   title="Publications"
   description="AeglysAI research papers and technical publications in preparation. No publication or conference acceptance is claimed."
 >
+  <div class="editorial-alignment alignment-publications">
   <Hero
     eyebrow="04 / Publications"
     title="AeglysAI Research"
@@ -32,7 +33,7 @@ const presentations = publishedPresentations();
       </a>
     </p>
     <section>
-      <SectionHeading eyebrow="Writing in progress" title="Research papers" />
+      <EditorialSectionHeader eyebrow="Writing in progress" title="Research papers" />
       <div class="publication-list">
         {papers.map((title, index) => (
           <article id={`paper-${index + 1}`}>
@@ -48,7 +49,7 @@ const presentations = publishedPresentations();
       </div>
     </section>
     <section class="section">
-      <SectionHeading eyebrow="Speaking & Presentations" title="Looking for talks?" />
+      <EditorialSectionHeader eyebrow="Speaking & Presentations" title="Looking for talks?" />
       <p>Presentation previews, invitations and proposed talks are now collected in <a class="text-link" href={href('speaking')}>Speaking & Presentations →</a>.</p>
     </section>
     <section class="notice">
@@ -61,4 +62,5 @@ const presentations = publishedPresentations();
       </p>
     </section>
   </div>
+</div>
 </Layout>
