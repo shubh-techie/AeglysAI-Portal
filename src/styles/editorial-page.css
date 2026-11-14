@@ -1,0 +1,50 @@
+/* Shared opt-in brand sections, using the same local color-scheme approach as Home. */
+.editorial-page {
+  --editorial-ivory: #f4f0e7;
+  --ed-color-paper: var(--editorial-ivory);
+  color-scheme: light;
+  color: var(--text);
+  background: var(--ed-color-paper);
+  overflow-wrap: anywhere;
+}
+.editorial-page .page-hero {
+  color-scheme: dark;
+  --ed-color-paper: var(--bg);
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: var(--ed-section-space) max(var(--ed-gutter),calc((100% - var(--ed-container)) / 2));
+  color: var(--text);
+  background: var(--ed-color-paper);
+  border: 0;
+}
+.editorial-page .page-hero h1 {
+  max-width: 20ch;
+  margin-block: var(--ed-space-3);
+  color: var(--text);
+  font: 400 clamp(2.75rem,6vw,5.75rem)/1.05 var(--ed-font-display);
+  letter-spacing: -.045em;
+}
+.editorial-page .page-hero .lead { color: var(--muted); max-width: 65ch; font-size: var(--ed-type-body); line-height: 1.8; }
+.editorial-page .page-content { padding-block: var(--ed-space-5) var(--ed-section-space); }
+.editorial-page .section-heading h2 { font-size: clamp(2rem,4vw,3.5rem); max-width: 25ch; }
+.editorial-page .text-link { min-height: 44px; display: inline-flex; align-items: center; padding-block: .5rem; }
+.editorial-page .architecture {
+  color-scheme: dark;
+  color: var(--text);
+  background: var(--surface);
+}
+.editorial-page .architecture :is(h2,h3) { font-family: var(--ed-font-body); }
+.editorial-page .editorial-technical,
+.editorial-page .results-panel,
+.editorial-page .table-scroll {
+  color-scheme: dark;
+  --ed-color-paper: var(--closing-start);
+  color: var(--text);
+  background: var(--ed-color-paper);
+  border-color: var(--line);
+}
+.editorial-page .editorial-technical { padding: clamp(1.25rem,3vw,3rem); }
+.editorial-page .table-scroll { padding: 1rem; }
+.editorial-page .editorial-technical p { color: var(--muted); }
+.editorial-page .editorial-technical code { color: var(--text); }

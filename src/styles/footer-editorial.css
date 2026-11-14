@@ -1,0 +1,13 @@
+/* Existing Footer only: no content, theme-controller or route behavior changes. */
+.site-footer .footer-inner { display: grid; grid-template-columns: minmax(0,1fr); align-items: start; gap: var(--ed-space-4); padding-block: var(--ed-space-5); }
+.site-footer p { max-width: 48ch; font-size: .875rem; line-height: 1.75; margin-top: var(--ed-space-1); }
+.site-footer .footer-note .eyebrow { color: var(--ed-color-muted); font-size: .6875rem; letter-spacing: .12em; }
+.site-footer .footer-project { max-width: none; }
+.site-footer .text-link { font-size: .875rem; min-height: 44px; display: inline-flex; align-items: center; }
+.site-footer .creator-links { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin-top: var(--ed-space-2); font-size: .875rem; }
+.site-footer .creator-links a { display: inline-flex; align-items: center; min-height: 44px; }
+.site-footer .footer-project p a { display: inline-block; min-height: 44px; padding-block: .5rem; }
+.site-footer :focus-visible { outline: var(--ed-focus-width) solid var(--ed-color-focus); outline-offset: var(--ed-focus-offset); }
+@media (min-width: 64rem) { .site-footer .footer-inner { grid-template-columns: minmax(0,1.1fr) minmax(0,1fr) minmax(10rem,.55fr); gap: var(--ed-space-5); } }
+
+.site-footer .wordmark { min-height: 44px; }
