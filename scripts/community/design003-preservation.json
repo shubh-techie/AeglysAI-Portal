@@ -97,7 +97,6 @@
     "dist/speaking/beyond-static-access-control/index.html": "0f71e4c8909bd2a0653aaba793d725821f6008a7cd6e9bce7ff89c69875da3cd"
   },
   "assetHashes": {
-    "dist/.DS_Store": "1bacc0bfad4dba7be6f2f8e18cdce236e188dfc6351ec556bd5ac370e8dc76ef",
     "dist/sitemap-0.xml": "86fc706baa9ec0e6be026b1ec601894220d736c28af8dc755d0b4024eb754f5b",
     "dist/.nojekyll": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "dist/sitemap-index.xml": "933fe78b6aa1db140fa114ad41d94ff31d2f052104f78818a8e3e22eb84edf95",
@@ -107,7 +106,6 @@
     "dist/images/shubh-prabhat.jpg": "c69cd72b729dbd27eb48b025f3649c7f25e92c99cd4929e75454056acfe60335",
     "dist/images/aeglysai-social.png": "21a8722f5f4290b24070471a811caa2844e38da0bdf085af19efce6f4bedcce1",
     "dist/images/media-article.svg": "dc1c247cece08a330d94720c46ecd989892c93d8203a672078c15dd1df29be1d",
-    "dist/brand/.DS_Store": "160b152105dcef7b8048a351b6f0291b94992be1741227c2121bc3fc5679735e",
     "dist/brand/AeglysAI Dark Tech Brand Kit.png": "411cc7f9978835687295ccc7be490771118b33b15a02a199ac06b957b981bfea",
     "dist/brand/AeglysAI Futuristic Brand Kit.png": "3a32db4a606c8b668c2743cc800f28efc832276fc4136d4d128e457f7863f78e",
     "dist/brand/README.md": "75ce40dab4c5c13b6d6c3d0c945832b5d4975722ed307093fdcd238be62e6cff",

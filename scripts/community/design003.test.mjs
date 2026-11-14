@@ -1,6 +1,14 @@
 import test from'node:test';import assert from'node:assert/strict';import{readFileSync}from'node:fs';import{createHash}from'node:crypto';
 import{beforeEditorialAlignment}from'./design003-preservation.mjs';import{normalizeSpeakingMedia}from'./speaking-discovery-preservation.mjs';
 const read=p=>readFileSync(p,'utf8'),sha=v=>createHash('sha256').update(v).digest('hex'),pin=JSON.parse(read('scripts/community/design003-preservation.json'));
+// A portable asset manifest must never require machine-local Finder metadata.
+// Every legitimate asset remains mandatory, including dotfiles such as .well-known entries.
+function assertAssetPins(assetHashes,readAsset=readFileSync){
+ for(const[path,hash]of Object.entries(assetHashes)){
+  assert.notEqual(path.split('/').at(-1),'.DS_Store','Finder metadata must not be pinned: '+path);
+  assert.equal(sha(readAsset(path)),hash,path);
+ }
+}
 const main=html=>html.match(/<main\b[\s\S]*?<\/main>/)[0];
 const footer=html=>html.match(/<footer class="site-footer"[\s\S]*?<\/footer>/)[0];
 const paragraphs=html=>[...html.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/g)].map(m=>m[1].replace(/<[^>]*>/g,'').replace(/\s+/g,' ').trim()).sort();
@@ -15,7 +23,7 @@ test('DESIGN003 changes only exact reviewed target mains and footer; frozen21rou
   }
   assert.equal(sha(html.replace(/<footer class="site-footer"[\s\S]*?<\/footer>/,'FOOTER')),hash,path);
  }
- for(const[path,hash]of Object.entries(pin.assetHashes))assert.equal(sha(readFileSync(path)),hash,path);
+ assertAssetPins(pin.assetHashes);
  for(const[path,hash]of Object.entries(pin.sourceIntegrity))assert.equal(sha(readFileSync(path)),hash,path);
 });
 test('DESIGN003 retains manuscript/research paragraphs, every destination and exact footer content while changing presentation',()=>{
@@ -53,4 +61,16 @@ test('DESIGN003A retains byte-identical merged event pages and footer token scop
  assert.equal(Object.keys(pin.eventWholeSHA256).length,8);
  for(const[path,hash]of Object.entries(pin.eventWholeSHA256))assert.equal(sha(read(path)),hash,path);
  const css=pin.footer.after.match(/<style data-footer-editorial>([\s\S]*?)<\/style>/)[1];assert.doesNotMatch(css,/\[data-editorial\]/);assert.match(css,/\.site-footer/);
+});
+
+test('DESIGN003 asset pins are independent of Finder files and still require real assets',()=>{
+ const assets={'dist/site.css':Buffer.from('body{color:navy}'),'dist/.well-known/security.txt':Buffer.from('Contact: https://example.test/security')};
+ const hashes=Object.fromEntries(Object.entries(assets).map(([path,bytes])=>[path,sha(bytes)]));
+ const read=path=>{if(!Object.hasOwn(assets,path))throw Object.assign(new Error('Missing required asset'),{code:'ENOENT'});return assets[path];};
+ assert.doesNotThrow(()=>assertAssetPins(hashes,read),'Clean Linux checkout without Finder files');
+ const mac={...assets,'dist/.DS_Store':Buffer.from('private Finder metadata'),'dist/brand/.DS_Store':Buffer.from('private Finder metadata')},reads=[];
+ assert.doesNotThrow(()=>assertAssetPins(hashes,path=>{reads.push(path);return mac[path];}));assert.deepEqual(reads,Object.keys(assets));
+ for(const path of['dist/.DS_Store','dist/brand/.DS_Store'])assert.throws(()=>assertAssetPins({[path]:sha(mac[path])},()=>{throw Error('Must reject before reading Finder data');}),/Finder metadata must not be pinned/);
+ assert.throws(()=>assertAssetPins(hashes,path=>{if(path==='dist/site.css')throw Object.assign(new Error('Missing required asset'),{code:'ENOENT'});return read(path);}),{code:'ENOENT'});
+ assert.throws(()=>assertAssetPins(hashes,path=>path==='dist/site.css'?Buffer.from('tampered'):read(path)),/dist\/site\.css/);
 });
