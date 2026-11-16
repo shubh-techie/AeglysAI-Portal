@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {hackathonForms, approvedFormUrl, eventPhase} from '../../src/data/hackathonForms.ts';
 import {whatsappCommunityUrl} from '../../src/data/hackathonChannels.ts';
-import {beforeProjectSubmission} from './phase2-preservation.mjs';
+import {beforeProjectSubmission, assertPhase2Assets} from './phase2-preservation.mjs';
 const read=p=>readFileSync(p,'utf8'),sha=v=>createHash('sha256').update(v).digest('hex');
 const pin=JSON.parse(read('scripts/community/phase2-preservation.json'));
 const html=read('dist/hackathons/index.html');
@@ -50,6 +50,7 @@ test('PHASE2 exact transition retains all previous bytes and all unaffected publ
   assert.notEqual(sha(beforeProjectSubmission(path,value+'UNREVIEWED')),record.beforeSHA256,path);
   if(path.endsWith('.html'))assert.deepEqual([...value.matchAll(/<script\b[\s\S]*?<\/script>/g)].map(m=>m[0]),[...String(beforeProjectSubmission(path,value)).matchAll(/<script\b[\s\S]*?<\/script>/g)].map(m=>m[0]),path);
  }
- for(const [path,hash] of Object.entries(pin.unchanged))assert.equal(sha(readFileSync(path)),hash,path);
+ assert.equal(pin.generatedAssetsPolicy,'current-speaking-inventory-v1');
+ assertPhase2Assets(pin.unchanged,JSON.parse(read('src/data/speakingPhotos.generated.json')));
  assert.equal(Object.keys(pin.files).filter(p=>p.endsWith('.html')).length,4);
 });
