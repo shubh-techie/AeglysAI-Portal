@@ -99,9 +99,9 @@ try {
    await click('#how-it-works .hx-process-controls button:nth-child(4)');
    assert.equal(await evaluate(`document.querySelector('#how-it-works .hx-selection-panel strong').textContent`),'UNDERSTAND & DOCUMENT');
    await screenshot(`qualification-${width}`);
-   await click('#timeline .hx-process-controls button:nth-child(8)');
-   assert.equal(await evaluate(`document.querySelector('#timeline .hx-selection-panel strong').textContent`),'FINALIST LIVE DEMO');
-   assert.equal(await evaluate(`document.querySelectorAll('.hx-competition-timeline .hx-status').length`),9);
+   await click('#timeline .hx-process-controls button:nth-child(3)');
+   assert.equal(await evaluate(`document.querySelector('#timeline .hx-selection-panel strong').textContent`),'Grand Finale');
+   assert.equal(await evaluate(`document.querySelectorAll('.hx-competition-timeline .hx-status').length`),3);
    await scrollTo('#judging');
    if(width===1440){assert.equal(await evaluate(`document.querySelector('.hx-progress-rail a[aria-current]').dataset.railSection`),'judging');assert.ok(Number(await evaluate(`document.querySelector('.hx-progress-rail').style.getPropertyValue('--page-progress')`))>0);}
    const scores=await evaluate(`([...document.querySelectorAll('.hx-round li')].map(e=>parseFloat(e.style.getPropertyValue('--score'))))`);

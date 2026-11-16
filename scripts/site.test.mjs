@@ -238,7 +238,7 @@ test("hackathon foundation separates confirmed schedule from pending operations 
     if (html === events) {
       assert.match(html, /Registration &amp; Qualification: Oct 1 – Nov 6, 2026/);
       assert.match(html, /Grand Finale: Nov 28, 2026/);
-      assert.match(html, /The phase window does not specify an hour-specific submission deadline/);
+      assert.match(html, /Submission deadline: November 22, 2026 — end of day/);
     } else assert.match(html, /PLANNED|Opening Soon/);
     assert.match(html, /docs\.google\.com\/forms\/d\/e\//);
     assert.doesNotMatch(html, /immigration|profile.building/i);
@@ -374,7 +374,7 @@ test("form configuration rejects private/unsafe links and keeps collection gated
   const { outputText } = transpileModule(readFileSync("src/data/hackathonForms.ts", "utf8"), { compilerOptions: { module: 99, target: 99 } });
   const { hackathonForms, publicFormUrl } = await import(`data:text/javascript;base64,${Buffer.from(outputText).toString("base64")}`);
   assert.equal(Object.keys(hackathonForms).length, 7);
-  assert.ok(Object.values(hackathonForms).every(form => form.url && form.open === true && form.available && form.publicationApproved));
+  assert.ok(Object.entries(hackathonForms).every(([kind, form]) => form.url && form.open === !["participant", "qualification"].includes(kind) && form.available && form.publicationApproved));
   assert.equal(publicFormUrl(null, true), null);
   const fixture = "https://forms.gle/synthetic-test-fixture";
   assert.equal(publicFormUrl(fixture, false), null);

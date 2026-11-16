@@ -19,7 +19,8 @@ const publicPages=walk('dist').filter(p=>p.endsWith('.html'));
 test('TIME001A confirms all three phase windows and separately tracks pending operations',()=>{
  assert.deepEqual(eventSchedule.registration,{status:'CONFIRMED',start:'2026-10-01',end:'2026-11-06',mode:'Online'});
  assert.deepEqual(eventSchedule.finale,{status:'CONFIRMED',date:'2026-11-28',mode:'Hybrid — Online & On-site'});
- for(const field of [eventSchedule.submission.deadline,eventSchedule.sessionTimes,eventSchedule.venue,eventSchedule.certificates.verificationChannel,eventSchedule.certificates.issuanceDate])assert.deepEqual(field,{status:'UNCONFIRMED',value:null});
+ for(const field of [eventSchedule.sessionTimes,eventSchedule.venue,eventSchedule.certificates.verificationChannel,eventSchedule.certificates.issuanceDate])assert.deepEqual(field,{status:'UNCONFIRMED',value:null});
+ assert.deepEqual(eventSchedule.submission.deadline,{status:'CONFIRMED',value:'2026-11-22'});
  assert.equal(eventSchedule.submission.mode,'Virtual judging and finalist selection');
  assert.equal(eventSchedule.submission.title,'Project Submission & Finalist Qualification');
  assert.deepEqual(eventSchedule.submission.dates,{status:'CONFIRMED',value:{start:'2026-11-15',end:'2026-11-22'}});
@@ -80,7 +81,7 @@ test('TIME001A final schedule separates registration, Phase 2 window and unconfi
  assert.deepEqual([...phases[0].matchAll(/datetime="([^"]+)"/g)].map(m=>m[1]),['2026-10-01','2026-11-06']);
  assert.deepEqual([...phases[1].matchAll(/datetime="([^"]+)"/g)].map(m=>m[1]),['2026-11-15','2026-11-22']);
  assert.doesNotMatch(landing,/2026-11-22T|23:59|11:59|register(?:ation)?[^<]{0,40}through November 28/i);
- assert.match(landing,/The phase window does not specify an hour-specific submission deadline/);
+ assert.match(landing,/Submission deadline: November 22, 2026 — end of day/);
  const homepage=visible(read('dist/index.html'));assert.ok(homepage.includes(scheduleCopy.summary));
  const awards=visible(landing.match(/<section id="prizes"[\s\S]*?<\/section>/)[0]);assert.ok(awards.includes(scheduleCopy.summary));
  const manifest=JSON.parse(read('scripts/community/time001a-final-preservation.json'));

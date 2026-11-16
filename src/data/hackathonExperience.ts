@@ -36,7 +36,7 @@ export const qualification = [
   ["Suggest one improvement", "Explain a realistic scoped change, its value and how you would validate it. A contribution does not require an accepted upstream PR."],
 ];
 export const faq = [
-  ["When are registration, qualification and the grand finale?", `${scheduleCopy.summary} Registration and qualification are online. ${scheduleCopy.submissionDeadline}`],
+  ["When are registration, qualification and the grand finale?", `${scheduleCopy.summary} Registration and qualification intake are closed. Qualified teams can submit their project now. ${scheduleCopy.submissionDeadline}`],
   ["When are projects judged?", scheduleCopy.judging],
   ["Where is the grand finale?", scheduleCopy.venue],
   ["How will certificate verification and issuance details be shared?", scheduleCopy.certificates],

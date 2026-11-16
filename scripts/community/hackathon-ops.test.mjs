@@ -12,8 +12,9 @@ test('OPS-001 verified mapping and independent collection gates',async()=>{
  assert.equal(new Set(Object.values(hackathonForms).map(x=>x.url)).size,7);
  for(const [kind,form] of Object.entries(hackathonForms)) {
   assert.ok(form.title.includes(titles[kind])); assert.match(form.url,/^https:\/\/docs\.google\.com\/forms\/d\/e\/[^/]+\/viewform$/);
-  assert.equal(approvedFormUrl(form),form.url);
-  const active={...form,open:true};assert.equal(approvedFormUrl(active),form.url);
+  const expected = ["participant","qualification"].includes(kind) ? null : form.url;
+  assert.equal(approvedFormUrl(form),expected);
+  const active={...form,open:true};assert.equal(approvedFormUrl(active),expected);
   for(const gate of ['available','publicationApproved','open']) assert.equal(approvedFormUrl({...active,[gate]:false}),null);
   assert.equal(approvedFormUrl({...active,verifiedAt:null}),null);
   assert.equal(approvedFormUrl({...active,verifiedAt:"not-a-date"}),null);
@@ -36,6 +37,6 @@ test('OPS-001 original certificate sample gate, distinct eligibility and safe pl
  assert.ok(!html.includes('Certificate design preview pending'));assert.ok(html.includes('Sample Recipient'));
  assert.ok(html.includes('Sample — Not Valid for Verification'));
  const {hackathonForms}=await load('src/data/hackathonForms.ts');
- for(const form of Object.values(hackathonForms)) assert.ok(html.includes(`href="${form.url}"`));
+ for(const [kind,form] of Object.entries(hackathonForms)) assert.equal(html.includes(`href="${form.url}"`),!["participant","qualification"].includes(kind));
  assert.doesNotMatch(html,/Keynote Speaker · PLANNED|formResponse|edit_requested/);
 });

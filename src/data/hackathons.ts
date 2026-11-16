@@ -1,5 +1,5 @@
 import { creator } from "./creator";
-import { hackathonForms, approvedFormUrl } from "./hackathonForms";
+import { hackathonForms, approvedFormUrl, eventPhase } from "./hackathonForms";
 
 export type ProgramStatus = "CONFIRMED" | "INVITED" | "PLANNED" | "COMPLETED";
 // Set to official HTTPS application forms when available; never invent URLs.
@@ -26,7 +26,7 @@ export interface EventSchedule {
 }
 export const eventSchedule: EventSchedule = {
   registration: { status: "CONFIRMED", start: "2026-10-01", end: "2026-11-06", mode: "Online" },
-  submission: { title: "Project Submission & Finalist Qualification", dates: { status: "CONFIRMED", value: { start: "2026-11-15", end: "2026-11-22" } }, deadline: { status: "UNCONFIRMED", value: null }, mode: "Virtual judging and finalist selection" },
+  submission: { title: "Project Submission & Finalist Qualification", dates: { status: "CONFIRMED", value: { start: "2026-11-15", end: "2026-11-22" } }, deadline: { status: "CONFIRMED", value: "2026-11-22" }, mode: "Virtual judging and finalist selection" },
   finale: { status: "CONFIRMED", date: "2026-11-28", mode: "Hybrid — Online & On-site" },
   judging: { schedule: { status: "CONFIRMED", value: "Virtual project review and finalist selection" } },
   sessionTimes: { status: "UNCONFIRMED", value: null },
@@ -57,9 +57,17 @@ export function eventScheduleCopy(schedule: EventSchedule) {
   const certificates = schedule.certificates.verificationChannel.status === "CONFIRMED" && schedule.certificates.issuanceDate.status === "CONFIRMED"
     ? `Certificate verification: ${schedule.certificates.verificationChannel.value}. Certificate issuance date: ${eventDate(schedule.certificates.issuanceDate.value)}.`
     : "Certificate verification and issuance details will be communicated through official AEGYTHON channels.";
-  return { registration, registrationShort, finale, finaleShort, submission, submissionShort, judging, venue, certificates, sessionTimes,
+  const submissionDeadlineLine = schedule.submission.deadline.status === "CONFIRMED"
+    ? `Submission deadline: ${eventDate(schedule.submission.deadline.value)} — end of day.`
+    : "Submission deadline to be confirmed by organizers.";
+  const submissionCutoffClarification = eventPhase.submissionCutoff.timezone === null
+    ? "The exact cutoff timezone has not yet been confirmed by organizers."
+    : `Cutoff timezone: ${eventPhase.submissionCutoff.timezone}.`;
+  const submissionPhaseShort = submissionShort.replace(schedule.submission.title, "Project Submission & Finalist Selection");
+  return { registration, registrationShort, finale, finaleShort, submission, submissionShort, submissionPhaseShort, judging, venue, certificates, sessionTimes,
+    submissionDeadlineLine, submissionCutoffClarification,
     summary: `${registrationShort}. ${submissionShort}. ${finaleShort}.`,
-    submissionDeadline: schedule.submission.deadline.status === "CONFIRMED" ? `Submission deadline: ${eventDate(schedule.submission.deadline.value)}.` : "The phase window does not specify an hour-specific submission deadline. Exact submission cutoff times will be announced separately.",
+    submissionDeadline: `${submissionDeadlineLine} ${submissionCutoffClarification}`,
     selectionNote: schedule.submission.dates.status === "CONFIRMED" ? "Selected phase is a reading aid." : "Selected phase is a reading aid. Phase 2 schedule remains to be announced.",
   };
 }

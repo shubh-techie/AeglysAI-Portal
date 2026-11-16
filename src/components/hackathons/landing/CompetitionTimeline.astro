@@ -11,7 +11,7 @@ const phases = [
  <p class="hx-eyebrow">THE COMPETITION JOURNEY</p><h2 id="timeline-heading">From application to the final demo.</h2>
  <p class="hx-section-copy">Three phases. Qualification establishes readiness; competition judging evaluates the finished project.</p>
  <ol class="hx-competition-timeline" data-selection-note={scheduleCopy.selectionNote}>{phases.map((phase, i) => <li><span class="hx-step-number">Phase {i + 1}</span><div><h3>{phase.title}</h3><p><strong>{phase.start && phase.end ? <><time datetime={phase.start}>{eventDate(phase.start).replace(/, \d{4}$/, "")}</time> – <time datetime={phase.end}>{eventDate(phase.end)}</time></> : phase.start ? <time datetime={phase.start}>{phase.dateLabel}</time> : phase.dateLabel}</strong></p><p>{phase.detail}</p></div><span class="hx-status">{phase.mode}</span></li>)}</ol>
- <div class="hx-inline-note"><p>Final submissions require a working project. Prepare the full checklist before submitting.</p><FormCta kind="project" label="Submit Project" id="project-form-note"/></div>
+ <div class="hx-inline-note"><p>Final submissions require a working project. Prepare the full checklist before submitting. {scheduleCopy.submissionDeadline}</p><FormCta kind="project" label="Submit Project" id="project-form-note"/></div>
 </section>
 <style is:inline>
  #timeline .hx-step-number { grid-column: 1 / -1; width: auto; }

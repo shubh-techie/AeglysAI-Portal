@@ -5,7 +5,7 @@ const { kind, label, id, primary = false } = Astro.props;
 const url = approvedFormUrl(hackathonForms[kind]);
 ---
 <div class="hx-form-cta">
-  {url ? <a class:list={["button", "hx-button", {"hx-primary": primary, "button-primary": primary}]} href={url} target="_blank" rel="noopener noreferrer">{label}<span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a> : <div class="hx-form-unavailable"><span>{label}</span><span class="hx-opening" id={id}>{kind === "participant" ? "Registration Opening Soon" : "Opening Soon"}</span></div>}
+  {url ? <a class:list={["button", "hx-button", {"hx-primary": primary, "button-primary": primary}]} href={url} target="_blank" rel="noopener noreferrer">{label}<span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a> : <div class="hx-form-unavailable"><span>{label}</span><span class="hx-opening" id={id}>{!hackathonForms[kind].open ? (kind === "participant" ? "Registration Closed" : kind === "qualification" ? "Qualification Intake Closed" : "Intake Closed") : kind === "participant" ? "Registration Opening Soon" : "Opening Soon"}</span></div>}
 </div>
 
 <style>
