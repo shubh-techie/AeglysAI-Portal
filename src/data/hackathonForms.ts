@@ -1,8 +1,15 @@
 /** Public responder configuration only. Availability, permission to link, and
  * organizer authorization to open collection are independent gates.
  * Supplied by organizer; verified using signed-out GETs, never submitted.
- * Latest organizer instruction authorizes all seven public onboarding links. */
+ * Phase 2 closes participant registration and qualification intake; historical URLs are retained. */
 export interface FormSetting { id: string; title: string; url: string | null; available: boolean; verifiedAt: string | null; publicationApproved: boolean; open: boolean; }
+export const eventPhase = {
+  registration: "CLOSED" as "OPEN" | "CLOSED",
+  qualification: "CLOSED" as "OPEN" | "CLOSED",
+  project: "OPEN",
+  finalistEvaluation: "PENDING",
+  submissionCutoff: { period: "END_OF_DAY", timezone: null },
+} as const;
 export const hackathonForms: Record<"participant" | "team" | "speaker" | "judge" | "guest" | "project" | "qualification", FormSetting> = {
   "participant": {
     "id": "FORM-01",
@@ -11,7 +18,7 @@ export const hackathonForms: Record<"participant" | "team" | "speaker" | "judge"
     "available": true,
     "verifiedAt": "2026-10-12T03:12:24.255884+00:00",
     "publicationApproved": true,
-    "open": true
+    "open": eventPhase.registration === "OPEN"
   },
   "team": {
     "id": "FORM-02",
@@ -56,7 +63,7 @@ export const hackathonForms: Record<"participant" | "team" | "speaker" | "judge"
     "available": true,
     "verifiedAt": "2026-10-12T03:12:25.826367+00:00",
     "publicationApproved": true,
-    "open": true
+    "open": eventPhase.project === "OPEN"
   },
   "qualification": {
     "id": "FORM-07",
@@ -65,12 +72,13 @@ export const hackathonForms: Record<"participant" | "team" | "speaker" | "judge"
     "available": true,
     "verifiedAt": "2026-10-12T03:12:26.119570+00:00",
     "publicationApproved": true,
-    "open": true
+    "open": eventPhase.qualification === "OPEN"
   }
 };
 export type HackathonFormKind = keyof typeof hackathonForms;
 export function approvedFormUrl(setting: FormSetting): string | null {
-  return publicFormUrl(setting.url, setting.available && setting.publicationApproved && setting.open && setting.verifiedAt !== null && Number.isFinite(Date.parse(setting.verifiedAt)));
+  const phaseOpen = setting.id === "FORM-01" ? eventPhase.registration === "OPEN" : setting.id === "FORM-07" ? eventPhase.qualification === "OPEN" : setting.id === "FORM-06" ? eventPhase.project === "OPEN" : true;
+  return publicFormUrl(setting.url, Boolean(phaseOpen) && setting.available && setting.publicationApproved && setting.open && setting.verifiedAt !== null && Number.isFinite(Date.parse(setting.verifiedAt)));
 }
 export function publicFormUrl(url: string | null, open: boolean): string | null {
   if (!url) return null;

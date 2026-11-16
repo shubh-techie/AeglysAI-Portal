@@ -1,3 +1,4 @@
+import{beforeProjectSubmission}from'./phase2-preservation.mjs';
 /** Test-only exact projection of DESIGN003 presentation, retaining all earlier pins.
  * Only three reviewed page mains, the shared footer and its source may project back.
  */
@@ -5,6 +6,7 @@ import{readFileSync}from'node:fs';import{createHash}from'node:crypto';
 const pin=JSON.parse(readFileSync(new URL('./design003-preservation.json',import.meta.url),'utf8'));
 const sha=v=>createHash('sha256').update(v).digest('hex');
 export function beforeEditorialAlignment(path,value){
+ value=beforeProjectSubmission(path,value);
  path=String(path).replace(/^\.\//,'');const buffer=Buffer.isBuffer(value);let text=String(value);
  const source=pin.sources[path];
  if(source){if(sha(value)===source.beforeSHA256)return value;if(sha(value)!==source.afterSHA256)throw Error('DESIGN003 source outside review: '+path);if(sha(source.before)!==source.beforeSHA256)throw Error('DESIGN003 historical source differs');return buffer?Buffer.from(source.before):source.before;}

@@ -40,5 +40,5 @@ test('CI003 reporting-month projection cannot change the approved five timeline 
  assert.deepEqual([...timeline.matchAll(/datetime="([^"]+)"/g)].map(m=>m[1]),['2026-10-01','2026-11-06','2026-11-15','2026-11-22','2026-11-28']);
  assert.match(timeline,/Project Submission &amp; Finalist Qualification/);assert.match(timeline,/Virtual judging and finalist selection/);
  assert.doesNotMatch(timeline,/Schedule to be announced/);
- assert.match(landing,/The phase window does not specify an hour-specific submission deadline/);
+ assert.match(landing,/Submission deadline: November 22, 2026 — end of day/);
 });

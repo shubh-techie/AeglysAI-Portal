@@ -1,4 +1,5 @@
 ---
+import { whatsappCommunityUrl } from "../../data/hackathonChannels";
 import { scheduleCopy } from "../../data/hackathons";
 import Layout from "../../layouts/Layout.astro";
 import { hackathonSeo } from "../../data/hackathonSeo";
@@ -44,6 +45,27 @@ const resources = [
 <Layout title={hackathonSeo.program.title} description={hackathonSeo.program.description} socialImage={hackathonSocialPreview.image}>
   <div class="hackathon-experience hx-global-event">
     <SeriesHero/>
+    <section class="hx-submission-announcement" id="project-submissions" aria-labelledby="project-submissions-heading">
+      <div class="container">
+        <div class="hx-submission-layout">
+          <div>
+            <p class="hx-eyebrow">PROJECT SUBMISSIONS OPEN · AEGYTHON 2026</p>
+            <h2 id="project-submissions-heading">Your project deserves to be seen.</h2>
+            <p class="hx-submission-description">Registration has closed. Qualified teams can now submit their working AI/ML projects for finalist consideration.</p>
+          </div>
+          <div class="hx-submission-actions">
+            <div class="hx-actions"><FormCta kind="project" label="Submit Your Project" id="submission-announcement-note" primary/><a class="hx-button" href="#challenges">Explore Challenges <span aria-hidden="true">↓</span></a></div>
+            <p class="hx-submission-deadline"><strong>{scheduleCopy.submissionDeadlineLine}</strong><br/><span class="hx-fine">Exact cutoff timezone pending organizer confirmation.</span></p>
+            <a class="hx-link hx-submission-community" href={whatsappCommunityUrl} target="_blank" rel="noopener noreferrer">Join the WhatsApp Community <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+          </div>
+        </div>
+        <ul class="hx-submission-schedule" aria-label="Event phase schedule">
+          <li>{scheduleCopy.registrationShort} — Closed</li>
+          <li>{scheduleCopy.submissionPhaseShort} — Active</li>
+          <li>{scheduleCopy.finaleShort} — Upcoming</li>
+        </ul>
+      </div>
+    </section>
     <div class="container hx-facts" aria-label="Official event facts">{["ONE HACKATHON", "SIX CHALLENGES", "TEAMS OF 1–4", "FREE PARTICIPATION", "ANY TECH STACK", "TWO-ROUND JUDGING"].map((fact, i) => <div><span aria-hidden="true">{String(i + 1).padStart(2, "0")}</span><strong>{fact}</strong></div>)}</div>
     <div class="container hx-content">
       <EventNav/>
@@ -76,7 +98,7 @@ const resources = [
         <div class="hx-section-heading"><div><p class="hx-eyebrow">START WITH EVIDENCE</p><h2 id="qualification-heading">AeglysAI Contributor Qualification</h2></div><a class="hx-button" href="#qualification-guide">View Qualification Guide <span aria-hidden="true">↓</span></a></div>
         <p class="hx-section-copy">Before selection, applicants demonstrate they can fork, clone and run AeglysAI, understand its basic architecture, provide one meaningful technical observation, suggest one realistic improvement and explain how to validate it. Qualification is not a LeetCode-style elimination exercise. Qualification is mandatory for every team member and does not guarantee selection. The A/B/C baseline is sufficient; Model D knowledge is not required.</p>
         <ol class="hx-qualification hx-grid" id="qualification-guide">{qualification.map(([title, detail], i) => <li class="hx-card"><span class="hx-eyebrow">{String(i + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{detail}</p></li>)}</ol>
-        <div class="hx-callout" id="github-workflow"><h3>Your fork. Your evidence.</h3><p>Fork <a class="hx-link" href={project.github}>AeglysAI on GitHub</a>, clone your own fork and follow the official repository setup instructions. Participants do not receive write access to the official repository or official main.</p><p>Create <code>qualification/&lt;github-username&gt;</code> in your fork, for example <code>qualification/example-user</code>. Record evidence in <code>community/qualification/&lt;github-username&gt;.md</code>: environment, OS, runtime, actual build/test results, architecture understanding, technical observation, improvement idea, engineering value and validation approach. Never use emails, phone numbers, student IDs or other PII in branch names.</p><p>Push to your fork. Submit your GitHub username, fork URL, qualification branch URL and qualification file URL and sanitized build-log URLs through the official Google Form. Organizer review uses published selection criteria; completing qualification does not guarantee selection.</p><p>Selected participants build in their own forks under <code>hackathon/&lt;team-id&gt;</code>. The organizer issues team IDs and verifies individual qualification and selection in private Google Sheets. No duplicate active team membership; changes require organizer approval. Final submission does not guarantee an AeglysAI merge. An optional upstream PR retains normal maintainer review.</p><p>Use Google Forms for registration, qualification and final submission, private Google Sheets for applicants/teams/judging, private Google Drive for supporting evidence and Google Meet for finalist presentations. No accounts, database or private-data API. Never publish private participant, credential or patent-related data.</p><FormCta kind="qualification" label="Submit Qualification" id="qualification-form-note" primary/></div>
+        <div class="hx-callout" id="github-workflow"><h3>Your fork. Your evidence.</h3><p>Fork <a class="hx-link" href={project.github}>AeglysAI on GitHub</a>, clone your own fork and follow the official repository setup instructions. Participants do not receive write access to the official repository or official main.</p><p>Create <code>qualification/&lt;github-username&gt;</code> in your fork, for example <code>qualification/example-user</code>. Record evidence in <code>community/qualification/&lt;github-username&gt;.md</code>: environment, OS, runtime, actual build/test results, architecture understanding, technical observation, improvement idea, engineering value and validation approach. Never use emails, phone numbers, student IDs or other PII in branch names.</p><p>Qualification intake is closed. The following evidence requirements remain available for reference. Push to your fork. Submit your GitHub username, fork URL, qualification branch URL and qualification file URL and sanitized build-log URLs through the official Google Form. Organizer review uses published selection criteria; completing qualification does not guarantee selection.</p><p>Selected participants build in their own forks under <code>hackathon/&lt;team-id&gt;</code>. The organizer issues team IDs and verifies individual qualification and selection in private Google Sheets. No duplicate active team membership; changes require organizer approval. Final submission does not guarantee an AeglysAI merge. An optional upstream PR retains normal maintainer review.</p><p>Use Google Forms for registration, qualification and final submission, private Google Sheets for applicants/teams/judging, private Google Drive for supporting evidence and Google Meet for finalist presentations. No accounts, database or private-data API. Never publish private participant, credential or patent-related data.</p><FormCta kind="qualification" label="Submit Qualification" id="qualification-form-note" primary/></div>
       </section>
       <CompetitionTimeline/>
       <p class="hx-fine">{scheduleCopy.venue}</p>
@@ -100,9 +122,22 @@ const resources = [
       <p class="hx-fine"><a class="hx-link" href={href("hackathons/sponsors")}>Become a Sponsor →</a></p>
       <section class="hx-final" aria-labelledby="final-heading">
         <p class="hx-eyebrow">READY TO BUILD?</p><h2 id="final-heading">Bring a question.<br/>Build the evidence.</h2><p>Join engineers, students and researchers exploring the future of adaptive security and resilient distributed systems.</p>
-        <div class="hx-actions"><FormCta kind="participant" label="Register for Hackathon" id="final-form-note" primary/><a class="hx-button" href={project.github}>View AeglysAI on GitHub <span aria-hidden="true">↗</span></a></div>
+        <div class="hx-actions"><FormCta kind="project" label="Submit Your Project" id="final-form-note" primary/><a class="hx-button" href={project.github}>View AeglysAI on GitHub <span aria-hidden="true">↗</span></a></div>
         <p class="hx-fine">Free participation<br/>{scheduleCopy.registrationShort}<br/>{scheduleCopy.submissionShort}<br/>{scheduleCopy.finaleShort}<br/>Eligibility and official terms pending</p>
       </section>
     </div>
   </div>
 </Layout>
+
+<style is:inline>
+  #project-submissions { background: #10233b; color: #eef5ff; padding-block: clamp(24px, 3vw, 40px); border-block: 1px solid #2b435a; }
+  #project-submissions .hx-submission-layout { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 24px 40px; align-items: center; }
+  #project-submissions .hx-eyebrow { margin: 0 0 .6rem; }
+  #project-submissions h2 { font-size: clamp(1.65rem, 2.8vw, 2.4rem); margin: 0 0 .6rem; }
+  #project-submissions .hx-submission-description { margin: 0; color: #b8c8df; max-width: 60ch; }
+  #project-submissions .hx-actions { margin-block: 0 .8rem; }
+  #project-submissions .hx-submission-deadline { margin: 0; line-height: 1.6; }
+  #project-submissions .hx-submission-community { display: inline-flex; align-items: center; flex-wrap: wrap; gap: .3rem; min-height: 44px; }
+  #project-submissions .hx-submission-schedule { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; padding: 1rem 0 0; margin: 1rem 0 0; list-style: none; border-top: 1px solid #2b435a; color: #b8c8df; font-size: .8rem; line-height: 1.6; }
+  @media (max-width: 900px) { #project-submissions .hx-submission-layout { grid-template-columns: minmax(0, 1fr); gap: 1rem; } }
+</style>

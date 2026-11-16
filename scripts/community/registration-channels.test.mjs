@@ -33,11 +33,11 @@ test('REG-001 keeps registration/qualification/selection authoritative and Disco
   const section=html.match(/<section class="hx-section" id="registration-channels"[\s\S]*?<\/section>/)[0];
   assert.ok(html.indexOf('id="registration"')<html.indexOf('id="registration-channels"'));
   assert.ok(html.indexOf('id="registration-channels"')<html.indexOf('id="qualification"'));
-  assert.match(section,/External registration does not complete AeglysAI technical qualification or indicate organizer selection/);
+  assert.match(section,/Registration and qualification intake are closed/);
   assert.match(section,/official AeglysAI page remains authoritative/);
   assert.match(section,/Registration &amp; Qualification: Oct 1 – Nov 6, 2026/);
   assert.match(section,/Grand Finale: Nov 28, 2026/);
-  assert.match(section,/The phase window does not specify an hour-specific submission deadline/);
+  assert.match(section,/Submission deadline: November 22, 2026 — end of day/);
   assert.match(section,/Age and geographic eligibility remain subject to official terms/);
   assert.doesNotMatch(section,/\b(?:registered|attendees|participants):?\s*\d|₹|2026-11-/i);
   assert.equal((html.match(/Discord participation does not constitute event registration, technical qualification or organizer selection\./g)||[]).length,2);

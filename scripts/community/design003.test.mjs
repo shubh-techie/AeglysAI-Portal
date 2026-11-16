@@ -1,3 +1,4 @@
+import{beforeProjectSubmission}from'./phase2-preservation.mjs';
 import test from'node:test';import assert from'node:assert/strict';import{readFileSync}from'node:fs';import{createHash}from'node:crypto';
 import{beforeEditorialAlignment}from'./design003-preservation.mjs';import{normalizeSpeakingMedia}from'./speaking-discovery-preservation.mjs';
 const read=p=>readFileSync(p,'utf8'),sha=v=>createHash('sha256').update(v).digest('hex'),pin=JSON.parse(read('scripts/community/design003-preservation.json'));
@@ -16,7 +17,7 @@ const links=html=>[...html.matchAll(/<a\b[^>]*>/g)].map(m=>['href','target','rel
 test('DESIGN003 changes only exact reviewed target mains and footer; frozen21routes and static assets remain pinned',()=>{
  assert.equal(Object.keys(pin.outsideFooter).length,21);
  for(const[path,hash]of Object.entries(pin.outsideFooter)){
-  let html=read(path);assert.equal(footer(html),path.startsWith('dist/hackathons/')?pin.footer.before:pin.footer.after,path);
+  let html=beforeProjectSubmission(path,read(path));assert.equal(footer(html),path.startsWith('dist/hackathons/')?pin.footer.before:pin.footer.after,path);
   if(path==='dist/speaking/index.html')html=normalizeSpeakingMedia(html);
   if(path==='dist/community/reports/index.html'){
    const month=new Date().toISOString().slice(0,7),matches=[...html.matchAll(/<p>(\d{4}-\d{2}) remains an open reporting period/g)];assert.equal(matches.length,1);assert.equal(matches[0][1],month);html=html.replace(`<p>${month} remains an open reporting period`,`<p>${pin.reportingMonth} remains an open reporting period`);
@@ -24,7 +25,7 @@ test('DESIGN003 changes only exact reviewed target mains and footer; frozen21rou
   assert.equal(sha(html.replace(/<footer class="site-footer"[\s\S]*?<\/footer>/,'FOOTER')),hash,path);
  }
  assertAssetPins(pin.assetHashes);
- for(const[path,hash]of Object.entries(pin.sourceIntegrity))assert.equal(sha(readFileSync(path)),hash,path);
+ for(const[path,hash]of Object.entries(pin.sourceIntegrity))assert.equal(sha(beforeProjectSubmission(path,readFileSync(path))),hash,path);
 });
 test('DESIGN003 retains manuscript/research paragraphs, every destination and exact footer content while changing presentation',()=>{
  for(const[path,record]of Object.entries(pin.pages)){
@@ -43,7 +44,7 @@ test('DESIGN003 preserves six unique media records with one latest feature and f
  assert.match(read('src/styles/editorial-alignment.css'),/-webkit-line-clamp: unset/);
 });
 test('DESIGN003 normalization rejects footer/source/head corruption and unrelated frozen content',()=>{
- const path='dist/index.html',html=read(path);assert.throws(()=>beforeEditorialAlignment(path,html.replace(footer(html),footer(html).replace('Research repository','UNAPPROVED'))));assert.equal(beforeEditorialAlignment(path,html).replace(/<footer class="site-footer"[\s\S]*?<\/footer>/,'FOOTER'),html.replace(/<footer class="site-footer"[\s\S]*?<\/footer>/,'FOOTER'));
+ const path='dist/index.html',html=beforeProjectSubmission(path,read(path));assert.throws(()=>beforeEditorialAlignment(path,html.replace(footer(html),footer(html).replace('Research repository','UNAPPROVED'))));assert.equal(beforeEditorialAlignment(path,html).replace(/<footer class="site-footer"[\s\S]*?<\/footer>/,'FOOTER'),html.replace(/<footer class="site-footer"[\s\S]*?<\/footer>/,'FOOTER'));
  for(const[path,record]of Object.entries(pin.sources)){assert.equal(sha(read(path)),record.afterSHA256);assert.equal(sha(beforeEditorialAlignment(path,read(path))),record.beforeSHA256);assert.throws(()=>beforeEditorialAlignment(path,read(path)+'UNAPPROVED'));}
  const media=read('dist/media/index.html');assert.throws(()=>beforeEditorialAlignment('dist/media/index.html',media.replace('<title>','<title>UNAPPROVED')));
 });
@@ -59,7 +60,7 @@ test('DESIGN003A scopes the shared editorial pattern and excludes every Hackatho
 
 test('DESIGN003A retains byte-identical merged event pages and footer token scope',()=>{
  assert.equal(Object.keys(pin.eventWholeSHA256).length,8);
- for(const[path,hash]of Object.entries(pin.eventWholeSHA256))assert.equal(sha(read(path)),hash,path);
+ for(const[path,hash]of Object.entries(pin.eventWholeSHA256))assert.equal(sha(beforeProjectSubmission(path,read(path))),hash,path);
  const css=pin.footer.after.match(/<style data-footer-editorial>([\s\S]*?)<\/style>/)[1];assert.doesNotMatch(css,/\[data-editorial\]/);assert.match(css,/\.site-footer/);
 });
 

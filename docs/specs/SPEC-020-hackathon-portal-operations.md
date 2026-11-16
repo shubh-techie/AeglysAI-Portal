@@ -29,3 +29,12 @@ project/role actions stay matched; no opening settings or responder URLs changed
 qualification and final callout provide a primary action at their respective stages. Prize
 presentation explicitly remains proposed/funding-unconfirmed; recognition still needs separate
 eligibility review and organizer approval. See the existing experience specification and ADR-011.
+
+
+## 2026-11-16 — HACK-2026-PHASE2 / PHASE2B local phase activation
+
+IMPLEMENTED locally, pending owner review: existing form registry now explicitly closes participant registration and qualification intake and opens project submission. The approved project URL remains FORM-06; selected-team roster and role-profile gates retain their prior authorization. No provider settings or applicant data were changed. The schedule records November 22, 2026 as the submission day, end of day; timezone remains null, with no invented instant. Evaluation is pending; finale remains November 28. Existing venue, session and certificate uncertainties remain.
+
+PHASE2B supersedes the interim hero copy/layout: preserve original branding, four-line BUILD INTELLIGENCE / SECURE TOMORROW headline, introduction, network and effects. Move submission messaging/actions/deadline/community/schedule into one container-aligned navy row immediately after the hero and before the untouched six-item facts strip. Local inline styles target only #project-submissions. No new component, dependency, runtime interaction or global CSS. Hero height naturally reduces when its former action/schedule content moves; exact old vertical dimensions are not artificially reserved.
+
+Central ownership: hackathonForms.ts phase gates; hackathons.ts calendar dates and derived copy; hackathonChannels.ts organizer-approved WhatsApp invitation. Discovery/qualification instructions, team rules, challenge definitions and both rubrics remain available. Historical tests project only exact new bytes back to the verified baseline; raw phase tests independently pin current output, status gates, ordering and unchanged hero/facts content. See docs/qa/HACK-2026-PHASE2B-REVIEW.md for actual validation, scope and remaining limitations. No stage, commit, push, merge or deployment authorized.
